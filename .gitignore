@@ -1,0 +1,11 @@
+# venv
+venv/
+.venv/
+
+# compiled python
+*.pyc
+*.pyo
+*.pyd
+
+# pycache
+__pycache__/

@@ -1,0 +1,14 @@
+Quality Indicator,Measurement Start Date And Time,Measurement Type,Sample Name,Temperature (°C),Z-Average (nm),Polydispersity Index (PI),Peak 1 Mean by Intensity ordered by area (nm),Attenuator,Mean Count Rate (kcps),Zeta Potential (mV),Zeta Deviation (mV),Derived Mean Count Rate (kcps)
+GoodData,12/03/2025 10:00,Size,Control,25,145.3,0.04272,155.3,9,297.5,,,2479
+GoodData,12/03/2025 10:01,Size,30bp-linear 33 uL,25,169.8,0.07818,186.6,9,326.2,,,2718
+GoodData,12/03/2025 10:03,Size,30bp-linear 6.6 uL,25,174.2,0.01183,183,9,330.4,,,2753
+GoodData,12/03/2025 10:05,Size,30bp-linear 1.65 uL,25,162.7,0.04686,173,9,274.4,,,2287
+GoodData,12/03/2025 10:07,Size,30bp-linear 0.33 uL,25,157.5,0.1334,173.7,9,320.1,,,2668
+GoodData,12/03/2025 10:09,Size,30bp-branched 33 uL,25,163,0.2345,155.1,9,306.4,,,2553
+GoodData,12/03/2025 10:11,Size,30bp-branched 6.6 uL,25,164.3,0.1381,185.1,9,305,,,2542
+GoodData,12/03/2025 10:13,Size,30bp-branched 1.65 uL,25.01,151.7,0.06359,164.7,9,265.7,,,2215
+GoodData,12/03/2025 10:14,Size,30bp-branched 0.33 uL,25,143.7,0.0842,158.3,9,297.9,,,2482
+GoodData,12/03/2025 10:16,Size,4-way-star 33 uL,25.01,175.8,0.08549,192.6,9,343.1,,,2859
+GoodData,12/03/2025 10:18,Size,4-way-star 6.6 uL,25,177.8,0.03467,188.5,9,343.5,,,2862
+GoodData,12/03/2025 10:19,Size,4-way-star 1.65 uL,25.01,173.4,0.03009,183.6,9,300.9,,,2508
+GoodData,12/03/2025 10:21,Size,4-way-star 0.33 uL,25,155.3,0.03222,164.9,9,286.8,,,2390

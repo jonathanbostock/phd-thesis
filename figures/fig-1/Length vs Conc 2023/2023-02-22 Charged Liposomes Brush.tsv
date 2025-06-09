@@ -1,0 +1,24 @@
+Quality Indicator	Sample Name	Temperature (°C)	Z-Average (nm)	Polydispersity Index (PI)	Peak 1 Area by Intensity ordered by area (%)	Peak 1 Mean by Intensity ordered by area (nm)
+GoodData	Ext 1 1:0 Ctrl 	25	131.4	0.0402	100	139.4
+GoodData	Ext 1 1:0 30 bp	25	150.2	0.03641	100	158.8
+GoodData	Ext 1 9:1 Ctrl	25	121.4	0.03368	100	128
+GoodData	Ext 1 9:1 30 bp	25	146.1	0.03968	100	154.3
+GoodData	Ext 1 3:1 Ctrl	25	114.1	0.05805	100	121.5
+GoodData	Ext 1 3:1 30 bp	25	139	0.04188	100	146.9
+GoodData	Ext 1 1:1 Ctrl	25	120.2	0.06955	100	130.8
+GoodData	Ext 1 1:1 30 bp	25	149.5	0.03543	100	158.3
+GoodData	Ext 2 1:0 Ctrl	25	127.2	0.07405	100	139.7
+GoodData	Ext 2 1:0 30 bp	25	155.4	0.07047	100	166.9
+GoodData	Ext 2 9:1 Ctrl	25	118.8	0.05684	100	127.4
+GoodData	Ext 2 9:1 30 bp	25	147.1	0.07899	100	157.7
+GoodData	Ext 2 3:1 Ctrl	25	113.8	0.04635	100	121.2
+GoodData	Ext 2 3:1 30 bp	25	143.8	0.03977	100	152.1
+GoodData	Ext 2 1:1 Ctrl	25	116.5	0.07274	100	126.7
+GoodData	Ext 2 1:1 30 bp	25	143.7	0.03807	100	153
+GoodData	Ext 3 1:0 Ctrl	25	134.7	0.06738	100	146.7
+GoodData	Ext 3 1:0 30 bp	25	158.4	0.05905	100	170.5
+GoodData	Ext 3 9:1 Ctrl	25	122.4	0.06961	100	131.5
+GoodData	Ext 3 9:1 30 bp	25	147.8	0.06705	100	160.8
+GoodData	Ext 3 3:1 Ctrl	25	114.7	0.05284	100	122.3
+GoodData	Ext 3 3:1 30 bp	25	147.7	0.06997	100	160.8
+NoData	Ext 3 1:1 Ctrl	25	113.1	0.04256	100	120
