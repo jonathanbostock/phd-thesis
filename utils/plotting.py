@@ -268,7 +268,7 @@ def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations,
             ax.plot(ratio_smooth, y_fit, color=color, linewidth=2, alpha=0.8)
             
             # Plot error band
-            ax.fill_between(ratio_smooth, y_lower, y_upper, color=color, alpha=0.2)
+            ax.fill_between(ratio_smooth, y_lower, y_upper, color=color, alpha=0.3)
             
             return popt, param_errors
             
@@ -279,7 +279,7 @@ def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations,
     return None, None
 
 
-def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsize=(6, 4)):
+def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsize=(6, 4), color_index=0):
     """
     Plot linear relationship with regression line and p-value
     
@@ -299,6 +299,8 @@ def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsi
         Y-axis label
     figsize : tuple
         Figure size (width, height)
+    color_index : int
+        Index of color to use from colorblind palette (default 0)
     
     Returns:
     --------
@@ -319,7 +321,7 @@ def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsi
     
     # Use colorblind palette for consistency
     colors = sns.color_palette("colorblind")
-    plot_color = colors[0]  # Use first color from colorblind palette
+    plot_color = colors[color_index]  # Use specified color from colorblind palette
     
     # Plot scatter points
     ax.scatter(x_data, y_data, color=plot_color, marker='o', 
@@ -357,7 +359,7 @@ def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsi
     # Plot confidence band in same color
     y_pred = slope * x_line + intercept
     ci = prediction_interval(x_data, y_data, x_line)
-    ax.fill_between(x_line, y_pred - ci, y_pred + ci, color=plot_color, alpha=0.2)
+    ax.fill_between(x_line, y_pred - ci, y_pred + ci, color=plot_color, alpha=0.3)
     
     # Add regression statistics to plot
     r_squared = r_value ** 2

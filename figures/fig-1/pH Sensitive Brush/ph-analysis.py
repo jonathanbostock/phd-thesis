@@ -23,7 +23,8 @@ def main() -> None:
         title="Effect of pH on Brush Formation",
         xlabel="pH",
         ylabel="ΔD",
-        figsize=(6, 4)
+        figsize=(6, 4),
+        color_index=3
     )
     
     # Print regression results
