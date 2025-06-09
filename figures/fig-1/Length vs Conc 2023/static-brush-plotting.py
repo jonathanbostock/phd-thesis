@@ -9,15 +9,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.optimize import curve_fit
 from itertools import product
-
-def fit_function(c, delta_d_max, c_half):
-    """Michaelis-Menten style function: ΔD = ΔD_max * c / (c + c_1/2)"""
-    return delta_d_max * c / (c + c_half)
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../..'))
+from utils.plotting import fit_function, setup_plot_style, format_axes, plot_fit_curve
 
 def main() -> None:
-    # Set seaborn style and colorblind palette
-    sns.set_style("white")
-    sns.set_palette("colorblind")
+    setup_plot_style()
     
     df = pd.read_csv("static-brush-data.csv")
 
@@ -47,8 +45,8 @@ def main() -> None:
     df_data["Concentration"] = 1 / df_data["Lipid:DNA Ratio"]  # Concentration is inverse of ratio
     df_data["Delta D"] = df_data["peak_1_mean_intensity"]
 
-    # Create figure
-    fig, ax = plt.subplots(figsize=(6, 4))
+    # Create figure with subplots for both plots
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
     
     # Get unique brush lengths and create gradient colormap
     brush_lengths = sorted(df_data["Brush Length / bp"].unique())
@@ -57,72 +55,82 @@ def main() -> None:
     norm = plt.Normalize(vmin=min(brush_lengths), vmax=max(brush_lengths))
     markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h'][:len(brush_lengths)]
     
-    # Plot individual data points as scatter
+    # Store fitted parameters for second plot
+    fitted_params = []
+    
+    # Set axis limits first to ensure curves extend to full range
+    all_ratios = df_data["Lipid:DNA Ratio"].values
+    min_ratio = min(all_ratios) * 0.3  # Extend further left  
+    max_ratio = max(all_ratios) * 3.0  # Extend further right
+    ax1.set_xlim(max_ratio, min_ratio)  # Reversed for log scale
+    
+    # Plot individual data points and fit curves
     for i, brush_length in enumerate(brush_lengths):
         data_subset = df_data[df_data["Brush Length / bp"] == brush_length]
         color = cmap(norm(brush_length))
-        ax.scatter(data_subset["Lipid:DNA Ratio"], data_subset["Delta D"], 
+        ax1.scatter(data_subset["Lipid:DNA Ratio"], data_subset["Delta D"], 
                   color=color, marker=markers[i], edgecolors='black', linewidths=0.5,
                   label=f'{int(brush_length)} bp', s=50)
         
-        # Fit curve for this brush length using concentration (1/ratio)
-        c_data = data_subset["Concentration"].values
-        y_data = data_subset["Delta D"].values
+        # Use shared utility for fitting and plotting
+        popt, param_errors = plot_fit_curve(ax1, data_subset, "Concentration", "Delta D", 
+                                          "Lipid:DNA Ratio", df_data["Concentration"].values, color)
         
-        if len(c_data) > 2:  # Need at least 3 points for fitting
-            try:
-                # Sort by concentration for smooth curve plotting
-                sort_idx = np.argsort(c_data)
-                c_sorted = c_data[sort_idx]
-                y_sorted = y_data[sort_idx]
-                
-                # Fit the function with better initial parameters
-                popt, pcov = curve_fit(fit_function, c_sorted, y_sorted, 
-                                     p0=[max(y_sorted), np.median(c_sorted)], maxfev=5000)
-                
-                # Calculate parameter errors
-                param_errors = np.sqrt(np.diag(pcov))
-                
-                # Generate smooth curve for plotting (in concentration space)
-                # Use full range of all data, not just this brush length
-                all_concentrations = df_data["Concentration"].values
-                c_smooth = np.logspace(np.log10(min(all_concentrations)), 
-                                     np.log10(max(all_concentrations)), 100)
-                y_fit = fit_function(c_smooth, *popt)
-                
-                # Calculate confidence band using parameter errors
-                y_upper = fit_function(c_smooth, popt[0] + param_errors[0], 
-                                     popt[1] + param_errors[1])
-                y_lower = fit_function(c_smooth, popt[0] - param_errors[0], 
-                                     popt[1] - param_errors[1])
-                
-                # Convert back to Lipid:DNA ratio for plotting
-                ratio_smooth = 1 / c_smooth
-                
-                # Plot fitted curve
-                ax.plot(ratio_smooth, y_fit, color=color, linewidth=2, alpha=0.8)
-                
-                # Plot error band
-                ax.fill_between(ratio_smooth, y_lower, y_upper, color=color, alpha=0.2)
-                
-            except (RuntimeError, ValueError) as e:
-                print(f"Could not fit curve for {brush_length} bp: {e}")
+        # Store fitted parameters for second plot
+        if popt is not None:
+            fitted_params.append({
+                'brush_length': brush_length,
+                'delta_d_max': popt[0],
+                'delta_d_max_error': param_errors[0],
+                'c_half': popt[1],
+                'color': color
+            })
     
-    ax.set_xscale("log")
-    ax.set_xlim(ax.get_xlim()[::-1])  # Reverse x-axis
-    ax.set_xlabel("Lipid:DNA Ratio")
-    ax.set_ylabel("Delta D")
-    ax.legend(title="Brush Length", bbox_to_anchor=(1.05, 1), loc='upper left', frameon=False)
-    ax.set_title("Static Brush Delta D vs Lipid:DNA Ratio")
+    # Format first subplot (original plot)
+    ax1.set_xscale("log")
+    ax1.set_xlabel("Lipid:DNA Ratio")
+    ax1.set_ylabel("Delta D")
+    ax1.legend(title="Brush Length", bbox_to_anchor=(1.05, 1), loc='upper left', frameon=False)
+    ax1.set_title("Static Brush Delta D vs Lipid:DNA Ratio")
+    format_axes(ax1)
     
-    # Remove top and right spines, remove grey background
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    ax.grid(False)
-    
-    # Add tick marks
-    ax.tick_params(axis='both', which='major', direction='in', length=4)
-    ax.tick_params(axis='both', which='minor', direction='in', length=2)
+    # Create second subplot: ΔD max vs Brush Length
+    if fitted_params:
+        # Extract data for plotting
+        brush_lengths_fit = [p['brush_length'] for p in fitted_params]
+        delta_d_max_vals = [p['delta_d_max'] for p in fitted_params]
+        delta_d_max_errors = [p['delta_d_max_error'] for p in fitted_params]
+        colors = [p['color'] for p in fitted_params]
+        
+        # Plot with error bars
+        for i, (bl, ddm, err, color) in enumerate(zip(brush_lengths_fit, delta_d_max_vals, delta_d_max_errors, colors)):
+            ax2.errorbar(bl, ddm, yerr=err, marker=markers[i], color=color, 
+                        markeredgecolor='black', markeredgewidth=0.5, markersize=8,
+                        capsize=3, capthick=1, linewidth=0)
+        
+        # Fit a line through the origin
+        # Force intercept to be 0 by fitting y = mx model
+        x_data = np.array(brush_lengths_fit)
+        y_data = np.array(delta_d_max_vals)
+        
+        # Fit slope (forcing through origin)
+        slope = np.sum(x_data * y_data) / np.sum(x_data**2)
+        
+        # Plot fitted line
+        x_fit = np.linspace(0, max(brush_lengths_fit) * 1.1, 100)
+        y_fit = slope * x_fit
+        ax2.plot(x_fit, y_fit, 'k--', linewidth=2, alpha=0.7, label=f'Slope = {slope:.3f}')
+        
+        # Format second subplot
+        ax2.set_xlabel("Brush Length (bp)")
+        ax2.set_ylabel("ΔD max")
+        ax2.set_title("Fitted ΔD max vs Brush Length")
+        ax2.legend(frameon=False)
+        
+        # Set origin at (0,0)
+        ax2.set_xlim(0, max(brush_lengths_fit) * 1.1)
+        ax2.set_ylim(0, max(delta_d_max_vals) * 1.1)
+        format_axes(ax2)
     
     plt.tight_layout()
     plt.savefig("Static Brush Plot.svg", bbox_inches='tight')

@@ -31,9 +31,15 @@ def format_axes(ax):
     ax.spines['right'].set_visible(False)
     ax.grid(False)
     
-    # Add tick marks
-    ax.tick_params(axis='both', which='major', direction='in', length=4)
-    ax.tick_params(axis='both', which='minor', direction='in', length=2)
+    # Add tick marks on all visible sides (bottom and left)
+    ax.tick_params(axis='both', which='major', direction='in', length=4, 
+                   top=False, right=False, bottom=True, left=True)
+    ax.tick_params(axis='both', which='minor', direction='in', length=2,
+                   top=False, right=False, bottom=True, left=True)
+    
+    # Ensure ticks are visible
+    ax.tick_params(axis='x', which='both', labelbottom=True)
+    ax.tick_params(axis='y', which='both', labelleft=True)
 
 
 def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col, 
@@ -74,6 +80,12 @@ def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col,
     cmap = plt.cm.viridis
     norm = plt.Normalize(vmin=min(categories), vmax=max(categories))
     markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h'][:len(categories)]
+    
+    # Set extended axis limits first for continuous data
+    all_ratios = df_data[x_col].values
+    min_ratio = min(all_ratios) * 0.3  # Extend further left  
+    max_ratio = max(all_ratios) * 3.0  # Extend further right
+    ax.set_xlim(min_ratio, max_ratio)  # Normal order, will be reversed later
     
     # Plot individual data points and fit curves
     for i, category in enumerate(categories):
@@ -141,6 +153,12 @@ def plot_brush_data_categorical(df_data, category_col, value_col, x_col, y_col,
     colors = sns.color_palette("colorblind", n_colors=len(categories))
     markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h'][:len(categories)]
     
+    # Set extended axis limits first for categorical data
+    all_ratios = df_data[x_col].values
+    min_ratio = min(all_ratios) * 0.3  # Extend further left  
+    max_ratio = max(all_ratios) * 3.0  # Extend further right
+    ax.set_xlim(min_ratio, max_ratio)  # Normal order, will be reversed later
+    
     # Plot individual data points and fit curves
     for i, category in enumerate(categories):
         data_subset = df_data[df_data[category_col] == category]
@@ -171,7 +189,7 @@ def plot_brush_data_categorical(df_data, category_col, value_col, x_col, y_col,
 
 def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations, color):
     """
-    Fit and plot curve for a data subset
+    Fit and plot curve for a data subset with proper uncertainty propagation
     
     Parameters:
     -----------
@@ -207,33 +225,44 @@ def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations,
             # Calculate parameter errors
             param_errors = np.sqrt(np.diag(pcov))
             
-            # Generate smooth curve for plotting (in concentration space)
-            # Use full range of all data, not just this category
-            c_smooth = np.logspace(np.log10(min(all_concentrations)), 
-                                 np.log10(max(all_concentrations)), 100)
+            # Get current axis limits to extend curves to full range
+            current_xlim = ax.get_xlim()
+            if current_xlim == (0.0, 1.0):  # Default limits, not set yet
+                # Use extended range beyond data
+                all_ratios = 1 / all_concentrations
+                min_ratio = min(all_ratios) * 0.3  # Extend further left
+                max_ratio = max(all_ratios) * 3.0  # Extend further right
+            else:
+                # Use actual axis limits (may be reversed for log scale)
+                max_ratio = max(current_xlim)
+                min_ratio = min(current_xlim)
+            
+            # Ensure positive values for log scale
+            min_ratio = max(min_ratio, 1e-10)
+            max_ratio = max(max_ratio, min_ratio * 10)
+            
+            # Generate smooth curve covering full axis range
+            ratio_smooth = np.logspace(np.log10(min_ratio), np.log10(max_ratio), 200)
+            c_smooth = 1 / ratio_smooth
+            
             y_fit = fit_function(c_smooth, *popt)
             
-            # Calculate confidence band using proper error propagation
-            # Generate multiple parameter combinations within error bounds
-            n_samples = 100
+            # Properly propagate uncertainty using Monte Carlo approach
+            n_samples = 1000
             y_samples = []
             
             for _ in range(n_samples):
-                # Sample parameters from normal distributions
+                # Sample parameters from their distributions
                 delta_d_max_sample = np.random.normal(popt[0], param_errors[0])
                 c_half_sample = np.random.normal(popt[1], param_errors[1])
                 
-                # Calculate y values for this parameter set
+                # Calculate curve for this sample
                 y_sample = fit_function(c_smooth, delta_d_max_sample, c_half_sample)
                 y_samples.append(y_sample)
             
-            # Calculate percentiles for error bands
             y_samples = np.array(y_samples)
-            y_upper = np.percentile(y_samples, 84.1, axis=0)  # +1 sigma
-            y_lower = np.percentile(y_samples, 15.9, axis=0)  # -1 sigma
-            
-            # Convert back to Lipid:DNA ratio for plotting
-            ratio_smooth = 1 / c_smooth
+            y_lower = np.percentile(y_samples, 16, axis=0)  # -1 sigma
+            y_upper = np.percentile(y_samples, 84, axis=0)  # +1 sigma
             
             # Plot fitted curve
             ax.plot(ratio_smooth, y_fit, color=color, linewidth=2, alpha=0.8)
@@ -241,8 +270,13 @@ def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations,
             # Plot error band
             ax.fill_between(ratio_smooth, y_lower, y_upper, color=color, alpha=0.2)
             
+            return popt, param_errors
+            
         except (RuntimeError, ValueError) as e:
             print(f"Could not fit curve: {e}")
+            return None, None
+    
+    return None, None
 
 
 def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsize=(6, 4)):
