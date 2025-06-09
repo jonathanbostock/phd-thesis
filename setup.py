@@ -11,7 +11,8 @@ setup(
         "scipy",
         "numpy", 
         "matplotlib",
-        "seaborn"
+        "seaborn",
+        "pandas"
     ],
     python_requires=">=3.6",
     classifiers=[
