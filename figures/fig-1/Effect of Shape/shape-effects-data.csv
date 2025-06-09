@@ -1,0 +1,40 @@
+sample_name,z_average,p1mi
+Ext-1 Control,145.3,155.3
+Ext-1 30bp-linear 33 uL,169.8,186.6
+Ext-1 30bp-linear 6.6 uL,174.2,183
+Ext-1 30bp-linear 1.65 uL,162.7,173
+Ext-1 30bp-linear 0.33 uL,157.5,173.7
+Ext-1 30bp-branched 33 uL,163,155.1
+Ext-1 30bp-branched 6.6 uL,164.3,185.1
+Ext-1 30bp-branched 1.65 uL,151.7,164.7
+Ext-1 30bp-branched 0.33 uL,143.7,158.3
+Ext-1 4-way-star 33 uL,175.8,192.6
+Ext-1 4-way-star 6.6 uL,177.8,188.5
+Ext-1 4-way-star 1.65 uL,173.4,183.6
+Ext-1 4-way-star 0.33 uL,155.3,164.9
+Ext-2 Control,156.3,169.8
+Ext-2 30bp-linear 0.33 uL,161.4,178.6
+Ext-2 30bp-linear 1.65 uL,198.5,224.1
+Ext-2 30bp-linear 6.6 uL,193.3,210.2
+Ext-2 30bp-linear 33 uL,228.6,273
+Ext-2 30bp-branched 0.33 uL,182.7,219.9
+Ext-2 30bp-branched 1.65 uL,185.5,202
+Ext-2 30bp-branched 6.6 uL,185.6,196.4
+Ext-2 30bp-branched 33 uL,184.9,204
+Ext-2 4-way-star 0.33 uL,172.7,184.7
+Ext-2 4-way-star 1.65 uL,197.3,208.8
+Ext-2 4-way-star 6.6 uL,197.3,215.5
+Ext-2 4-way-star 33 uL,192.6,214.1
+Ext-3 Control,165,181.6
+Ext-3 30bp-linear 0.33 uL,164.9,181
+Ext-3 30bp-linear 1.65 uL,195.7,220.3
+Ext-3 30bp-linear 6.6 uL,197.8,218.5
+Ext-3 30bp-linear 33 uL,192.7,213.2
+Ext-3 30bp-branched 0.33 uL,167.4,175.8
+Ext-3 30bp-branched 1.65 uL,183.7,205.5
+Ext-3 30bp-branched 6.6 uL,184.9,196.6
+Ext-3 30bp-branched 33 uL,187.4,201.7
+Ext-3 4-way-star 0.33 uL,173.4,189.9
+Ext-3 4-way-star 1.65 uL,198.2,218.9
+Ext-3 4-way-star 6.6 uL,199.7,217.7
+Ext-3 4-way-star 33 uL,195.1,210.2

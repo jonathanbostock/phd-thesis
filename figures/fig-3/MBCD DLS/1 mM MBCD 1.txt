@@ -1,0 +1,11 @@
+Quality Indicator	Measurement Type	Result State	Sample Name	Record Created Date	Measurement Start Date And Time	Temperature (°C)	Z-Average (nm)	Polydispersity Index (PI)	Peak 1 Area by Intensity ordered by area (%)	Peak 2 Area by Intensity ordered by area (%)	Zeta Potential (mV)	Peak 1 Mean by Intensity ordered by area (nm)
+NoData	Size	Completed	1mM MBCD 	25/01/2024 14:49	25/01/2024 14:49	25	153.2	0.1932	100			156.2
+NoData	Size	Completed	1mM MBCD 	25/01/2024 14:52	25/01/2024 14:52	25	151.5	0.2669	100			140.2
+NoData	Size	Completed	1mM MBCD 	25/01/2024 14:55	25/01/2024 14:55	25	143.2	0.1983	100			151.6
+NoData	Size	Completed	1mM MBCD 	25/01/2024 14:58	25/01/2024 14:58	25	143.4	0.1151	100			161.3
+NoData	Size	Completed	1mM MBCD 	25/01/2024 15:02	25/01/2024 15:02	25	143.1	0.1714	100			150.8
+NoData	Size	Completed	1mM MBCD no DNA	25/01/2024 15:05	25/01/2024 15:05	25	124.2	0.1485	100			133
+NoData	Size	Completed	1mM MBCD no DNA	25/01/2024 15:08	25/01/2024 15:08	25	121.9	0.1656	100			136.8
+NoData	Size	Completed	1mM MBCD no DNA	25/01/2024 15:11	25/01/2024 15:11	25	120.8	0.1508	100			137.6
+NoData	Size	Completed	1mM MBCD no DNA	25/01/2024 15:14	25/01/2024 15:14	25	121.5	0.1551	100			139.6
+NoData	Size	Completed	1mM MBCD no DNA	25/01/2024 15:18	25/01/2024 15:18	25	120.9	0.1564	100			141.7
