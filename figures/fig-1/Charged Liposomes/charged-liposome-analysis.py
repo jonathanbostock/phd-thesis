@@ -23,7 +23,8 @@ def main() -> None:
         title="Effect of DOPG Percentage on Brush Formation",
         xlabel="DOPG Percentage (%)",
         ylabel="ΔD",
-        figsize=(6, 4)
+        figsize=(6, 4),
+        color_index=4
     )
     
     # Print regression results
