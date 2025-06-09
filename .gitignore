@@ -9,3 +9,6 @@ venv/
 
 # pycache
 __pycache__/
+
+# egg info
+*.egg-info/
