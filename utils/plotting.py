@@ -5,6 +5,7 @@ Following CLAUDE.md formatting guidelines
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.patches import Ellipse
 import seaborn as sns
 from scipy.optimize import curve_fit
 from scipy import stats
@@ -17,9 +18,9 @@ default_figsize = (defaults.fig_width, defaults.fig_height)
 np.random.seed(42)
 
 
-def fit_function(c, delta_d_max, c_half):
+def fit_function(c, delta_d_max, log_c_half):
     """Michaelis-Menten style function: ΔD = ΔD_max * c / (c + c_1/2)"""
-    return delta_d_max * c / (c + c_half)
+    return delta_d_max * c / (c + np.pow(10, log_c_half))
 
 
 def setup_plot_style():
@@ -46,8 +47,69 @@ def format_axes(ax):
     ax.tick_params(axis='y', which='both', labelleft=True)
 
 
+def plot_error_ellipse(mean, cov_matrix, color, ax=None, **kwargs):
+    """
+    Plot an error ellipse representing the standard error of a 2D variable.
+    
+    Parameters:
+    -----------
+    mean : array-like, shape (2,)
+        Mean values [x_mean, y_mean]
+    cov_matrix : array-like, shape (2, 2)
+        Covariance/error matrix
+    ax : matplotlib.axes.Axes, optional
+        Axes to plot on. If None, uses current axes.
+    confidence : float, default 0.68
+        Confidence level (0.68 ≈ 1σ, 0.95 ≈ 2σ, 0.997 ≈ 3σ)
+    **kwargs : dict
+        Additional arguments passed to matplotlib.patches.Ellipse
+        
+    Returns:
+    --------
+    ellipse : matplotlib.patches.Ellipse
+        The ellipse patch object
+    """
+    if ax is None:
+        ax = plt.gca()
+    
+    # Convert to numpy arrays
+    mean = np.array(mean)
+    cov_matrix = np.array(cov_matrix)
+    
+    # Eigendecomposition to get ellipse parameters
+    eigenvals, eigenvecs = np.linalg.eigh(cov_matrix)
+    
+    # Sort eigenvalues and eigenvectors by eigenvalue magnitude
+    order = eigenvals.argsort()[::-1]
+    eigenvals = eigenvals[order]
+    eigenvecs = eigenvecs[:, order]
+
+    # Semi-axes lengths (scaled by chi-squared value)
+    width = eigenvals[0]
+    height = eigenvals[1]
+    
+    # Rotation angle (in degrees)
+    angle = np.degrees(np.arctan2(eigenvecs[1, 0], eigenvecs[0, 0]))
+    
+    # Default styling
+    ellipse_kwargs = {
+        'facecolor': 'none',
+        'edgecolor': color,
+        'linewidth': 2,
+        'alpha': 0.7
+    }
+    ellipse_kwargs.update(kwargs)
+    
+    # Create and add ellipse
+    ellipse = Ellipse(mean, width, height, angle=angle, **ellipse_kwargs)
+    ax.add_patch(ellipse)
+
+    
+    return ellipse
+
+
 def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col, 
-                              title, xlabel, ylabel, legend_title, figsize=default_figsize):
+                               title, xlabel, ylabel, legend_title, figsize=(defaults.fig_width*2, defaults.fig_height)):
     """
     Plot brush data with continuous categories using gradient colors
     
@@ -119,8 +181,10 @@ def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col,
     return fig, ax
 
 
-def plot_brush_data_categorical(df_data, category_col, value_col, x_col, y_col, 
-                               title, xlabel, ylabel, legend_title, figsize=default_figsize):
+def plot_brush_data_categorical(
+    df_data, category_col, value_col, x_col, y_col, 
+    ax_1_title, ax_2_title, xlabel, ylabel, legend_title,
+    figsize=(defaults.fig_width*2, defaults.fig_height)):
     """
     Plot brush data with categorical categories using colorblind palette
     
@@ -136,8 +200,10 @@ def plot_brush_data_categorical(df_data, category_col, value_col, x_col, y_col,
         Column name for x-axis data (e.g., "Lipid:DNA Ratio")
     y_col : str
         Column name for y-axis data (e.g., "Delta D")
-    title : str
-        Plot title
+    ax_1_title : str
+        Title for first axis
+    ax_2_title : str
+        Title for second axis
     xlabel : str
         X-axis label
     ylabel : str
@@ -150,7 +216,7 @@ def plot_brush_data_categorical(df_data, category_col, value_col, x_col, y_col,
     setup_plot_style()
     
     # Create figure
-    fig, ax = plt.subplots(figsize=figsize)
+    fig, (ax_1, ax_2) = plt.subplots(1, 2, figsize=figsize)
     
     # Get unique categories and assign colors
     categories = sorted(df_data[category_col].unique())
@@ -161,7 +227,7 @@ def plot_brush_data_categorical(df_data, category_col, value_col, x_col, y_col,
     all_ratios = df_data[x_col].values
     min_ratio = min(all_ratios) * 0.3  # Extend further left  
     max_ratio = max(all_ratios) * 3.0  # Extend further right
-    ax.set_xlim(min_ratio, max_ratio)  # Normal order, will be reversed later
+    ax_1.set_xlim(min_ratio, max_ratio)  # Normal order, will be reversed later
     
     # Plot individual data points and fit curves
     for i, category in enumerate(categories):
@@ -169,26 +235,43 @@ def plot_brush_data_categorical(df_data, category_col, value_col, x_col, y_col,
         color = colors[i]
         
         # Plot scatter points
-        ax.scatter(data_subset[x_col], data_subset[y_col], 
+        ax_1.scatter(data_subset[x_col], data_subset[y_col], 
                   color=color, marker=markers[i], edgecolors='black', linewidths=0.5,
                   label=f'{category}', s=50)
         
         # Fit and plot curve
-        plot_fit_curve(ax, data_subset, value_col, y_col, x_col, 
-                      df_data[value_col].values, color)
+        param_mean, param_cov = plot_fit_curve(
+            ax_1, data_subset, value_col, y_col, x_col, 
+            df_data[value_col].values, color)
+
+        # Flip x and y
+        param_mean = param_mean[::-1]
+        param_cov = param_cov[::-1, ::-1]
+
+        ax_2.scatter([param_mean[0]], [param_mean[1]],
+                     color=color, marker=markers[i], edgecolors='black', linewidths=0.5,
+                     label=f'{category}',s=50)
+
+        plot_error_ellipse(param_mean, param_cov, ax=ax_2, color=color)
     
     # Format plot
-    ax.set_xscale("log")
-    ax.set_xlim(ax.get_xlim()[::-1])  # Reverse x-axis
-    ax.set_xlabel(xlabel)
-    ax.set_ylabel(ylabel)
-    ax.legend(title=legend_title, bbox_to_anchor=(1.05, 1), loc='upper left', frameon=False)
-    ax.set_title(title)
+    ax_1.set_xscale("log")
+    ax_1.set_xlim(ax_1.get_xlim()[::-1])  # Reverse x-axis
+    ax_1.set_xlabel(xlabel)
+    ax_1.set_ylabel(ylabel)
+    ax_1.legend(title=legend_title, bbox_to_anchor=(1.05, 1), loc='upper left', frameon=False)
+    ax_1.set_title(ax_1_title)
     
-    format_axes(ax)
+    format_axes(ax_1)
+
+    ax_2.set_xlabel("$c_{1/2}$")
+    ax_2.set_ylabel("$\Delta D_{max}$")
+    ax_2.set_title(ax_2_title)
+
+    format_axes(ax_2)
     
     plt.tight_layout()
-    return fig, ax
+    return fig
 
 
 def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations, color):
@@ -221,14 +304,18 @@ def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations,
             sort_idx = np.argsort(c_data)
             c_sorted = c_data[sort_idx]
             y_sorted = y_data[sort_idx]
-            
+
+            # Define the bounds
+            # Fit function takes c, delta_d_max, c_half
+            # Bounds on delta_d_max are [0, 100]
+            # Bounds on log_c_half are [-5, -1]
+            bounds = [(0, -5), (100, -1)]
+
             # Fit the function with better initial parameters
-            popt, pcov = curve_fit(fit_function, c_sorted, y_sorted, 
-                                 p0=[max(y_sorted), np.median(c_sorted)], maxfev=5000)
-            
-            # Calculate parameter errors
-            param_errors = np.sqrt(np.diag(pcov))
-            
+            popt, pcov = curve_fit(
+                fit_function, c_sorted, y_sorted, 
+                bounds = bounds, maxfev=5000)
+
             # Get current axis limits to extend curves to full range
             current_xlim = ax.get_xlim()
             if current_xlim == (0.0, 1.0):  # Default limits, not set yet
@@ -254,11 +341,12 @@ def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations,
             # Properly propagate uncertainty using Monte Carlo approach
             n_samples = 1000
             y_samples = []
+
+            param_samples = np.random.multivariate_normal(popt, pcov, n_samples)
             
-            for _ in range(n_samples):
+            for i in range(n_samples):
                 # Sample parameters from their distributions
-                delta_d_max_sample = np.random.normal(popt[0], param_errors[0])
-                c_half_sample = np.random.normal(popt[1], param_errors[1])
+                delta_d_max_sample, c_half_sample = param_samples[i]
                 
                 # Calculate curve for this sample
                 y_sample = fit_function(c_smooth, delta_d_max_sample, c_half_sample)
@@ -274,7 +362,7 @@ def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations,
             # Plot error band
             ax.fill_between(ratio_smooth, y_lower, y_upper, color=color, alpha=0.3)
             
-            return popt, param_errors
+            return popt, pcov
             
         except (RuntimeError, ValueError) as e:
             print(f"Could not fit curve: {e}")
