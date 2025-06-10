@@ -4,7 +4,22 @@ import numpy as np
 import pandas as pd
 import scipy.stats as stats
 import matplotlib.pyplot as plt
-import jbplot
+import seaborn as sns
+
+# Set up plotting style
+sns.set_style("white")
+sns.set_palette("colorblind")
+
+def format_axes(ax):
+    """Apply standard formatting according to project guidelines"""
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.grid(False)
+    ax.tick_params(axis='both', which='major', direction='in', length=4)
+
+def save_plot(fig, filename):
+    """Save plot as SVG"""
+    fig.savefig(f"{filename}.svg", bbox_inches='tight')
 
 CONDITIONS = ["Free",
               "Sparse",
@@ -97,6 +112,7 @@ NAMES = ["No Lipid", "Sparse Brush", "Dense Brush"]
 
 fig, ax = jbplot.figax()
 
+"""
 jbplot.plotdf(ax, raw_data,
               x = "Time",
               y = [f"{c} Digestion Mean" for c in CONDITIONS],
@@ -149,3 +165,4 @@ ax_3.set_xlabel("Time")
 ax_3.set_ylabel("Log(1-Digestion)")
 
 jbplot.save(fig_3, "Rate Fits 1")
+"""

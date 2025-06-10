@@ -26,7 +26,6 @@ def main() -> None:
         xlabel="Lipid:DNA Ratio",
         ylabel="Delta D",
         legend_title="DNA Shape",
-        figsize=(6, 4)
     )
     
     # Save and show
