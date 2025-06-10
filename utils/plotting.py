@@ -9,6 +9,10 @@ import seaborn as sns
 from scipy.optimize import curve_fit
 from scipy import stats
 
+from utils import defaults
+
+default_figsize = (defaults.fig_width, defaults.fig_height)
+
 # Set random seed for reproducible error bands
 np.random.seed(42)
 
@@ -43,7 +47,7 @@ def format_axes(ax):
 
 
 def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col, 
-                              title, xlabel, ylabel, legend_title, figsize=(6, 4)):
+                              title, xlabel, ylabel, legend_title, figsize=default_figsize):
     """
     Plot brush data with continuous categories using gradient colors
     
@@ -116,7 +120,7 @@ def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col,
 
 
 def plot_brush_data_categorical(df_data, category_col, value_col, x_col, y_col, 
-                               title, xlabel, ylabel, legend_title, figsize=(6, 4)):
+                               title, xlabel, ylabel, legend_title, figsize=default_figsize):
     """
     Plot brush data with categorical categories using colorblind palette
     
@@ -279,7 +283,7 @@ def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations,
     return None, None
 
 
-def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsize=(6, 4), color_index=0):
+def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsize=default_figsize, color_index=0):
     """
     Plot linear relationship with regression line and p-value
     
