@@ -6,6 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from utils.data_processing import process_ph_data
 from utils.plotting import plot_linear_relationship, save_plot
+from utils import defaults
 
 
 def main() -> None:
@@ -23,8 +24,8 @@ def main() -> None:
         title="Effect of pH on Brush Formation",
         xlabel="pH",
         ylabel="ΔD",
-        figsize=(6, 4),
-        color_index=3
+        color_index=3,
+        figsize=(defaults.fig_width*defaults.small_fig_scale, defaults.fig_height*defaults.small_fig_scale)
     )
     
     # Print regression results

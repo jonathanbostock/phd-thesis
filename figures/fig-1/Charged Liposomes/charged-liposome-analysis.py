@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from utils.data_processing import process_charged_liposome_data
 from utils.plotting import plot_linear_relationship, save_plot
-
+from utils import defaults
 
 def main() -> None:
     # Read the data
@@ -23,8 +23,8 @@ def main() -> None:
         title="Effect of DOPG Percentage on Brush Formation",
         xlabel="DOPG Percentage (%)",
         ylabel="ΔD",
-        figsize=(6, 4),
-        color_index=4
+        color_index=4,
+        figsize=(defaults.fig_width*defaults.small_fig_scale, defaults.fig_height*defaults.small_fig_scale)
     )
     
     # Print regression results
