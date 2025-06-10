@@ -13,6 +13,7 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../..'))
 from utils.plotting import fit_function, setup_plot_style, format_axes, plot_fit_curve
+from utils import defaults
 
 def main() -> None:
     setup_plot_style()
@@ -46,7 +47,7 @@ def main() -> None:
     df_data["Delta D"] = df_data["peak_1_mean_intensity"]
 
     # Create figure with subplots for both plots
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(defaults.fig_width * 2, defaults.fig_height))
     
     # Get unique brush lengths and create gradient colormap
     brush_lengths = sorted(df_data["Brush Length / bp"].unique())
