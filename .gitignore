@@ -18,3 +18,6 @@ __pycache__/
 
 # Large png files
 *.png
+
+# Examples for AI agents
+examples/
