@@ -25,7 +25,7 @@ def main() -> None:
         ax_1_title="Shape Effect on Brush $\Delta D$",
         ax_2_title="Shape Effect on $\Delta D_{max}$ and $c_{1/2}$",
         xlabel="Lipid:DNA Ratio",
-        ylabel="Delta D",
+        ylabel="$\Delta D$",
         legend_title="DNA Shape",
         figsize = (defaults.fig_width*2, defaults.fig_height)
     )

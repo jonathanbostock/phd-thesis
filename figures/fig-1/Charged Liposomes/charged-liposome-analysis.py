@@ -20,20 +20,12 @@ def main() -> None:
         df_data=df_data,
         x_col="DOPG_percentage",
         y_col="delta_p1mi",
-        title="Effect of DOPG Percentage on Brush Formation",
+        title="Effect of Charge on Brush Formation",
         xlabel="DOPG Percentage (%)",
-        ylabel="ΔD",
+        ylabel="$\Delta D$",
         color_index=4,
         figsize=(defaults.fig_width*defaults.small_fig_scale, defaults.fig_height*defaults.small_fig_scale)
     )
-    
-    # Print regression results
-    print(f"Linear regression results:")
-    print(f"Slope: {slope:.4f} ± {std_err:.4f}")
-    print(f"Intercept: {intercept:.4f}")
-    print(f"R²: {r_value**2:.4f}")
-    print(f"p-value: {p_value:.4f}")
-    print(f"Significance: {'Non-significant' if p_value > 0.05 else 'Significant'}")
     
     # Save and show
     save_plot(fig, "Charged Liposome Plot")

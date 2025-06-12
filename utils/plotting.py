@@ -47,7 +47,7 @@ def format_axes(ax):
     ax.tick_params(axis='y', which='both', labelleft=True)
 
 
-def plot_error_ellipse(mean, cov_matrix, color, ax=None, **kwargs):
+def plot_error_ellipse(mean, cov_matrix, color, ax=None, x_exponent_base=None, **kwargs):
     """
     Plot an error ellipse representing the standard error of a 2D variable.
     
@@ -59,8 +59,10 @@ def plot_error_ellipse(mean, cov_matrix, color, ax=None, **kwargs):
         Covariance/error matrix
     ax : matplotlib.axes.Axes, optional
         Axes to plot on. If None, uses current axes.
-    confidence : float, default 0.68
-        Confidence level (0.68 ≈ 1σ, 0.95 ≈ 2σ, 0.997 ≈ 3σ)
+    color : 
+        color in which to plot the ellipse
+    x_exponent_base: float, optional
+        base for exponential transform of x (if None, no transform occurs)
     **kwargs : dict
         Additional arguments passed to matplotlib.patches.Ellipse
         
@@ -85,27 +87,40 @@ def plot_error_ellipse(mean, cov_matrix, color, ax=None, **kwargs):
     eigenvecs = eigenvecs[:, order]
 
     # Semi-axes lengths (scaled by chi-squared value)
-    width = eigenvals[0]
-    height = eigenvals[1]
+    width = np.sqrt(eigenvals[0])
+    height = np.sqrt(eigenvals[1])
     
     # Rotation angle (in degrees)
     angle = np.degrees(np.arctan2(eigenvecs[1, 0], eigenvecs[0, 0]))
     
     # Default styling
     ellipse_kwargs = {
-        'facecolor': 'none',
-        'edgecolor': color,
+        'color': color,
         'linewidth': 2,
-        'alpha': 0.7
+        'alpha': 0.7,
+        'zorder': -1
     }
     ellipse_kwargs.update(kwargs)
-    
-    # Create and add ellipse
-    ellipse = Ellipse(mean, width, height, angle=angle, **ellipse_kwargs)
-    ax.add_patch(ellipse)
 
-    
-    return ellipse
+    # Generate points along the ellipse perimeter
+    theta = np.linspace(0, 2*np.pi, 100)
+    cos_angle = np.cos(np.radians(angle))
+    sin_angle = np.sin(np.radians(angle))
+
+    # Ellipse in rotated coordinate system
+    x_rot = (width/2) * np.cos(theta)
+    y_rot = (height/2) * np.sin(theta)
+
+    # Rotate back to original coordinate system
+    x_ellipse = mean[0] + x_rot * cos_angle - y_rot * sin_angle
+    y_ellipse = mean[1] + x_rot * sin_angle + y_rot * cos_angle
+
+    if x_exponent_base is not None:
+        x_ellipse = np.pow(x_exponent_base, x_ellipse)
+
+    ax.plot(x_ellipse, y_ellipse, **ellipse_kwargs)
+
+    return 
 
 
 def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col, 
@@ -248,11 +263,11 @@ def plot_brush_data_categorical(
         param_mean = param_mean[::-1]
         param_cov = param_cov[::-1, ::-1]
 
-        ax_2.scatter([param_mean[0]], [param_mean[1]],
+        ax_2.scatter([np.pow(10,param_mean[0])], [param_mean[1]],
                      color=color, marker=markers[i], edgecolors='black', linewidths=0.5,
                      label=f'{category}',s=50)
 
-        plot_error_ellipse(param_mean, param_cov, ax=ax_2, color=color)
+        plot_error_ellipse(param_mean, param_cov, ax=ax_2, color=color, x_exponent_base=10)
     
     # Format plot
     ax_1.set_xscale("log")
@@ -265,6 +280,7 @@ def plot_brush_data_categorical(
     format_axes(ax_1)
 
     ax_2.set_xlabel("$c_{1/2}$")
+    ax_2.set_xscale("log")
     ax_2.set_ylabel("$\Delta D_{max}$")
     ax_2.set_title(ax_2_title)
 
@@ -430,7 +446,7 @@ def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsi
     ax.plot(x_line, y_line, color=plot_color, linewidth=2, alpha=0.8)
     
     # Calculate confidence interval for regression line
-    def prediction_interval(x, y, new_x, confidence=0.95):
+    def prediction_interval(x, y, new_x, confidence=0.68):
         """Calculate prediction interval for linear regression"""
         n = len(x)
         x_mean = np.mean(x)
