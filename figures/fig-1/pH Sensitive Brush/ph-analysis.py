@@ -21,21 +21,13 @@ def main() -> None:
         df_data=df_data,
         x_col="pH",
         y_col="delta_p1mi",
-        title="Effect of pH on Brush Formation",
+        title="Effect of pH on Brush",
         xlabel="pH",
-        ylabel="ΔD",
+        ylabel="$\Delta D$",
         color_index=3,
         figsize=(defaults.fig_width*defaults.small_fig_scale, defaults.fig_height*defaults.small_fig_scale)
     )
-    
-    # Print regression results
-    print(f"Linear regression results:")
-    print(f"Slope: {slope:.4f} ± {std_err:.4f}")
-    print(f"Intercept: {intercept:.4f}")
-    print(f"R²: {r_value**2:.4f}")
-    print(f"p-value: {p_value:.4f}")
-    print(f"Significance: {'Non-significant' if p_value > 0.05 else 'Significant'}")
-    
+
     # Save and show
     save_plot(fig, "pH Response Plot")
     plt.show()

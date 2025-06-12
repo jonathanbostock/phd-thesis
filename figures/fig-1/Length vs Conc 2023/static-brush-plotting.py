@@ -75,22 +75,22 @@ def main() -> None:
         
         # Use shared utility for fitting and plotting
         popt, param_errors = plot_fit_curve(ax1, data_subset, "Concentration", "Delta D", 
-                                          "Lipid:DNA Ratio", df_data["Concentration"].values, color)
+                                            "Lipid:DNA Ratio", df_data["Concentration"].values, color)
         
         # Store fitted parameters for second plot
         if popt is not None:
             fitted_params.append({
                 'brush_length': brush_length,
                 'delta_d_max': popt[0],
-                'delta_d_max_error': param_errors[0],
-                'c_half': popt[1],
+                'delta_d_max_error': np.sqrt(param_errors[0, 0]),
+                'log_c_half': popt[1],
                 'color': color
             })
     
     # Format first subplot (original plot)
     ax1.set_xscale("log")
     ax1.set_xlabel("Lipid:DNA Ratio")
-    ax1.set_ylabel("Delta D")
+    ax1.set_ylabel("$\Delta D$")
     ax1.legend(title="Brush Length", bbox_to_anchor=(1.05, 1), loc='upper left', frameon=False)
     ax1.set_title("Static Brush Delta D vs Lipid:DNA Ratio")
     format_axes(ax1)
@@ -101,13 +101,16 @@ def main() -> None:
         brush_lengths_fit = [p['brush_length'] for p in fitted_params]
         delta_d_max_vals = [p['delta_d_max'] for p in fitted_params]
         delta_d_max_errors = [p['delta_d_max_error'] for p in fitted_params]
+
+        print(delta_d_max_errors)
+
         colors = [p['color'] for p in fitted_params]
         
         # Plot with error bars
         for i, (bl, ddm, err, color) in enumerate(zip(brush_lengths_fit, delta_d_max_vals, delta_d_max_errors, colors)):
             ax2.errorbar(bl, ddm, yerr=err, marker=markers[i], color=color, 
                         markeredgecolor='black', markeredgewidth=0.5, markersize=8,
-                        capsize=3, capthick=1, linewidth=0)
+                        capsize=3, linewidth=0.5)
         
         # Fit a line through the origin
         # Force intercept to be 0 by fitting y = mx model
@@ -124,8 +127,8 @@ def main() -> None:
         
         # Format second subplot
         ax2.set_xlabel("Brush Length (bp)")
-        ax2.set_ylabel("ΔD max")
-        ax2.set_title("Fitted ΔD max vs Brush Length")
+        ax2.set_ylabel("$\Delta D_{max}$")
+        ax2.set_title("Fitted $\Delta D_{max}$ vs Brush Length")
         ax2.legend(frameon=False)
         
         # Set origin at (0,0)
