@@ -281,7 +281,7 @@ def plot_brush_data_categorical(
 
     ax_2.set_xlabel("$c_{1/2}$")
     ax_2.set_xscale("log")
-    ax_2.set_ylabel("$\Delta D_{max}$")
+    ax_2.set_ylabel(r"$\Delta D_{max} / nm$")
     ax_2.set_title(ax_2_title)
 
     format_axes(ax_2)
@@ -490,6 +490,72 @@ def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsi
     
     plt.tight_layout()
     return fig, ax, slope, intercept, r_value, p_value, std_err
+
+def plot_calcein_release(mean_df, sem_df, experiment_names, group_size=8):
+    """
+    Plot calcein release data with both bar chart (final timepoint) and line chart (full timecourse).
+    
+    Args:
+        mean_df: DataFrame with mean release values over time
+        sem_df: DataFrame with standard error values over time
+        experiment_names: List of experiment names to use as labels
+        group_size: Number of samples per group for color cycling
+    """
+    # Set up the plot style
+    setup_plot_style()
+    
+    # Create figure with two subplots
+    fig1, ax1 = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
+    fig2, ax2 = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
+    
+    colors = sns.color_palette("colorblind", n_colors=group_size)
+
+    final_means = mean_df.iloc[-1]
+    final_sems = sem_df.iloc[-1]
+    final_time = mean_df.index[-1]
+    
+    # Group bars by color
+    for i, (well, mean_val) in enumerate(final_means.items()):
+        color_idx = i % group_size
+        color = colors[color_idx]       
+        ax1.bar(i, mean_val, yerr=final_sems[well], 
+                color=color, capsize=3)
+    
+    ax1.set_xlabel('Well')
+    ax1.set_ylabel('Calcein Release (%)')
+    ax1.set_title(f'Final Release at {final_time:.1f} min')
+    ax1.set_xticks(np.arange(len(experiment_names)))
+    ax1.set_xticklabels(experiment_names, rotation=45, ha='right')
+    format_axes(ax1)
+    
+    # Create line chart with shaded areas
+    time_points = mean_df.index
+    
+    for i, well in enumerate(mean_df.columns):
+        color_idx = i % group_size
+        color = colors[color_idx]
+        
+        # Use different alpha and linestyle for different groups
+        linestyle = '-' if i < group_size else '--'
+        
+        # Plot mean line
+        ax2.plot(time_points, mean_df[well], color=color,
+                linestyle=linestyle, linewidth=2, label=experiment_names[i])
+        
+        # Plot shaded error area
+        ax2.fill_between(time_points, 
+                        mean_df[well] - sem_df[well],
+                        mean_df[well] + sem_df[well],
+                        color=color, alpha=0.3)
+    
+    ax2.set_xlabel('Time (min)')
+    ax2.set_ylabel('Calcein Release (%)')
+    ax2.set_title('Release Over Time')
+    ax2.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+    format_axes(ax2)
+    
+    plt.tight_layout()
+    return fig1, fig2
 
 
 def save_plot(fig, filename_base):

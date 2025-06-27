@@ -4,11 +4,11 @@ Support for calcein release assays.
 import pandas as pd
 import numpy as np
 from scipy import stats
-from os.path import Path
 import glob
+import os
 
-def calculate_calcein_release(
-    data_dir: Path) -> pd.DataFrame:
+def calculate_release_from_path(
+    data_dir: str | os.PathLike) -> pd.DataFrame:
     """
     Calculate the calcein release from the before, timecourse, and after dataframes.
 
@@ -20,9 +20,9 @@ def calculate_calcein_release(
     """
     
     # Find the data files
-    before_files = glob.glob(str(data_dir / "*before*.csv"))
-    timecourse_files = glob.glob(str(data_dir / "*timecourse*.csv"))
-    triton_files = glob.glob(str(data_dir / "*triton*.csv"))
+    before_files = glob.glob(os.path.join(data_dir, "*before*.csv"))
+    timecourse_files = glob.glob(os.path.join(data_dir, "*timecourse*.csv"))
+    triton_files = glob.glob(os.path.join(data_dir, "*triton*.csv"))
     
     if not before_files or not timecourse_files or not triton_files:
         raise FileNotFoundError(f"Could not find required files in {data_dir}")
@@ -47,7 +47,7 @@ def calculate_calcein_release(
     
     # Extract time and intensity data
     # Data starts from row 2 (index 1) and has time, intensity pairs for each sample
-    def extract_fluorescence_data(data, sample_names):
+    def extract_fluorescence_data(data, sample_names) -> pd.DataFrame:
         """Extract fluorescence data for each sample"""
         fluorescence_data = {}
         
@@ -67,34 +67,22 @@ def calculate_calcein_release(
                 
                 # Remove any NaN values
                 valid_mask = ~(times.isna() | intensities.isna())
-                fluorescence_data[sample] = {
-                    'time': times[valid_mask].values,
-                    'intensity': intensities[valid_mask].values
-                }
+                fluorescence_data[sample] = intensities[valid_mask].values
         
-        return fluorescence_data
+        return pd.DataFrame(fluorescence_data)
     
     # Extract data from all three files
     before_fluorescence = extract_fluorescence_data(before_data, sample_names)
     timecourse_fluorescence = extract_fluorescence_data(timecourse_data, sample_names)
     triton_fluorescence = extract_fluorescence_data(triton_data, sample_names)
-    
-    # Calculate average before and triton values for each sample
-    before_avg = {}
-    triton_avg = {}
-    
-    for sample in sample_names:
-        if sample in before_fluorescence:
-            before_avg[sample] = np.mean(before_fluorescence[sample]['intensity'])
-        if sample in triton_fluorescence:
-            triton_avg[sample] = np.mean(triton_fluorescence[sample]['intensity'])
+
+    sample_names = before_fluorescence.columns
+
+    before_avg = before_fluorescence.mean(axis=1)
+    triton_avg = triton_fluorescence.mean(axis=1)
     
     # Calculate calcein release percentage
     release_data = {}
-    
-    # Use time from timecourse data
-    if sample_names and sample_names[0] in timecourse_fluorescence:
-        release_data['time'] = timecourse_fluorescence[sample_names[0]]['time']
     
     for sample in sample_names:
         if (sample in timecourse_fluorescence and 
@@ -116,4 +104,101 @@ def calculate_calcein_release(
     
     return result_df
 
+def calculate_release_from_fluorescence(
+    initial_df: pd.DataFrame,
+    timecourse_df: pd.DataFrame,
+    triton_df: pd.DataFrame
+) -> pd.DataFrame:
+    """
+    Calculate calcein release from 96-well plate data.
+    
+    Args:
+        initial_df: DataFrame with initial fluorescence values (single timepoint)
+        timecourse_df: DataFrame with fluorescence values over time
+        triton_df: DataFrame with triton-treated fluorescence values (maximum release)
+    
+    Returns:
+        DataFrame with calcein release percentage over time for each well
+    """
+    # Get the common wells that exist in all three datasets
+    initial_wells = set(initial_df.columns)
+    timecourse_wells = set(timecourse_df.columns)
+    triton_wells = set(triton_df.columns)
+    
+    common_wells = initial_wells.intersection(timecourse_wells).intersection(triton_wells)
+    common_wells = sorted(list(common_wells))
+    
+    # Calculate average initial and triton values for each well
+    initial_avg = {}
+    triton_avg = {}
+    
+    for well in common_wells:
+        # For initial data, use the single value
+        initial_avg[well] = initial_df[well].iloc[0]
+        
+        # For triton data, use the average of all timepoints
+        triton_values = triton_df[well].dropna()
+        if len(triton_values) > 0:
+            triton_avg[well] = triton_values.mean()
+        else:
+            triton_avg[well] = np.nan
+    
+    # Calculate calcein release percentage for each well over time
+    release_data = {}
+    release_data['time'] = timecourse_df.index.values
+    
+    for well in common_wells:
+        if well in initial_avg and well in triton_avg:
+            f_initial = initial_avg[well]
+            f_triton = triton_avg[well]
+            
+            if not np.isnan(f_initial) and not np.isnan(f_triton) and f_triton > f_initial:
+                # Get timecourse values for this well
+                f_timecourse = timecourse_df[well].values
+                
+                # Calculate release percentage: (F_t - F_0) / (F_triton - F_0) * 100
+                release_percentage = 100 * (f_timecourse - f_initial) / (f_triton - f_initial)
+                release_data[well] = release_percentage
+            else:
+                # Skip wells with invalid data
+                print(f"Skipping well {well}: invalid initial or triton values")
+    
+    # Create the final DataFrame
+    result_df = pd.DataFrame(release_data)
+    result_df = result_df.set_index('time')
+    
+    return result_df
 
+def calculate_average_and_sem_release(
+    release_df: pd.DataFrame
+) -> pd.DataFrame:
+    """
+    Calculate the average and sem of the release data.
+    """
+    # Group wells by number (column position) and calculate statistics
+    number_stats = {}
+    
+    for well in release_df.columns:
+        number = well[1:]  # Extract the number part (e.g., "1" from "A1")
+        if number not in number_stats:
+            number_stats[number] = []
+        number_stats[number].append(release_df[well])
+    
+    # Calculate mean and SEM for each number
+    mean_data = {}
+    sem_data = {}
+    
+    for number, wells in number_stats.items():
+        if wells:
+            # Concatenate all wells for this number
+            number_df = pd.concat(wells, axis=1)
+            
+            # Calculate mean and SEM across rows (timepoints)
+            mean_data[number] = number_df.mean(axis=1)
+            sem_data[number] = number_df.sem(axis=1)
+    
+    # Create result DataFrames
+    mean_df = pd.DataFrame(mean_data)
+    sem_df = pd.DataFrame(sem_data)
+    
+    return mean_df, sem_df
