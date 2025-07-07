@@ -20,9 +20,9 @@ def calculate_release_from_path(
     """
     
     # Find the data files
-    before_files = glob.glob(os.path.join(data_dir, "*before*.csv"))
-    timecourse_files = glob.glob(os.path.join(data_dir, "*timecourse*.csv"))
-    triton_files = glob.glob(os.path.join(data_dir, "*triton*.csv"))
+    before_files = glob.glob(os.path.join(data_dir, "*[B|b]efore*.csv"))
+    timecourse_files = glob.glob(os.path.join(data_dir, "*[T|t]imecourse*.csv"))
+    triton_files = glob.glob(os.path.join(data_dir, "*[T|t]riton*.csv"))
     
     if not before_files or not timecourse_files or not triton_files:
         raise FileNotFoundError(f"Could not find required files in {data_dir}")
@@ -50,6 +50,16 @@ def calculate_release_from_path(
     def extract_fluorescence_data(data, sample_names) -> pd.DataFrame:
         """Extract fluorescence data for each sample"""
         fluorescence_data = {}
+
+        data_cleaned = data.iloc[:, :-1] # Skip the first two rows which are headers
+        data_cleaned = data_cleaned.reset_index(drop=True)  # Reset index after slicing
+        # Remove rows from the bottom that aren't square (i.e., incomplete sample columns)
+        n_rows = len(data_cleaned)
+        n_samples = len(sample_names)
+        n_cols_expected = n_samples * 2
+        # Find the last row where all columns are present (i.e., no NaNs in any sample's time/intensity)
+        valid_rows = data_cleaned.iloc[:, :n_cols_expected].dropna(how='any')
+        data_cleaned = data_cleaned.iloc[:len(valid_rows)+1]
         
         for i, sample in enumerate(sample_names):
             # Each sample has 2 columns: time and intensity
@@ -62,8 +72,8 @@ def calculate_release_from_path(
                 data_start = 2  # Start after the header rows
                 
                 # Get time and intensity values
-                times = data.iloc[data_start:, time_col].astype(float)
-                intensities = data.iloc[data_start:, intensity_col].astype(float)
+                times = data_cleaned.iloc[data_start:, time_col].astype(float)
+                intensities = data_cleaned.iloc[data_start:, intensity_col].astype(float)
                 
                 # Remove any NaN values
                 valid_mask = ~(times.isna() | intensities.isna())
@@ -78,18 +88,18 @@ def calculate_release_from_path(
 
     sample_names = before_fluorescence.columns
 
-    before_avg = before_fluorescence.mean(axis=1)
-    triton_avg = triton_fluorescence.mean(axis=1)
+    before_avg = before_fluorescence.mean(axis=0)
+    triton_avg = triton_fluorescence.mean(axis=0)
     
     # Calculate calcein release percentage
     release_data = {}
     
     for sample in sample_names:
-        if (sample in timecourse_fluorescence and 
-            sample in before_avg and 
-            sample in triton_avg):
+        if (sample in timecourse_fluorescence.columns and 
+            sample in before_avg.index and 
+            sample in triton_avg.index):
             
-            f_timecourse = timecourse_fluorescence[sample]['intensity']
+            f_timecourse = timecourse_fluorescence[sample]
             f_before = before_avg[sample]
             f_triton = triton_avg[sample]
             
