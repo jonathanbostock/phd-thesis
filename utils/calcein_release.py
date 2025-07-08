@@ -43,7 +43,7 @@ def calculate_release_from_path(
     sample_names = []
     for i in range(0, len(before_data.columns), 2):
         if i < len(before_data.columns) - 1:
-            sample_name = before_data.iloc[0, i].strip()
+            sample_name = str(before_data.iloc[0, i]).strip()
             if sample_name.startswith('Sample '):
                 sample_names.append(sample_name.replace('Sample ', ''))
     

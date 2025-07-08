@@ -45,17 +45,22 @@ def main():
     mean_release, sem_release = calculate_average_and_sem_release(release_df)
 
     experiment_names = [
-        "-MAC No Brush",
-        "-MAC Sparse Brush",
-        "-MAC Dense Brush",
-        "-MAC Star Brush",
-        "+MAC No Brush",
-        "+MAC Sparse Brush",
-        "+MAC Dense Brush",
-        "+MAC Star Brush",
+        "No Brush",
+        "Sparse Brush",
+        "Dense Brush",
+        "Star Brush",
+        "No Brush",
+        "Sparse Brush",
+        "Dense Brush",
+        "Star Brush",
     ]
 
-    barchart, linechart = plot_calcein_release(mean_release, sem_release, experiment_names, group_size=4)
+    barchart, linechart = plot_calcein_release(
+        experiment_names = experiment_names,
+        mean_df = mean_release,
+        sem_df = sem_release,
+        raw_release_df=release_df,
+        group_size=4)
 
     save_plot(barchart, os.path.join(file_path, "barchart"))
     save_plot(linechart, os.path.join(file_path, "linechart"))
