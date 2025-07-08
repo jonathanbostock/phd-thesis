@@ -12,12 +12,12 @@ def main():
 
     mean_release, sem_release = calcein_release.calculate_average_and_sem_release(release_df)
 
-    experiment_names = ["Control No Brush",
-                        "Control Sparse Brush",
-                        "Control Dense Brush",
-                        "Ahl No Brush",
-                        "Ahl Sparse Brush",
-                        "Ahl Dense Brush"]
+    experiment_names = ["-Ahl No Brush",
+                        "-Ahl Sparse Brush",
+                        "-Ahl Dense Brush",
+                        "+Ahl No Brush",
+                        "+Ahl Sparse Brush",
+                        "+Ahl Dense Brush"]
 
     # Plot the data
     fig1, fig2 = plotting.plot_calcein_release(mean_release.iloc[:, :-1], sem_release.iloc[:, :-1], experiment_names = experiment_names, group_size=3)
