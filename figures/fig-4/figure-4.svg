@@ -25,8 +25,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.0280428"
-     inkscape:cx="455.72033"
-     inkscape:cy="421.18869"
+     inkscape:cx="421.18869"
+     inkscape:cy="379.848"
      inkscape:window-width="1854"
      inkscape:window-height="1011"
      inkscape:window-x="66"
@@ -1592,8 +1592,7 @@
      id="layer1"><g
        id="patch_1"
        transform="matrix(0.35277778,0,0,0.35277778,3.4790142e-6,100)" /><g
-       id="g394"
-       transform="translate(10.651251)"><g
+       id="g394"><g
          id="matplotlib.axis_1"
          transform="matrix(0.35277778,0,0,0.35277778,9.1789814,100)"><g
            id="xtick_1"><g
