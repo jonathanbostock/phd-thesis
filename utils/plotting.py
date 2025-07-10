@@ -5,12 +5,16 @@ Following CLAUDE.md formatting guidelines
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.colors import Normalize
 from matplotlib.patches import Ellipse
 import seaborn as sns
 from scipy.optimize import curve_fit
-from scipy import stats
+import scipy.stats as stats
+import pandas as pd
+from typing import Iterable, Optional, Tuple, List
 
 from utils import defaults
+
 
 default_figsize = (defaults.fig_width, defaults.fig_height)
 
@@ -158,8 +162,8 @@ def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col,
     
     # Get unique categories and create gradient colormap
     categories = sorted(df_data[category_col].unique())
-    cmap = plt.cm.viridis
-    norm = plt.Normalize(vmin=min(categories), vmax=max(categories))
+    cmap = plt.cm.get_cmap("viridis")
+    norm = Normalize(vmin=min(categories), vmax=max(categories))
     markers = ['o', 's', '^', 'D', 'v', '<', '>', 'p', '*', 'h'][:len(categories)]
     
     # Set extended axis limits first for continuous data
@@ -184,7 +188,7 @@ def plot_brush_data_continuous(df_data, category_col, value_col, x_col, y_col,
     
     # Format plot
     ax.set_xscale("log")
-    ax.set_xlim(ax.get_xlim()[::-1])  # Reverse x-axis
+    ax.set_xlim(ax.get_xlim()[1], ax.get_xlim()[0])  # Reverse x-axis
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.legend(title=legend_title, bbox_to_anchor=(1.05, 1), loc='upper left', frameon=False)
@@ -258,6 +262,10 @@ def plot_brush_data_categorical(
         param_mean, param_cov = plot_fit_curve(
             ax_1, data_subset, value_col, y_col, x_col, 
             df_data[value_col].values, color)
+        
+        if param_mean is None or param_cov is None:
+            print("Could not fit curve for category: ", category)
+            continue
 
         # Flip x and y
         param_mean = param_mean[::-1]
@@ -290,7 +298,9 @@ def plot_brush_data_categorical(
     return fig
 
 
-def plot_fit_curve(ax, data_subset, value_col, y_col, x_col, all_concentrations, color):
+def plot_fit_curve(
+        ax, data_subset, value_col, y_col, x_col, all_concentrations, color
+        ) -> Tuple[Optional[np.ndarray], Optional[np.ndarray]]:
     """
     Fit and plot curve for a data subset with proper uncertainty propagation
     
@@ -425,7 +435,12 @@ def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsi
     y_data = df_data[y_col].values
     
     # Perform linear regression
-    slope, intercept, r_value, p_value, std_err = stats.linregress(x_data, y_data)
+    linregress_result: LinregressResult = stats.linregress(x_data, y_data) # type: ignore
+    slope = linregress_result.slope
+    intercept = linregress_result.intercept
+    r_value = linregress_result.rvalue
+    p_value = linregress_result.pvalue
+    std_err = linregress_result.stderr
     
     # Use colorblind palette for consistency
     colors = sns.color_palette("colorblind")
@@ -491,13 +506,19 @@ def plot_linear_relationship(df_data, x_col, y_col, title, xlabel, ylabel, figsi
     plt.tight_layout()
     return fig, ax, slope, intercept, r_value, p_value, std_err
 
-def plot_calcein_release(mean_df, sem_df, experiment_names, group_size=8):
+def plot_calcein_release(
+        experiment_names: List[str],
+        mean_df: pd.DataFrame,
+        sem_df: pd.DataFrame,
+        raw_release_df: Optional[pd.DataFrame] = None,
+        group_size: Optional[int] = 4):
     """
     Plot calcein release data with both bar chart (final timepoint) and line chart (full timecourse).
     
     Args:
         mean_df: DataFrame with mean release values over time
         sem_df: DataFrame with standard error values over time
+        raw_release_df: 
         experiment_names: List of experiment names to use as labels
         group_size: Number of samples per group for color cycling
     """
@@ -510,33 +531,60 @@ def plot_calcein_release(mean_df, sem_df, experiment_names, group_size=8):
     
     colors = sns.color_palette("colorblind", n_colors=group_size)
 
-    final_means = mean_df.iloc[-1]
-    final_sems = sem_df.iloc[-1]
-    final_time = mean_df.index[-1]
+    final_means = mean_df.iloc[-1].astype(float)
+    final_sems = sem_df.iloc[-1].astype(float)
+    final_time = float(mean_df.index[-1])
     
     # Group bars by color
-    for i, (well, mean_val) in enumerate(final_means.items()):
-        color_idx = i % group_size
-        color = colors[color_idx]       
-        ax1.bar(i, mean_val, yerr=final_sems[well], 
-                color=color, capsize=3)
-    
+    for i, mean_val in enumerate(final_means):
+
+        color_idx = i if group_size is None else i % group_size
+        color = colors[color_idx]
+
+        if raw_release_df is None:
+            yerr = final_sems.iloc[i]
+        else:
+            yerr = None
+
+        ax1.bar(i, mean_val, yerr=yerr,
+                color=color, capsize=3, edgecolor='none')
+        
+        if raw_release_df is not None:
+            well_column_on_plate = mean_df.columns[i]
+            wells_in_column = list(filter(
+                lambda x: str(well_column_on_plate) in str(x),
+                raw_release_df.columns))
+            
+            raw_values = raw_release_df[wells_in_column].iloc[-1].astype(float)
+
+            # Scatter raw values with horizontal jitter
+            n_points = len(raw_values)
+            if n_points > 0:
+                # Spread points within ±0.15 of the bar center
+                jitter = np.linspace(-0.15, 0.15, n_points)
+                ax1.scatter(i + jitter, raw_values, marker="o",
+                            color=color, edgecolor="black", alpha=1, s=18, zorder=10,
+                            linewidths=1)
+
+    # Add a horizontal line at y=0
+    ax1.axhline(0, color='black', linewidth=1, zorder=5)
+
     ax1.set_xlabel('Well')
     ax1.set_ylabel('Calcein Release (%)')
     ax1.set_title(f'Final Release at {final_time:.1f} min')
     ax1.set_xticks(np.arange(len(experiment_names)))
-    ax1.set_xticklabels(experiment_names, rotation=45, ha='right')
+    ax1.set_xticklabels(experiment_names, rotation=90, ha='right')
     format_axes(ax1)
     
     # Create line chart with shaded areas
     time_points = mean_df.index
     
     for i, well in enumerate(mean_df.columns):
-        color_idx = i % group_size
+        color_idx = i if group_size is None else i % group_size
         color = colors[color_idx]
         
         # Use different alpha and linestyle for different groups
-        linestyle = '-' if i < group_size else '--'
+        linestyle = '-' if group_size is None or i < group_size else '--'
         
         # Plot mean line
         ax2.plot(time_points, mean_df[well], color=color,
