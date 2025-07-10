@@ -7,8 +7,10 @@ from scipy import stats
 import glob
 import os
 
+from typing import Tuple, Union
+
 def calculate_release_from_path(
-    data_dir: str | os.PathLike) -> pd.DataFrame:
+    data_dir: Union[str, os.PathLike]) -> pd.DataFrame:
     """
     Calculate the calcein release from the before, timecourse, and after dataframes.
 
@@ -41,7 +43,7 @@ def calculate_release_from_path(
     sample_names = []
     for i in range(0, len(before_data.columns), 2):
         if i < len(before_data.columns) - 1:
-            sample_name = before_data.iloc[0, i].strip()
+            sample_name = str(before_data.iloc[0, i]).strip()
             if sample_name.startswith('Sample '):
                 sample_names.append(sample_name.replace('Sample ', ''))
     
@@ -181,7 +183,7 @@ def calculate_release_from_fluorescence(
 
 def calculate_average_and_sem_release(
     release_df: pd.DataFrame
-) -> pd.DataFrame:
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
     Calculate the average and sem of the release data.
     """
