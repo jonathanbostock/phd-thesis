@@ -1,0 +1,41 @@
+[project]
+name = "dna-brush-paper-2025"
+version = "0.1.0"
+description = "All the code for DNA Brush Paper 2025 in one place"
+authors = [
+    { name = "Jonathan Bostock", email = "jdb22@ic.ac.uk" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "scipy",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "pandas",
+]
+
+[project.optional-dependencies]
+dev = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "pre-commit>=4.3.0",
+    "pyright>=1.1.407",
+    "ruff>=0.14.4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["utils"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
