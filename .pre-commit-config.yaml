@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.4
+    hooks:
+      - id: ruff-format
+        name: ruff-format
+        description: Run ruff formatter
+        types_or: [python, pyi]
+
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.407
+    hooks:
+      - id: pyright
+        name: pyright
+        description: Run pyright type checker
+        types_or: [python, pyi]
