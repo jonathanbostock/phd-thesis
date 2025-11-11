@@ -1,6 +1,7 @@
-When using python, always use the venv in the project directory.
-Whenever you install a module, add it to the requirements in setup.py.
-Always install the project directory in the venv, avoid doing any adding of os.path.filename + "../../.." to the python path.
+This project uses uv for package management.
+To run Python commands, use: uv run python <script.py>
+To add a new dependency, use: uv add <package-name>
+The project is automatically installed in editable mode - avoid doing any adding of os.path.filename + "../../.." to the python path.
 
 If you're doing some sort of data processing more than once make a utility for this, and put it in a named .py file in utils/
 For example, creating utils/calcein_release.py in order to re-use the code to process calcein release assays as mentioned above.

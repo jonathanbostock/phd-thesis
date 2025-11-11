@@ -2,6 +2,10 @@
 venv/
 .venv/
 
+# uv
+.python-version
+uv.lock
+
 # compiled python
 *.pyc
 *.pyo

@@ -1,0 +1,12 @@
+{
+  "typeCheckingMode": "standard",
+  "pythonVersion": "3.9",
+  "pythonPlatform": "Linux",
+  "venvPath": ".",
+  "venv": ".venv",
+  "exclude": [
+    "**/__pycache__",
+    "**/.git",
+    "**/node_modules"
+  ]
+}
