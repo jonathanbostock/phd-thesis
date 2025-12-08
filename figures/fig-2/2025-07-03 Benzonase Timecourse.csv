@@ -1,0 +1,8 @@
+Quality Indicator,Measurement Start Date And Time,Measurement Type,Sample Name,Temperature (°C),Z-Average (nm),Polydispersity Index (PI),Peak 1 Mean by Intensity ordered by area (nm),Concentration (mg/mL),Mean Count Rate (kcps)
+GoodData,03/07/2025 13:33,Size,control,25,160.6,0.1369,187.3,,299.8
+GoodData,03/07/2025 13:35,Size,0min,25,181,0.0649,196.1,,325.4
+GoodData,03/07/2025 13:37,Size,1min,25,180.2,0.06688,196.7,,266.2
+GoodData,03/07/2025 13:38,Size,2min,25,151.7,0.07407,166.1,,272.7
+GoodData,03/07/2025 13:40,Size,5min,25,155.2,0.07297,169.6,,279.9
+GoodData,03/07/2025 13:42,Size,10min,25,152.8,0.02369,161.4,,270.8
+GoodData,03/07/2025 13:43,Size,20min,25,150,0.06192,163.3,,193.4
