@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import scipy.stats as stats
 import matplotlib.pyplot as plt
+import seaborn as sns
 from utils.plotting import setup_plot_style, format_axes, save_plot
 from utils import defaults
 
@@ -185,23 +186,9 @@ def plot_digestion_timecourse(raw_data: pd.DataFrame) -> tuple:
     fig, ax = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
 
     names = ["No Lipid", "Sparse Brush", "Dense Brush"]
-    colors = ["#0173B2", "#DE8F05", "#CC78BC"]  # Colorblind palette
-    markers = ["o", "s", "^"]
+    colors = sns.color_palette("colorblind", n_colors=3)
 
     for i, c in enumerate(CONDITIONS):
-        # Plot individual replicates as scatter
-        for b in range(3):
-            ax.scatter(
-                raw_data["Time"],
-                raw_data[f"{c} Digestion {b}"],
-                color=colors[i],
-                marker=markers[i],
-                edgecolors="black",
-                linewidths=0.5,
-                s=20,
-                alpha=0.3,
-            )
-
         # Plot mean as line
         ax.plot(
             raw_data["Time"],
@@ -209,6 +196,15 @@ def plot_digestion_timecourse(raw_data: pd.DataFrame) -> tuple:
             color=colors[i],
             linewidth=2,
             label=names[i],
+        )
+
+        # Plot SEM as shaded area
+        ax.fill_between(
+            raw_data["Time"],
+            raw_data[f"{c} Digestion Mean"] - raw_data[f"{c} Digestion SEM"],
+            raw_data[f"{c} Digestion Mean"] + raw_data[f"{c} Digestion SEM"],
+            color=colors[i],
+            alpha=0.3,
         )
 
     ax.set_xlabel("Time / min")
@@ -235,7 +231,7 @@ def plot_fluorescence_timecourse(raw_data: pd.DataFrame) -> tuple:
     setup_plot_style()
     fig, ax = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
 
-    condition_colors = ["#0173B2", "#DE8F05", "#CC78BC"]
+    condition_colors = sns.color_palette("colorblind", n_colors=3)
     control_linestyles = ["-", "--", ":"]
     control_names = ["Experimental", "Positive Control", "Negative Control"]
 
@@ -253,6 +249,15 @@ def plot_fluorescence_timecourse(raw_data: pd.DataFrame) -> tuple:
                 linestyle=control_linestyles[ctrl_idx],
                 linewidth=2,
                 label=label,
+            )
+
+            # Plot SEM as shaded area
+            ax.fill_between(
+                raw_data["Time"],
+                raw_data[f"{c} {ctrl} Mean"] - raw_data[f"{c} {ctrl} SEM"],
+                raw_data[f"{c} {ctrl} Mean"] + raw_data[f"{c} {ctrl} SEM"],
+                color=condition_colors[cond_idx],
+                alpha=0.2,
             )
 
     ax.set_xlabel("Time / min")
@@ -284,22 +289,28 @@ def plot_rate_fits(raw_data: pd.DataFrame, fits: dict, fit_points: int = 25) -> 
     fig, ax = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
 
     names = ["No Lipid", "Sparse Brush", "Dense Brush"]
-    colors = ["#0173B2", "#DE8F05", "#CC78BC"]
-    markers = ["o", "s", "^"]
+    colors = sns.color_palette("colorblind", n_colors=3)
 
     for i, c in enumerate(CONDITIONS):
-        # Plot data points
-        for b in range(3):
-            ax.scatter(
-                raw_data["Time"][:fit_points],
-                raw_data[f"{c} LogRemainder {b}"][:fit_points],
-                color=colors[i],
-                marker=markers[i],
-                edgecolors="black",
-                linewidths=0.5,
-                s=30,
-                alpha=0.6,
-            )
+        # Plot mean as line with shaded SEM
+        ax.plot(
+            raw_data["Time"][:fit_points],
+            raw_data[f"{c} LogRemainder Mean"][:fit_points],
+            color=colors[i],
+            linewidth=1.5,
+            alpha=0.7,
+        )
+
+        # Plot SEM as shaded area
+        ax.fill_between(
+            raw_data["Time"][:fit_points],
+            raw_data[f"{c} LogRemainder Mean"][:fit_points]
+            - raw_data[f"{c} LogRemainder SEM"][:fit_points],
+            raw_data[f"{c} LogRemainder Mean"][:fit_points]
+            + raw_data[f"{c} LogRemainder SEM"][:fit_points],
+            color=colors[i],
+            alpha=0.3,
+        )
 
         # Plot fit line
         x_fit = np.array(range(fit_points))
