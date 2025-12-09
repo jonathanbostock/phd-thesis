@@ -120,7 +120,7 @@ def main() -> None:
     ax1.legend(
         title="Brush Length", bbox_to_anchor=(1.05, 1), loc="upper left", frameon=False
     )
-    ax1.set_title("Static Brush Delta D vs Lipid:DNA Ratio")
+    ax1.set_title(r"Static Brush $\Delta D$ vs Lipid:DNA Ratio")
     format_axes(ax1)
 
     # Create second subplot: ΔD max vs Brush Length
