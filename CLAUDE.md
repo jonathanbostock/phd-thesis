@@ -20,3 +20,5 @@ Save all your plots as a .svg instead of  a .png.
 When plotting fitted curves, always keep the curve the same colour as the data.
 
 If I ask you to "clean up the python files for commit" I'd like you to use the commands ```bash\ngit add --all``` and ```bas\nuv run pre-commit run``` to check whether our pre-commit hooks are passing, and if not (particularly if there are pyright errors) fix these errors and repeat until the pre-commit hook is successful.
+Always run git add --all first, and make sure your changes aren't getting stashed randomly
+This seems to have been an issue in the past for some reason.
