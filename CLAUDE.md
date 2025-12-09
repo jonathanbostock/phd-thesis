@@ -13,8 +13,10 @@ When formatting, remove the top and right edges of the bounding box, and remove 
 When working with numeric options, always use a gradient.
 Some of this will end up being repeated.
 Put a plotting.py file in utils/ to reduce code overhead and improve consistency if this happens.
-When plotting error bars, plot +/- standard error rather than standard deviation or confidence interval.
-Sometimes I'll ask you to plot the raw data as a scatter rather than doing error bars.
+Default to plotting the raw data as scatter without error bars.
+If I do ask you to plot error bars, plot +/- standard error rather than standard deviation or confidence interval.
 To fit functions, use scipy and always plot fitted functions with a +/- error.
 Save all your plots as a .svg instead of  a .png.
 When plotting fitted curves, always keep the curve the same colour as the data.
+
+If I ask you to "clean up the python files for commit" I'd like you to use the commands ```bash\ngit add --all``` and ```bas\nuv run pre-commit run``` to check whether our pre-commit hooks are passing, and if not (particularly if there are pyright errors) fix these errors and repeat until the pre-commit hook is successful.
