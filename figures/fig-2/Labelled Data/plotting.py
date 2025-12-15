@@ -7,6 +7,8 @@ import seaborn as sns
 from pathlib import Path
 from scipy.interpolate import interp1d
 from statsmodels.nonparametric.smoothers_lowess import lowess
+from tqdm import tqdm
+from typing import cast
 
 # Set up plotting style
 sns.set_palette("colorblind")
@@ -29,6 +31,9 @@ def compute_power_spectrum(row_data, curve_length_px, pixel_scale_nm):
     """
     Compute power spectrum from intensity data along a curve.
 
+    For real-valued signals, the FFT produces symmetric positive and negative
+    frequencies. This function properly combines the power from both sides.
+
     Parameters
     ----------
     row_data : array-like
@@ -43,14 +48,14 @@ def compute_power_spectrum(row_data, curve_length_px, pixel_scale_nm):
     spacing_nm : ndarray
         Spatial spacing in nm
     power : ndarray
-        Power spectrum values
+        Power spectrum values (with negative frequency power incorporated)
     """
     # Convert to numpy array and ensure float type
     row_data = np.asarray(row_data, dtype=float)
 
-    # Perform FFT and compute absolute value (amplitude spectrum)
+    # Perform FFT and compute power spectrum
     fft_result = np.fft.fft(row_data)
-    power = np.abs(fft_result)
+    power_full = np.abs(fft_result)
 
     # Get frequencies
     n_samples = len(row_data)
@@ -64,16 +69,37 @@ def compute_power_spectrum(row_data, curve_length_px, pixel_scale_nm):
 
     # Convert frequency to spacing
     # frequency = 1/spacing, so spacing = 1/frequency
-    # But we need to handle the units correctly
     with np.errstate(divide="ignore", invalid="ignore"):
-        spacing_nm = np.where(
-            frequencies != 0, spacing_per_sample / frequencies, np.inf
+        spacing_nm_full = np.where(
+            frequencies != 0, spacing_per_sample / np.abs(frequencies), np.inf
         )
 
-    # Only keep positive frequencies (spacing)
+    # For real-valued signals, combine power from positive and negative frequencies
+    # Keep only positive frequencies for output
     positive_mask = frequencies > 0
-    spacing_nm = spacing_nm[positive_mask]
-    power = power[positive_mask]
+
+    # Get positive frequency indices
+    pos_indices = np.where(positive_mask)[0]
+
+    # For each positive frequency, find the corresponding negative frequency
+    # and sum their powers
+    power_combined = power_full[pos_indices].copy()
+
+    # Handle the symmetric negative frequencies
+    # For frequency f[i] > 0, the corresponding negative frequency is at f[-i]
+    # But we need to match by absolute frequency value
+    for i, pos_idx in enumerate(pos_indices):
+        pos_freq = frequencies[pos_idx]
+        # Find the negative frequency with the same absolute value
+        neg_idx = np.where(np.abs(frequencies + pos_freq) < 1e-10)[0]
+        if len(neg_idx) > 0:
+            power_combined[i] += power_full[neg_idx[0]]
+
+    spacing_nm = spacing_nm_full[positive_mask]
+    power = power_combined
+
+    # Normalize
+    power = power  # / np.mean(power, keepdims=True)
 
     return spacing_nm, power
 
@@ -118,9 +144,11 @@ def process_csv_file(csv_path):
     return all_spacings, all_powers
 
 
-def fit_loess_curve(spacings_list, powers_list, spacing_range=(0.1, 20)):
+def fit_loess_curve(
+    spacings_list, powers_list, spacing_range=(0.1, 20), n_bootstrap=10
+):
     """
-    Fit a LOESS curve to the power spectrum data.
+    Fit a LOESS curve to the power spectrum data with bootstrap error estimation.
 
     Parameters
     ----------
@@ -130,6 +158,8 @@ def fit_loess_curve(spacings_list, powers_list, spacing_range=(0.1, 20)):
         Power values from multiple rows
     spacing_range : tuple
         (min, max) spacing range in nm to consider
+    n_bootstrap : int
+        Number of bootstrap samples to use for error estimation
 
     Returns
     -------
@@ -137,46 +167,62 @@ def fit_loess_curve(spacings_list, powers_list, spacing_range=(0.1, 20)):
         Spacing values for the fitted curve
     power_fit : ndarray
         Fitted power values
+    power_sem : ndarray
+        Standard error of the mean for fitted power values
     """
-    # Combine all data points
-    all_spacings = np.concatenate(spacings_list)
-    all_powers = np.concatenate(powers_list)
-
-    # Filter to spacing range
-    mask = (all_spacings >= spacing_range[0]) & (all_spacings <= spacing_range[1])
-    spacings_filtered = all_spacings[mask]
-    powers_filtered = all_powers[mask]
-
-    # Sort by spacing for LOESS
-    sort_idx = np.argsort(spacings_filtered)
-    spacings_sorted = spacings_filtered[sort_idx]
-    powers_sorted = powers_filtered[sort_idx]
-
-    # Apply LOWESS smoothing
-    # lowess returns a 2D array with shape (n, 2) where [:, 0] is x and [:, 1] is y
-    # frac controls the amount of smoothing (fraction of data used for each point)
-    lowess_result = lowess(powers_sorted, spacings_sorted, frac=0.1)
-
-    # Generate smooth curve for plotting
+    # Generate smooth curve points for plotting
     spacing_fit = np.logspace(
         np.log10(spacing_range[0]), np.log10(spacing_range[1]), 200
     )
 
-    # Interpolate LOWESS result
-    # Create interpolation function from LOWESS output
-    from typing import cast
+    # Store bootstrap results
+    bootstrap_fits = np.zeros((n_bootstrap, len(spacing_fit)))
 
-    lowess_interp = interp1d(
-        lowess_result[:, 0],  # x values (spacings)
-        lowess_result[:, 1],  # y values (powers)
-        kind="linear",
-        bounds_error=False,
-        fill_value=cast(float, "extrapolate"),  # type: ignore[arg-type]
-    )
+    # Number of rows (samples)
+    n_rows = len(spacings_list)
 
-    power_fit = lowess_interp(spacing_fit)
+    # Perform bootstrap resampling
+    rng = np.random.default_rng(42)  # Set seed for reproducibility
 
-    return spacing_fit, power_fit
+    for boot_idx in tqdm(range(n_bootstrap), desc="Bootstrap", leave=False):
+        # Resample whole rows with replacement
+        sample_indices = rng.choice(n_rows, size=n_rows, replace=True)
+        boot_spacings = [spacings_list[i] for i in sample_indices]
+        boot_powers = [powers_list[i] for i in sample_indices]
+
+        # Combine all data points from this bootstrap sample
+        all_spacings = np.concatenate(boot_spacings)
+        all_powers = np.concatenate(boot_powers)
+
+        # Filter to spacing range
+        mask = (all_spacings >= spacing_range[0]) & (all_spacings <= spacing_range[1])
+        spacings_filtered = all_spacings[mask]
+        powers_filtered = all_powers[mask]
+
+        # Sort by spacing for LOESS
+        sort_idx = np.argsort(spacings_filtered)
+        spacings_sorted = spacings_filtered[sort_idx]
+        powers_sorted = powers_filtered[sort_idx]
+
+        # Apply LOWESS smoothing
+        lowess_result = lowess(powers_sorted, spacings_sorted, frac=0.1)
+
+        # Interpolate LOWESS result to common spacing grid
+        lowess_interp = interp1d(
+            lowess_result[:, 0],  # x values (spacings)
+            lowess_result[:, 1],  # y values (powers)
+            kind="linear",
+            bounds_error=False,
+            fill_value=cast(float, "extrapolate"),  # type: ignore[arg-type]
+        )
+
+        bootstrap_fits[boot_idx, :] = lowess_interp(spacing_fit)
+
+    # Calculate mean and SEM across bootstrap samples
+    power_fit = np.mean(bootstrap_fits, axis=0)
+    power_sem = np.std(bootstrap_fits, axis=0, ddof=1)
+
+    return spacing_fit, power_fit, power_sem
 
 
 def main():
@@ -232,12 +278,13 @@ def main():
             label="Raw data",
         )
 
-        # Fit and plot LOESS curve
+        # Fit and plot LOESS curve with bootstrap error
         try:
-            spacing_fit, power_fit = fit_loess_curve(
+            spacing_fit, power_fit, power_sem = fit_loess_curve(
                 spacings_list, powers_list, spacing_range
             )
 
+            # Plot LOESS fit
             ax.plot(
                 spacing_fit,
                 power_fit,
@@ -246,8 +293,18 @@ def main():
                 label="LOESS fit",
             )
 
-            # Track max y value
-            all_y_max = max(all_y_max, np.max(power_fit))
+            # Plot +/- SEM as shaded region
+            ax.fill_between(
+                spacing_fit,
+                power_fit - power_sem,
+                power_fit + power_sem,
+                color=colors[idx],
+                alpha=0.2,
+                label="±SEM",
+            )
+
+            # Track max y value (including error bars)
+            all_y_max = max(all_y_max, np.max(power_fit + power_sem))
         except Exception as e:
             print(f"Warning: Could not fit LOESS for {dataset_name}: {e}")
 

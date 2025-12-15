@@ -154,6 +154,12 @@ def main():
         markersize=4,
     )
 
+    # Add vertical dashed lines at t=1, t=15, and t=31
+    snapshot_times = [1, 15, 31]
+    for t in snapshot_times:
+        if t < n_timepoints:
+            ax2.axvline(x=t, color="gray", linestyle="--", linewidth=1, alpha=0.7)
+
     ax2.set_xlabel("Time Point")
     ax2.set_ylabel("Membrane Fluorescence Intensity")
     ax2.set_title("Membrane Fluorescence Over Time")
@@ -163,6 +169,25 @@ def main():
     plt.savefig("membrane_intensity_time.svg")
     print("Saved membrane_intensity_time.svg")
     plt.close()
+
+    # Save PNG images of fluorescence profiles at specific timepoints
+    snapshot_times = [1, 15, 31]
+    for t in snapshot_times:
+        if t < n_timepoints:
+            fig_snap, ax_snap = plt.subplots(figsize=(8, 6))
+            ax_snap.plot(
+                range(n_positions),
+                channel1[t, :],
+                color=colors[t],
+                linewidth=2,
+            )
+            ax_snap.set_xlabel("Distance (pixels)")
+            ax_snap.set_ylabel("Fluorescence Intensity")
+            ax_snap.set_title(f"Fluorescence Profile at t={t}")
+            plt.tight_layout()
+            plt.savefig(f"fluorescence_profile_t{t}.png", dpi=300)
+            print(f"Saved fluorescence_profile_t{t}.png")
+            plt.close()
 
     # Diagnostic plot showing where both membranes were detected
     fig3, ax3 = plt.subplots(figsize=(8, 6))
