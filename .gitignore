@@ -20,8 +20,10 @@ __pycache__/
 # Claude
 .claude/
 
-# Large png files
+# Large png, pdf, tif files
 *.png
+*.pdf
+*.tif
 
 # Examples for AI agents
 examples/
