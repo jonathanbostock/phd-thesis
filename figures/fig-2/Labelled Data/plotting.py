@@ -137,7 +137,6 @@ def process_csv_file(csv_path):
         spacing_nm, power = compute_power_spectrum(
             intensities, curve_length_px, pixel_scale_nm
         )
-
         all_spacings.append(spacing_nm)
         all_powers.append(power)
 
@@ -227,10 +226,20 @@ def fit_loess_curve(
 
 def main():
     """Main plotting function."""
-    # Get all CSV files in the current directory
+    # Parse command-line arguments
+    # Get all CSV files in the csv-files subdirectory
     data_dir = Path(__file__).parent
-    csv_files = sorted(data_dir.glob("*-labels.csv"))
+    csv_dir = data_dir / "csv-files"
 
+    # Select files based on data type
+    csv_files = sorted(csv_dir.glob("*-labels.csv"))
+
+    if not csv_files:
+        raise FileNotFoundError(
+            f"No CSV files found {csv_dir}. Looking for: '*-labels.csv'"
+        )
+
+    print(f"Using labeled data files from {csv_dir}")
     if len(csv_files) != 4:
         print(f"Warning: Expected 4 CSV files, found {len(csv_files)}")
 
@@ -329,6 +338,67 @@ def main():
     output_path = data_dir / "power_spectrum_analysis.svg"
     plt.savefig(output_path, format="svg", dpi=300, bbox_inches="tight")
     print(f"\nSaved plot to {output_path}")
+
+    # Create a second figure with individual traces instead of scatter
+    fig2, axes2 = plt.subplots(2, 2, figsize=(12, 10))
+    axes2 = axes2.flatten()
+
+    # Track y-axis limits for second plot
+    all_y_max_traces = 0
+
+    # Re-process each file for the trace plot
+    for idx, csv_path in enumerate(csv_files):
+        ax = axes2[idx]
+
+        # Get dataset name from filename
+        dataset_name = csv_path.stem.replace("-labels", "")
+
+        # Process the CSV
+        spacings_list, powers_list = process_csv_file(csv_path)
+
+        # Filter data to spacing range
+        spacing_range = (0.1, 20)
+
+        # Plot each row as a thin line
+        for spacings, powers in zip(spacings_list, powers_list):
+            mask = (spacings >= spacing_range[0]) & (spacings <= spacing_range[1])
+            spacings_filtered = spacings[mask]
+            powers_filtered = powers[mask]
+
+            # Sort by spacing for proper line plotting
+            sort_idx = np.argsort(spacings_filtered)
+            spacings_sorted = spacings_filtered[sort_idx]
+            powers_sorted = powers_filtered[sort_idx]
+
+            # Plot thin line
+            ax.plot(
+                spacings_sorted,
+                powers_sorted,
+                color=colors[idx],
+                linewidth=0.5,
+                alpha=0.3,
+            )
+
+            # Track max y value
+            if len(powers_sorted) > 0:
+                all_y_max_traces = max(all_y_max_traces, np.max(powers_sorted))
+
+        # Labels and formatting
+        ax.set_xlabel("Spacing (nm)", fontsize=10)
+        ax.set_ylabel("Amplitude", fontsize=10)
+        ax.set_xlim(0.1, 20)
+        ax.set_title(dataset_name, fontsize=11, fontweight="bold")
+
+    # Set consistent y-axis limits across all subplots
+    for ax in axes2:
+        ax.set_ylim(0, all_y_max_traces * 1.05)
+
+    plt.tight_layout()
+
+    # Save second figure
+    output_path_traces = data_dir / "power_spectrum_traces.svg"
+    plt.savefig(output_path_traces, format="svg", dpi=300, bbox_inches="tight")
+    print(f"Saved trace plot to {output_path_traces}")
 
 
 if __name__ == "__main__":
