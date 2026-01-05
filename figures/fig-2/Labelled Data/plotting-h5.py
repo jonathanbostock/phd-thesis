@@ -624,7 +624,7 @@ def plot_lowess_at_spacing(
         Number of bootstrap iterations (default: 500)
     """
     # Create figure
-    fig, ax = plt.subplots(1, 1, figsize=(8, 6))
+    fig, ax = plt.subplots(1, 1, figsize=(4, 3))
 
     # Use seaborn colorblind palette
     colors = sns.color_palette("colorblind", n_colors=4)
@@ -720,7 +720,7 @@ def plot_combined_power_spectra(
         Path to save the output SVG file
     """
     # Create figure with 2x2 subplots
-    fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+    fig, axes = plt.subplots(2, 2, figsize=(8, 6))
     axes = axes.flatten()
 
     # Use plasma colormap for radial distances
@@ -807,7 +807,7 @@ def plot_radial_average_power_spectrum(
     n_bootstrap : int
         Number of bootstrap iterations (default: 500)
     """
-    fig, ax = plt.subplots(1, 1, figsize=(8, 6))
+    fig, ax = plt.subplots(1, 1, figsize=(4, 3))
     colors = sns.color_palette("colorblind", n_colors=4)
 
     for i, (dataset_name, (radial_distances, raw_data_list)) in enumerate(
