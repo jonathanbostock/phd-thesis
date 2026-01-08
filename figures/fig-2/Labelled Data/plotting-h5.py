@@ -3,8 +3,6 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
-from matplotlib.colors import Normalize
 import seaborn as sns
 import h5py
 from pathlib import Path
@@ -600,216 +598,52 @@ def bootstrap_lowess_at_spacing(
     return interp_mean(x_coords), interp_se(x_coords)
 
 
-def plot_lowess_at_spacing(
-    all_dataset_curves: dict[str, tuple[Any, list[tuple[Any, Any]]]],
-    all_dataset_per_particle_data: dict[str, tuple[Any, list[list[tuple[Any, Any]]]]],
-    output_path: Path,
-    target_spacing: float = 4.0,
-    n_bootstrap: int = 100,
-) -> None:
-    """
-    Create plot showing LOWESS values at a specific spacing for all datasets with bootstrap errors.
-
-    Parameters
-    ----------
-    all_dataset_curves : dict
-        Dictionary mapping dataset names to (radial_distances, lowess_curves) tuples
-    all_dataset_per_particle_data : dict
-        Dictionary mapping dataset names to (radial_distances, per_particle_data) tuples
-    output_path : Path
-        Path to save the output SVG file
-    target_spacing : float
-        The spacing value (in nm) at which to extract LOWESS values (default: 4.0)
-    n_bootstrap : int
-        Number of bootstrap iterations (default: 500)
-    """
-    # Create figure
-    fig, ax = plt.subplots(1, 1, figsize=(4, 3))
-
-    # Use seaborn colorblind palette
-    colors = sns.color_palette("colorblind", n_colors=4)
-    markers = ["o", "s", "^", "D"]  # circle, square, triangle, diamond
-
-    # Create custom x-coordinates
-    x_coords = np.arange(0.5, 25.0, 1.0)  # [0.5, 1.5, 2.5, ..., 24.5]
-
-    # Plot each dataset
-    for i, (dataset_name, (radial_distances, lowess_curves)) in enumerate(
-        all_dataset_curves.items()
-    ):
-        # Extract values at target spacing for each radial distance
-        values_at_spacing = []
-
-        for spacing_fit, power_fit in lowess_curves:
-            # Find the index closest to target spacing
-            idx = np.argmin(np.abs(spacing_fit - target_spacing))
-            values_at_spacing.append(power_fit[idx])
-
-        values_at_spacing = np.array(values_at_spacing)
-
-        # Interpolate to custom x-coordinates
-        interp_func = interp1d(
-            radial_distances,
-            values_at_spacing,
-            kind="linear",
-            bounds_error=False,
-            fill_value="extrapolate",  # type: ignore
-        )
-        values_interpolated = interp_func(x_coords)
-
-        # Get bootstrap estimates
-        _, per_particle_data = all_dataset_per_particle_data[dataset_name]
-        mean_values, se_values = bootstrap_lowess_at_spacing(
-            per_particle_data, radial_distances, target_spacing, n_bootstrap
-        )
-
-        # Plot error band first (so it's behind the line)
-        ax.fill_between(
-            x_coords,
-            mean_values - se_values,
-            mean_values + se_values,
-            alpha=0.3,
-            color=colors[i],
-            linewidth=0,
-        )
-
-        # Plot main curve
-        ax.plot(
-            x_coords,
-            values_interpolated,
-            marker=markers[i],
-            color=colors[i],
-            markerfacecolor=colors[i],
-            markeredgecolor="black",
-            markeredgewidth=1.0,
-            markersize=6,
-            linewidth=1.5,
-            label=dataset_name,
-            alpha=0.8,
-        )
-
-    # Format axes
-    ax.set_xlabel("Radial distance from membrane (nm)", fontsize=12)
-    ax.set_ylabel(f"Amplitude at {target_spacing} nm", fontsize=12)
-    ax.set_xlim(math.floor(x_coords.min()), math.ceil(x_coords.max()))  # (0, 25)
-    ax.legend(frameon=False, fontsize=10)
-    ax.set_title(f"LOWESS Amplitude at {target_spacing} nm Spacing", fontsize=14)
-
-    # Apply standard formatting
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-    ax.grid(False)
-
-    plt.tight_layout()
-    plt.savefig(output_path, format="svg", dpi=300, bbox_inches="tight")
-    plt.close(fig)
-
-
-def plot_combined_power_spectra(
-    all_dataset_curves: dict[str, tuple[Any, list[tuple[Any, Any]]]],
-    output_path: Path,
-) -> None:
-    """
-    Create 2x2 grid of power spectrum plots for all datasets.
-
-    Parameters
-    ----------
-    all_dataset_curves : dict
-        Dictionary mapping dataset names to (radial_distances, lowess_curves) tuples
-    output_path : Path
-        Path to save the output SVG file
-    """
-    # Create figure with 2x2 subplots
-    fig, axes = plt.subplots(2, 2, figsize=(8, 6))
-    axes = axes.flatten()
-
-    # Use plasma colormap for radial distances
-    cmap = cm.get_cmap("plasma")
-
-    # Track radial distances for colorbar (should be same for all datasets)
-    radial_distances = None
-
-    # Plot each dataset
-    for idx, (dataset_name, (rad_dist, lowess_curves)) in enumerate(
-        all_dataset_curves.items()
-    ):
-        ax = axes[idx]
-        radial_distances = rad_dist  # Store for colorbar
-
-        # Plot each radial distance curve
-        for radial_idx, (spacing_fit, power_fit) in enumerate(lowess_curves):
-            # Get color from colormap based on radial distance position
-            color_val = (
-                radial_idx / (len(lowess_curves) - 1) if len(lowess_curves) > 1 else 0
-            )
-            color = cmap(color_val)
-
-            # Plot LOWESS curve
-            ax.plot(spacing_fit, power_fit, color=color, linewidth=1.5, alpha=0.8)
-
-        # Format axis
-        ax.set_xlabel("Spacing (nm)", fontsize=12)
-        ax.set_ylabel("Amplitude", fontsize=12)
-        ax.set_xlim(0.5, 10)
-        ax.set_title(dataset_name, fontsize=14)
-
-        # Apply standard formatting
-        ax.spines["top"].set_visible(False)
-        ax.spines["right"].set_visible(False)
-        ax.grid(False)
-
-    # Add shared colorbar
-    # Reserve space for colorbar on the right before creating it
-    plt.tight_layout(rect=[0, 0, 0.92, 1])  # type: ignore[arg-type]
-
-    if radial_distances is not None:
-        sm = cm.ScalarMappable(
-            cmap=cmap,
-            norm=Normalize(vmin=radial_distances[0], vmax=radial_distances[-1]),
-        )
-        sm.set_array([])
-        cbar = fig.colorbar(sm, ax=axes, label="Distance from membrane (nm)")
-
-    plt.savefig(output_path, format="svg", dpi=300, bbox_inches="tight")
-    plt.close(fig)
-
-
-def plot_radial_average_power_spectrum(
+def plot_combined_spectrum_and_amplitude(
     all_dataset_raw_data: dict[str, tuple[Any, list[tuple[Any, Any]]]],
+    all_dataset_curves: dict[str, tuple[Any, list[tuple[Any, Any]]]],
     all_dataset_per_particle_data: dict[str, tuple[Any, list[list[tuple[Any, Any]]]]],
     output_path: Path,
-    radial_band_min: float = 1.0,
+    radial_band_min: float = 2.0,
     radial_band_max: float = 5.0,
+    peak_search_min: float = 2.0,
+    peak_search_max: float = 7.0,
     spacing_range: tuple[float, float] = (0.5, 10.0),
     n_bootstrap: int = 100,
 ) -> None:
     """
-    Plot power spectrum averaged over radial bands for all datasets with bootstrap errors.
-
-    Averages RAW FFT data from radial distances in [radial_band_min, radial_band_max],
-    applies LOWESS smoothing, and plots the result with bootstrap error bands.
+    Create combined plot with power spectrum (left) and amplitude at peak spacing (right).
 
     Parameters
     ----------
     all_dataset_raw_data : dict
         Dictionary mapping dataset names to (radial_distances, raw_data_list) tuples
-        where raw_data_list is the output from process_h5_file
+    all_dataset_curves : dict
+        Dictionary mapping dataset names to (radial_distances, lowess_curves) tuples
     all_dataset_per_particle_data : dict
         Dictionary mapping dataset names to (radial_distances, per_particle_data) tuples
     output_path : Path
         Path to save the output SVG file
     radial_band_min : float
-        Minimum radial distance in nm (default: 1.0)
+        Minimum radial distance in nm (default: 2.0)
     radial_band_max : float
         Maximum radial distance in nm (default: 5.0)
+    peak_search_min : float
+        Minimum spacing to search for peak (default: 2.0)
+    peak_search_max : float
+        Maximum spacing to search for peak (default: 7.0)
     spacing_range : tuple
         (min, max) spacing range in nm for plotting (default: 0.5 to 10.0)
     n_bootstrap : int
-        Number of bootstrap iterations (default: 500)
+        Number of bootstrap iterations (default: 100)
     """
-    fig, ax = plt.subplots(1, 1, figsize=(4, 3))
+    # Create figure with 1x2 subplots
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 3))
     colors = sns.color_palette("colorblind", n_colors=4)
 
+    # Store peak spacings for each dataset
+    peak_spacings = {}
+
+    # LEFT SUBPLOT: Power spectrum
     for i, (dataset_name, (radial_distances, raw_data_list)) in enumerate(
         all_dataset_raw_data.items()
     ):
@@ -853,6 +687,15 @@ def plot_radial_average_power_spectrum(
         )
         power_fit = lowess_interp(spacing_fit)
 
+        # Find peak in specified range
+        peak_mask = (spacing_fit >= peak_search_min) & (spacing_fit <= peak_search_max)
+        peak_idx = np.argmax(power_fit[peak_mask])
+        peak_spacing = spacing_fit[peak_mask][peak_idx]
+        peak_power = power_fit[peak_mask][peak_idx]
+
+        # Store peak spacing for right subplot
+        peak_spacings[dataset_name] = peak_spacing
+
         # Get bootstrap estimates
         _, per_particle_data = all_dataset_per_particle_data[dataset_name]
         mean_curve, se_curve = bootstrap_lowess_power_spectrum(
@@ -865,7 +708,7 @@ def plot_radial_average_power_spectrum(
         )
 
         # Plot error band first (so it's behind the line)
-        ax.fill_between(
+        ax1.fill_between(
             spacing_fit,
             mean_curve - se_curve,
             mean_curve + se_curve,
@@ -875,29 +718,104 @@ def plot_radial_average_power_spectrum(
         )
 
         # Plot main curve
-        ax.plot(
+        ax1.plot(
             spacing_fit,
             power_fit,
             color=colors[i],
             linewidth=2,
-            label=dataset_name,
+            label=f"{dataset_name} ({peak_spacing:.1f} nm)",
             alpha=0.8,
         )
 
-    # Format axes
-    ax.set_xlabel("Spacing (nm)", fontsize=12)
-    ax.set_ylabel("Amplitude", fontsize=12)
-    ax.set_xlim(spacing_range[0], spacing_range[1])
-    ax.set_title(
-        f"Power Spectrum (Radial Average: {radial_band_min}-{radial_band_max} nm)",
-        fontsize=14,
-    )
-    ax.legend(frameon=False, fontsize=10)
+        # Add marker at peak
+        ax1.plot(
+            peak_spacing,
+            peak_power,
+            marker="*",
+            markersize=10,
+            color=colors[i],
+            markeredgecolor="black",
+            markeredgewidth=0.5,
+        )
 
-    # Apply standard formatting
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-    ax.grid(False)
+    # Format left subplot
+    ax1.set_xlabel("Spacing (nm)", fontsize=12)
+    ax1.set_ylabel("Amplitude", fontsize=12)
+    ax1.set_xlim(spacing_range[0], spacing_range[1])
+    ax1.set_title("Average Power Spectrum", fontsize=14)
+    ax1.spines["top"].set_visible(False)
+    ax1.spines["right"].set_visible(False)
+    ax1.grid(False)
+
+    # RIGHT SUBPLOT: Amplitude at peak spacing
+    x_coords = np.arange(0.5, 25.0, 1.0)  # [0.5, 1.5, 2.5, ..., 24.5]
+
+    for i, (dataset_name, (radial_distances, lowess_curves)) in enumerate(
+        all_dataset_curves.items()
+    ):
+        # Get the peak spacing for this dataset
+        peak_spacing = peak_spacings[dataset_name]
+
+        # Extract values at peak spacing for each radial distance
+        values_at_spacing = []
+
+        for spacing_fit, power_fit in lowess_curves:
+            # Find the index closest to peak spacing
+            idx = np.argmin(np.abs(spacing_fit - peak_spacing))
+            values_at_spacing.append(power_fit[idx])
+
+        values_at_spacing = np.array(values_at_spacing)
+
+        # Interpolate to custom x-coordinates
+        interp_func = interp1d(
+            radial_distances,
+            values_at_spacing,
+            kind="linear",
+            bounds_error=False,
+            fill_value="extrapolate",  # type: ignore
+        )
+        values_interpolated = interp_func(x_coords)
+
+        # Get bootstrap estimates
+        _, per_particle_data = all_dataset_per_particle_data[dataset_name]
+        mean_values, se_values = bootstrap_lowess_at_spacing(
+            per_particle_data, radial_distances, peak_spacing, n_bootstrap
+        )
+
+        # Plot error band first (so it's behind the line)
+        ax2.fill_between(
+            x_coords,
+            mean_values - se_values,
+            mean_values + se_values,
+            alpha=0.3,
+            color=colors[i],
+            linewidth=0,
+        )
+
+        # Plot main curve (no markers)
+        ax2.plot(
+            x_coords,
+            values_interpolated,
+            color=colors[i],
+            linewidth=1.5,
+            label=f"{dataset_name} ({peak_spacing:.1f} nm)",
+            alpha=0.8,
+        )
+
+    # Format right subplot
+    ax2.set_xlabel("Radial distance from membrane (nm)", fontsize=12)
+    ax2.set_xlim(math.floor(x_coords.min()), math.ceil(x_coords.max()))
+    ax2.set_title("Amplitude At Peak Spacing", fontsize=14)
+    ax2.legend(frameon=False, fontsize=10, loc="upper right")
+    ax2.spines["top"].set_visible(False)
+    ax2.spines["left"].set_visible(False)
+    ax2.grid(False)
+    ax2.yaxis.tick_right()
+    ax2.yaxis.set_label_position("right")
+
+    # Share y-axis between subplots
+    ax1.get_shared_y_axes().joined(ax1, ax2)
+    ax2.set_ylim(ax1.get_ylim())
 
     plt.tight_layout()
     plt.savefig(output_path, format="svg", dpi=300, bbox_inches="tight")
@@ -958,39 +876,21 @@ def main():
             )
         all_dataset_raw_data[dataset_name] = (radial_distances, raw_data_list)
 
-    # Create combined power spectra plot (2x2 grid)
-    if all_dataset_curves:
-        print("\nCreating combined power spectra plot...")
-        combined_output = data_dir / "power_spectra_combined.svg"
-        plot_combined_power_spectra(all_dataset_curves, combined_output)
-        print(f"  Saved combined power spectra to {combined_output}")
-
-    # Create plot of LOWESS values at 4nm (with custom x-coords and bootstrap errors)
-    if all_dataset_curves and all_dataset_per_particle_data:
-        print("\nCreating LOWESS at 4nm plot with bootstrap errors...")
-        lowess_4nm_output = data_dir / "lowess_at_4nm.svg"
-        plot_lowess_at_spacing(
+    # Create combined spectrum and amplitude plot
+    if all_dataset_raw_data and all_dataset_curves and all_dataset_per_particle_data:
+        print("\nCreating combined spectrum and amplitude plot...")
+        combined_output = data_dir / "combined_spectrum_amplitude.svg"
+        plot_combined_spectrum_and_amplitude(
+            all_dataset_raw_data,
             all_dataset_curves,
             all_dataset_per_particle_data,
-            lowess_4nm_output,
-            target_spacing=4.0,
-        )
-        print(f"  Saved LOWESS at 4nm plot to {lowess_4nm_output}")
-
-    # Create radial average power spectrum plot (2.0-5.0 nm radial band with bootstrap errors)
-    if all_dataset_raw_data and all_dataset_per_particle_data:
-        print(
-            "\nCreating radial average power spectrum (2-5 nm band) with bootstrap errors..."
-        )
-        radial_avg_output = data_dir / "power_spectrum_radial_avg_2_5nm.svg"
-        plot_radial_average_power_spectrum(
-            all_dataset_raw_data,
-            all_dataset_per_particle_data,
-            radial_avg_output,
+            combined_output,
             radial_band_min=2.0,
             radial_band_max=5.0,
+            peak_search_min=2.0,
+            peak_search_max=7.0,
         )
-        print(f"  Saved radial average power spectrum to {radial_avg_output}")
+        print(f"  Saved combined plot to {combined_output}")
 
 
 if __name__ == "__main__":
