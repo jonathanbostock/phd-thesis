@@ -167,7 +167,6 @@ def process_h5_file(
         pixel_scale_nm = float(f.attrs["pixel_scale_nm"])  # type: ignore[arg-type]
         radial_min = float(f.attrs["radial_range_nm_min"])  # type: ignore[arg-type]
         radial_max = float(f.attrs["radial_range_nm_max"])  # type: ignore[arg-type]
-        angular_samples = int(f.attrs["angular_samples"])  # type: ignore[arg-type]
         radial_samples = int(f.attrs["radial_samples"])  # type: ignore[arg-type]
 
         # Calculate radial distances
@@ -282,7 +281,6 @@ def process_h5_file_with_particles(
         pixel_scale_nm = float(f.attrs["pixel_scale_nm"])  # type: ignore[arg-type]
         radial_min = float(f.attrs["radial_range_nm_min"])  # type: ignore[arg-type]
         radial_max = float(f.attrs["radial_range_nm_max"])  # type: ignore[arg-type]
-        angular_samples = int(f.attrs["angular_samples"])  # type: ignore[arg-type]
         radial_samples = int(f.attrs["radial_samples"])  # type: ignore[arg-type]
 
         # Calculate radial distances
