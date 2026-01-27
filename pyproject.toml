@@ -18,6 +18,9 @@ dependencies = [
     "tqdm>=4.67.1",
     "h5py>=3.14.0",
     "joblib>=1.5.3",
+    "readlif>=0.6.5",
+    "trackpy>=0.6.1",
+    "scikit-image>=0.22.0",
 ]
 
 [project.optional-dependencies]
