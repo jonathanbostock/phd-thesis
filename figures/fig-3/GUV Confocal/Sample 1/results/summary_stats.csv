@@ -1,3 +1,3 @@
 n_vesicles_detected,n_vesicles_tracked,n_frames,pixel_size_um,detection_method,excluded_incomplete,excluded_border,excluded_jump,file,condition
-44,41,35,0.4848334637964775,dark_regions,285,16,0,After DNA brush addition.lif,after_dna
-88,133,36,0.6786463796477495,dark_regions,384,29,0,After cyclodextrin addition.lif,after_cd
+44,41,35,0.4848334637964775,fluorescence,285,16,0,After DNA brush addition.lif,after_dna
+88,133,36,0.6786463796477495,fluorescence,384,29,0,After cyclodextrin addition.lif,after_cd

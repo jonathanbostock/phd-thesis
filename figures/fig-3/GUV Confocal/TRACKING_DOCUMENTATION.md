@@ -296,16 +296,83 @@ figures/fig-3/GUV Confocal/
 ├── Sample 1/
 │   ├── After DNA brush addition.lif
 │   ├── After cyclodextrin addition.lif
-│   └── results/
-│       ├── guv_tracking_results.h5
-│       └── summary_stats.csv
+│   ├── results/
+│   │   ├── guv_tracking_results.h5
+│   │   ├── summary_stats.csv
+│   │   └── debug/               # Debug images with detection overlay
+│   ├── snapshots/               # Images at plot tick timepoints
+│   │   ├── after_DNA_0_minutes_fluorescence.png
+│   │   ├── after_DNA_0_minutes_brightfield.png
+│   │   ├── after_DNA_16_minutes_fluorescence.png
+│   │   └── ...
+│   ├── membrane_fluorescence_timecourse.svg
+│   └── condition_comparison.svg
 ├── Sample 2/
-│   ├── After DNA brush addition.lif
-│   ├── After cyclodextrin addition.lif
-│   └── results/
-│       └── ...
+│   └── ...                      # Same structure as Sample 1
 └── TRACKING_DOCUMENTATION.md    # This file
 
 utils/
 └── guv_tracking.py              # Core tracking utilities
+```
+
+---
+
+## Output Files
+
+### Plots
+
+1. **membrane_fluorescence_timecourse.svg**: Time series of membrane fluorescence
+   - Individual vesicle traces (thin, semi-transparent)
+   - Mean trace (thick line)
+   - Two segments: After DNA Brush, After Cyclodextrin
+   - Y-axis ticks positioned outside the axis
+
+2. **condition_comparison.svg**: Final fluorescence comparison
+   - Scatter plot with jitter
+   - Mean bars
+
+### Snapshots
+
+Saved at x-axis tick timepoints (0, mid, max for each condition):
+
+- `after_DNA_[t]_minutes_fluorescence.png`: Fluorescence channel (green colormap)
+- `after_DNA_[t]_minutes_brightfield.png`: Brightfield channel (greyscale)
+- `after_cyclodextrin_[t]_minutes_fluorescence.png`
+- `after_cyclodextrin_[t]_minutes_brightfield.png`
+
+---
+
+## Detection Methods
+
+The tracking code supports two detection methods, configurable via `TrackingConfig.detection_method`:
+
+### 1. Fluorescence-based detection (default: `"fluorescence"`)
+
+Detects vesicles by finding dark regions in the fluorescence channel.
+
+**Advantages:**
+- Works well when vesicle interiors clearly exclude the dye
+- Robust for well-separated vesicles
+
+**Disadvantages:**
+- Can fail when vesicles are clustered (dark interiors merge)
+
+### 2. Brightfield-based detection (`"brightfield"`)
+
+Detects circles in brightfield using Hough transform, then validates by checking fluorescence interior is dark.
+
+**Advantages:**
+- Better for clustered vesicles (membranes visible even when touching)
+
+**Disadvantages:**
+- More sensitive to noise in brightfield images
+- Requires parameter tuning (Canny sigma, Hough threshold)
+
+**Configuration parameters:**
+```python
+canny_sigma: float = 2.0           # Edge detection smoothing
+hough_min_distance: int = 20       # Min distance between circles
+hough_threshold: float = 0.3       # Accumulator threshold
+hough_num_peaks: int = 100         # Max circles per frame
+interior_darkness_threshold: float = 0.8  # Validation threshold
 ```

@@ -21,8 +21,10 @@ from matplotlib.patches import Circle
 from readlif.reader import LifFile
 from skimage import measure
 from skimage.draw import disk
+from skimage.feature import canny
 from skimage.filters import threshold_otsu
 from skimage.morphology import remove_small_holes, remove_small_objects
+from skimage.transform import hough_circle, hough_circle_peaks
 
 
 @dataclass
@@ -40,6 +42,18 @@ class TrackingConfig:
     max_jump_factor: float = 0.5  # Max jump as fraction of diameter
     min_track_fraction: float = 0.25  # Require presence in at least 25% of frames
     link_memory: int = 5  # Allow gaps of up to 5 frames in tracking
+
+    # Detection method: "brightfield" (Hough circles) or "fluorescence" (dark regions)
+    detection_method: str = "brightfield"
+
+    # Brightfield circle detection (Hough transform) parameters
+    canny_sigma: float = 2.0  # Gaussian smoothing for edge detection
+    hough_min_distance: int = 20  # Min distance between circle centers (pixels)
+    hough_threshold: float = 0.3  # Accumulator threshold (fraction of max)
+    hough_num_peaks: int = 100  # Max circles to detect per frame
+
+    # Fluorescence validation (used with brightfield detection)
+    interior_darkness_threshold: float = 0.8  # Interior must be < threshold * Otsu
 
 
 @dataclass
@@ -296,34 +310,257 @@ def detect_vesicles_dark_regions(
     return detections
 
 
+def detect_circles_brightfield(
+    brightfield_frame: np.ndarray,
+    pixel_size_um: float,
+    config: TrackingConfig,
+    frame_idx: int = 0,
+) -> List[GUVDetection]:
+    """
+    Detect circles in brightfield using Hough Circle Transform.
+
+    GUV membranes appear as rings in brightfield, which can be detected
+    even when vesicles are clustered together (unlike dark region detection).
+
+    Parameters
+    ----------
+    brightfield_frame : np.ndarray
+        Brightfield image
+    pixel_size_um : float
+        Pixel size in micrometers
+    config : TrackingConfig
+        Detection configuration
+    frame_idx : int
+        Frame index for the detection
+
+    Returns
+    -------
+    detections : List[GUVDetection]
+        Candidate circles (not yet validated with fluorescence)
+    """
+    # Convert diameter range to pixel radii
+    min_radius_px = int((config.min_diameter_um / 2) / pixel_size_um)
+    max_radius_px = int((config.max_diameter_um / 2) / pixel_size_um)
+
+    # Normalize brightfield to 0-1 range for edge detection
+    bf_min = brightfield_frame.min()
+    bf_max = brightfield_frame.max()
+    if bf_max > bf_min:
+        bf_norm = (brightfield_frame - bf_min) / (bf_max - bf_min)
+    else:
+        return []  # Empty image
+
+    # Apply Canny edge detection
+    edges = canny(bf_norm, sigma=config.canny_sigma)
+
+    # Define radius range to search (step by 1 pixel)
+    hough_radii = np.arange(min_radius_px, max_radius_px + 1, 1)
+
+    if len(hough_radii) == 0:
+        return []
+
+    # Run Hough Circle Transform
+    hough_res = hough_circle(edges, hough_radii)
+
+    # Find circle peaks
+    # total_num_peaks limits how many circles we detect
+    accums, cx, cy, radii = hough_circle_peaks(
+        hough_res,
+        hough_radii,
+        min_xdistance=config.hough_min_distance,
+        min_ydistance=config.hough_min_distance,
+        threshold=config.hough_threshold * hough_res.max(),
+        num_peaks=config.hough_num_peaks,
+        total_num_peaks=config.hough_num_peaks,
+    )
+
+    # Convert to GUVDetection objects
+    detections = []
+    for x, y, radius in zip(cx, cy, radii):
+        det = GUVDetection(
+            x_px=float(x),
+            y_px=float(y),
+            radius_px=float(radius),
+            frame=frame_idx,
+        )
+        detections.append(det)
+
+    return detections
+
+
+def validate_with_fluorescence(
+    candidates: List[GUVDetection],
+    fluorescence_frame: np.ndarray,
+    config: TrackingConfig,
+) -> List[GUVDetection]:
+    """
+    Validate candidate circles by checking if interior is dark in fluorescence.
+
+    GUV interiors exclude the fluorescent dye, so valid vesicles should have
+    dark interiors relative to the background.
+
+    Parameters
+    ----------
+    candidates : List[GUVDetection]
+        Candidate circles from brightfield detection
+    fluorescence_frame : np.ndarray
+        Fluorescence image (dark interiors = vesicles)
+    config : TrackingConfig
+        Configuration with validation threshold
+
+    Returns
+    -------
+    validated : List[GUVDetection]
+        Circles that passed fluorescence validation
+    """
+    if not candidates:
+        return []
+
+    # Calculate Otsu threshold for the fluorescence frame
+    threshold = threshold_otsu(fluorescence_frame)
+    darkness_threshold = threshold * config.interior_darkness_threshold
+
+    image_shape = fluorescence_frame.shape
+    validated = []
+
+    for det in candidates:
+        # Create disk mask for interior (with margin from edge to avoid membrane)
+        margin = max(3, int(det.radius_px * 0.2))  # At least 3 pixels or 20% of radius
+        interior_radius = det.radius_px - margin
+
+        if interior_radius < 2:
+            # Circle too small to measure interior reliably
+            continue
+
+        interior_mask = _create_disk_mask(
+            (det.x_px, det.y_px), interior_radius, image_shape
+        )
+
+        if not np.any(interior_mask):
+            continue
+
+        # Calculate mean fluorescence inside
+        interior_mean = np.mean(fluorescence_frame[interior_mask])
+
+        # Accept if interior is sufficiently dark
+        if interior_mean < darkness_threshold:
+            det.interior_mean = float(interior_mean)
+            validated.append(det)
+
+    return validated
+
+
+def detect_vesicles_brightfield_validated(
+    fluorescence_frame: np.ndarray,
+    brightfield_frame: np.ndarray,
+    pixel_size_um: float,
+    config: TrackingConfig,
+    frame_idx: int = 0,
+) -> List[GUVDetection]:
+    """
+    Detect vesicles using brightfield circles validated by fluorescence.
+
+    Two-step process:
+    1. Detect circles in brightfield (Hough transform)
+    2. Validate by checking interior is dark in fluorescence
+
+    This approach works better for clustered vesicles because brightfield
+    shows membrane boundaries even when vesicles are touching.
+
+    Parameters
+    ----------
+    fluorescence_frame : np.ndarray
+        Fluorescence image (for validation)
+    brightfield_frame : np.ndarray
+        Brightfield image (for circle detection)
+    pixel_size_um : float
+        Pixel size in micrometers
+    config : TrackingConfig
+        Detection configuration
+    frame_idx : int
+        Frame index for the detection
+
+    Returns
+    -------
+    detections : List[GUVDetection]
+        Validated vesicle detections
+    """
+    # Step 1: Detect circles in brightfield
+    candidates = detect_circles_brightfield(
+        brightfield_frame, pixel_size_um, config, frame_idx
+    )
+
+    # Step 2: Validate with fluorescence (dark interior check)
+    validated = validate_with_fluorescence(candidates, fluorescence_frame, config)
+
+    return validated
+
+
 def generate_debug_image(
     fluorescence_frame: np.ndarray,
     detections: List[GUVDetection],
     output_path: Path,
     config: TrackingConfig,
     title: str = "Detection Debug",
+    brightfield_frame: Optional[np.ndarray] = None,
+    candidate_detections: Optional[List[GUVDetection]] = None,
 ) -> None:
     """
-    Generate a debug image showing Otsu threshold overlay and detected vesicles.
+    Generate a debug image showing detection results.
 
-    Creates a hue-based overlay where:
-    - Pixels below threshold (dark/vesicle interior) → cyan
-    - Pixels above threshold (bright/background) → magenta
-    - Detected vesicle circles drawn in yellow
+    For fluorescence detection method:
+    - Left: Fluorescence with detected circles
+    - Right: Otsu threshold overlay (cyan=dark, magenta=bright)
+
+    For brightfield detection method:
+    - Left: Brightfield with Canny edges and all candidate circles
+    - Right: Fluorescence with validated circles (green) and rejected (red)
 
     Parameters
     ----------
     fluorescence_frame : np.ndarray
         Single fluorescence image
     detections : List[GUVDetection]
-        Detected vesicles for this frame
+        Validated/detected vesicles for this frame
     output_path : Path
         Where to save the debug image
     config : TrackingConfig
         Configuration with threshold parameters
     title : str
         Title for the plot
+    brightfield_frame : Optional[np.ndarray]
+        Brightfield image (required for brightfield detection debug)
+    candidate_detections : Optional[List[GUVDetection]]
+        All candidate circles before validation (for brightfield method)
     """
+    if config.detection_method == "brightfield" and brightfield_frame is not None:
+        _generate_debug_image_brightfield(
+            fluorescence_frame,
+            brightfield_frame,
+            detections,
+            candidate_detections or [],
+            output_path,
+            config,
+            title,
+        )
+    else:
+        _generate_debug_image_fluorescence(
+            fluorescence_frame,
+            detections,
+            output_path,
+            config,
+            title,
+        )
+
+
+def _generate_debug_image_fluorescence(
+    fluorescence_frame: np.ndarray,
+    detections: List[GUVDetection],
+    output_path: Path,
+    config: TrackingConfig,
+    title: str,
+) -> None:
+    """Generate debug image for fluorescence-based detection (original method)."""
     # Calculate Otsu threshold
     threshold = threshold_otsu(fluorescence_frame)
     effective_threshold = threshold * config.dark_threshold_factor
@@ -340,26 +577,17 @@ def generate_debug_image(
     thresh_norm = (effective_threshold - img_min) / (img_max - img_min)
 
     # Create HSV image where hue indicates position relative to threshold
-    # Below threshold: hue = 0.5 (cyan)
-    # Above threshold: hue = 0.85 (magenta)
-    # Smooth transition near threshold
     height, width = fluorescence_frame.shape
     hsv = np.zeros((height, width, 3), dtype=float)
 
     # Hue: transition from cyan (0.5) to magenta (0.85) based on intensity
-    # Use sigmoid-like transition centered at threshold
-    transition_width = 0.1  # Width of transition zone
+    transition_width = 0.1
     relative_pos = (img_norm - thresh_norm) / transition_width
-    hue = 0.5 + 0.35 * (1 / (1 + np.exp(-relative_pos * 5)))  # 0.5 to 0.85
+    hue = 0.5 + 0.35 * (1 / (1 + np.exp(-relative_pos * 5)))
     hsv[:, :, 0] = hue
-
-    # Saturation: full saturation
     hsv[:, :, 1] = 0.7
-
-    # Value: based on original intensity (so we can still see structure)
     hsv[:, :, 2] = 0.3 + 0.7 * img_norm
 
-    # Convert to RGB
     rgb = hsv_to_rgb(hsv)
 
     # Create figure
@@ -369,7 +597,6 @@ def generate_debug_image(
     axes[0].imshow(fluorescence_frame, cmap="gray")
     axes[0].set_title("Fluorescence + Detections")
 
-    # Draw detection circles
     for det in detections:
         circle = Circle(
             (det.x_px, det.y_px),
@@ -382,7 +609,7 @@ def generate_debug_image(
 
     axes[0].axis("off")
 
-    # Right: Hue-based threshold overlay with detections
+    # Right: Hue-based threshold overlay
     axes[1].imshow(rgb)
     axes[1].set_title(
         f"Otsu Threshold Overlay\n"
@@ -390,7 +617,6 @@ def generate_debug_image(
         f"Cyan=below threshold, Magenta=above"
     )
 
-    # Draw detection circles on overlay too
     for det in detections:
         circle = Circle(
             (det.x_px, det.y_px),
@@ -404,6 +630,106 @@ def generate_debug_image(
     axes[1].axis("off")
 
     plt.suptitle(f"{title} ({len(detections)} detections)")
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+def _generate_debug_image_brightfield(
+    fluorescence_frame: np.ndarray,
+    brightfield_frame: np.ndarray,
+    validated: List[GUVDetection],
+    candidates: List[GUVDetection],
+    output_path: Path,
+    config: TrackingConfig,
+    title: str,
+) -> None:
+    """Generate debug image for brightfield-based detection."""
+    # Normalize brightfield for edge detection
+    bf_min = brightfield_frame.min()
+    bf_max = brightfield_frame.max()
+    if bf_max > bf_min:
+        bf_norm = (brightfield_frame - bf_min) / (bf_max - bf_min)
+    else:
+        bf_norm = np.zeros_like(brightfield_frame, dtype=float)
+
+    # Get Canny edges
+    edges = canny(bf_norm, sigma=config.canny_sigma)
+
+    # Create RGB overlay for brightfield with edges
+    bf_rgb = np.stack([bf_norm, bf_norm, bf_norm], axis=-1)
+    # Overlay edges in cyan
+    bf_rgb[edges, 0] = 0.0
+    bf_rgb[edges, 1] = 1.0
+    bf_rgb[edges, 2] = 1.0
+
+    # Get validated detection IDs for comparison
+    validated_coords = {(det.x_px, det.y_px, det.radius_px) for det in validated}
+
+    # Create figure
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+    # Left: Brightfield with edges and all candidate circles
+    axes[0].imshow(bf_rgb)
+    axes[0].set_title(
+        f"Brightfield + Canny Edges (σ={config.canny_sigma})\n"
+        f"Yellow=candidates ({len(candidates)})"
+    )
+
+    for det in candidates:
+        circle = Circle(
+            (det.x_px, det.y_px),
+            det.radius_px,
+            fill=False,
+            color="yellow",
+            linewidth=1.0,
+            alpha=0.7,
+        )
+        axes[0].add_patch(circle)
+
+    axes[0].axis("off")
+
+    # Right: Fluorescence with validated (green) vs rejected (red)
+    axes[1].imshow(fluorescence_frame, cmap="gray")
+
+    # Calculate threshold for display
+    threshold = threshold_otsu(fluorescence_frame)
+    darkness_thresh = threshold * config.interior_darkness_threshold
+
+    axes[1].set_title(
+        f"Fluorescence Validation\n"
+        f"Green=validated ({len(validated)}), Red=rejected ({len(candidates) - len(validated)})\n"
+        f"Interior darkness threshold: {darkness_thresh:.0f}"
+    )
+
+    # Draw rejected circles (candidates not in validated) in red
+    for det in candidates:
+        coord = (det.x_px, det.y_px, det.radius_px)
+        if coord not in validated_coords:
+            circle = Circle(
+                (det.x_px, det.y_px),
+                det.radius_px,
+                fill=False,
+                color="red",
+                linewidth=1.5,
+                alpha=0.7,
+            )
+            axes[1].add_patch(circle)
+
+    # Draw validated circles in green
+    for det in validated:
+        circle = Circle(
+            (det.x_px, det.y_px),
+            det.radius_px,
+            fill=False,
+            color="lime",
+            linewidth=2.0,
+        )
+        axes[1].add_patch(circle)
+
+    axes[1].axis("off")
+
+    plt.suptitle(f"{title} - Brightfield Detection")
     plt.tight_layout()
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -668,7 +994,9 @@ def process_lif_file(
     """
     Full processing pipeline for a single .lif file.
 
-    Uses dark region detection in fluorescence to find vesicles.
+    Detection method is controlled by config.detection_method:
+    - "brightfield": Hough circle detection on brightfield, validated by fluorescence
+    - "fluorescence": Dark region detection in fluorescence (original method)
 
     Parameters
     ----------
@@ -696,7 +1024,7 @@ def process_lif_file(
     image_shape = metadata["dimensions"]
     time_interval_s = metadata["time_interval_s"]
 
-    # Detect vesicles in each frame using dark region detection
+    # Detect vesicles in each frame
     all_detections: List[List[GUVDetection]] = []
     total_detected = 0
 
@@ -709,10 +1037,17 @@ def process_lif_file(
             all_detections.append([])
             continue
 
-        # Detect using dark regions in fluorescence
-        detections = detect_vesicles_dark_regions(
-            fl_frame, bf_frame, pixel_size_um, config, frame_idx
-        )
+        # Choose detection method based on config
+        if config.detection_method == "brightfield":
+            # Brightfield circle detection with fluorescence validation
+            detections = detect_vesicles_brightfield_validated(
+                fl_frame, bf_frame, pixel_size_um, config, frame_idx
+            )
+        else:
+            # Fallback: dark region detection in fluorescence
+            detections = detect_vesicles_dark_regions(
+                fl_frame, bf_frame, pixel_size_um, config, frame_idx
+            )
 
         all_detections.append(detections)
         total_detected += len(detections)
@@ -739,7 +1074,7 @@ def process_lif_file(
         "n_vesicles_tracked": len(filtered_tracks),
         "n_frames": n_frames,
         "pixel_size_um": pixel_size_um,
-        "detection_method": "dark_regions",
+        "detection_method": config.detection_method,
         **exclusion_stats,
     }
 
@@ -796,10 +1131,20 @@ def generate_debug_images_for_lif(
         if fl_frame.max() == 0:
             continue
 
-        # Detect vesicles
-        detections = detect_vesicles_dark_regions(
-            fl_frame, bf_frame, pixel_size_um, config, frame_idx
-        )
+        # Detect vesicles based on configured method
+        candidates: Optional[List[GUVDetection]] = None
+
+        if config.detection_method == "brightfield":
+            # Get candidates and validated separately for debug visualization
+            candidates = detect_circles_brightfield(
+                bf_frame, pixel_size_um, config, frame_idx
+            )
+            detections = validate_with_fluorescence(candidates, fl_frame, config)
+        else:
+            # Fluorescence-based detection
+            detections = detect_vesicles_dark_regions(
+                fl_frame, bf_frame, pixel_size_um, config, frame_idx
+            )
 
         # Generate debug image
         output_path = output_dir / f"debug_{lif_name}_frame{frame_idx:03d}.png"
@@ -809,6 +1154,8 @@ def generate_debug_images_for_lif(
             output_path,
             config,
             title=f"{lif_name} - Frame {frame_idx}",
+            brightfield_frame=bf_frame,
+            candidate_detections=candidates,
         )
 
     print(f"  Debug images saved to {output_dir}")

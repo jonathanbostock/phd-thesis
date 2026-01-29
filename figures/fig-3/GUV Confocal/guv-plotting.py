@@ -15,17 +15,23 @@ from typing import Dict, List
 
 import h5py
 import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
 import pandas as pd
-import seaborn as sns
 
 from utils import defaults
 from utils.guv_tracking import (
     TrackingConfig,
     generate_debug_images_for_lif,
+    load_lif_series,
     process_lif_file,
 )
 from utils.plotting import format_axes, save_plot, setup_plot_style
+
+# Custom colormap: black (0,0,0) to green (0,1,0) for fluorescence snapshots
+FLUORESCENCE_CMAP = LinearSegmentedColormap.from_list(
+    "black_to_green", [(0, 0, 0), (0, 1, 0)]
+)
 
 # === Configuration ===
 CONFIG = TrackingConfig(
@@ -34,6 +40,8 @@ CONFIG = TrackingConfig(
     min_diameter_um=5.0,  # Lowered from 10 to detect smaller vesicles
     max_diameter_um=50.0,
     annulus_width_px=3,
+    # Use fluorescence-based detection (dark region detection)
+    detection_method="fluorescence",
 )
 
 # Files to process within each sample folder (only "after" files)
@@ -57,6 +65,79 @@ OKABE_ITO = {
     "yellow": "#F0E442",
     "purple": "#CC79A7",
 }
+
+
+def save_snapshots_at_timepoints(
+    sample_dir: Path,
+    condition: str,
+    timepoints: List[float],
+) -> None:
+    """
+    Save fluorescence and brightfield snapshots at specified timepoints.
+
+    Parameters
+    ----------
+    sample_dir : Path
+        Path to sample folder containing .lif files
+    condition : str
+        Condition name ("after_dna" or "after_cd")
+    timepoints : List[float]
+        Frame indices (minutes) to save snapshots for (will be converted to int)
+    """
+    # Map condition to filename and label
+    condition_to_file = {
+        "after_dna": "After DNA brush addition.lif",
+        "after_cd": "After cyclodextrin addition.lif",
+    }
+    condition_to_label = {
+        "after_dna": "DNA",
+        "after_cd": "cyclodextrin",
+    }
+
+    lif_name = condition_to_file.get(condition)
+    label = condition_to_label.get(condition)
+    if not lif_name or not label:
+        return
+
+    lif_path = sample_dir / lif_name
+    if not lif_path.exists():
+        return
+
+    # Create snapshots directory
+    snapshots_dir = sample_dir / "snapshots"
+    snapshots_dir.mkdir(exist_ok=True)
+
+    # Load the LIF file
+    fluorescence, brightfield, metadata = load_lif_series(lif_path, CONFIG)
+    n_frames = metadata["n_frames"]
+
+    for t in timepoints:
+        frame_idx = int(t)
+        if frame_idx < 0 or frame_idx >= n_frames:
+            continue
+
+        fl_frame = fluorescence[frame_idx]
+        bf_frame = brightfield[frame_idx]
+
+        # Save fluorescence image (green colormap)
+        fig, ax = plt.subplots(figsize=(6, 6))
+        ax.imshow(fl_frame, cmap=FLUORESCENCE_CMAP)
+        ax.axis("off")
+        plt.tight_layout(pad=0)
+        fl_path = snapshots_dir / f"after_{label}_{int(t)}_minutes_fluorescence.png"
+        plt.savefig(fl_path, dpi=150, bbox_inches="tight", pad_inches=0)
+        plt.close(fig)
+
+        # Save brightfield image (greyscale)
+        fig, ax = plt.subplots(figsize=(6, 6))
+        ax.imshow(bf_frame, cmap="gray")
+        ax.axis("off")
+        plt.tight_layout(pad=0)
+        bf_path = snapshots_dir / f"after_{label}_{int(t)}_minutes_brightfield.png"
+        plt.savefig(bf_path, dpi=150, bbox_inches="tight", pad_inches=0)
+        plt.close(fig)
+
+    print(f"  Snapshots saved to {snapshots_dir}")
 
 
 def save_to_hdf5(
@@ -143,12 +224,19 @@ def load_from_hdf5(h5_path: Path) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def plot_membrane_fluorescence_timecourse(df: pd.DataFrame, output_dir: Path) -> None:
+def plot_membrane_fluorescence_timecourse(
+    df: pd.DataFrame, output_dir: Path
+) -> Dict[str, List[float]]:
     """
     Plot membrane fluorescence vs time for both conditions on one axis.
 
     Both conditions plotted sequentially with a breakpoint between them.
     X-axis resets for each segment. Time in minutes.
+
+    Returns
+    -------
+    tick_timepoints : Dict[str, List[float]]
+        Dictionary mapping condition to list of tick timepoints (in minutes/frames)
     """
     setup_plot_style()
 
@@ -168,12 +256,16 @@ def plot_membrane_fluorescence_timecourse(df: pd.DataFrame, output_dir: Path) ->
     tick_positions: List[float] = []
     tick_labels: List[str] = []
 
+    # Track tick timepoints per condition for snapshot saving
+    tick_timepoints: Dict[str, List[float]] = {}
+
     for idx, condition in enumerate(conditions):
         cond_data = df[df["condition"] == condition]
         color = colors[idx]
         offset = time_offset if condition == "after_cd" else 0
 
         if len(cond_data) == 0:
+            tick_timepoints[condition] = []
             continue
 
         # time_seconds is frame number = minutes (1 frame per minute)
@@ -209,6 +301,8 @@ def plot_membrane_fluorescence_timecourse(df: pd.DataFrame, output_dir: Path) ->
         # Add ticks for this segment (0, mid, max)
         segment_max = time_min.max()
         segment_ticks = [0, segment_max / 2, segment_max]
+        tick_timepoints[condition] = segment_ticks
+
         for t in segment_ticks:
             tick_positions.append(t + offset)
             tick_labels.append(f"{t:.0f}")
@@ -225,11 +319,17 @@ def plot_membrane_fluorescence_timecourse(df: pd.DataFrame, output_dir: Path) ->
     ax.set_xlabel("Time (min)")
     ax.set_ylabel("Membrane Fluorescence (a.u.)")
     ax.legend(frameon=False, loc="upper left")
+
     format_axes(ax)
+
+    # Put ticks outside (must be after format_axes which sets direction="in")
+    ax.tick_params(axis="both", direction="out")
 
     plt.tight_layout()
     save_plot(fig, str(output_dir / "membrane_fluorescence_timecourse"))
     plt.close(fig)
+
+    return tick_timepoints
 
 
 def plot_condition_comparison(df: pd.DataFrame, output_dir: Path) -> None:
@@ -276,7 +376,11 @@ def plot_condition_comparison(df: pd.DataFrame, output_dir: Path) -> None:
     ax.set_xticks(range(len(condition_order)))
     ax.set_xticklabels(condition_labels)
     ax.set_ylabel("Final Membrane Fluorescence (a.u.)")
+
     format_axes(ax)
+
+    # Put ticks outside (must be after format_axes which sets direction="in")
+    ax.tick_params(axis="both", direction="out")
 
     plt.tight_layout()
     save_plot(fig, str(output_dir / "condition_comparison"))
@@ -364,9 +468,17 @@ def process_sample_folder(sample_dir: Path) -> None:
         combined_df = load_from_hdf5(h5_path)
 
         if len(combined_df) > 0:
-            plot_membrane_fluorescence_timecourse(combined_df, sample_dir)
+            tick_timepoints = plot_membrane_fluorescence_timecourse(
+                combined_df, sample_dir
+            )
             plot_condition_comparison(combined_df, sample_dir)
             print("Plots saved.")
+
+            # Save snapshots at tick timepoints
+            print("\nSaving snapshots at tick timepoints...")
+            for condition, timepoints in tick_timepoints.items():
+                if timepoints:
+                    save_snapshots_at_timepoints(sample_dir, condition, timepoints)
         else:
             print("No data to plot.")
     else:
