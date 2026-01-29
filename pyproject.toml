@@ -21,6 +21,7 @@ dependencies = [
     "readlif>=0.6.5",
     "trackpy>=0.6.1",
     "scikit-image>=0.22.0",
+    "opencv-python>=4.13.0.90",
 ]
 
 [project.optional-dependencies]

@@ -10,9 +10,12 @@ Usage:
     uv run python guv-plotting.py
 """
 
+import math
 from pathlib import Path
 from typing import Dict, List
 
+import cv2
+from PIL import Image, ImageDraw, ImageFont
 import h5py
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
@@ -67,6 +70,102 @@ OKABE_ITO = {
 }
 
 
+def draw_scale_bar(image: np.ndarray, pixel_size_um: float) -> np.ndarray:
+    """Draw a scale bar on the image with auto-calculated length.
+
+    The scale bar length is automatically chosen to be the nearest value
+    in the form (1, 2, 5) * 10^n that is closest to 2/5 the width of the image.
+
+    Parameters
+    ----------
+    image : np.ndarray
+        Input image array (8-bit, can be grayscale or RGB/BGR)
+    pixel_size_um : float
+        Size of each pixel in micrometers
+
+    Returns
+    -------
+    np.ndarray
+        Image with scale bar drawn in bottom-right corner (8-bit BGR)
+    """
+    img_8bit = image.copy()
+
+    # Handle grayscale vs RGB
+    if img_8bit.ndim == 2:
+        img_8bit = cv2.cvtColor(img_8bit, cv2.COLOR_GRAY2BGR)
+
+    height, width = img_8bit.shape[:2]
+
+    # Calculate target scale bar length: 2/5 of image width in µm
+    target_width_px = width * 2 / 5.0
+    target_width_um = target_width_px * pixel_size_um
+
+    # Find nearest (1, 2, 5) * 10^n value
+    log_value = math.log10(target_width_um)
+    exponent = math.floor(log_value)
+    mantissa = target_width_um / (10**exponent)
+
+    # Find closest value from [1, 2, 5, 10]
+    candidates = [1, 2, 5, 10]
+    closest_mantissa = min(candidates, key=lambda x: abs(x - mantissa))
+
+    # If we picked 10, increment the exponent and use 1
+    if closest_mantissa == 10:
+        exponent += 1
+        closest_mantissa = 1
+
+    # Calculate final scale bar length in µm
+    scale_bar_um = closest_mantissa * (10**exponent)
+    scale_bar_length_px = int(scale_bar_um / pixel_size_um)
+
+    # Define padding and bar properties
+    padding = 60  # Increased to move bar inward from edge
+    bar_thickness = 16
+    text_offset = 10
+
+    # Calculate positions (bottom-right corner)
+    bar_x1 = width - scale_bar_length_px - padding
+    bar_x2 = width - padding
+    bar_y = height - padding
+
+    # Draw white scale bar
+    cv2.rectangle(
+        img_8bit,
+        (bar_x1, bar_y - bar_thickness),
+        (bar_x2, bar_y),
+        (255, 255, 255),
+        -1,
+    )
+
+    # Add text label above the bar using PIL for proper Unicode support
+    text = f"{int(scale_bar_um)} µm"
+
+    # Convert to PIL Image for text rendering
+    img_pil = Image.fromarray(cv2.cvtColor(img_8bit, cv2.COLOR_BGR2RGB))
+    draw = ImageDraw.Draw(img_pil)
+
+    # Use default font at larger size (PIL handles Unicode properly)
+    try:
+        font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 36)
+    except OSError:
+        font = ImageFont.load_default()
+
+    # Get text bounding box to center it above the bar
+    bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = bbox[2] - bbox[0]
+    text_height = bbox[3] - bbox[1]
+    text_x = bar_x1 + (scale_bar_length_px - text_width) // 2
+    text_y = bar_y - bar_thickness - text_offset - text_height
+
+    # Draw white text
+    draw.text((text_x, text_y), text, font=font, fill=(255, 255, 255))
+
+    # Convert back to OpenCV format
+    img_8bit = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
+
+    return img_8bit
+
+
 def save_snapshots_at_timepoints(
     sample_dir: Path,
     condition: str,
@@ -74,6 +173,8 @@ def save_snapshots_at_timepoints(
 ) -> None:
     """
     Save fluorescence and brightfield snapshots at specified timepoints.
+
+    Images include a scale bar burned into the bottom-right corner.
 
     Parameters
     ----------
@@ -110,6 +211,7 @@ def save_snapshots_at_timepoints(
     # Load the LIF file
     fluorescence, brightfield, metadata = load_lif_series(lif_path, CONFIG)
     n_frames = metadata["n_frames"]
+    pixel_size_um = metadata["pixel_size_um"]
 
     for t in timepoints:
         frame_idx = int(t)
@@ -119,23 +221,28 @@ def save_snapshots_at_timepoints(
         fl_frame = fluorescence[frame_idx]
         bf_frame = brightfield[frame_idx]
 
-        # Save fluorescence image (green colormap)
-        fig, ax = plt.subplots(figsize=(6, 6))
-        ax.imshow(fl_frame, cmap=FLUORESCENCE_CMAP)
-        ax.axis("off")
-        plt.tight_layout(pad=0)
-        fl_path = snapshots_dir / f"after_{label}_{int(t)}_minutes_fluorescence.png"
-        plt.savefig(fl_path, dpi=150, bbox_inches="tight", pad_inches=0)
-        plt.close(fig)
+        # Normalize frames to 0-1 range for colormap application
+        fl_norm = (fl_frame - fl_frame.min()) / (fl_frame.max() - fl_frame.min() + 1e-8)
+        bf_norm = (bf_frame - bf_frame.min()) / (bf_frame.max() - bf_frame.min() + 1e-8)
 
-        # Save brightfield image (greyscale)
-        fig, ax = plt.subplots(figsize=(6, 6))
-        ax.imshow(bf_frame, cmap="gray")
-        ax.axis("off")
-        plt.tight_layout(pad=0)
+        # Apply fluorescence colormap (black to green) and convert to 8-bit BGR
+        fl_colored = FLUORESCENCE_CMAP(fl_norm)[:, :, :3]  # Drop alpha channel
+        fl_8bit = (fl_colored * 255).astype(np.uint8)
+        fl_8bit = cv2.cvtColor(fl_8bit, cv2.COLOR_RGB2BGR)
+
+        # Apply grayscale colormap and convert to 8-bit BGR
+        bf_8bit = (bf_norm * 255).astype(np.uint8)
+        bf_8bit = cv2.cvtColor(bf_8bit, cv2.COLOR_GRAY2BGR)
+
+        # Add scale bars
+        fl_with_bar = draw_scale_bar(fl_8bit, pixel_size_um)
+        bf_with_bar = draw_scale_bar(bf_8bit, pixel_size_um)
+
+        # Save images
+        fl_path = snapshots_dir / f"after_{label}_{int(t)}_minutes_fluorescence.png"
         bf_path = snapshots_dir / f"after_{label}_{int(t)}_minutes_brightfield.png"
-        plt.savefig(bf_path, dpi=150, bbox_inches="tight", pad_inches=0)
-        plt.close(fig)
+        cv2.imwrite(str(fl_path), fl_with_bar)
+        cv2.imwrite(str(bf_path), bf_with_bar)
 
     print(f"  Snapshots saved to {snapshots_dir}")
 
