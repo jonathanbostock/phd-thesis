@@ -6,12 +6,11 @@ Following CLAUDE.md formatting guidelines
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
-from matplotlib.patches import Ellipse
 import seaborn as sns
 from scipy.optimize import curve_fit
 import scipy.stats as stats
 import pandas as pd
-from typing import Iterable, Optional, Tuple, List
+from typing import Optional, Tuple, List
 
 from utils import defaults
 
@@ -44,7 +43,7 @@ def format_axes(ax):
     ax.tick_params(
         axis="both",
         which="major",
-        direction="in",
+        direction="out",
         length=4,
         top=False,
         right=False,
@@ -54,7 +53,7 @@ def format_axes(ax):
     ax.tick_params(
         axis="both",
         which="minor",
-        direction="in",
+        direction="out",
         length=2,
         top=False,
         right=False,
@@ -497,12 +496,12 @@ def plot_linear_relationship(
     y_data = df_data[y_col].values
 
     # Perform linear regression
-    linregress_result: LinregressResult = stats.linregress(x_data, y_data)  # type: ignore
-    slope = linregress_result.slope
-    intercept = linregress_result.intercept
-    r_value = linregress_result.rvalue
-    p_value = linregress_result.pvalue
-    std_err = linregress_result.stderr
+    linregress_result = stats.linregress(x_data, y_data)
+    slope = linregress_result.slope  # type: ignore
+    intercept = linregress_result.intercept  # type: ignore
+    r_value = linregress_result.rvalue  # type: ignore
+    p_value = linregress_result.pvalue  # type: ignore
+    std_err = linregress_result.stderr  # type: ignore
 
     # Use colorblind palette for consistency
     colors = sns.color_palette("colorblind")

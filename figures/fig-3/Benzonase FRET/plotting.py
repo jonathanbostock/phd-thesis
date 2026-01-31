@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import scipy.stats as stats
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 import seaborn as sns
 from utils.plotting import setup_plot_style, format_axes, save_plot
 from utils import defaults
@@ -234,21 +235,17 @@ def plot_fluorescence_timecourse(raw_data: pd.DataFrame) -> tuple:
     condition_colors = sns.color_palette("colorblind", n_colors=3)
     control_linestyles = ["-", "--", ":"]
     control_names = ["Experimental", "Positive Control", "Negative Control"]
+    condition_names = ["No Lipid", "Sparse Brush", "Dense Brush"]
 
     # Plot each control type
     for ctrl_idx, ctrl in enumerate(CONTROLS):
         for cond_idx, c in enumerate(CONDITIONS):
-            label = None
-            if cond_idx == 0:
-                label = control_names[ctrl_idx]
-
             ax.plot(
                 raw_data["Time"],
                 raw_data[f"{c} {ctrl} Mean"],
                 color=condition_colors[cond_idx],
                 linestyle=control_linestyles[ctrl_idx],
                 linewidth=2,
-                label=label,
             )
 
             # Plot SEM as shaded area
@@ -260,9 +257,21 @@ def plot_fluorescence_timecourse(raw_data: pd.DataFrame) -> tuple:
                 alpha=0.2,
             )
 
+    # Create custom legend with grey lines for line styles and colored lines for conditions
+    grey = "dimgrey"
+    legend_handles = [
+        Line2D([0], [0], color=grey, linestyle="-", linewidth=2),
+        Line2D([0], [0], color=grey, linestyle="--", linewidth=2),
+        Line2D([0], [0], color=grey, linestyle=":", linewidth=2),
+        Line2D([0], [0], color=condition_colors[0], linestyle="-", linewidth=2),
+        Line2D([0], [0], color=condition_colors[1], linestyle="-", linewidth=2),
+        Line2D([0], [0], color=condition_colors[2], linestyle="-", linewidth=2),
+    ]
+    legend_labels = control_names + condition_names
+
     ax.set_xlabel("Time / min")
     ax.set_ylabel("Fluorescence / a.u.")
-    ax.legend(frameon=False)
+    ax.legend(legend_handles, legend_labels, frameon=False)
     format_axes(ax)
 
     return fig, ax
@@ -312,14 +321,25 @@ def plot_rate_fits(raw_data: pd.DataFrame, fits: dict, fit_points: int = 25) -> 
             alpha=0.3,
         )
 
-        # Plot fit line
+        # Plot fit line (dashed)
         x_fit = np.array(range(fit_points))
         y_fit = fits[c].slope * x_fit + fits[c].intercept
-        ax.plot(x_fit, y_fit, color=colors[i], linewidth=2, label=names[i])
+        ax.plot(x_fit, y_fit, color=colors[i], linewidth=2, linestyle="--")
+
+    # Create custom legend with grey lines for data/fit and colored lines for conditions
+    grey = "dimgrey"
+    legend_handles = [
+        Line2D([0], [0], color=grey, linestyle="-", linewidth=1.5, alpha=0.7),
+        Line2D([0], [0], color=grey, linestyle="--", linewidth=2),
+        Line2D([0], [0], color=colors[0], linestyle="-", linewidth=2),
+        Line2D([0], [0], color=colors[1], linestyle="-", linewidth=2),
+        Line2D([0], [0], color=colors[2], linestyle="-", linewidth=2),
+    ]
+    legend_labels = ["Data", "Fit"] + names
 
     ax.set_xlabel("Time / min")
     ax.set_ylabel("ln(1 - Digestion)")
-    ax.legend(frameon=False)
+    ax.legend(legend_handles, legend_labels, frameon=False)
     format_axes(ax)
 
     return fig, ax
