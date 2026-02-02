@@ -561,7 +561,7 @@ def plot_linear_relationship(
 
     # Add regression statistics to plot
     r_squared = r_value**2
-    p_text = f"p < 0.001" if p_value < 0.001 else f"p = {p_value:.3f}"
+    p_text = "p < 0.001" if p_value < 0.001 else f"p = {p_value:.3f}"
     stats_text = f"R² = {r_squared:.3f}\n{p_text}"
     ax.text(
         0.05,
