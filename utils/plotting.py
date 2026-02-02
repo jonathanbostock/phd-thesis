@@ -65,9 +65,11 @@ def format_axes(ax):
     ax.tick_params(axis="x", which="both", labelbottom=True)
     ax.tick_params(axis="y", which="both", labelleft=True)
 
-    # Center-align x-axis tick labels vertically (midline aligns with tick)
+    # Align x-axis tick labels so top of text meets the tick
+    # (va="top" works correctly for both normal and 90-degree rotated labels)
     for label in ax.get_xticklabels():
-        label.set_va("center")
+        label.set_va("top")
+        label.set_ha("center")
 
 
 def plot_error_ellipse(
