@@ -65,6 +65,10 @@ def format_axes(ax):
     ax.tick_params(axis="x", which="both", labelbottom=True)
     ax.tick_params(axis="y", which="both", labelleft=True)
 
+    # Center-align x-axis tick labels vertically (midline aligns with tick)
+    for label in ax.get_xticklabels():
+        label.set_va("center")
+
 
 def plot_error_ellipse(
     mean, cov_matrix, color, ax=None, x_exponent_base=None, **kwargs
@@ -606,7 +610,7 @@ def plot_calcein_release(
 
     # Create figure with two subplots
     fig1, ax1 = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
-    fig2, ax2 = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
+    fig2, ax2 = plt.subplots(figsize=(defaults.fig_width * 1.5, defaults.fig_height))
 
     colors = sns.color_palette("colorblind", n_colors=group_size)
 
@@ -704,7 +708,7 @@ def plot_calcein_release(
     ax2.set_xlabel("Time (min)")
     ax2.set_ylabel("Calcein Release (%)")
     ax2.set_title("Release Over Time")
-    ax2.legend(bbox_to_anchor=(1.05, 1), loc="upper left")
+    ax2.legend(bbox_to_anchor=(1.05, 1), loc="upper left", frameon=False)
     format_axes(ax2)
 
     plt.tight_layout()

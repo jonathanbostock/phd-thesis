@@ -1,0 +1,540 @@
+Sample B1,,Sample B2,,Sample B3,,Sample B4,,Sample B5,,Sample B6,,Sample B7,,
+Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),
+0.0008333333535,12.7848587,0.02185416594,63.05239487,0.04318749905,16.42805672,0.06402083486,72.52256012,0.0845208317,25.05096436,0.1050624996,18.54764748,0.1267291754,17.88508987,
+1.000833273,12.71824741,1.021229148,72.31833649,1.041604161,18.22631645,1.063395858,87.18732452,1.083729148,28.7750988,1.104395747,18.7431488,1.125895858,18.18024445,
+2.000833273,12.89031506,2.021229267,81.25804138,2.042062521,20.85720253,2.063250065,97.97062683,2.08397913,32.12615585,2.104604244,18.55347443,2.125083208,17.94326973,
+3.000833273,12.82004356,3.021062374,87.50954437,3.041729212,22.24577522,3.062395811,107.9787292,3.08375001,35.08835983,3.104166746,18.64398384,3.124937534,18.24785805,
+4.000833511,12.36063671,4.021166801,93.30355835,4.042104244,23.49959373,4.063083172,112.0370483,4.084249973,38.20541382,4.104895592,18.81857109,4.125562668,18.17146492,
+5.000833035,12.79087257,5.021583557,96.07575989,5.041916847,24.6320591,5.062895775,117.2908096,5.084416866,39.57623672,5.105082989,18.83358192,5.125729561,19.04344559,
+6.000833035,12.58625221,6.021229267,101.263504,6.042500019,25.85846138,6.06275034,121.1471329,6.084249973,40.99658585,6.104917049,19.67723274,6.125416756,18.54949379,
+7.000833035,12.50793457,7.021103859,104.1066055,7.04172945,27.44586754,7.063250065,125.4810104,7.084395885,43.82841873,7.104729176,19.15475464,7.125395775,17.96031952,
+8.000833511,12.12963295,8.020895958,107.5731354,8.041833878,28.4328022,8.062937737,130.6540375,8.084416389,44.76700592,8.104895592,18.41248322,8.125562668,18.19212723,
+9.000833511,13.28099918,9.02193737,110.306427,9.042895317,28.98713112,9.063562393,132.5245667,9.084916115,47.36330032,9.105250359,19.28926468,9.125916481,18.16744804,
+10.00083351,12.77790642,10.02081299,92.87960815,10.04147911,30.23503876,10.06281185,136.628891,10.08341694,47.8735466,10.10491657,19.04206467,10.12524986,18.46399498,
+11.00083351,12.65039635,11.02081299,94.50978851,11.04206276,30.56666183,11.06314564,138.0606232,11.08433342,48.38986588,11.10514641,19.09828568,11.12574959,18.13213539,
+12.00083351,12.58399582,12.02093697,97.11135864,12.04176998,32.52403641,12.06247997,140.1208038,12.08293724,50.43265533,12.10443687,18.89125824,12.12560463,18.17594528,
+13.00083351,12.49320984,13.02156258,99.42227936,13.04272842,32.43406296,13.06322956,143.1653442,13.08377075,51.53057098,13.10550022,19.25492287,13.12650013,17.80847549,
+14.00083351,12.04484272,14.02208328,101.1788177,14.04272842,32.81898117,14.06424999,144.6616211,14.08458328,53.29362488,14.10541725,18.88786697,14.12660408,18.45382118,
+15.00083351,12.8049469,15.0210619,100.011055,15.04208374,34.45512772,15.06277084,145.4054108,15.08310413,54.00054169,15.10458374,18.32232666,15.12524986,18.52902031,
+16.00083351,12.68943882,16.02091599,102.5740814,16.04174995,34.97744751,16.06208229,147.4414673,16.08343697,54.39540482,16.10464668,18.73853493,16.12566566,18.12666321,
+17.00083351,12.85081291,17.0217495,104.2690887,17.04306221,35.68053818,17.06374931,130.5862274,17.08489609,56.34573746,17.10522842,19.03291512,17.12608147,17.63147926,
+18.00083351,12.45178223,18.02075005,104.9961166,18.04199982,35.01341629,18.06322861,133.2851868,18.08381271,55.76816559,18.10458374,18.27296638,18.12558365,17.91814041,
+19.00083351,12.63074589,19.0217514,104.9903793,19.04258347,37.32294083,19.06374931,134.1216583,19.0842514,59.21452332,19.1052494,18.74716377,19.1257515,17.97070313,
+20.00083351,12.19967175,20.02210426,105.6488113,20.0427494,37.1218605,20.06391525,134.8564301,20.08441544,56.99928665,20.10489464,19.11339569,20.12606239,18.17460823,
+21.00083351,12.9341135,21.02114677,106.0949173,21.0422287,38.34738922,21.06322861,135.8366089,21.08439445,58.97896957,21.10558319,18.37355042,21.12608147,17.93237305,
+22.00083351,12.39496326,22.02041626,110.5364532,22.04158401,38.57239151,22.06258392,138.1047211,22.08341599,58.77097321,22.10449982,19.10700417,22.12524986,17.41505623,
+23.00083351,12.60842133,23.02041626,109.4558716,23.04174995,38.07920074,23.06243706,137.1954956,23.08358383,59.9673996,23.10408401,19.25619888,23.12514687,18.18503952,
+24.00083351,12.88737011,24.02191544,110.7872772,24.04241753,38.99330139,24.06358147,138.3624573,24.08439445,60.04293823,24.10489464,19.05504799,24.12608147,17.73348808,
+25.00083351,12.84231663,25.02093697,111.074852,25.04243851,39.18681717,25.06308365,139.7706299,25.08391762,60.17015076,25.10408401,18.60692406,25.12527084,17.93018723,
+26.00083351,12.38650799,26.02039528,110.0692825,26.04141617,40.27457047,26.0617485,136.1618805,26.08293724,62.80283737,26.10443687,19.55766296,26.12556076,17.40781021,
+27.00083351,12.91519833,27.02072906,111.8556671,27.04122925,41.01013947,27.06222916,138.2110748,27.08325005,63.13816452,27.10427094,19.32434273,27.12460327,17.81333542,
+28.00083351,12.42420864,28.02077103,113.4924698,28.0418129,40.76934052,28.06241608,135.9992218,28.08347893,62.63611603,28.10408401,18.61182594,28.12524986,17.75745201,
+29.00083351,11.93989658,29.0212307,112.727356,29.04239464,41.31906509,29.06258392,136.4790497,29.08374977,64.43375397,29.10508347,19.96442413,29.1257515,18.17974281,
+30.00083351,12.37276173,30.02091599,113.2632904,30.04210472,41.26127243,30.06333351,136.9180145,30.0837307,63.97310638,30.1044178,18.9201889,30.12591743,17.57676315,
+31.00083351,12.08345413,31.02191544,114.6144943,31.04256248,42.19023895,31.06389618,138.5383606,31.08458328,65.91126251,31.10489464,19.13681221,31.12589455,18.08382034,
+32.00083542,12.39422607,32.02208328,114.8987274,32.04258347,42.10684967,32.06356049,140.6523743,32.0842514,65.85399628,32.1047287,19.18417549,32.12539673,17.94781876,
+33.00083542,12.71690845,33.02031326,114.8425522,33.04172897,43.80713272,33.06233215,138.1347198,33.08339691,67.75311279,33.10422897,19.34071922,33.12591934,17.85915947,
+34.00083542,12.51397228,34.02141571,117.1009064,34.04258347,43.77336502,34.0629158,140.7079315,34.08456039,66.37769318,34.10475159,18.66453743,34.12558365,17.9083004,
+35.00083542,12.19170094,35.02164841,117.0244522,35.04172897,43.46369171,35.06316757,142.00914,35.08431244,67.74440002,35.10498047,19.3437233,35.12566757,18.03726768,
+36.00083542,12.26612282,36.02191544,116.0128479,36.04308319,44.19161224,36.06358337,142.793396,36.08422852,67.22879028,36.10558319,18.86037445,36.12608337,17.55467796,
+37.00083542,12.21860981,37.02231598,116.2216034,37.04293442,44.31299591,37.06356049,142.1678162,37.08522797,68.03726959,37.10539627,18.97468376,37.1268959,17.70575333,
+38.00083542,12.38447762,38.02006531,118.8351746,38.04156113,44.52948761,38.06239319,142.3832397,38.08372879,67.46511078,38.10422897,18.83082008,38.12508011,17.76549911,
+39.00083542,12.29623508,39.02214813,116.2231827,39.04264832,43.7660408,39.06360245,139.5465393,39.0850029,68.16816711,39.10539627,18.80877686,39.12672806,17.79168701,
+40.00083542,12.38136101,40.02048111,117.3157196,40.04174805,45.40255356,40.06274796,143.8734283,40.08306122,69.42043304,40.10406113,19.33565903,40.12524796,17.99596024,
+41.00083542,12.70788193,41.02072906,119.4393463,41.04131317,46.27685165,41.06233215,143.4655151,41.08356094,69.29611206,41.10406113,18.76394844,41.125,17.97118378,
+42.00083542,12.30837536,42.0208931,119.9485397,42.04125214,46.08473587,42.06222916,142.9048462,42.08356094,69.46929932,42.10424805,19.03676033,42.12483215,17.90752792,
+43.00083542,12.81273746,43.02098083,120.3791351,43.04233551,46.67066193,43.06239319,142.2600555,43.08360672,70.67554474,43.10499954,19.20482063,43.12566757,17.88636398,
+44.00083542,12.18451977,44.02091599,120.5210876,44.04125214,45.52596283,44.06258011,141.9715271,44.08325195,71.05097198,44.10406113,19.27599907,44.12508011,18.07920837,
+45.00083542,12.44108868,45.02058411,119.822113,45.04139328,47.23219299,45.06277084,144.6352692,45.08293915,71.21325684,45.10383224,19.35417557,45.1245842,17.36002731,
+46.00083542,12.45807934,46.0202713,119.699791,46.0418129,46.59872055,46.06210709,144.1444855,46.08292007,70.55580902,46.10398102,19.3831501,46.12489319,18.01733589,
+47.00083542,11.76220131,47.02098083,121.2106094,47.04233551,47.0965004,47.06266785,144.720108,47.08389664,72.33542633,47.10474777,19.14082909,47.12508011,17.41278076,
+48.00083542,12.14174461,48.0208931,119.5715485,48.04224777,47.97482681,48.06274796,145.7501831,48.08381271,72.8469162,48.10400009,18.70129204,48.12522888,17.53663254,
+49.00083542,12.32706642,49.02239609,119.3841324,49.04333496,47.08375931,49.06331253,145.5698547,49.08422852,72.86841583,49.10616684,19.27243996,49.12706375,17.91963959,
+50.00083542,12.39627934,50.02264404,122.3329163,50.04316711,47.45209503,50.06377029,146.9994202,50.08514404,72.71215057,50.10541534,19.44608879,50.12591553,17.69091034,
+51.00083542,11.74488258,51.02158356,120.7460175,51.04210663,47.54202271,51.06306076,145.6523743,51.08341599,73.66327667,51.10406113,19.53263474,51.12524796,17.54164314,
+52.00083542,12.28087616,52.02058411,120.5182571,52.04207993,47.74632263,52.06274796,145.5024719,52.08374786,74.43758392,52.10474777,19.08739281,52.12510681,18.02270889,
+53.00083542,12.17648506,53.02156067,122.4966049,53.04272842,48.48723602,53.06358337,145.1344299,53.08406067,75.78096771,53.10508347,18.97066879,53.12622833,17.29958344,
+54.00083542,12.13156509,54.02141571,124.4336472,54.04239655,49.09154892,54.06322861,146.6228638,54.08424759,73.74588013,54.10443878,19.23952675,54.1259346,17.38305283,
+55.00083542,11.90776825,55.02075195,123.5041885,55.04139328,47.75138474,55.06256104,145.6057129,55.0833931,75.09711456,55.10416794,19.06139565,55.12477112,17.0337677,
+56.00083542,12.32001495,56.02116776,123.4064941,56.04233551,49.61440277,56.06293869,145.5377808,56.08389664,73.76805115,56.1047287,18.74020004,56.12539291,17.18125916,
+57.00083542,12.14228058,57.02108002,124.7177582,57.0416069,50.00126266,57.0625,146.7671967,57.08377457,75.22050476,57.10493469,19.11246872,57.12531281,17.25726128,
+58.00083542,12.04064465,58.02183533,126.4061203,58.04322815,50.19329071,58.06372833,145.6985168,58.08439636,75.64868164,58.10572815,18.84189987,58.12639618,17.25498199,
+59.00083542,12.16359615,59.02127457,126.5988922,59.04174805,49.62583923,59.06306076,146.0292816,59.08372879,74.69651794,59.10474777,18.71337509,59.12491989,17.64308739,
+60.00083542,12.10118294,60.02206039,125.3402863,60.04283524,49.89946365,60.06331253,147.4018402,60.08456039,76.10197449,60.10506058,18.38814163,60.12639618,17.17471504,
+
+Sample B1,
+Sample B1
+Collection Time: 14-Nov-25 2:45:42 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Fri 14 Nov 02:45:42 PM 2025
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    60.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\Users\admin\Desktop\Ces\Adnan\conditioned media\06-11-25 lysed.FBKN
+Date/Time stamp: 07-Nov-25 10:51:12 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 04-Nov-25 4:27:33 PM, Old:600, New:675
+Well plate reader Changed: 04-Nov-25 4:27:33 PM, Old:OFF, New:ON
+Autoconvert Changed: 04-Nov-25 4:27:33 PM, Old:None, New:Ascii with Log
+Excitation Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 0.0000, New: 2.0000
+Stop Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 1.0000, New:1000.0000
+Emission PMT (V): Changed: 04-Nov-25 4:27:33 PM, Old: 600, New: 675
+Wellplate Samples Changed: 04-Nov-25 4:27:33 PM, Old:, New:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;
+Wellplate Samples Changed: 04-Nov-25 5:02:46 PM, Old:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;, New:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;
+PMT Volts Changed: 04-Nov-25 5:03:45 PM, Old:675, New:800
+Emission PMT (V): Changed: 04-Nov-25 5:03:45 PM, Old: 675, New: 800
+PMT Volts Changed: 06-Nov-25 4:42:58 PM, Old:800, New:700
+Emission PMT (V): Changed: 06-Nov-25 4:42:58 PM, Old: 800, New: 700
+PMT Volts Changed: 07-Nov-25 10:24:20 AM, Old:700, New:650
+Emission PMT (V): Changed: 07-Nov-25 10:24:20 AM, Old: 700, New: 650
+PMT Volts Changed: 14-Nov-25 2:37:06 PM, Old:650, New:700
+Excitation Wavelength Changed: 14-Nov-25 2:37:06 PM, Old: 494.00, New: 495.00
+Cycle Time 1 Changed: 14-Nov-25 2:37:06 PM, Old: 2.0000, New: 0.5000
+Stop Time 1 Changed: 14-Nov-25 2:37:06 PM, Old:1000.0000, New: 1.0000
+Emission PMT (V): Changed: 14-Nov-25 2:37:06 PM, Old: 650, New: 700
+Wellplate Samples Changed: 14-Nov-25 2:37:06 PM, Old:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;, New:B1;B2;B3;B4;B5;B6;B7;
+Autoconvert Changed: 14-Nov-25 2:39:01 PM, Old:Ascii with Log, New:None
+PMT Volts Changed: 14-Nov-25 2:40:48 PM, Old:700, New:600
+Emission PMT (V): Changed: 14-Nov-25 2:40:48 PM, Old: 700, New: 600
+Cycle Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 0.5000, New: 1.0000
+Stop Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 1.0000, New:60.0000
+End Method Modifications
+
+Sample B2,
+Sample B2
+Collection Time: 14-Nov-25 2:45:42 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Fri 14 Nov 02:45:42 PM 2025
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    60.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\Users\admin\Desktop\Ces\Adnan\conditioned media\06-11-25 lysed.FBKN
+Date/Time stamp: 07-Nov-25 10:51:12 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 04-Nov-25 4:27:33 PM, Old:600, New:675
+Well plate reader Changed: 04-Nov-25 4:27:33 PM, Old:OFF, New:ON
+Autoconvert Changed: 04-Nov-25 4:27:33 PM, Old:None, New:Ascii with Log
+Excitation Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 0.0000, New: 2.0000
+Stop Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 1.0000, New:1000.0000
+Emission PMT (V): Changed: 04-Nov-25 4:27:33 PM, Old: 600, New: 675
+Wellplate Samples Changed: 04-Nov-25 4:27:33 PM, Old:, New:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;
+Wellplate Samples Changed: 04-Nov-25 5:02:46 PM, Old:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;, New:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;
+PMT Volts Changed: 04-Nov-25 5:03:45 PM, Old:675, New:800
+Emission PMT (V): Changed: 04-Nov-25 5:03:45 PM, Old: 675, New: 800
+PMT Volts Changed: 06-Nov-25 4:42:58 PM, Old:800, New:700
+Emission PMT (V): Changed: 06-Nov-25 4:42:58 PM, Old: 800, New: 700
+PMT Volts Changed: 07-Nov-25 10:24:20 AM, Old:700, New:650
+Emission PMT (V): Changed: 07-Nov-25 10:24:20 AM, Old: 700, New: 650
+PMT Volts Changed: 14-Nov-25 2:37:06 PM, Old:650, New:700
+Excitation Wavelength Changed: 14-Nov-25 2:37:06 PM, Old: 494.00, New: 495.00
+Cycle Time 1 Changed: 14-Nov-25 2:37:06 PM, Old: 2.0000, New: 0.5000
+Stop Time 1 Changed: 14-Nov-25 2:37:06 PM, Old:1000.0000, New: 1.0000
+Emission PMT (V): Changed: 14-Nov-25 2:37:06 PM, Old: 650, New: 700
+Wellplate Samples Changed: 14-Nov-25 2:37:06 PM, Old:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;, New:B1;B2;B3;B4;B5;B6;B7;
+Autoconvert Changed: 14-Nov-25 2:39:01 PM, Old:Ascii with Log, New:None
+PMT Volts Changed: 14-Nov-25 2:40:48 PM, Old:700, New:600
+Emission PMT (V): Changed: 14-Nov-25 2:40:48 PM, Old: 700, New: 600
+Cycle Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 0.5000, New: 1.0000
+Stop Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 1.0000, New:60.0000
+End Method Modifications
+
+Sample B3,
+Sample B3
+Collection Time: 14-Nov-25 2:45:42 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Fri 14 Nov 02:45:42 PM 2025
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    60.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\Users\admin\Desktop\Ces\Adnan\conditioned media\06-11-25 lysed.FBKN
+Date/Time stamp: 07-Nov-25 10:51:12 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 04-Nov-25 4:27:33 PM, Old:600, New:675
+Well plate reader Changed: 04-Nov-25 4:27:33 PM, Old:OFF, New:ON
+Autoconvert Changed: 04-Nov-25 4:27:33 PM, Old:None, New:Ascii with Log
+Excitation Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 0.0000, New: 2.0000
+Stop Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 1.0000, New:1000.0000
+Emission PMT (V): Changed: 04-Nov-25 4:27:33 PM, Old: 600, New: 675
+Wellplate Samples Changed: 04-Nov-25 4:27:33 PM, Old:, New:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;
+Wellplate Samples Changed: 04-Nov-25 5:02:46 PM, Old:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;, New:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;
+PMT Volts Changed: 04-Nov-25 5:03:45 PM, Old:675, New:800
+Emission PMT (V): Changed: 04-Nov-25 5:03:45 PM, Old: 675, New: 800
+PMT Volts Changed: 06-Nov-25 4:42:58 PM, Old:800, New:700
+Emission PMT (V): Changed: 06-Nov-25 4:42:58 PM, Old: 800, New: 700
+PMT Volts Changed: 07-Nov-25 10:24:20 AM, Old:700, New:650
+Emission PMT (V): Changed: 07-Nov-25 10:24:20 AM, Old: 700, New: 650
+PMT Volts Changed: 14-Nov-25 2:37:06 PM, Old:650, New:700
+Excitation Wavelength Changed: 14-Nov-25 2:37:06 PM, Old: 494.00, New: 495.00
+Cycle Time 1 Changed: 14-Nov-25 2:37:06 PM, Old: 2.0000, New: 0.5000
+Stop Time 1 Changed: 14-Nov-25 2:37:06 PM, Old:1000.0000, New: 1.0000
+Emission PMT (V): Changed: 14-Nov-25 2:37:06 PM, Old: 650, New: 700
+Wellplate Samples Changed: 14-Nov-25 2:37:06 PM, Old:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;, New:B1;B2;B3;B4;B5;B6;B7;
+Autoconvert Changed: 14-Nov-25 2:39:01 PM, Old:Ascii with Log, New:None
+PMT Volts Changed: 14-Nov-25 2:40:48 PM, Old:700, New:600
+Emission PMT (V): Changed: 14-Nov-25 2:40:48 PM, Old: 700, New: 600
+Cycle Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 0.5000, New: 1.0000
+Stop Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 1.0000, New:60.0000
+End Method Modifications
+
+Sample B4,
+Sample B4
+Collection Time: 14-Nov-25 2:45:42 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Fri 14 Nov 02:45:42 PM 2025
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    60.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\Users\admin\Desktop\Ces\Adnan\conditioned media\06-11-25 lysed.FBKN
+Date/Time stamp: 07-Nov-25 10:51:12 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 04-Nov-25 4:27:33 PM, Old:600, New:675
+Well plate reader Changed: 04-Nov-25 4:27:33 PM, Old:OFF, New:ON
+Autoconvert Changed: 04-Nov-25 4:27:33 PM, Old:None, New:Ascii with Log
+Excitation Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 0.0000, New: 2.0000
+Stop Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 1.0000, New:1000.0000
+Emission PMT (V): Changed: 04-Nov-25 4:27:33 PM, Old: 600, New: 675
+Wellplate Samples Changed: 04-Nov-25 4:27:33 PM, Old:, New:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;
+Wellplate Samples Changed: 04-Nov-25 5:02:46 PM, Old:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;, New:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;
+PMT Volts Changed: 04-Nov-25 5:03:45 PM, Old:675, New:800
+Emission PMT (V): Changed: 04-Nov-25 5:03:45 PM, Old: 675, New: 800
+PMT Volts Changed: 06-Nov-25 4:42:58 PM, Old:800, New:700
+Emission PMT (V): Changed: 06-Nov-25 4:42:58 PM, Old: 800, New: 700
+PMT Volts Changed: 07-Nov-25 10:24:20 AM, Old:700, New:650
+Emission PMT (V): Changed: 07-Nov-25 10:24:20 AM, Old: 700, New: 650
+PMT Volts Changed: 14-Nov-25 2:37:06 PM, Old:650, New:700
+Excitation Wavelength Changed: 14-Nov-25 2:37:06 PM, Old: 494.00, New: 495.00
+Cycle Time 1 Changed: 14-Nov-25 2:37:06 PM, Old: 2.0000, New: 0.5000
+Stop Time 1 Changed: 14-Nov-25 2:37:06 PM, Old:1000.0000, New: 1.0000
+Emission PMT (V): Changed: 14-Nov-25 2:37:06 PM, Old: 650, New: 700
+Wellplate Samples Changed: 14-Nov-25 2:37:06 PM, Old:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;, New:B1;B2;B3;B4;B5;B6;B7;
+Autoconvert Changed: 14-Nov-25 2:39:01 PM, Old:Ascii with Log, New:None
+PMT Volts Changed: 14-Nov-25 2:40:48 PM, Old:700, New:600
+Emission PMT (V): Changed: 14-Nov-25 2:40:48 PM, Old: 700, New: 600
+Cycle Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 0.5000, New: 1.0000
+Stop Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 1.0000, New:60.0000
+End Method Modifications
+
+Sample B5,
+Sample B5
+Collection Time: 14-Nov-25 2:45:42 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Fri 14 Nov 02:45:42 PM 2025
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    60.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\Users\admin\Desktop\Ces\Adnan\conditioned media\06-11-25 lysed.FBKN
+Date/Time stamp: 07-Nov-25 10:51:12 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 04-Nov-25 4:27:33 PM, Old:600, New:675
+Well plate reader Changed: 04-Nov-25 4:27:33 PM, Old:OFF, New:ON
+Autoconvert Changed: 04-Nov-25 4:27:33 PM, Old:None, New:Ascii with Log
+Excitation Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 0.0000, New: 2.0000
+Stop Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 1.0000, New:1000.0000
+Emission PMT (V): Changed: 04-Nov-25 4:27:33 PM, Old: 600, New: 675
+Wellplate Samples Changed: 04-Nov-25 4:27:33 PM, Old:, New:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;
+Wellplate Samples Changed: 04-Nov-25 5:02:46 PM, Old:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;, New:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;
+PMT Volts Changed: 04-Nov-25 5:03:45 PM, Old:675, New:800
+Emission PMT (V): Changed: 04-Nov-25 5:03:45 PM, Old: 675, New: 800
+PMT Volts Changed: 06-Nov-25 4:42:58 PM, Old:800, New:700
+Emission PMT (V): Changed: 06-Nov-25 4:42:58 PM, Old: 800, New: 700
+PMT Volts Changed: 07-Nov-25 10:24:20 AM, Old:700, New:650
+Emission PMT (V): Changed: 07-Nov-25 10:24:20 AM, Old: 700, New: 650
+PMT Volts Changed: 14-Nov-25 2:37:06 PM, Old:650, New:700
+Excitation Wavelength Changed: 14-Nov-25 2:37:06 PM, Old: 494.00, New: 495.00
+Cycle Time 1 Changed: 14-Nov-25 2:37:06 PM, Old: 2.0000, New: 0.5000
+Stop Time 1 Changed: 14-Nov-25 2:37:06 PM, Old:1000.0000, New: 1.0000
+Emission PMT (V): Changed: 14-Nov-25 2:37:06 PM, Old: 650, New: 700
+Wellplate Samples Changed: 14-Nov-25 2:37:06 PM, Old:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;, New:B1;B2;B3;B4;B5;B6;B7;
+Autoconvert Changed: 14-Nov-25 2:39:01 PM, Old:Ascii with Log, New:None
+PMT Volts Changed: 14-Nov-25 2:40:48 PM, Old:700, New:600
+Emission PMT (V): Changed: 14-Nov-25 2:40:48 PM, Old: 700, New: 600
+Cycle Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 0.5000, New: 1.0000
+Stop Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 1.0000, New:60.0000
+End Method Modifications
+
+Sample B6,
+Sample B6
+Collection Time: 14-Nov-25 2:45:42 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Fri 14 Nov 02:45:42 PM 2025
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    60.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\Users\admin\Desktop\Ces\Adnan\conditioned media\06-11-25 lysed.FBKN
+Date/Time stamp: 07-Nov-25 10:51:12 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 04-Nov-25 4:27:33 PM, Old:600, New:675
+Well plate reader Changed: 04-Nov-25 4:27:33 PM, Old:OFF, New:ON
+Autoconvert Changed: 04-Nov-25 4:27:33 PM, Old:None, New:Ascii with Log
+Excitation Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 0.0000, New: 2.0000
+Stop Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 1.0000, New:1000.0000
+Emission PMT (V): Changed: 04-Nov-25 4:27:33 PM, Old: 600, New: 675
+Wellplate Samples Changed: 04-Nov-25 4:27:33 PM, Old:, New:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;
+Wellplate Samples Changed: 04-Nov-25 5:02:46 PM, Old:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;, New:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;
+PMT Volts Changed: 04-Nov-25 5:03:45 PM, Old:675, New:800
+Emission PMT (V): Changed: 04-Nov-25 5:03:45 PM, Old: 675, New: 800
+PMT Volts Changed: 06-Nov-25 4:42:58 PM, Old:800, New:700
+Emission PMT (V): Changed: 06-Nov-25 4:42:58 PM, Old: 800, New: 700
+PMT Volts Changed: 07-Nov-25 10:24:20 AM, Old:700, New:650
+Emission PMT (V): Changed: 07-Nov-25 10:24:20 AM, Old: 700, New: 650
+PMT Volts Changed: 14-Nov-25 2:37:06 PM, Old:650, New:700
+Excitation Wavelength Changed: 14-Nov-25 2:37:06 PM, Old: 494.00, New: 495.00
+Cycle Time 1 Changed: 14-Nov-25 2:37:06 PM, Old: 2.0000, New: 0.5000
+Stop Time 1 Changed: 14-Nov-25 2:37:06 PM, Old:1000.0000, New: 1.0000
+Emission PMT (V): Changed: 14-Nov-25 2:37:06 PM, Old: 650, New: 700
+Wellplate Samples Changed: 14-Nov-25 2:37:06 PM, Old:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;, New:B1;B2;B3;B4;B5;B6;B7;
+Autoconvert Changed: 14-Nov-25 2:39:01 PM, Old:Ascii with Log, New:None
+PMT Volts Changed: 14-Nov-25 2:40:48 PM, Old:700, New:600
+Emission PMT (V): Changed: 14-Nov-25 2:40:48 PM, Old: 700, New: 600
+Cycle Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 0.5000, New: 1.0000
+Stop Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 1.0000, New:60.0000
+End Method Modifications
+
+Sample B7,
+Sample B7
+Collection Time: 14-Nov-25 2:45:42 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Fri 14 Nov 02:45:42 PM 2025
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    60.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\Users\admin\Desktop\Ces\Adnan\conditioned media\06-11-25 lysed.FBKN
+Date/Time stamp: 07-Nov-25 10:51:12 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 04-Nov-25 4:26:50 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 04-Nov-25 4:27:33 PM, Old:600, New:675
+Well plate reader Changed: 04-Nov-25 4:27:33 PM, Old:OFF, New:ON
+Autoconvert Changed: 04-Nov-25 4:27:33 PM, Old:None, New:Ascii with Log
+Excitation Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 04-Nov-25 4:27:33 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 0.0000, New: 2.0000
+Stop Time 1 Changed: 04-Nov-25 4:27:33 PM, Old: 1.0000, New:1000.0000
+Emission PMT (V): Changed: 04-Nov-25 4:27:33 PM, Old: 600, New: 675
+Wellplate Samples Changed: 04-Nov-25 4:27:33 PM, Old:, New:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;
+Wellplate Samples Changed: 04-Nov-25 5:02:46 PM, Old:A7;A8;A9;A10;A11;A12;B7;B8;B9;B10;B11;B12;, New:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;
+PMT Volts Changed: 04-Nov-25 5:03:45 PM, Old:675, New:800
+Emission PMT (V): Changed: 04-Nov-25 5:03:45 PM, Old: 675, New: 800
+PMT Volts Changed: 06-Nov-25 4:42:58 PM, Old:800, New:700
+Emission PMT (V): Changed: 06-Nov-25 4:42:58 PM, Old: 800, New: 700
+PMT Volts Changed: 07-Nov-25 10:24:20 AM, Old:700, New:650
+Emission PMT (V): Changed: 07-Nov-25 10:24:20 AM, Old: 700, New: 650
+PMT Volts Changed: 14-Nov-25 2:37:06 PM, Old:650, New:700
+Excitation Wavelength Changed: 14-Nov-25 2:37:06 PM, Old: 494.00, New: 495.00
+Cycle Time 1 Changed: 14-Nov-25 2:37:06 PM, Old: 2.0000, New: 0.5000
+Stop Time 1 Changed: 14-Nov-25 2:37:06 PM, Old:1000.0000, New: 1.0000
+Emission PMT (V): Changed: 14-Nov-25 2:37:06 PM, Old: 650, New: 700
+Wellplate Samples Changed: 14-Nov-25 2:37:06 PM, Old:A8;A9;A10;A11;A12;B8;B9;B10;B11;B12;C8;C9;C10;C11;C12;D8;D9;D10;D11;D12;, New:B1;B2;B3;B4;B5;B6;B7;
+Autoconvert Changed: 14-Nov-25 2:39:01 PM, Old:Ascii with Log, New:None
+PMT Volts Changed: 14-Nov-25 2:40:48 PM, Old:700, New:600
+Emission PMT (V): Changed: 14-Nov-25 2:40:48 PM, Old: 700, New: 600
+Cycle Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 0.5000, New: 1.0000
+Stop Time 1 Changed: 14-Nov-25 2:45:15 PM, Old: 1.0000, New:60.0000
+End Method Modifications
+
