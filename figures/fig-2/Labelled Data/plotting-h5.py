@@ -13,13 +13,10 @@ from statsmodels.nonparametric.smoothers_lowess import lowess
 from tqdm import tqdm
 from typing import Any, cast
 from joblib import Parallel, delayed
+from utils.plotting import setup_plot_style, format_axes
 
 # Set up plotting style
-sns.set_palette("colorblind")
-plt.rcParams["axes.spines.top"] = False
-plt.rcParams["axes.spines.right"] = False
-plt.rcParams["axes.facecolor"] = "white"
-plt.rcParams["axes.grid"] = False
+setup_plot_style()
 
 # Define dataset names (used for finding H5 files)
 DATASET_NAMES = [
@@ -754,9 +751,7 @@ def plot_combined_spectrum_and_amplitude(
     ax1.set_ylabel("")
     ax1.set_xlim(spacing_range[0], spacing_range[1])
     ax1.set_title("Average Power Spectrum", fontsize=14)
-    ax1.spines["top"].set_visible(False)
-    ax1.spines["right"].set_visible(False)
-    ax1.grid(False)
+    format_axes(ax1)
     ax1.tick_params(axis="y", which="both", left=False, labelleft=False)
 
     # RIGHT SUBPLOT: Amplitude at peak spacing
@@ -800,10 +795,8 @@ def plot_combined_spectrum_and_amplitude(
     ax2.set_xlim(math.floor(x_coords.min()), math.ceil(x_coords.max()))
     ax2.set_title("Amplitude At Peak Spacing", fontsize=14)
     ax2.legend(frameon=False, fontsize=10, loc="upper right")
-    ax2.spines["top"].set_visible(False)
+    format_axes(ax2)
     ax2.spines["left"].set_visible(False)
-    ax2.spines["right"].set_visible(False)
-    ax2.grid(False)
     ax2.tick_params(
         axis="y",
         which="both",
@@ -892,14 +885,10 @@ def plot_combined_power_spectra(
         ax.set_ylim(ylim)
         ax.set_title(dataset_name, fontsize=14)
 
-        # Remove Y-axis labels and ticks (units are arbitrary)
+        # Apply standard formatting, then remove Y-axis ticks (units are arbitrary)
         ax.set_ylabel("")
+        format_axes(ax)
         ax.tick_params(axis="y", which="both", left=False, labelleft=False)
-
-        # Apply standard formatting
-        ax.spines["top"].set_visible(False)
-        ax.spines["right"].set_visible(False)
-        ax.grid(False)
 
     # Add shared colorbar
     # Reserve space for colorbar on the right before creating it
