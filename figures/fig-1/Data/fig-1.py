@@ -97,7 +97,7 @@ def main() -> None:
 
     ax1.set_xscale("log")
     ax1.set_xlabel("Lipid:DNA Ratio")
-    ax1.set_ylabel(r"$\Delta D$")
+    ax1.set_ylabel(r"$\Delta D$ / nm")
     ax1.set_title(r"Static Brush $\Delta D$ vs Lipid:DNA Ratio")
     format_axes(ax1)
 
@@ -148,8 +148,8 @@ def main() -> None:
             label=f"Slope = {slope:.3f}",
         )
 
-        ax2.set_xlabel("Brush Length (bp)")
-        ax2.set_ylabel(r"$\Delta D_{max}$")
+        ax2.set_xlabel("Brush Length / bp")
+        ax2.set_ylabel(r"$\Delta D_{max}$ / nm")
         ax2.set_title(r"Fitted $\Delta D_{max}$ vs Brush Length")
         ax2.legend(frameon=False)
         ax2.set_xlim(0, max(bl_fit) * 1.1)
@@ -220,9 +220,10 @@ def main() -> None:
     xlim = ax3.get_xlim()
     ax3.set_xlim(xlim[1], xlim[0])  # Reverse x-axis
     ax3.set_xlabel("Lipid:DNA Ratio")
-    ax3.set_ylabel(r"$\Delta D$")
+    ax3.set_ylabel(r"$\Delta D$ / nm")
     ax3.set_title(r"Shape Effect on Brush $\Delta D$")
     format_axes(ax3)
+    ax3.set_ylim(ax1.get_ylim()[0], None)
 
     # Legend for bottom row — placed off to the right
     ax3.legend(
@@ -234,7 +235,7 @@ def main() -> None:
 
     ax4.set_xlabel("$c_{1/2}$")
     ax4.set_xscale("log")
-    ax4.set_ylabel(r"$\Delta D_{max} / nm$")
+    ax4.set_ylabel(r"$\Delta D_{max}$ / nm")
     ax4.set_title(r"Shape Effect on $\Delta D_{max}$ and $c_{1/2}$")
     format_axes(ax4)
 

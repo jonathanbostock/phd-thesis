@@ -26,6 +26,13 @@ DATASET_NAMES = [
     "star-dense",
 ]
 
+DATASET_PLOT_TITLES = {
+    "38bp-dense": "38 bp Dense",
+    "68bp-sparse": "68 bp Sparse",
+    "68bp-dense": "68 bp Dense",
+    "star-dense": "Star Dense",
+}
+
 
 def compute_power_spectrum(row_data, curve_length_px, pixel_scale_nm):
     """
@@ -153,7 +160,7 @@ def process_h5_file(
     Returns
     -------
     radial_distances : ndarray
-        Array of radial distances from membrane (nm)
+        Array of radial distances from membrane / nm
     lowess_curves : list of tuples
         List of (spacing_fit, power_fit) for each radial distance
     raw_data_list : list of tuples
@@ -265,7 +272,7 @@ def process_h5_file_with_particles(
     Returns
     -------
     radial_distances : ndarray
-        Array of radial distances from membrane (nm)
+        Array of radial distances from membrane / nm
     lowess_curves : list of tuples
         List of (spacing_fit, power_fit) for each radial distance
     per_particle_data : list of lists of tuples
@@ -747,8 +754,8 @@ def plot_combined_spectrum_and_amplitude(
         )
 
     # Format left subplot
-    ax1.set_xlabel("Spacing (nm)", fontsize=12)
-    ax1.set_ylabel("")
+    ax1.set_xlabel("Spacing / nm", fontsize=12)
+    ax1.set_ylabel("Fourier transform amplitude", fontsize=12)
     ax1.set_xlim(spacing_range[0], spacing_range[1])
     ax1.set_title("Average Power Spectrum", fontsize=14)
     format_axes(ax1)
@@ -785,18 +792,17 @@ def plot_combined_spectrum_and_amplitude(
             mean_values,
             color=colors[i],
             linewidth=1.5,
-            label=f"{dataset_name} ({peak_spacing:.1f} nm)",
+            label=f"{DATASET_PLOT_TITLES.get(dataset_name, dataset_name)} ({peak_spacing:.1f} nm)",
             alpha=0.8,
         )
 
     # Format right subplot
-    ax2.set_xlabel("Radial distance from membrane (nm)", fontsize=12)
-    ax2.set_ylabel("")
+    ax2.set_xlabel("Radial distance from membrane / nm", fontsize=12)
+    ax2.set_ylabel("Fourier transform amplitude", fontsize=12)
     ax2.set_xlim(math.floor(x_coords.min()), math.ceil(x_coords.max()))
     ax2.set_title("Amplitude At Peak Spacing", fontsize=14)
     ax2.legend(frameon=False, fontsize=10, loc="upper right")
     format_axes(ax2)
-    ax2.spines["left"].set_visible(False)
     ax2.tick_params(
         axis="y",
         which="both",
@@ -880,13 +886,13 @@ def plot_combined_power_spectra(
             ax.plot(spacing_fit, power_fit, color=color, linewidth=1.5, alpha=0.8)
 
         # Format axis
-        ax.set_xlabel("Spacing (nm)", fontsize=12)
+        ax.set_xlabel("Spacing / nm", fontsize=12)
         ax.set_xlim(0.5, 10)
         ax.set_ylim(ylim)
-        ax.set_title(dataset_name, fontsize=14)
+        ax.set_title(DATASET_PLOT_TITLES.get(dataset_name, dataset_name), fontsize=14)
 
         # Apply standard formatting, then remove Y-axis ticks (units are arbitrary)
-        ax.set_ylabel("")
+        ax.set_ylabel("Fourier transform amplitude", fontsize=12)
         format_axes(ax)
         ax.tick_params(axis="y", which="both", left=False, labelleft=False)
 
@@ -900,7 +906,6 @@ def plot_combined_power_spectra(
             norm=Normalize(vmin=radial_distances[0], vmax=radial_distances[-1]),
         )
         sm.set_array([])
-        cbar = fig.colorbar(sm, ax=axes, label="Distance from membrane (nm)")
 
     plt.savefig(output_path, format="svg", dpi=300, bbox_inches="tight")
     plt.close(fig)
