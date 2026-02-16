@@ -12,7 +12,7 @@ Usage:
 
 import math
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import cv2
 from PIL import Image, ImageDraw, ImageFont
@@ -52,6 +52,16 @@ FILES_TO_PROCESS: Dict[str, str] = {
     "After DNA brush addition.lif": "after_dna",
     "After cyclodextrin addition.lif": "after_cd",
 }
+
+
+def find_lif_file(directory: Path, canonical_name: str) -> Optional[Path]:
+    """Find a .lif file by name, case-insensitive."""
+    canonical_lower = canonical_name.lower()
+    for f in directory.iterdir():
+        if f.name.lower() == canonical_lower:
+            return f
+    return None
+
 
 CONDITION_LABELS = {
     "after_dna": "After DNA Brush",
@@ -200,8 +210,8 @@ def save_snapshots_at_timepoints(
     if not lif_name or not label:
         return
 
-    lif_path = sample_dir / lif_name
-    if not lif_path.exists():
+    lif_path = find_lif_file(sample_dir, lif_name)
+    if lif_path is None:
         return
 
     # Create snapshots directory
@@ -529,8 +539,8 @@ def process_sample_folder(sample_dir: Path) -> None:
 
     # Process each .lif file in the folder
     for lif_name, condition in FILES_TO_PROCESS.items():
-        lif_path = sample_dir / lif_name
-        if not lif_path.exists():
+        lif_path = find_lif_file(sample_dir, lif_name)
+        if lif_path is None:
             print(f"Warning: {lif_name} not found, skipping")
             continue
 

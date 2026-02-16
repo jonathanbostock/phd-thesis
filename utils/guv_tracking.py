@@ -22,6 +22,7 @@ from readlif.reader import LifFile
 from skimage import measure
 from skimage.draw import disk
 from skimage.feature import canny
+from skimage.exposure import equalize_adapthist
 from skimage.filters import threshold_otsu
 from skimage.morphology import remove_small_holes, remove_small_objects
 from skimage.transform import hough_circle, hough_circle_peaks
@@ -41,10 +42,17 @@ class TrackingConfig:
     search_range_factor: float = 0.5  # Fraction of diameter for linking
     max_jump_factor: float = 0.5  # Max jump as fraction of diameter
     min_track_fraction: float = 0.25  # Require presence in at least 25% of frames
+    min_track_length: int = (
+        10  # Absolute cap on minimum detections (prevents over-filtering long videos)
+    )
     link_memory: int = 5  # Allow gaps of up to 5 frames in tracking
 
     # Detection method: "brightfield" (Hough circles) or "fluorescence" (dark regions)
     detection_method: str = "brightfield"
+
+    # CLAHE preprocessing for fluorescence segmentation
+    use_clahe: bool = True  # Apply CLAHE before Otsu thresholding
+    clahe_clip_limit: float = 0.03  # CLAHE clip limit (higher = more contrast)
 
     # Brightfield circle detection (Hough transform) parameters
     canny_sigma: float = 2.0  # Gaussian smoothing for edge detection
@@ -269,9 +277,25 @@ def detect_vesicles_dark_regions(
     min_area = np.pi * min_radius_px**2
     max_area = np.pi * max_radius_px**2
 
-    # Find dark regions in fluorescence
-    threshold = threshold_otsu(fluorescence_frame)
-    dark_mask = fluorescence_frame < threshold * config.dark_threshold_factor
+    # Optionally apply CLAHE for better segmentation in dim images
+    if config.use_clahe:
+        fl_for_segmentation = equalize_adapthist(
+            fluorescence_frame,
+            clip_limit=config.clahe_clip_limit,
+        )
+    else:
+        fl_min = float(fluorescence_frame.min())
+        fl_max = float(fluorescence_frame.max())
+        if fl_max > fl_min:
+            fl_for_segmentation = (fluorescence_frame - fl_min).astype(np.float64) / (
+                fl_max - fl_min
+            )
+        else:
+            return []
+
+    # Find dark regions using the preprocessed image
+    threshold = threshold_otsu(fl_for_segmentation)
+    dark_mask = fl_for_segmentation < threshold * config.dark_threshold_factor
 
     # Clean up the mask
     dark_mask = remove_small_objects(dark_mask, max_size=int(min_area * 0.5))
@@ -561,20 +585,25 @@ def _generate_debug_image_fluorescence(
     title: str,
 ) -> None:
     """Generate debug image for fluorescence-based detection (original method)."""
-    # Calculate Otsu threshold
-    threshold = threshold_otsu(fluorescence_frame)
-    effective_threshold = threshold * config.dark_threshold_factor
-
-    # Normalize image to 0-1
-    img_min = fluorescence_frame.min()
-    img_max = fluorescence_frame.max()
-    if img_max > img_min:
-        img_norm = (fluorescence_frame - img_min) / (img_max - img_min)
+    # Mirror the preprocessing from detect_vesicles_dark_regions
+    if config.use_clahe:
+        img_norm = equalize_adapthist(
+            fluorescence_frame,
+            clip_limit=config.clahe_clip_limit,
+        )
     else:
-        img_norm = np.zeros_like(fluorescence_frame, dtype=float)
+        img_min = float(fluorescence_frame.min())
+        img_max = float(fluorescence_frame.max())
+        if img_max > img_min:
+            img_norm = (fluorescence_frame - img_min).astype(np.float64) / (
+                img_max - img_min
+            )
+        else:
+            img_norm = np.zeros_like(fluorescence_frame, dtype=np.float64)
 
-    # Normalize threshold to same scale
-    thresh_norm = (effective_threshold - img_min) / (img_max - img_min)
+    threshold = threshold_otsu(img_norm)
+    effective_threshold = threshold * config.dark_threshold_factor
+    thresh_norm = effective_threshold
 
     # Create HSV image where hue indicates position relative to threshold
     height, width = fluorescence_frame.shape
@@ -611,9 +640,10 @@ def _generate_debug_image_fluorescence(
 
     # Right: Hue-based threshold overlay
     axes[1].imshow(rgb)
+    clahe_label = " CLAHE" if config.use_clahe else ""
     axes[1].set_title(
-        f"Otsu Threshold Overlay\n"
-        f"(Otsu={threshold:.0f}, ×{config.dark_threshold_factor}={effective_threshold:.0f})\n"
+        f"Otsu{clahe_label} Threshold Overlay\n"
+        f"(Otsu={threshold:.3f}, ×{config.dark_threshold_factor}={effective_threshold:.3f})\n"
         f"Cyan=below threshold, Magenta=above"
     )
 
@@ -863,7 +893,11 @@ def filter_tracks(
     avg_diameter_um = (config.min_diameter_um + config.max_diameter_um) / 2
     avg_diameter_px = avg_diameter_um / pixel_size_um
     max_jump_px = config.max_jump_factor * avg_diameter_px
-    min_detections = int(n_frames * config.min_track_fraction)
+    min_from_fraction = int(n_frames * config.min_track_fraction)
+    if config.min_track_length > 0:
+        min_detections = min(min_from_fraction, config.min_track_length)
+    else:
+        min_detections = min_from_fraction
 
     exclusion_stats = {
         "excluded_incomplete": 0,
