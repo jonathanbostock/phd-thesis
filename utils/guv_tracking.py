@@ -58,10 +58,27 @@ class TrackingConfig:
     canny_sigma: float = 2.0  # Gaussian smoothing for edge detection
     hough_min_distance: int = 20  # Min distance between circle centers (pixels)
     hough_threshold: float = 0.3  # Accumulator threshold (fraction of max)
-    hough_num_peaks: int = 100  # Max circles to detect per frame
+    hough_num_peaks: int = 500  # Max circles to detect per frame
 
     # Fluorescence validation (used with brightfield detection)
-    interior_darkness_threshold: float = 0.8  # Interior must be < threshold * Otsu
+    interior_darkness_threshold: float = 0.7  # Interior must be < threshold * Otsu
+    interior_darkness_percentile: float = 90.0  # Most interior pixels must be dark
+    fluorescence_membrane_inner_offset_px: int = 2
+    fluorescence_membrane_outer_offset_px: int = 2
+    fluorescence_outer_ring_inner_offset_px: int = 3
+    fluorescence_outer_ring_outer_offset_px: int = 8
+    require_membrane_contrast_check: bool = False
+    fluorescence_membrane_contrast_min: float = 4.0
+    fluorescence_outer_bright_delta: float = 2.0
+    fluorescence_outer_sectors: int = 8
+    fluorescence_min_bright_sector_fraction: float = 0.5
+
+    # Overlap suppression for duplicate/overlapping circles
+    candidate_overlap_iou_threshold: float = 0.75
+    validated_overlap_iou_threshold: float = 0.75
+    overlap_center_distance_fraction: float = 0.4
+    overlap_radius_ratio_min: float = 0.6
+    overlap_radius_ratio_max: float = 1.8
 
 
 @dataclass
@@ -82,6 +99,116 @@ class GUVTrack:
 
     track_id: int
     detections: List[GUVDetection] = field(default_factory=list)
+
+
+def _circle_intersection_area(
+    x1: float,
+    y1: float,
+    r1: float,
+    x2: float,
+    y2: float,
+    r2: float,
+) -> float:
+    """Compute intersection area between two circles."""
+    dx = x2 - x1
+    dy = y2 - y1
+    d = float(np.sqrt(dx**2 + dy**2))
+
+    # No overlap
+    if d >= r1 + r2:
+        return 0.0
+
+    # One circle fully inside the other
+    if d <= abs(r1 - r2):
+        return float(np.pi * min(r1, r2) ** 2)
+
+    # Partial overlap
+    r1_sq = r1**2
+    r2_sq = r2**2
+    alpha = np.arccos((d**2 + r1_sq - r2_sq) / (2 * d * r1))
+    beta = np.arccos((d**2 + r2_sq - r1_sq) / (2 * d * r2))
+    area = (
+        r1_sq * alpha
+        + r2_sq * beta
+        - 0.5 * np.sqrt((-d + r1 + r2) * (d + r1 - r2) * (d - r1 + r2) * (d + r1 + r2))
+    )
+    return float(area)
+
+
+def _circle_iou(d1: GUVDetection, d2: GUVDetection) -> float:
+    """Compute IoU between two circular detections."""
+    intersection = _circle_intersection_area(
+        d1.x_px, d1.y_px, d1.radius_px, d2.x_px, d2.y_px, d2.radius_px
+    )
+    area1 = float(np.pi * d1.radius_px**2)
+    area2 = float(np.pi * d2.radius_px**2)
+    union = area1 + area2 - intersection
+    if union <= 0:
+        return 0.0
+    return intersection / union
+
+
+def _is_overlap_duplicate(
+    d1: GUVDetection,
+    d2: GUVDetection,
+    config: TrackingConfig,
+    iou_threshold: float,
+) -> bool:
+    """Return True if two detections look like the same GUV pick."""
+    iou = _circle_iou(d1, d2)
+    if iou >= iou_threshold:
+        return True
+
+    dx = d1.x_px - d2.x_px
+    dy = d1.y_px - d2.y_px
+    center_dist = float(np.sqrt(dx**2 + dy**2))
+    min_radius = min(d1.radius_px, d2.radius_px)
+    center_close = center_dist <= config.overlap_center_distance_fraction * min_radius
+
+    if min(d1.radius_px, d2.radius_px) <= 0:
+        return center_close
+
+    radius_ratio = max(d1.radius_px, d2.radius_px) / min(d1.radius_px, d2.radius_px)
+    similar_radius = (
+        config.overlap_radius_ratio_min
+        <= radius_ratio
+        <= config.overlap_radius_ratio_max
+    )
+
+    return center_close and similar_radius
+
+
+def _suppress_overlapping_detections(
+    detections: List[GUVDetection],
+    scores: List[float],
+    config: TrackingConfig,
+    iou_threshold: float,
+) -> List[GUVDetection]:
+    """Greedy suppression of heavily overlapping detections, keeping best-scoring ones."""
+    if len(detections) <= 1:
+        return detections
+
+    order = sorted(range(len(detections)), key=lambda i: scores[i], reverse=True)
+    kept: List[GUVDetection] = []
+
+    for idx in order:
+        candidate = detections[idx]
+        should_keep = True
+        for existing in kept:
+            iou = _circle_iou(candidate, existing)
+            if iou >= iou_threshold:
+                should_keep = False
+                break
+
+            # Also suppress near-concentric duplicates with similar radii
+            if _is_overlap_duplicate(candidate, existing, config, iou_threshold):
+                should_keep = False
+                break
+
+        if should_keep:
+            kept.append(candidate)
+
+    return kept
 
 
 def load_lif_series(
@@ -400,7 +527,8 @@ def detect_circles_brightfield(
 
     # Convert to GUVDetection objects
     detections = []
-    for x, y, radius in zip(cx, cy, radii):
+    scores: List[float] = []
+    for score, x, y, radius in zip(accums, cx, cy, radii):
         det = GUVDetection(
             x_px=float(x),
             y_px=float(y),
@@ -408,6 +536,15 @@ def detect_circles_brightfield(
             frame=frame_idx,
         )
         detections.append(det)
+        scores.append(float(score))
+
+    # Suppress near-duplicate or heavily overlapping circles
+    detections = _suppress_overlapping_detections(
+        detections,
+        scores,
+        config,
+        iou_threshold=config.candidate_overlap_iou_threshold,
+    )
 
     return detections
 
@@ -463,13 +600,84 @@ def validate_with_fluorescence(
         if not np.any(interior_mask):
             continue
 
-        # Calculate mean fluorescence inside
-        interior_mean = np.mean(fluorescence_frame[interior_mask])
+        # Calculate interior fluorescence statistics
+        interior_values = fluorescence_frame[interior_mask]
+        interior_mean = float(np.mean(interior_values))
+        interior_dark_stat = float(
+            np.percentile(interior_values, config.interior_darkness_percentile)
+        )
 
-        # Accept if interior is sufficiently dark
-        if interior_mean < darkness_threshold:
-            det.interior_mean = float(interior_mean)
-            validated.append(det)
+        # Must have a mostly dark interior, not just a dark mean
+        if interior_dark_stat >= darkness_threshold:
+            continue
+
+        if config.require_membrane_contrast_check:
+            # Optional: enforce membrane brightness above interior
+            membrane_inner = max(
+                1.0, det.radius_px - config.fluorescence_membrane_inner_offset_px
+            )
+            membrane_outer = (
+                det.radius_px + config.fluorescence_membrane_outer_offset_px
+            )
+            membrane_mask = _create_annulus_mask(
+                (det.x_px, det.y_px), membrane_inner, membrane_outer, image_shape
+            )
+            if not np.any(membrane_mask):
+                continue
+
+            membrane_values = fluorescence_frame[membrane_mask]
+            membrane_p70 = float(np.percentile(membrane_values, 70))
+            if (
+                membrane_p70
+                < float(interior_mean) + config.fluorescence_membrane_contrast_min
+            ):
+                continue
+
+        # Check that most of the outside ring is brighter than interior
+        outer_inner = det.radius_px + config.fluorescence_outer_ring_inner_offset_px
+        outer_outer = det.radius_px + config.fluorescence_outer_ring_outer_offset_px
+        outer_mask = _create_annulus_mask(
+            (det.x_px, det.y_px), outer_inner, outer_outer, image_shape
+        )
+        if not np.any(outer_mask):
+            continue
+
+        yy, xx = np.where(outer_mask)
+        if len(xx) == 0:
+            continue
+
+        dx = xx - det.x_px
+        dy = yy - det.y_px
+        angles = (np.arctan2(dy, dx) + 2 * np.pi) % (2 * np.pi)
+        outer_values = fluorescence_frame[yy, xx]
+
+        n_sectors = max(1, config.fluorescence_outer_sectors)
+        bright_threshold = float(interior_mean) + config.fluorescence_outer_bright_delta
+        bright_sectors = 0
+        valid_sectors = 0
+
+        for sector_idx in range(n_sectors):
+            start_angle = 2 * np.pi * sector_idx / n_sectors
+            end_angle = 2 * np.pi * (sector_idx + 1) / n_sectors
+            sector_mask = (angles >= start_angle) & (angles < end_angle)
+            if not np.any(sector_mask):
+                continue
+
+            valid_sectors += 1
+            sector_mean = float(np.mean(outer_values[sector_mask]))
+            if sector_mean >= bright_threshold:
+                bright_sectors += 1
+
+        if valid_sectors == 0:
+            continue
+
+        bright_fraction = bright_sectors / valid_sectors
+        if bright_fraction < config.fluorescence_min_bright_sector_fraction:
+            continue
+
+        det.interior_mean = float(interior_mean)
+        det.exterior_mean = float(np.mean(outer_values))
+        validated.append(det)
 
     return validated
 
@@ -514,10 +722,23 @@ def detect_vesicles_brightfield_validated(
         brightfield_frame, pixel_size_um, config, frame_idx
     )
 
-    # Step 2: Validate with fluorescence (dark interior check)
+    # Step 2: Validate with fluorescence (dark inside + bright outside sectors)
     validated = validate_with_fluorescence(candidates, fluorescence_frame, config)
 
-    return validated
+    # Step 3: Suppress overlapping validated circles
+    if len(validated) <= 1:
+        return validated
+
+    validation_scores = [
+        (det.exterior_mean - det.interior_mean) + det.radius_px * 0.05
+        for det in validated
+    ]
+    return _suppress_overlapping_detections(
+        validated,
+        validation_scores,
+        config,
+        iou_threshold=config.validated_overlap_iou_threshold,
+    )
 
 
 def generate_debug_image(
@@ -693,9 +914,6 @@ def _generate_debug_image_brightfield(
     bf_rgb[edges, 1] = 1.0
     bf_rgb[edges, 2] = 1.0
 
-    # Get validated detection IDs for comparison
-    validated_coords = {(det.x_px, det.y_px, det.radius_px) for det in validated}
-
     # Create figure
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
@@ -719,7 +937,7 @@ def _generate_debug_image_brightfield(
 
     axes[0].axis("off")
 
-    # Right: Fluorescence with validated (green) vs rejected (red)
+    # Right: Fluorescence with validated detections only
     axes[1].imshow(fluorescence_frame, cmap="gray")
 
     # Calculate threshold for display
@@ -728,23 +946,9 @@ def _generate_debug_image_brightfield(
 
     axes[1].set_title(
         f"Fluorescence Validation\n"
-        f"Green=validated ({len(validated)}), Red=rejected ({len(candidates) - len(validated)})\n"
+        f"Green=validated ({len(validated)})\n"
         f"Interior darkness threshold: {darkness_thresh:.0f}"
     )
-
-    # Draw rejected circles (candidates not in validated) in red
-    for det in candidates:
-        coord = (det.x_px, det.y_px, det.radius_px)
-        if coord not in validated_coords:
-            circle = Circle(
-                (det.x_px, det.y_px),
-                det.radius_px,
-                fill=False,
-                color="red",
-                linewidth=1.5,
-                alpha=0.7,
-            )
-            axes[1].add_patch(circle)
 
     # Draw validated circles in green
     for det in validated:

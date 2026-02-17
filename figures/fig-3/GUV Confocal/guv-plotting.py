@@ -43,8 +43,11 @@ CONFIG = TrackingConfig(
     min_diameter_um=5.0,  # Lowered from 10 to detect smaller vesicles
     max_diameter_um=50.0,
     annulus_width_px=3,
-    # Use fluorescence-based detection (dark region detection)
-    detection_method="fluorescence",
+    # Use brightfield circle detection with fluorescence interior validation
+    detection_method="brightfield",
+    hough_num_peaks=500,
+    interior_darkness_threshold=0.7,
+    interior_darkness_percentile=90.0,
 )
 
 # Files to process within each sample folder (only "after" files)
