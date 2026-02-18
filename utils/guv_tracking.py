@@ -23,7 +23,7 @@ from skimage import measure
 from skimage.draw import disk
 from skimage.feature import canny
 from skimage.exposure import equalize_adapthist
-from skimage.filters import threshold_otsu
+from skimage.filters import gaussian, threshold_otsu
 from skimage.morphology import remove_small_holes, remove_small_objects
 from skimage.transform import hough_circle, hough_circle_peaks
 
@@ -37,7 +37,9 @@ class TrackingConfig:
     min_diameter_um: float = 5.0  # Lowered from 10 to detect smaller vesicles
     max_diameter_um: float = 50.0
     annulus_width_px: int = 3
-    dark_threshold_factor: float = 0.7  # Threshold multiplier for dark region detection
+    dark_threshold_factor: float = (
+        1.0  # Threshold multiplier for dark region detection (1.0 = use Otsu directly)
+    )
     max_eccentricity: float = 0.7  # Max eccentricity for valid vesicles (0=circle)
     search_range_factor: float = 0.5  # Fraction of diameter for linking
     max_jump_factor: float = 0.5  # Max jump as fraction of diameter
@@ -47,22 +49,36 @@ class TrackingConfig:
     )
     link_memory: int = 5  # Allow gaps of up to 5 frames in tracking
 
-    # Detection method: "brightfield" (Hough circles) or "fluorescence" (dark regions)
-    detection_method: str = "brightfield"
-
-    # CLAHE preprocessing for fluorescence segmentation
-    use_clahe: bool = True  # Apply CLAHE before Otsu thresholding
-    clahe_clip_limit: float = 0.03  # CLAHE clip limit (higher = more contrast)
+    # Detection method: "consensus" (default), "brightfield", or "fluorescence"
+    detection_method: str = "consensus"
 
     # Brightfield circle detection (Hough transform) parameters
     canny_sigma: float = 2.0  # Gaussian smoothing for edge detection
     hough_min_distance: int = 20  # Min distance between circle centers (pixels)
     hough_threshold: float = 0.3  # Accumulator threshold (fraction of max)
     hough_num_peaks: int = 500  # Max circles to detect per frame
+    hough_radius_step: int = 2  # Step size for radius search (pixels)
 
-    # Fluorescence validation (used with brightfield detection)
-    interior_darkness_threshold: float = 0.7  # Interior must be < threshold * Otsu
-    interior_darkness_percentile: float = 90.0  # Most interior pixels must be dark
+    # Fluorescence dark-disc detection (Prong 1 of consensus)
+    fluorescence_blur_sigma: float = 5.0  # Gaussian blur sigma for preprocessing
+
+    # Brightfield edge validation of dark discs
+    bf_edge_min_fraction: float = (
+        0.15  # Min fraction of perimeter pixels that are edges
+    )
+    bf_edge_annulus_width_px: int = (
+        3  # Half-width of annulus around disc perimeter to check
+    )
+    bf_edge_canny_sigma: float = (
+        2.0  # Canny sigma for edge detection in brightfield validation
+    )
+    bf_darkness_check: bool = True  # Also require disc interior dark in brightfield
+
+    # Legacy parameters (used by "brightfield" and "fluorescence" detection methods)
+    use_clahe: bool = True
+    clahe_clip_limit: float = 0.03
+    interior_darkness_threshold: float = 0.7
+    interior_darkness_percentile: float = 90.0
     fluorescence_membrane_inner_offset_px: int = 2
     fluorescence_membrane_outer_offset_px: int = 2
     fluorescence_outer_ring_inner_offset_px: int = 3
@@ -365,6 +381,241 @@ def _sample_interior_exterior(
     return float(interior_mean), float(exterior_mean)
 
 
+def detect_dark_discs(
+    fluorescence_frame: np.ndarray,
+    pixel_size_um: float,
+    config: TrackingConfig,
+    frame_idx: int = 0,
+) -> List[GUVDetection]:
+    """
+    Detect dark discs in fluorescence using Gaussian blur + Otsu thresholding.
+
+    Prong 1 of the two-prong consensus approach. GUV interiors exclude
+    fluorescent dye, appearing as dark filled discs.
+
+    Parameters
+    ----------
+    fluorescence_frame : np.ndarray
+        Single fluorescence image.
+    pixel_size_um : float
+        Pixel size in micrometers.
+    config : TrackingConfig
+        Uses fluorescence_blur_sigma, dark_threshold_factor,
+        min/max_diameter_um, max_eccentricity.
+    frame_idx : int
+        Frame index for the returned detections.
+
+    Returns
+    -------
+    detections : List[GUVDetection]
+        One detection per dark disc, with centroid and equivalent-circle radius.
+    """
+    min_radius_px = (config.min_diameter_um / 2) / pixel_size_um
+    max_radius_px = (config.max_diameter_um / 2) / pixel_size_um
+    min_area = np.pi * min_radius_px**2
+    max_area = np.pi * max_radius_px**2
+
+    # Normalize to 0-1 float
+    fl_min = float(fluorescence_frame.min())
+    fl_max = float(fluorescence_frame.max())
+    if fl_max <= fl_min:
+        return []
+    fl_norm = (fluorescence_frame - fl_min).astype(np.float64) / (fl_max - fl_min)
+
+    # Gaussian blur to smooth out noise and merge nearby dark pixels
+    blurred = gaussian(fl_norm, sigma=config.fluorescence_blur_sigma)
+
+    # Threshold: dark regions are below dark_threshold_factor * Otsu
+    threshold = threshold_otsu(blurred)
+    dark_mask = blurred < threshold * config.dark_threshold_factor
+
+    # Clean up the mask
+    dark_mask = remove_small_objects(dark_mask, max_size=int(min_area * 0.5))
+    dark_mask = remove_small_holes(dark_mask, max_size=int(min_area * 0.3))
+
+    # Label connected components
+    labels = measure.label(dark_mask)
+    regions = measure.regionprops(labels)
+
+    detections = []
+    for region in regions:
+        if not (min_area < region.area < max_area):
+            continue
+        if region.eccentricity > config.max_eccentricity:
+            continue
+
+        y, x = region.centroid
+        radius = np.sqrt(region.area / np.pi)
+
+        detections.append(
+            GUVDetection(
+                x_px=float(x),
+                y_px=float(y),
+                radius_px=float(radius),
+                frame=frame_idx,
+            )
+        )
+
+    return detections
+
+
+def validate_discs_with_brightfield(
+    dark_discs: List[GUVDetection],
+    brightfield_frame: np.ndarray,
+    config: TrackingConfig,
+) -> Tuple[List[GUVDetection], List[float]]:
+    """
+    Validate dark disc detections and refine radius using brightfield edges.
+
+    For each dark disc, searches for the membrane in brightfield by looking
+    at the radial edge-density profile. GUV membranes appear as a doughnut
+    in brightfield: two concentric edge rings with a dark band between them.
+    The radius is refined to the peak edge density, which marks the membrane.
+
+    Parameters
+    ----------
+    dark_discs : List[GUVDetection]
+        Dark discs from fluorescence (Prong 1).
+    brightfield_frame : np.ndarray
+        Brightfield image.
+    config : TrackingConfig
+        Uses bf_edge_min_fraction, bf_edge_annulus_width_px,
+        bf_edge_canny_sigma, bf_darkness_check.
+
+    Returns
+    -------
+    validated : List[GUVDetection]
+        Dark discs that pass brightfield edge validation, with refined radii.
+    edge_scores : List[float]
+        Peak edge fraction for each validated detection (for debug).
+    """
+    if not dark_discs:
+        return [], []
+
+    # Normalize brightfield
+    bf_min = float(brightfield_frame.min())
+    bf_max = float(brightfield_frame.max())
+    if bf_max <= bf_min:
+        return [], []
+    bf_norm = (brightfield_frame - bf_min).astype(np.float64) / (bf_max - bf_min)
+
+    # Compute edges once for the whole frame
+    edges = canny(bf_norm, sigma=config.bf_edge_canny_sigma)
+
+    height, width = brightfield_frame.shape
+
+    # Pre-compute distance arrays for each pixel
+    ycoords, xcoords = np.mgrid[:height, :width]
+
+    validated = []
+    edge_scores = []
+
+    for disc in dark_discs:
+        x, y, r = disc.x_px, disc.y_px, disc.radius_px
+
+        # Compute distance of each pixel from disc center
+        dist = np.sqrt((xcoords - x) ** 2 + (ycoords - y) ** 2)
+
+        # Search for membrane edge peak in a range around the disc radius.
+        # The dark mask underestimates slightly, so search from inside to
+        # moderately outside the disc boundary.
+        search_inner = max(1.0, r * 0.8)
+        search_outer = r * 1.5
+        hw = config.bf_edge_annulus_width_px
+
+        # Sample radial edge density at a series of radii
+        test_radii = np.arange(search_inner, search_outer + 1, 1.0)
+        if len(test_radii) == 0:
+            continue
+
+        edge_fractions = []
+        for test_r in test_radii:
+            annulus = (dist >= test_r - hw) & (dist <= test_r + hw)
+            n_pixels = int(annulus.sum())
+            if n_pixels == 0:
+                edge_fractions.append(0.0)
+                continue
+            edge_fractions.append(int((edges & annulus).sum()) / n_pixels)
+
+        edge_fractions = np.array(edge_fractions)
+        peak_idx = int(np.argmax(edge_fractions))
+        peak_fraction = float(edge_fractions[peak_idx])
+        refined_radius = float(test_radii[peak_idx])
+
+        # Optional: check interior is darker than exterior in brightfield
+        if config.bf_darkness_check:
+            r_int = max(1, int(refined_radius * 0.5))
+            interior = dist < r_int
+            r_ext_min = refined_radius * 1.5
+            r_ext_max = refined_radius * 2.5
+            exterior = (dist > r_ext_min) & (dist < r_ext_max)
+            if interior.any() and exterior.any():
+                if bf_norm[interior].mean() >= bf_norm[exterior].mean():
+                    continue  # Interior brighter than exterior — not a GUV
+
+        if peak_fraction >= config.bf_edge_min_fraction:
+            validated.append(
+                GUVDetection(
+                    x_px=disc.x_px,
+                    y_px=disc.y_px,
+                    radius_px=refined_radius,
+                    frame=disc.frame,
+                )
+            )
+            edge_scores.append(peak_fraction)
+
+    return validated, edge_scores
+
+
+def detect_vesicles_consensus(
+    fluorescence_frame: np.ndarray,
+    brightfield_frame: np.ndarray,
+    pixel_size_um: float,
+    config: TrackingConfig,
+    frame_idx: int = 0,
+) -> Tuple[List[GUVDetection], List[GUVDetection], List[float]]:
+    """
+    Detect vesicles: dark discs in fluorescence validated by brightfield edges.
+
+    Returns
+    -------
+    validated : List[GUVDetection]
+        Dark discs that pass brightfield edge validation.
+    all_dark_discs : List[GUVDetection]
+        All dark disc detections (for debug).
+    edge_scores : List[float]
+        Edge fraction for each validated detection (for debug).
+    """
+    # Prong 1: dark discs in fluorescence
+    all_dark_discs = detect_dark_discs(
+        fluorescence_frame, pixel_size_um, config, frame_idx
+    )
+
+    # Prong 2: validate dark discs against brightfield edges
+    validated, edge_scores = validate_discs_with_brightfield(
+        all_dark_discs, brightfield_frame, config
+    )
+
+    # Suppress overlapping detections
+    if len(validated) > 1:
+        scores = [det.radius_px for det in validated]
+        validated = _suppress_overlapping_detections(
+            validated,
+            scores,
+            config,
+            iou_threshold=config.validated_overlap_iou_threshold,
+        )
+        # Re-align edge_scores with surviving detections
+        surviving_set = set(id(d) for d in validated)
+        edge_scores = [
+            s
+            for d, s in zip(validated, edge_scores[: len(validated)])
+            if id(d) in surviving_set
+        ]
+
+    return validated, all_dark_discs, edge_scores
+
+
 def detect_vesicles_dark_regions(
     fluorescence_frame: np.ndarray,
     brightfield_frame: np.ndarray,
@@ -489,8 +740,8 @@ def detect_circles_brightfield(
     detections : List[GUVDetection]
         Candidate circles (not yet validated with fluorescence)
     """
-    # Convert diameter range to pixel radii
-    min_radius_px = int((config.min_diameter_um / 2) / pixel_size_um)
+    # Convert diameter range to pixel radii (use ceil for min to avoid too-small circles)
+    min_radius_px = max(5, int(np.ceil((config.min_diameter_um / 2) / pixel_size_um)))
     max_radius_px = int((config.max_diameter_um / 2) / pixel_size_um)
 
     # Normalize brightfield to 0-1 range for edge detection
@@ -504,8 +755,8 @@ def detect_circles_brightfield(
     # Apply Canny edge detection
     edges = canny(bf_norm, sigma=config.canny_sigma)
 
-    # Define radius range to search (step by 1 pixel)
-    hough_radii = np.arange(min_radius_px, max_radius_px + 1, 1)
+    # Define radius range to search
+    hough_radii = np.arange(min_radius_px, max_radius_px + 1, config.hough_radius_step)
 
     if len(hough_radii) == 0:
         return []
@@ -514,7 +765,6 @@ def detect_circles_brightfield(
     hough_res = hough_circle(edges, hough_radii)
 
     # Find circle peaks
-    # total_num_peaks limits how many circles we detect
     accums, cx, cy, radii = hough_circle_peaks(
         hough_res,
         hough_radii,
@@ -525,10 +775,28 @@ def detect_circles_brightfield(
         total_num_peaks=config.hough_num_peaks,
     )
 
-    # Convert to GUVDetection objects
+    # Convert to GUVDetection objects, filtering to keep only dark-interior circles.
+    # GUVs appear as dark circles in brightfield; reject circles around bright spots.
+    height, width = bf_norm.shape
+    yy, xx = np.ogrid[:height, :width]
     detections = []
     scores: List[float] = []
     for score, x, y, radius in zip(accums, cx, cy, radii):
+        # Check interior vs exterior brightness in brightfield
+        r_inner = max(int(radius * 0.7), 1)
+        interior_mask = ((xx - x) ** 2 + (yy - y) ** 2) < r_inner**2
+        r_outer_min = int(radius * 1.3)
+        r_outer_max = int(radius * 2.0)
+        exterior_mask = (((xx - x) ** 2 + (yy - y) ** 2) > r_outer_min**2) & (
+            ((xx - x) ** 2 + (yy - y) ** 2) < r_outer_max**2
+        )
+
+        if interior_mask.any() and exterior_mask.any():
+            interior_mean = float(bf_norm[interior_mask].mean())
+            exterior_mean = float(bf_norm[exterior_mask].mean())
+            if interior_mean >= exterior_mean:
+                continue  # Reject: interior is brighter (not a dark circle)
+
         det = GUVDetection(
             x_px=float(x),
             y_px=float(y),
@@ -749,36 +1017,32 @@ def generate_debug_image(
     title: str = "Detection Debug",
     brightfield_frame: Optional[np.ndarray] = None,
     candidate_detections: Optional[List[GUVDetection]] = None,
+    dark_disc_detections: Optional[List[GUVDetection]] = None,
+    edge_scores: Optional[List[float]] = None,
 ) -> None:
     """
     Generate a debug image showing detection results.
 
-    For fluorescence detection method:
-    - Left: Fluorescence with detected circles
-    - Right: Otsu threshold overlay (cyan=dark, magenta=bright)
-
-    For brightfield detection method:
-    - Left: Brightfield with Canny edges and all candidate circles
-    - Right: Fluorescence with validated circles (green) and rejected (red)
-
-    Parameters
-    ----------
-    fluorescence_frame : np.ndarray
-        Single fluorescence image
-    detections : List[GUVDetection]
-        Validated/detected vesicles for this frame
-    output_path : Path
-        Where to save the debug image
-    config : TrackingConfig
-        Configuration with threshold parameters
-    title : str
-        Title for the plot
-    brightfield_frame : Optional[np.ndarray]
-        Brightfield image (required for brightfield detection debug)
-    candidate_detections : Optional[List[GUVDetection]]
-        All candidate circles before validation (for brightfield method)
+    For consensus method: 3-panel (dark discs, BF edges, validated)
+    For brightfield method: 2-panel (candidates + edges, validated on fluorescence)
+    For fluorescence method: 2-panel (detections, Otsu overlay)
     """
-    if config.detection_method == "brightfield" and brightfield_frame is not None:
+    if (
+        config.detection_method == "consensus"
+        and brightfield_frame is not None
+        and dark_disc_detections is not None
+    ):
+        _generate_debug_image_consensus(
+            fluorescence_frame,
+            brightfield_frame,
+            detections,
+            dark_disc_detections,
+            edge_scores or [],
+            output_path,
+            title,
+            config=config,
+        )
+    elif config.detection_method == "brightfield" and brightfield_frame is not None:
         _generate_debug_image_brightfield(
             fluorescence_frame,
             brightfield_frame,
@@ -964,6 +1228,138 @@ def _generate_debug_image_brightfield(
     axes[1].axis("off")
 
     plt.suptitle(f"{title} - Brightfield Detection")
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+def _generate_debug_image_consensus(
+    fluorescence_frame: np.ndarray,
+    brightfield_frame: np.ndarray,
+    validated: List[GUVDetection],
+    dark_discs: List[GUVDetection],
+    edge_scores: List[float],
+    output_path: Path,
+    title: str,
+    config: Optional[TrackingConfig] = None,
+) -> None:
+    """Generate 4-panel debug image for consensus detection.
+
+    Panels:
+    (a) Fluorescence segmentation mask (foreground/background) with colour
+    (b) Fluorescence + dark disc outlines (cyan) — all dark discs
+    (c) Brightfield + Canny edges + disc perimeters — edge validation
+    (d) Brightfield + validated detections (green)
+    """
+    bf_min = brightfield_frame.min()
+    bf_max = brightfield_frame.max()
+    if bf_max > bf_min:
+        bf_norm = (brightfield_frame - bf_min) / (bf_max - bf_min)
+    else:
+        bf_norm = np.zeros_like(brightfield_frame, dtype=float)
+
+    # Compute edges for panel (c)
+    sigma = config.bf_edge_canny_sigma if config else 2.0
+    edges = canny(bf_norm, sigma=sigma)
+    bf_rgb = np.stack([bf_norm, bf_norm, bf_norm], axis=-1)
+    bf_rgb[edges, 0] = 0.0
+    bf_rgb[edges, 1] = 1.0
+    bf_rgb[edges, 2] = 1.0
+
+    # Compute fluorescence segmentation mask (same logic as detect_dark_discs)
+    fl_min = float(fluorescence_frame.min())
+    fl_max = float(fluorescence_frame.max())
+    blur_sigma = config.fluorescence_blur_sigma if config else 5.0
+    dark_factor = config.dark_threshold_factor if config else 0.7
+    if fl_max > fl_min:
+        fl_norm = (fluorescence_frame - fl_min).astype(np.float64) / (fl_max - fl_min)
+        fl_blurred = gaussian(fl_norm, sigma=blur_sigma)
+        otsu_thresh = threshold_otsu(fl_blurred)
+        dark_mask = fl_blurred < otsu_thresh * dark_factor
+    else:
+        fl_norm = np.zeros_like(fluorescence_frame, dtype=np.float64)
+        fl_blurred = fl_norm
+        dark_mask = np.zeros_like(fluorescence_frame, dtype=bool)
+        otsu_thresh = 0.0
+
+    # Build colour overlay: green = foreground (background solution),
+    # magenta = dark (GUV interiors / below threshold)
+    fl_rgb = np.stack([fl_norm, fl_norm, fl_norm], axis=-1).copy()
+    # Tint foreground (above threshold) green
+    fl_rgb[~dark_mask, 0] *= 0.3
+    fl_rgb[~dark_mask, 1] = np.clip(fl_rgb[~dark_mask, 1] * 1.0 + 0.15, 0, 1)
+    fl_rgb[~dark_mask, 2] *= 0.3
+    # Tint dark mask (below threshold) magenta
+    fl_rgb[dark_mask, 0] = np.clip(fl_rgb[dark_mask, 0] * 1.0 + 0.15, 0, 1)
+    fl_rgb[dark_mask, 1] *= 0.3
+    fl_rgb[dark_mask, 2] = np.clip(fl_rgb[dark_mask, 2] * 1.0 + 0.15, 0, 1)
+
+    fig, axes = plt.subplots(1, 4, figsize=(28, 6))
+
+    # Panel (a): Fluorescence segmentation mask
+    axes[0].imshow(fl_rgb)
+    axes[0].set_title(
+        f"FL Segmentation Mask\n"
+        f"Otsu={otsu_thresh:.3f}, x{dark_factor}={otsu_thresh * dark_factor:.3f}\n"
+        f"Green=foreground, Magenta=dark (GUV interior)"
+    )
+    axes[0].axis("off")
+
+    # Panel (b): Dark discs on fluorescence
+    axes[1].imshow(fluorescence_frame, cmap="gray")
+    axes[1].set_title(f"Dark Discs — Fluorescence ({len(dark_discs)})")
+    for det in dark_discs:
+        circle = Circle(
+            (det.x_px, det.y_px),
+            det.radius_px,
+            fill=False,
+            color="cyan",
+            linewidth=1.5,
+        )
+        axes[1].add_patch(circle)
+    axes[1].axis("off")
+
+    # Panel (c): Brightfield edges + all disc perimeters
+    axes[2].imshow(bf_rgb)
+    axes[2].set_title(f"BF Edges + Disc Perimeters ({len(dark_discs)})")
+    for det in dark_discs:
+        circle = Circle(
+            (det.x_px, det.y_px),
+            det.radius_px,
+            fill=False,
+            color="yellow",
+            linewidth=1.0,
+            alpha=0.7,
+        )
+        axes[2].add_patch(circle)
+    axes[2].axis("off")
+
+    # Panel (d): Validated detections on brightfield
+    axes[3].imshow(bf_norm, cmap="gray")
+    axes[3].set_title(f"Edge-Validated ({len(validated)})")
+    for i, det in enumerate(validated):
+        score_label = f"{edge_scores[i]:.2f}" if i < len(edge_scores) else ""
+        circle = Circle(
+            (det.x_px, det.y_px),
+            det.radius_px,
+            fill=False,
+            color="lime",
+            linewidth=2.0,
+        )
+        axes[3].add_patch(circle)
+        if score_label:
+            axes[3].text(
+                det.x_px,
+                det.y_px - det.radius_px - 2,
+                score_label,
+                color="lime",
+                fontsize=6,
+                ha="center",
+                va="bottom",
+            )
+    axes[3].axis("off")
+
+    plt.suptitle(f"{title} — Edge Validation")
     plt.tight_layout()
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -1155,6 +1551,45 @@ def filter_tracks(
     return filtered, exclusion_stats
 
 
+def estimate_background_fluorescence(
+    fluorescence_frame: np.ndarray,
+    config: TrackingConfig,
+) -> float:
+    """
+    Estimate background fluorescence using the same blur + Otsu logic as detection.
+
+    Background is the mean of pixels *above* the dark-disc threshold — i.e. the
+    fluorescent solution surrounding the GUVs.
+
+    Parameters
+    ----------
+    fluorescence_frame : np.ndarray
+        Single fluorescence image.
+    config : TrackingConfig
+        Uses fluorescence_blur_sigma, dark_threshold_factor.
+
+    Returns
+    -------
+    background_mean : float
+        Mean fluorescence of the background region (in raw intensity units).
+    """
+    fl_min = float(fluorescence_frame.min())
+    fl_max = float(fluorescence_frame.max())
+    if fl_max <= fl_min:
+        return 0.0
+
+    fl_norm = (fluorescence_frame - fl_min).astype(np.float64) / (fl_max - fl_min)
+    blurred = gaussian(fl_norm, sigma=config.fluorescence_blur_sigma)
+    threshold = threshold_otsu(blurred)
+    background_mask = blurred >= threshold * config.dark_threshold_factor
+
+    if not np.any(background_mask):
+        return 0.0
+
+    # Return mean in *raw* intensity units (not normalised)
+    return float(np.mean(fluorescence_frame[background_mask]))
+
+
 def measure_membrane_fluorescence(
     tracks: List[GUVTrack],
     fluorescence_stack: np.ndarray,
@@ -1164,6 +1599,9 @@ def measure_membrane_fluorescence(
 ) -> pd.DataFrame:
     """
     Measure fluorescence in annulus at membrane for each tracked vesicle.
+
+    Background is estimated per-frame using the same Otsu thresholding as
+    dark-disc detection, and subtracted from the raw membrane signal.
 
     Parameters
     ----------
@@ -1182,10 +1620,26 @@ def measure_membrane_fluorescence(
     -------
     measurements : pd.DataFrame
         Columns: vesicle_id, frame, time_seconds, x_um, y_um, radius_um,
-                 membrane_fluorescence_mean
+                 membrane_fluorescence_mean, background_fluorescence,
+                 membrane_fluorescence_bg_subtracted
     """
     rows = []
     image_shape = fluorescence_stack.shape[1:]
+
+    # Pre-compute per-frame background
+    n_frames = fluorescence_stack.shape[0]
+    frame_backgrounds: Dict[int, float] = {}
+
+    # Only compute for frames that appear in tracks
+    needed_frames = set()
+    for track in tracks:
+        for det in track.detections:
+            needed_frames.add(det.frame)
+
+    for f in needed_frames:
+        frame_backgrounds[f] = estimate_background_fluorescence(
+            fluorescence_stack[f], config
+        )
 
     for track in tracks:
         for det in track.detections:
@@ -1206,6 +1660,8 @@ def measure_membrane_fluorescence(
                 np.mean(fl_frame[membrane_mask]) if np.any(membrane_mask) else 0.0
             )
 
+            bg = frame_backgrounds.get(det.frame, 0.0)
+
             # Calculate time
             time_s = det.frame * time_interval_s if time_interval_s else det.frame
 
@@ -1218,6 +1674,8 @@ def measure_membrane_fluorescence(
                     "y_um": det.y_px * pixel_size_um,
                     "radius_um": det.radius_px * pixel_size_um,
                     "membrane_fluorescence_mean": float(membrane_mean),
+                    "background_fluorescence": float(bg),
+                    "membrane_fluorescence_bg_subtracted": float(membrane_mean - bg),
                 }
             )
 
@@ -1276,13 +1734,16 @@ def process_lif_file(
             continue
 
         # Choose detection method based on config
-        if config.detection_method == "brightfield":
-            # Brightfield circle detection with fluorescence validation
+        if config.detection_method == "consensus":
+            consensus, _dark_discs, _hough = detect_vesicles_consensus(
+                fl_frame, bf_frame, pixel_size_um, config, frame_idx
+            )
+            detections = consensus
+        elif config.detection_method == "brightfield":
             detections = detect_vesicles_brightfield_validated(
                 fl_frame, bf_frame, pixel_size_um, config, frame_idx
             )
         else:
-            # Fallback: dark region detection in fluorescence
             detections = detect_vesicles_dark_regions(
                 fl_frame, bf_frame, pixel_size_um, config, frame_idx
             )
@@ -1370,30 +1831,46 @@ def generate_debug_images_for_lif(
             continue
 
         # Detect vesicles based on configured method
-        candidates: Optional[List[GUVDetection]] = None
+        output_path = output_dir / f"debug_{lif_name}_frame{frame_idx:03d}.png"
 
-        if config.detection_method == "brightfield":
-            # Get candidates and validated separately for debug visualization
+        if config.detection_method == "consensus":
+            validated, dark_discs, edge_scores = detect_vesicles_consensus(
+                fl_frame, bf_frame, pixel_size_um, config, frame_idx
+            )
+            generate_debug_image(
+                fl_frame,
+                validated,
+                output_path,
+                config,
+                title=f"{lif_name} - Frame {frame_idx}",
+                brightfield_frame=bf_frame,
+                dark_disc_detections=dark_discs,
+                edge_scores=edge_scores,
+            )
+        elif config.detection_method == "brightfield":
             candidates = detect_circles_brightfield(
                 bf_frame, pixel_size_um, config, frame_idx
             )
             detections = validate_with_fluorescence(candidates, fl_frame, config)
+            generate_debug_image(
+                fl_frame,
+                detections,
+                output_path,
+                config,
+                title=f"{lif_name} - Frame {frame_idx}",
+                brightfield_frame=bf_frame,
+                candidate_detections=candidates,
+            )
         else:
-            # Fluorescence-based detection
             detections = detect_vesicles_dark_regions(
                 fl_frame, bf_frame, pixel_size_um, config, frame_idx
             )
-
-        # Generate debug image
-        output_path = output_dir / f"debug_{lif_name}_frame{frame_idx:03d}.png"
-        generate_debug_image(
-            fl_frame,
-            detections,
-            output_path,
-            config,
-            title=f"{lif_name} - Frame {frame_idx}",
-            brightfield_frame=bf_frame,
-            candidate_detections=candidates,
-        )
+            generate_debug_image(
+                fl_frame,
+                detections,
+                output_path,
+                config,
+                title=f"{lif_name} - Frame {frame_idx}",
+            )
 
     print(f"  Debug images saved to {output_dir}")

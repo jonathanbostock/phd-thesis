@@ -40,14 +40,15 @@ FLUORESCENCE_CMAP = LinearSegmentedColormap.from_list(
 CONFIG = TrackingConfig(
     fluorescence_channel=0,  # Channel 0 = fluorescence
     brightfield_channel=1,  # Channel 1 = brightfield
-    min_diameter_um=5.0,  # Lowered from 10 to detect smaller vesicles
+    min_diameter_um=5.0,
     max_diameter_um=50.0,
     annulus_width_px=3,
-    # Use brightfield circle detection with fluorescence interior validation
-    detection_method="brightfield",
-    hough_num_peaks=500,
-    interior_darkness_threshold=0.7,
-    interior_darkness_percentile=90.0,
+    detection_method="consensus",
+    fluorescence_blur_sigma=5.0,
+    bf_edge_min_fraction=0.05,
+    bf_edge_annulus_width_px=3,
+    bf_edge_canny_sigma=2.0,
+    bf_darkness_check=False,  # Disabled: clustered GUVs have dark neighbors
 )
 
 # Files to process within each sample folder (only "after" files)
@@ -296,6 +297,8 @@ def save_to_hdf5(
                 "y_um",
                 "radius_um",
                 "membrane_fluorescence_mean",
+                "background_fluorescence",
+                "membrane_fluorescence_bg_subtracted",
             ]:
                 vesicle_group.create_dataset(col, data=np.array(vesicle_data[col]))
 
@@ -325,6 +328,10 @@ def load_from_hdf5(h5_path: Path) -> pd.DataFrame:
                 y_data = np.array(vesicle_group["y_um"])  # type: ignore[index]
                 radius_data = np.array(vesicle_group["radius_um"])  # type: ignore[index]
                 fl_data = np.array(vesicle_group["membrane_fluorescence_mean"])  # type: ignore[index]
+                bg_data = np.array(vesicle_group["background_fluorescence"])  # type: ignore[index]
+                fl_sub_data = np.array(
+                    vesicle_group["membrane_fluorescence_bg_subtracted"]  # type: ignore[index]
+                )
 
                 n_frames = len(time_data)
                 for i in range(n_frames):
@@ -338,6 +345,10 @@ def load_from_hdf5(h5_path: Path) -> pd.DataFrame:
                             "y_um": float(y_data[i]),
                             "radius_um": float(radius_data[i]),
                             "membrane_fluorescence_mean": float(fl_data[i]),
+                            "background_fluorescence": float(bg_data[i]),
+                            "membrane_fluorescence_bg_subtracted": float(
+                                fl_sub_data[i]
+                            ),
                         }
                     )
 
@@ -398,7 +409,7 @@ def plot_membrane_fluorescence_timecourse(
             vesicle_time = vesicle_data["time_seconds"] + offset
             ax.plot(
                 vesicle_time,
-                vesicle_data["membrane_fluorescence_mean"],
+                vesicle_data["membrane_fluorescence_bg_subtracted"],
                 color=color,
                 alpha=0.3,
                 linewidth=0.5,
@@ -406,7 +417,7 @@ def plot_membrane_fluorescence_timecourse(
 
         # Plot mean trace (thick line)
         mean_trace = cond_data.groupby("time_seconds")[
-            "membrane_fluorescence_mean"
+            "membrane_fluorescence_bg_subtracted"
         ].mean()
         mean_time = mean_trace.index + offset
         label = f"{CONDITION_LABELS[condition]} (n={unique_ids})"
@@ -437,7 +448,7 @@ def plot_membrane_fluorescence_timecourse(
     ax.set_xticklabels(tick_labels)
 
     ax.set_xlabel("Time (min)")
-    ax.set_ylabel("Membrane Fluorescence (a.u.)")
+    ax.set_ylabel("Membrane Fluorescence\n(bg-subtracted, a.u.)")
     ax.legend(frameon=False, loc="upper left")
 
     format_axes(ax)
@@ -471,7 +482,7 @@ def plot_condition_comparison(df: pd.DataFrame, output_dir: Path) -> None:
 
     for i, condition in enumerate(condition_order):
         cond_data = final_data[final_data["condition"] == condition]
-        values = cond_data["membrane_fluorescence_mean"].values
+        values = cond_data["membrane_fluorescence_bg_subtracted"].values
 
         if len(values) == 0:
             continue
