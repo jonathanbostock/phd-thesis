@@ -27,3 +27,6 @@ __pycache__/
 
 # Examples for AI agents
 examples/
+
+# Pickle caches
+*.pkl

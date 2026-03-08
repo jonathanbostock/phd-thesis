@@ -1,6 +1,8 @@
 """FFT power spectrum analysis of H5 rectified data with radial distance encoding."""
 
+import argparse
 import math
+import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
@@ -652,7 +654,7 @@ def plot_combined_spectrum_and_amplitude(
         Number of bootstrap iterations (default: 100)
     """
     # Create figure with 1x2 subplots
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 3))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(120 / 25.4, 40 / 25.4))
     colors = sns.color_palette("colorblind", n_colors=4)
 
     # Store peak spacings for each dataset
@@ -754,10 +756,10 @@ def plot_combined_spectrum_and_amplitude(
         )
 
     # Format left subplot
-    ax1.set_xlabel("Spacing / nm", fontsize=12)
-    ax1.set_ylabel("Fourier transform amplitude", fontsize=12)
+    ax1.set_xlabel("Spacing / nm")
+    ax1.set_ylabel("Fourier transform amplitude")
     ax1.set_xlim(spacing_range[0], spacing_range[1])
-    ax1.set_title("Average Power Spectrum", fontsize=14)
+    ax1.set_title("Average Power Spectrum")
     format_axes(ax1)
     ax1.tick_params(axis="y", which="both", left=False, labelleft=False)
 
@@ -797,11 +799,11 @@ def plot_combined_spectrum_and_amplitude(
         )
 
     # Format right subplot
-    ax2.set_xlabel("Radial distance from membrane / nm", fontsize=12)
-    ax2.set_ylabel("Fourier transform amplitude", fontsize=12)
+    ax2.set_xlabel("Radial distance from membrane / nm")
+    ax2.set_ylabel("Fourier transform amplitude")
     ax2.set_xlim(math.floor(x_coords.min()), math.ceil(x_coords.max()))
-    ax2.set_title("Amplitude At Peak Spacing", fontsize=14)
-    ax2.legend(frameon=False, fontsize=10, loc="upper right")
+    ax2.set_title("Amplitude At Peak Spacing")
+    ax2.legend(frameon=False, loc="upper right")
     format_axes(ax2)
     ax2.tick_params(
         axis="y",
@@ -812,11 +814,13 @@ def plot_combined_spectrum_and_amplitude(
         labelright=False,
     )
 
-    # Share y-axis between subplots
+    # Share y-axis between subplots, with a little extra headroom
     ax1.get_shared_y_axes().joined(ax1, ax2)
-    ax2.set_ylim(ax1.get_ylim())
+    y_lo, y_hi = ax1.get_ylim()
+    ax1.set_ylim(y_lo, y_hi * 1.08)
+    ax2.set_ylim(y_lo, y_hi * 1.08)
 
-    plt.tight_layout()
+    fig.subplots_adjust(left=0.08, right=0.98, top=0.9, bottom=0.18, wspace=0.15)
     plt.savefig(output_path, format="svg", dpi=300, bbox_inches="tight")
     plt.close(fig)
 
@@ -854,7 +858,7 @@ def plot_combined_power_spectra(
     ylim = (y_min - y_margin, y_max + y_margin)
 
     # Create figure with 2x2 subplots, sharing Y-axis (half size: 14.4 -> 7.2, 12 -> 6)
-    fig, axes = plt.subplots(2, 2, figsize=(7.2, 6), sharey=True)
+    fig, axes = plt.subplots(2, 2, figsize=(120 / 25.4, 100 / 25.4), sharey=True)
     axes = axes.flatten()
 
     # Use plasma colormap for radial distances
@@ -886,26 +890,32 @@ def plot_combined_power_spectra(
             ax.plot(spacing_fit, power_fit, color=color, linewidth=1.5, alpha=0.8)
 
         # Format axis
-        ax.set_xlabel("Spacing / nm", fontsize=12)
+        ax.set_xlabel("Spacing / nm")
         ax.set_xlim(0.5, 10)
         ax.set_ylim(ylim)
-        ax.set_title(DATASET_PLOT_TITLES.get(dataset_name, dataset_name), fontsize=14)
+        ax.set_title(DATASET_PLOT_TITLES.get(dataset_name, dataset_name))
 
         # Apply standard formatting, then remove Y-axis ticks (units are arbitrary)
-        ax.set_ylabel("Fourier transform amplitude", fontsize=12)
+        ax.set_ylabel("Fourier transform amplitude")
         format_axes(ax)
         ax.tick_params(axis="y", which="both", left=False, labelleft=False)
 
-    # Add shared colorbar
-    # Reserve space for colorbar on the right before creating it
-    plt.tight_layout(rect=[0, 0, 0.92, 1])  # type: ignore[arg-type]
+    # Reserve space on the right for the colorbar
+    fig.subplots_adjust(
+        hspace=0.35, wspace=0.15, left=0.08, right=0.88, top=0.95, bottom=0.1
+    )
 
+    # Add colorbar spanning the full height of both rows
     if radial_distances is not None:
         sm = cm.ScalarMappable(
             cmap=cmap,
             norm=Normalize(vmin=radial_distances[0], vmax=radial_distances[-1]),
         )
         sm.set_array([])
+        cbar_ax = fig.add_axes([0.91, 0.1, 0.03, 0.85])  # type: ignore[list-item]
+        # [left, bottom, width, height]
+        cbar = fig.colorbar(sm, cax=cbar_ax)
+        cbar.set_label("Radial distance from membrane / nm")
 
     plt.savefig(output_path, format="svg", dpi=300, bbox_inches="tight")
     plt.close(fig)
@@ -913,57 +923,83 @@ def plot_combined_power_spectra(
 
 def main():
     """Main plotting function."""
-    # Get data directory
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--plot-only",
+        action="store_true",
+        help="Skip analysis and load previously cached results",
+    )
+    args = parser.parse_args()
+
     data_dir = Path(__file__).parent
+    cache_path = data_dir / "analysis_cache.pkl"
 
-    # Dictionaries to collect data for all datasets
-    all_dataset_curves = {}
-    all_dataset_raw_data = {}
-    all_dataset_per_particle_data = {}
+    if args.plot_only:
+        print(f"Loading cached analysis from {cache_path}...")
+        with open(cache_path, "rb") as f:
+            cache = pickle.load(f)
+        all_dataset_curves = cache["all_dataset_curves"]
+        all_dataset_raw_data = cache["all_dataset_raw_data"]
+        all_dataset_per_particle_data = cache["all_dataset_per_particle_data"]
+    else:
+        # Dictionaries to collect data for all datasets
+        all_dataset_curves = {}
+        all_dataset_raw_data = {}
+        all_dataset_per_particle_data = {}
 
-    # Process each dataset
-    for dataset_name in DATASET_NAMES:
-        print(f"\nProcessing {dataset_name}...")
+        # Process each dataset
+        for dataset_name in DATASET_NAMES:
+            print(f"\nProcessing {dataset_name}...")
 
-        # Find and load H5 file
-        try:
-            h5_path = find_latest_h5_file(data_dir, dataset_name)
-            print(f"  Loading: {h5_path}")
-        except FileNotFoundError as e:
-            print(f"  Error: {e}")
-            continue
+            # Find and load H5 file
+            try:
+                h5_path = find_latest_h5_file(data_dir, dataset_name)
+                print(f"  Loading: {h5_path}")
+            except FileNotFoundError as e:
+                print(f"  Error: {e}")
+                continue
 
-        # Process the H5 file with per-particle data
-        (
-            radial_distances,
-            lowess_curves,
-            per_particle_data,
-        ) = process_h5_file_with_particles(h5_path)
+            # Process the H5 file with per-particle data
+            (
+                radial_distances,
+                lowess_curves,
+                per_particle_data,
+            ) = process_h5_file_with_particles(h5_path)
 
-        # Store for combined plots
-        all_dataset_curves[dataset_name] = (radial_distances, lowess_curves)
-        all_dataset_per_particle_data[dataset_name] = (
-            radial_distances,
-            per_particle_data,
-        )
-
-        # Also need raw_data for the old interface (flatten per-particle to combined)
-        # This is just for backwards compatibility with plot_combined_power_spectra
-        raw_data_list = []
-        for radial_idx in range(len(per_particle_data)):
-            # Combine all particles at this radial distance
-            all_spacings = []
-            all_powers = []
-            for spacings, powers in per_particle_data[radial_idx]:
-                all_spacings.append(spacings)
-                all_powers.append(powers)
-            combined_spacings = np.concatenate(all_spacings)
-            combined_powers = np.concatenate(all_powers)
-            sort_idx = np.argsort(combined_spacings)
-            raw_data_list.append(
-                (combined_spacings[sort_idx], combined_powers[sort_idx])
+            # Store for combined plots
+            all_dataset_curves[dataset_name] = (radial_distances, lowess_curves)
+            all_dataset_per_particle_data[dataset_name] = (
+                radial_distances,
+                per_particle_data,
             )
-        all_dataset_raw_data[dataset_name] = (radial_distances, raw_data_list)
+
+            # Flatten per-particle data to combined raw_data_list
+            raw_data_list = []
+            for radial_idx in range(len(per_particle_data)):
+                all_spacings = []
+                all_powers = []
+                for spacings, powers in per_particle_data[radial_idx]:
+                    all_spacings.append(spacings)
+                    all_powers.append(powers)
+                combined_spacings = np.concatenate(all_spacings)
+                combined_powers = np.concatenate(all_powers)
+                sort_idx = np.argsort(combined_spacings)
+                raw_data_list.append(
+                    (combined_spacings[sort_idx], combined_powers[sort_idx])
+                )
+            all_dataset_raw_data[dataset_name] = (radial_distances, raw_data_list)
+
+        # Save all analysis data for future --plot-only runs
+        print(f"\nSaving analysis cache to {cache_path}...")
+        with open(cache_path, "wb") as f:
+            pickle.dump(
+                {
+                    "all_dataset_curves": all_dataset_curves,
+                    "all_dataset_raw_data": all_dataset_raw_data,
+                    "all_dataset_per_particle_data": all_dataset_per_particle_data,
+                },
+                f,
+            )
 
     # Create combined spectrum and amplitude plot
     if all_dataset_raw_data and all_dataset_curves and all_dataset_per_particle_data:

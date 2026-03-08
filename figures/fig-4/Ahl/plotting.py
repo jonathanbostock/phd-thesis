@@ -26,8 +26,8 @@ def main():
 
     # Plot the data
     fig1, fig2 = plotting.plot_calcein_release(
-        mean_df=mean_release.iloc[:, :-1],
-        sem_df=sem_release.iloc[:, :-1],
+        mean_df=mean_release.iloc[:, :-1],  # type: ignore
+        sem_df=sem_release.iloc[:, :-1],  # type: ignore
         raw_release_df=release_df,
         experiment_names=experiment_names,
         group_size=3,

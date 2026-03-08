@@ -1,6 +1,6 @@
 # Jonathan Bostock
 # Figure 1: Combined Length vs Concentration and Effect of Shape analysis
-# Four-panel plot with legends on the right of each row
+# Four-panel plot with legends on the right-hand panels
 
 import numpy as np
 import pandas as pd
@@ -19,7 +19,6 @@ from utils.plotting import (
     plot_error_ellipse,
     save_plot,
 )
-from utils import defaults
 
 
 def main() -> None:
@@ -35,9 +34,11 @@ def main() -> None:
         control_name="control",
     )
 
-    # --- Figure setup: 2 rows x 3 cols (col 3 is narrow for legends) ---
-    fig = plt.figure(figsize=(defaults.fig_width * 2.2, defaults.fig_height * 2.4))
-    gs = gridspec.GridSpec(2, 3, width_ratios=[1, 1, 0.05], hspace=0.4, wspace=0.45)
+    # --- Figure setup: 2 rows x 2 cols ---
+    fig = plt.figure(figsize=(120 / 25.4, 130 / 25.4))
+    gs = gridspec.GridSpec(
+        2, 2, hspace=0.45, wspace=0.4, left=0.1, right=0.98, top=0.95, bottom=0.1
+    )
     ax1 = fig.add_subplot(gs[0, 0])  # Top-left: length dose-response
     ax2 = fig.add_subplot(gs[0, 1])  # Top-right: ΔD_max vs brush length
     ax3 = fig.add_subplot(gs[1, 0])  # Bottom-left: shape dose-response
@@ -96,18 +97,10 @@ def main() -> None:
             )
 
     ax1.set_xscale("log")
-    ax1.set_xlabel("Lipid:DNA Ratio")
+    ax1.set_xlabel("Lipid:Construct Ratio")
     ax1.set_ylabel(r"$\Delta D$ / nm")
-    ax1.set_title(r"Static Brush $\Delta D$ vs Lipid:DNA Ratio")
+    ax1.set_title("dsDNA Constructs")
     format_axes(ax1)
-
-    # Legend for top row — placed off to the right
-    ax1.legend(
-        title="Brush Length",
-        bbox_to_anchor=(2.25, 1),
-        loc="upper left",
-        frameon=False,
-    )
 
     # Top-right panel: ΔD_max vs Brush Length
     if fitted_params:
@@ -148,9 +141,17 @@ def main() -> None:
             label=f"Slope = {slope:.3f}",
         )
 
+        # Legend for top row on the right-hand panel
+        ax1.legend(
+            title="Brush Length",
+            bbox_to_anchor=(1.05, 1),
+            loc="upper left",
+            frameon=False,
+        )
+
         ax2.set_xlabel("Brush Length / bp")
         ax2.set_ylabel(r"$\Delta D_{max}$ / nm")
-        ax2.set_title(r"Fitted $\Delta D_{max}$ vs Brush Length")
+        ax2.set_title(r"Fitted $\Delta D_{max}$ vs Construct Length")
         ax2.legend(frameon=False)
         ax2.set_xlim(0, max(bl_fit) * 1.1)
         ax2.set_ylim(0, max(ddm_vals) * 1.1)
@@ -219,16 +220,16 @@ def main() -> None:
     ax3.set_xscale("log")
     xlim = ax3.get_xlim()
     ax3.set_xlim(xlim[1], xlim[0])  # Reverse x-axis
-    ax3.set_xlabel("Lipid:DNA Ratio")
+    ax3.set_xlabel("Lipid:Construct Ratio")
     ax3.set_ylabel(r"$\Delta D$ / nm")
-    ax3.set_title(r"Shape Effect on Brush $\Delta D$")
+    ax3.set_title("Variable-Shape Constructs")
     format_axes(ax3)
     ax3.set_ylim(ax1.get_ylim()[0], None)
 
-    # Legend for bottom row — placed off to the right
+    # Legend for bottom row on the right-hand panel
     ax3.legend(
         title="DNA Shape",
-        bbox_to_anchor=(2.25, 1),
+        bbox_to_anchor=(1.05, 1),
         loc="upper left",
         frameon=False,
     )
@@ -236,10 +237,10 @@ def main() -> None:
     ax4.set_xlabel("$c_{1/2}$")
     ax4.set_xscale("log")
     ax4.set_ylabel(r"$\Delta D_{max}$ / nm")
-    ax4.set_title(r"Shape Effect on $\Delta D_{max}$ and $c_{1/2}$")
+    ax4.set_title("Fitted Parameters vs Construct Shape")
     format_axes(ax4)
 
-    save_plot(fig, "Delta D")
+    save_plot(fig, data_dir / "Delta D")
     plt.show()
 
 

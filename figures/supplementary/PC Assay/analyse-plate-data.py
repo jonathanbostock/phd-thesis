@@ -344,7 +344,7 @@ def plot_calibration_curves(results_by_row: Dict, output_path: Path):
         ax.set_xlabel("Absorbance Difference")
         ax.set_ylabel("Concentration / mM")
         ax.set_title(f"Row {row_letter}")
-        ax.legend(frameon=False, fontsize=8, loc="upper left")
+        ax.legend(frameon=False, loc="upper left")
         format_axes(ax)
 
         # Override tick direction to outside

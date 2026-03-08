@@ -155,10 +155,10 @@ def plot_combined_timecourse(
             label=CONDITION_LABELS[condition],
         )
 
-        # Ticks: 0, midpoint, max — labels show actual minutes
-        for t in [0, max_t / 2, max_t]:
+        # Ticks every 15 minutes — labels show actual minutes
+        for t in range(0, int(max_t) + 1, 15):
             tick_positions.append(t + offset)
-            tick_labels.append(str(int(t)))
+            tick_labels.append(str(t))
 
     # Divider between conditions
     if max_dna_t > 0:
@@ -189,6 +189,9 @@ def process_sample(sample_dir: Path) -> None:
     for condition, h5_path in h5_files.items():
         print(f"  Loading {h5_path.name}...")
         df = load_condition_data(h5_path)
+        if condition == "After cyclodextrin addition":
+            df = df[df["frame"] <= 30].copy()
+        assert isinstance(df, pd.DataFrame)
         n_guvs = df["guv_id"].nunique()
         n_frames = df["frame"].nunique()
         print(f"    {n_guvs} GUVs across {n_frames} frames")

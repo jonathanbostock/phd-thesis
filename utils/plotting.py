@@ -30,6 +30,13 @@ def setup_plot_style():
     """Set up seaborn style according to CLAUDE.md guidelines"""
     sns.set_style("white")
     sns.set_palette("colorblind")
+    plt.rcParams["font.size"] = 7
+    plt.rcParams["axes.labelsize"] = 7
+    plt.rcParams["axes.titlesize"] = 8
+    plt.rcParams["xtick.labelsize"] = 7
+    plt.rcParams["ytick.labelsize"] = 7
+    plt.rcParams["legend.fontsize"] = 7
+    plt.rcParams["legend.title_fontsize"] = 7
 
 
 def format_axes(ax):
@@ -596,6 +603,7 @@ def plot_calcein_release(
     sem_df: pd.DataFrame,
     raw_release_df: Optional[pd.DataFrame] = None,
     group_size: Optional[int] = 4,
+    bar_figsize: Optional[Tuple[float, float]] = None,
 ):
     """
     Plot calcein release data with both bar chart (final timepoint) and line chart (full timecourse).
@@ -611,8 +619,16 @@ def plot_calcein_release(
     setup_plot_style()
 
     # Create figure with two subplots
-    fig1, ax1 = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
-    fig2, ax2 = plt.subplots(figsize=(defaults.fig_width * 1.5, defaults.fig_height))
+    s = defaults.small_fig_scale
+    _bar_figsize = (
+        bar_figsize
+        if bar_figsize is not None
+        else (defaults.fig_width * s, defaults.fig_height * s)
+    )
+    fig1, ax1 = plt.subplots(figsize=_bar_figsize)
+    fig2, ax2 = plt.subplots(
+        figsize=(defaults.fig_width * 1.5 * s, defaults.fig_height * s)
+    )
 
     colors = sns.color_palette("colorblind", n_colors=group_size)
 
