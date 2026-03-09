@@ -1,0 +1,1265 @@
+Sample A1,,Sample A2,,Sample A3,,Sample A4,,Sample A5,,Sample A6,,Sample A7,,Sample B1,,Sample B2,,Sample B3,,Sample B4,,Sample B5,,Sample B6,,Sample B7,,Sample C1,,Sample C2,,Sample C3,,Sample C4,,Sample C5,,Sample C6,,Sample C7,,
+Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),
+0.0008333333535,293.4787903,0.0213333331,312.6130676,0.04279166833,324.461731,0.06408333033,324.5644531,0.08472916484,347.8735962,0.1055416688,29.63627052,0.1267083287,48.90777588,0.2776666582,371.2842102,0.2572083175,307.8629761,0.236708343,313.5412903,0.2153749913,341.9262085,0.1942291707,305.6303711,0.1735833287,35.48410416,0.1529166698,32.74202728,0.3028750122,405.0406189,0.3233750165,314.8139343,0.3446666598,318.0365601,0.3651666641,323.0276184,0.3862083554,291.9480286,0.4081249833,35.60785294,0.4289999902,35.53684616,
+1.000833273,316.6169739,1.021875024,324.2607727,1.043208361,348.6400146,1.063541651,327.8372192,1.084874988,369.005249,1.105208278,30.94407654,1.126541615,43.53232193,1.278062463,377.2487183,1.257249951,321.2017517,1.235874891,312.5482178,1.215562463,344.6009827,1.194062591,312.0966797,1.173562527,34.66438675,1.152895808,31.10871696,1.302812457,405.0236206,1.323708296,310.3373413,1.344874978,322.3605042,1.365645885,330.1702576,1.387041688,294.235199,1.408041596,33.31192398,1.428375006,36.64463806,
+
+Sample A1,
+Sample A1
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample A2,
+Sample A2
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample A3,
+Sample A3
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample A4,
+Sample A4
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample A5,
+Sample A5
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample A6,
+Sample A6
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample A7,
+Sample A7
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample B1,
+Sample B1
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample B2,
+Sample B2
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample B3,
+Sample B3
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample B4,
+Sample B4
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample B5,
+Sample B5
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample B6,
+Sample B6
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample B7,
+Sample B7
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample C1,
+Sample C1
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample C2,
+Sample C2
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample C3,
+Sample C3
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample C4,
+Sample C4
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample C5,
+Sample C5
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample C6,
+Sample C6
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+
+Sample C7,
+Sample C7
+Collection Time: 05-Nov-24 12:52:18 PM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Tue 05 Nov 12:52:18 PM 2024
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   1.0000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   High
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Date/Time stamp: 12-Jun-24 9:10:34 AM
+Method Modifications:
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 11-Jun-24 5:29:48 PM, Old:User defined, New:Overlay columns
+PMT Volts Changed: 11-Jun-24 5:34:02 PM, Old:600, New:550
+Well plate reader Changed: 11-Jun-24 5:34:02 PM, Old:OFF, New:ON
+Autoconvert Changed: 11-Jun-24 5:34:02 PM, Old:None, New:Ascii
+Excitation Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 11-Jun-24 5:34:02 PM, Old: 600.00, New: 514.00
+Stop Time 1 Changed: 11-Jun-24 5:34:02 PM, Old: 1.0000, New:120.0000
+Emission PMT (V): Changed: 11-Jun-24 5:34:02 PM, Old: 600, New: 550
+Wellplate Samples Changed: 11-Jun-24 5:34:02 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;
+Stop Time 1 Changed: 12-Jun-24 8:47:35 AM, Old:120.0000, New: 3.0000
+Current Method Changed: 05-Nov-24 12:49:38 PM, Old:C:\Users\admin\Desktop\txc.FBKN, New:C:\USERS\ADMIN\DESKTOP\TXC.FBKN
+Excitation Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 494.00, New: 495.00
+Emission Wavelength Changed: 05-Nov-24 12:51:26 PM, Old: 514.00, New: 515.00
+Cycle Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 0.0000, New: 1.0000
+Stop Time 1 Changed: 05-Nov-24 12:51:26 PM, Old: 3.0000, New: 1.0000
+Wellplate Samples Changed: 05-Nov-24 12:51:26 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;D1;D2;D3;D4;D5;D6;D7;D8;D9;D10;D11;D12;E1;E2;E3;E4;E5;E6;E7;E8;E9;E10;E11;E12;F1;F2;F3;F4;F5;F6;F7;F8;F9;F10;F11;F12;G1;G2;G3;G4;G5;G6;G7;G8;G9;G10;G11;G12;H1;H2;H3;H4;H5;H6;H7;H8;H9;H10;H11;H12;, New:A1;A2;A3;A4;A5;A6;A7;B1;B2;B3;B4;B5;B6;B7;C1;C2;C3;C4;C5;C6;C7;
+PMT Volts Changed: 05-Nov-24 12:51:38 PM, Old:550, New:600
+Emission PMT (V): Changed: 05-Nov-24 12:51:38 PM, Old: 550, New: 600
+PMT Volts Changed: 05-Nov-24 12:52:16 PM, Old:600, New:800
+Emission PMT (V): Changed: 05-Nov-24 12:52:16 PM, Old: 600, New: 800
+End Method Modifications
+

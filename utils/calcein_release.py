@@ -30,101 +30,83 @@ def calculate_release_from_path(data_dir: Union[str, os.PathLike]) -> pd.DataFra
     if not before_files or not timecourse_files or not triton_files:
         raise FileNotFoundError(f"Could not find required files in {data_dir}")
 
-    # Use the first matching file for each type
-    before_file = before_files[0]
-    timecourse_file = timecourse_files[0]
-    triton_file = triton_files[0]
+    if len(before_files) != len(timecourse_files) or len(before_files) != len(
+        triton_files
+    ):
+        raise ValueError(
+            f"Mismatched number of Before/Timecourse/Triton files in {data_dir}: "
+            f"{len(before_files)} / {len(timecourse_files)} / {len(triton_files)}"
+        )
 
-    # Read the data files
-    before_data = pd.read_csv(before_file, header=None)
-    timecourse_data = pd.read_csv(timecourse_file, header=None)
-    triton_data = pd.read_csv(triton_file, header=None)
-
-    # Extract sample names from the first row
-    sample_names = []
-    for i in range(0, len(before_data.columns), 2):
-        if i < len(before_data.columns) - 1:
-            sample_name = str(before_data.iloc[0, i]).strip()
-            if sample_name.startswith("Sample "):
-                sample_names.append(sample_name.replace("Sample ", ""))
-
-    # Extract time and intensity data
-    # Data starts from row 2 (index 1) and has time, intensity pairs for each sample
-    def extract_fluorescence_data(data, sample_names) -> pd.DataFrame:
-        """Extract fluorescence data for each sample"""
+    def extract_fluorescence_data(
+        data: pd.DataFrame, sample_names: list[str]
+    ) -> pd.DataFrame:
+        """Extract fluorescence data for each sample from a raw CSV DataFrame."""
         fluorescence_data = {}
-
-        data_cleaned = data.iloc[:, :-1]  # Skip the first two rows which are headers
-        data_cleaned = data_cleaned.reset_index(drop=True)  # Reset index after slicing
-        # Remove rows from the bottom that aren't square (i.e., incomplete sample columns)
-        n_rows = len(data_cleaned)
-        n_samples = len(sample_names)
-        n_cols_expected = n_samples * 2
-        # Find the last row where all columns are present (i.e., no NaNs in any sample's time/intensity)
+        data_cleaned = data.iloc[:, :-1].reset_index(drop=True)
+        n_cols_expected = len(sample_names) * 2
         valid_rows = data_cleaned.iloc[:, :n_cols_expected].dropna(how="any")
         data_cleaned = data_cleaned.iloc[: len(valid_rows) + 1]
 
         for i, sample in enumerate(sample_names):
-            # Each sample has 2 columns: time and intensity
             time_col = 2 * i
             intensity_col = 2 * i + 1
-
             if time_col < len(data.columns) and intensity_col < len(data.columns):
-                # Skip the header rows and get the actual data
-                # Find where the data starts (after the metadata)
-                data_start = 2  # Start after the header rows
-
-                # Get time and intensity values
-                times = data_cleaned.iloc[data_start:, time_col].astype(float)
-                intensities = data_cleaned.iloc[data_start:, intensity_col].astype(
-                    float
-                )
-
-                # Remove any NaN values
+                times = data_cleaned.iloc[2:, time_col].astype(float)
+                intensities = data_cleaned.iloc[2:, intensity_col].astype(float)
                 valid_mask = ~(times.isna() | intensities.isna())
                 fluorescence_data[sample] = intensities[valid_mask].values
 
         return pd.DataFrame(fluorescence_data)
 
-    # Extract data from all three files
-    before_fluorescence = extract_fluorescence_data(before_data, sample_names)
-    timecourse_fluorescence = extract_fluorescence_data(timecourse_data, sample_names)
-    triton_fluorescence = extract_fluorescence_data(triton_data, sample_names)
+    def process_run(
+        before_file: str, timecourse_file: str, triton_file: str
+    ) -> pd.DataFrame:
+        """Process one set of Before/Timecourse/Triton CSVs into a release DataFrame."""
+        before_data = pd.read_csv(before_file, header=None)
+        timecourse_data = pd.read_csv(timecourse_file, header=None)
+        triton_data = pd.read_csv(triton_file, header=None)
 
-    sample_names = before_fluorescence.columns
+        sample_names = []
+        for i in range(0, len(before_data.columns), 2):
+            if i < len(before_data.columns) - 1:
+                name = str(before_data.iloc[0, i]).strip()
+                if name.startswith("Sample "):
+                    sample_names.append(name.replace("Sample ", ""))
 
-    before_avg = before_fluorescence.mean(axis=0)
-    triton_avg = triton_fluorescence.mean(axis=0)
+        before_fluorescence = extract_fluorescence_data(before_data, sample_names)
+        timecourse_fluorescence = extract_fluorescence_data(
+            timecourse_data, sample_names
+        )
+        triton_fluorescence = extract_fluorescence_data(triton_data, sample_names)
 
-    # Ensure we have Series objects
-    if not isinstance(before_avg, pd.Series):
-        before_avg = pd.Series(before_avg)
-    if not isinstance(triton_avg, pd.Series):
-        triton_avg = pd.Series(triton_avg)
+        cols = before_fluorescence.columns
+        before_avg = before_fluorescence.mean(axis=0)
+        triton_avg = triton_fluorescence.mean(axis=0)
 
-    # Calculate calcein release percentage
-    release_data = {}
+        release_data = {}
+        for sample in cols:
+            if sample in timecourse_fluorescence.columns:
+                f_before = float(before_avg[sample])  # type: ignore[arg-type]
+                f_triton = float(triton_avg[sample])  # type: ignore[arg-type]
+                release_data[sample] = (
+                    100
+                    * (timecourse_fluorescence[sample] - f_before)
+                    / (f_triton - f_before)
+                )
 
-    for sample in sample_names:
-        if (
-            sample in timecourse_fluorescence.columns
-            and sample in before_avg.index
-            and sample in triton_avg.index
-        ):
-            f_timecourse = timecourse_fluorescence[sample]
-            f_before = float(before_avg[sample])
-            f_triton = float(triton_avg[sample])
+        return pd.DataFrame(release_data)
 
-            # Calculate release percentage
-            # release = 100 * (f_timecourse - f_before) / (f_triton - f_before)
-            release_percentage = 100 * (f_timecourse - f_before) / (f_triton - f_before)
+    # Process all runs and concatenate (runs use distinct row letters, so column
+    # names like A1, B1 from run 1 and C1, D1 from run 2 don't collide)
+    run_dfs = [
+        process_run(b, t, r)
+        for b, t, r in zip(
+            sorted(before_files), sorted(timecourse_files), sorted(triton_files)
+        )
+    ]
 
-            release_data[sample] = release_percentage
-
-    # Create the final DataFrame
-    result_df = pd.DataFrame(release_data)
-
-    return result_df
+    return pd.concat(run_dfs, axis=1)
 
 
 def calculate_release_from_fluorescence(
