@@ -13,7 +13,7 @@ from pathlib import Path
 from scipy.interpolate import interp1d
 from statsmodels.nonparametric.smoothers_lowess import lowess
 from tqdm import tqdm
-from typing import Any, cast
+from typing import Any, Optional, cast
 from joblib import Parallel, delayed
 from utils.plotting import setup_plot_style, format_axes
 
@@ -620,6 +620,7 @@ def plot_combined_spectrum_and_amplitude(
     all_dataset_curves: dict[str, tuple[Any, list[tuple[Any, Any]]]],
     all_dataset_per_particle_data: dict[str, tuple[Any, list[list[tuple[Any, Any]]]]],
     output_path: Path,
+    bootstrap_cache_path: Optional[Path] = None,
     radial_band_min: float = 2.0,
     radial_band_max: float = 5.0,
     peak_search_min: float = 2.0,
@@ -640,6 +641,9 @@ def plot_combined_spectrum_and_amplitude(
         Dictionary mapping dataset names to (radial_distances, per_particle_data) tuples
     output_path : Path
         Path to save the output SVG file
+    bootstrap_cache_path : Path or None
+        If provided, load bootstrap results from this file if it exists, otherwise
+        compute and save them there.
     radial_band_min : float
         Minimum radial distance in nm (default: 2.0)
     radial_band_max : float
@@ -653,78 +657,111 @@ def plot_combined_spectrum_and_amplitude(
     n_bootstrap : int
         Number of bootstrap iterations (default: 100)
     """
-    # Create figure with 1x2 subplots
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(120 / 25.4, 40 / 25.4))
+    # Shared spacing grid used by bootstrap
+    spacing_fit = np.logspace(
+        np.log10(spacing_range[0]), np.log10(spacing_range[1]), 200
+    )
+
+    # --- Compute (or load) bootstrap results ---
+    if bootstrap_cache_path is not None and bootstrap_cache_path.exists():
+        print(f"  Loading bootstrap cache from {bootstrap_cache_path}...")
+        with open(bootstrap_cache_path, "rb") as f:
+            boot_cache = pickle.load(f)
+        peak_spacings: dict[str, Any] = boot_cache["peak_spacings"]
+        peak_powers: dict[str, Any] = boot_cache["peak_powers"]
+        spectrum_boot: dict[str, tuple[Any, Any]] = boot_cache["spectrum_boot"]
+        amplitude_boot: dict[str, tuple[Any, Any]] = boot_cache["amplitude_boot"]
+    else:
+        peak_spacings = {}
+        peak_powers = {}
+        spectrum_boot = {}
+        amplitude_boot = {}
+
+        # First pass: find peak spacings and compute spectrum bootstrap
+        for dataset_name, (
+            radial_distances,
+            raw_data_list,
+        ) in all_dataset_raw_data.items():
+            mask = (radial_distances >= radial_band_min) & (
+                radial_distances <= radial_band_max
+            )
+            selected_indices = np.where(mask)[0]
+
+            all_spacings = []
+            all_powers = []
+            for idx in selected_indices:
+                spacings_sorted, powers_sorted = raw_data_list[idx]
+                all_spacings.append(spacings_sorted)
+                all_powers.append(powers_sorted)
+
+            combined_spacings = np.concatenate(all_spacings)
+            combined_powers = np.concatenate(all_powers)
+            sort_idx = np.argsort(combined_spacings)
+            combined_spacings = combined_spacings[sort_idx]
+            combined_powers = combined_powers[sort_idx]
+
+            lowess_result = lowess(combined_powers, combined_spacings, frac=0.1)
+            lowess_interp = interp1d(
+                lowess_result[:, 0],
+                lowess_result[:, 1],
+                kind="linear",
+                bounds_error=False,
+                fill_value=cast(float, "extrapolate"),  # type: ignore[arg-type]
+            )
+            power_fit = lowess_interp(spacing_fit)
+
+            peak_mask = (spacing_fit >= peak_search_min) & (
+                spacing_fit <= peak_search_max
+            )
+            peak_idx = np.argmax(power_fit[peak_mask])
+            peak_spacings[dataset_name] = spacing_fit[peak_mask][peak_idx]
+            peak_powers[dataset_name] = power_fit[peak_mask][peak_idx]
+
+            print(f"  Bootstrap spectrum for {dataset_name}...")
+            _, per_particle_data = all_dataset_per_particle_data[dataset_name]
+            mean_curve, se_curve = bootstrap_lowess_power_spectrum(
+                per_particle_data,
+                radial_distances,
+                radial_band_min,
+                radial_band_max,
+                spacing_fit,
+                n_bootstrap,
+            )
+            spectrum_boot[dataset_name] = (mean_curve, se_curve)
+
+        # Second pass: compute amplitude bootstrap using peak spacings
+        for dataset_name, (radial_distances, _) in all_dataset_curves.items():
+            peak_spacing = peak_spacings[dataset_name]
+            print(f"  Bootstrap amplitude for {dataset_name}...")
+            _, per_particle_data = all_dataset_per_particle_data[dataset_name]
+            mean_values, se_values = bootstrap_lowess_at_spacing(
+                per_particle_data, radial_distances, peak_spacing, n_bootstrap
+            )
+            amplitude_boot[dataset_name] = (mean_values, se_values)
+
+        if bootstrap_cache_path is not None:
+            print(f"  Saving bootstrap cache to {bootstrap_cache_path}...")
+            with open(bootstrap_cache_path, "wb") as f:
+                pickle.dump(
+                    {
+                        "peak_spacings": peak_spacings,
+                        "peak_powers": peak_powers,
+                        "spectrum_boot": spectrum_boot,
+                        "amplitude_boot": amplitude_boot,
+                    },
+                    f,
+                )
+
+    # --- Plot ---
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(88 / 25.4, 40 * 88 / 120 / 25.4))
     colors = sns.color_palette("colorblind", n_colors=4)
 
-    # Store peak spacings for each dataset
-    peak_spacings = {}
-
     # LEFT SUBPLOT: Power spectrum
-    for i, (dataset_name, (radial_distances, raw_data_list)) in enumerate(
-        all_dataset_raw_data.items()
-    ):
-        # Find indices of radial distances in the band
-        mask = (radial_distances >= radial_band_min) & (
-            radial_distances <= radial_band_max
-        )
-        selected_indices = np.where(mask)[0]
+    for i, dataset_name in enumerate(all_dataset_raw_data):
+        mean_curve, se_curve = spectrum_boot[dataset_name]
+        peak_spacing = peak_spacings[dataset_name]
+        peak_power = peak_powers[dataset_name]
 
-        # Collect all raw data from selected radial distances
-        all_spacings = []
-        all_powers = []
-
-        for idx in selected_indices:
-            spacings_sorted, powers_sorted = raw_data_list[idx]
-            all_spacings.append(spacings_sorted)
-            all_powers.append(powers_sorted)
-
-        # Combine all data
-        combined_spacings = np.concatenate(all_spacings)
-        combined_powers = np.concatenate(all_powers)
-
-        # Sort by spacing
-        sort_idx = np.argsort(combined_spacings)
-        combined_spacings = combined_spacings[sort_idx]
-        combined_powers = combined_powers[sort_idx]
-
-        # Apply LOWESS smoothing
-        lowess_result = lowess(combined_powers, combined_spacings, frac=0.1)
-
-        # Interpolate to smooth grid
-        spacing_fit = np.logspace(
-            np.log10(spacing_range[0]), np.log10(spacing_range[1]), 200
-        )
-        lowess_interp = interp1d(
-            lowess_result[:, 0],
-            lowess_result[:, 1],
-            kind="linear",
-            bounds_error=False,
-            fill_value=cast(float, "extrapolate"),  # type: ignore[arg-type]
-        )
-        power_fit = lowess_interp(spacing_fit)
-
-        # Find peak in specified range
-        peak_mask = (spacing_fit >= peak_search_min) & (spacing_fit <= peak_search_max)
-        peak_idx = np.argmax(power_fit[peak_mask])
-        peak_spacing = spacing_fit[peak_mask][peak_idx]
-        peak_power = power_fit[peak_mask][peak_idx]
-
-        # Store peak spacing for right subplot
-        peak_spacings[dataset_name] = peak_spacing
-
-        # Get bootstrap estimates
-        _, per_particle_data = all_dataset_per_particle_data[dataset_name]
-        mean_curve, se_curve = bootstrap_lowess_power_spectrum(
-            per_particle_data,
-            radial_distances,
-            radial_band_min,
-            radial_band_max,
-            spacing_fit,
-            n_bootstrap,
-        )
-
-        # Plot error band first (so it's behind the line)
         ax1.fill_between(
             spacing_fit,
             mean_curve - se_curve,
@@ -733,8 +770,6 @@ def plot_combined_spectrum_and_amplitude(
             color=colors[i],
             linewidth=0,
         )
-
-        # Plot main curve (use mean_curve from bootstrap so it matches the error bands)
         ax1.plot(
             spacing_fit,
             mean_curve,
@@ -743,8 +778,6 @@ def plot_combined_spectrum_and_amplitude(
             label=f"{dataset_name} ({peak_spacing:.1f} nm)",
             alpha=0.8,
         )
-
-        # Add marker at peak
         ax1.plot(
             peak_spacing,
             peak_power,
@@ -755,30 +788,20 @@ def plot_combined_spectrum_and_amplitude(
             markeredgewidth=0.5,
         )
 
-    # Format left subplot
     ax1.set_xlabel("Spacing / nm")
-    ax1.set_ylabel("Fourier transform amplitude")
+    ax1.set_ylabel("Fourier amplitude")
     ax1.set_xlim(spacing_range[0], spacing_range[1])
     ax1.set_title("Average Power Spectrum")
     format_axes(ax1)
     ax1.tick_params(axis="y", which="both", left=False, labelleft=False)
 
     # RIGHT SUBPLOT: Amplitude at peak spacing
-    x_coords = np.arange(0.5, 25.0, 1.0)  # [0.5, 1.5, 2.5, ..., 24.5]
+    x_coords = np.arange(0.5, 25.0, 1.0)
 
-    for i, (dataset_name, (radial_distances, lowess_curves)) in enumerate(
-        all_dataset_curves.items()
-    ):
-        # Get the peak spacing for this dataset
+    for i, dataset_name in enumerate(all_dataset_curves):
         peak_spacing = peak_spacings[dataset_name]
+        mean_values, se_values = amplitude_boot[dataset_name]
 
-        # Get bootstrap estimates
-        _, per_particle_data = all_dataset_per_particle_data[dataset_name]
-        mean_values, se_values = bootstrap_lowess_at_spacing(
-            per_particle_data, radial_distances, peak_spacing, n_bootstrap
-        )
-
-        # Plot error band first (so it's behind the line)
         ax2.fill_between(
             x_coords,
             mean_values - se_values,
@@ -787,8 +810,6 @@ def plot_combined_spectrum_and_amplitude(
             color=colors[i],
             linewidth=0,
         )
-
-        # Plot main curve (use mean_values from bootstrap so it matches the error bands)
         ax2.plot(
             x_coords,
             mean_values,
@@ -798,9 +819,8 @@ def plot_combined_spectrum_and_amplitude(
             alpha=0.8,
         )
 
-    # Format right subplot
     ax2.set_xlabel("Radial distance from membrane / nm")
-    ax2.set_ylabel("Fourier transform amplitude")
+    ax2.set_ylabel("Fourier amplitude")
     ax2.set_xlim(math.floor(x_coords.min()), math.ceil(x_coords.max()))
     ax2.set_title("Amplitude At Peak Spacing")
     ax2.legend(frameon=False, loc="upper right")
@@ -858,7 +878,9 @@ def plot_combined_power_spectra(
     ylim = (y_min - y_margin, y_max + y_margin)
 
     # Create figure with 2x2 subplots, sharing Y-axis (half size: 14.4 -> 7.2, 12 -> 6)
-    fig, axes = plt.subplots(2, 2, figsize=(120 / 25.4, 100 / 25.4), sharey=True)
+    fig, axes = plt.subplots(
+        2, 2, figsize=(88 / 25.4, 100 * 88 / 120 / 25.4), sharey=True
+    )
     axes = axes.flatten()
 
     # Use plasma colormap for radial distances
@@ -896,7 +918,7 @@ def plot_combined_power_spectra(
         ax.set_title(DATASET_PLOT_TITLES.get(dataset_name, dataset_name))
 
         # Apply standard formatting, then remove Y-axis ticks (units are arbitrary)
-        ax.set_ylabel("Fourier transform amplitude")
+        ax.set_ylabel("Fourier amplitude")
         format_axes(ax)
         ax.tick_params(axis="y", which="both", left=False, labelleft=False)
 
@@ -1005,11 +1027,13 @@ def main():
     if all_dataset_raw_data and all_dataset_curves and all_dataset_per_particle_data:
         print("\nCreating combined spectrum and amplitude plot...")
         combined_output = data_dir / "combined_spectrum_amplitude.svg"
+        bootstrap_cache = data_dir / "bootstrap_cache.pkl"
         plot_combined_spectrum_and_amplitude(
             all_dataset_raw_data,
             all_dataset_curves,
             all_dataset_per_particle_data,
             combined_output,
+            bootstrap_cache_path=bootstrap_cache,
             radial_band_min=2.0,
             radial_band_max=5.0,
             peak_search_min=2.0,

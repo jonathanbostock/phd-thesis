@@ -18,7 +18,6 @@ import seaborn as sns
 from pathlib import Path
 from typing import cast
 
-from utils.default_settings import defaults
 from utils.plotting import format_axes, save_plot, setup_plot_style
 
 GAUSSIAN_SIGMA_UM = 1.0  # Gaussian kernel width in micrometres
@@ -26,8 +25,8 @@ GAUSSIAN_SIGMA_UM = 1.0  # Gaussian kernel width in micrometres
 CONDITION_ORDER = ["After DNA brush addition", "After cyclodextrin addition"]
 
 CONDITION_LABELS = {
-    "After DNA brush addition": "After DNA Brush Addition",
-    "After cyclodextrin addition": "After Cyclodextrin Addition",
+    "After DNA brush addition": "+ DNA Construct",
+    "After cyclodextrin addition": "+ Cyclodextrin",
 }
 
 
@@ -172,8 +171,9 @@ def plot_combined_timecourse(
 
     ax.set_xticks(tick_positions)
     ax.set_xticklabels(tick_labels)
-    ax.set_xlabel("Time (min)")
-    ax.set_ylabel("Membrane Fluorescence (a.u.)")
+    ax.set_xlabel("Time / min")
+    ax.set_ylabel("Membrane Fluorescence")
+    ax.set_yticks([])
     ax.legend(frameon=False, loc="best")
     format_axes(ax)
 
@@ -198,9 +198,7 @@ def process_sample(sample_dir: Path) -> None:
         data[condition] = df
 
     setup_plot_style()
-    fig, ax = plt.subplots(
-        figsize=(defaults.fig_width * 2.5, defaults.fig_height * 1.2)
-    )
+    fig, ax = plt.subplots(figsize=(120 / 25.4, 45 / 25.4))
     plot_combined_timecourse(data, ax)
     plt.tight_layout()
     out_path = str(sample_dir / "membrane_fluorescence_timecourse")

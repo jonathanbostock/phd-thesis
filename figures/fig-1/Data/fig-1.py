@@ -34,14 +34,14 @@ def main() -> None:
         control_name="control",
     )
 
-    # --- Figure setup: 2 rows x 2 cols ---
-    fig = plt.figure(figsize=(120 / 25.4, 130 / 25.4))
+    # --- Figure setup: 2 rows x 2 cols (length col left, shape col right) ---
+    fig = plt.figure(figsize=(88 / 25.4, 88 * 120 / 130 / 25.4))
     gs = gridspec.GridSpec(
-        2, 2, hspace=0.45, wspace=0.4, left=0.1, right=0.98, top=0.95, bottom=0.1
+        2, 2, hspace=0.5, wspace=0.4, left=0.1, right=0.98, top=0.95, bottom=0.1
     )
     ax1 = fig.add_subplot(gs[0, 0])  # Top-left: length dose-response
-    ax2 = fig.add_subplot(gs[0, 1])  # Top-right: ΔD_max vs brush length
-    ax3 = fig.add_subplot(gs[1, 0])  # Bottom-left: shape dose-response
+    ax2 = fig.add_subplot(gs[1, 0])  # Bottom-left: ΔD_max vs brush length
+    ax3 = fig.add_subplot(gs[0, 1])  # Top-right: shape dose-response
     ax4 = fig.add_subplot(gs[1, 1])  # Bottom-right: shape params
 
     # =====================================================================
@@ -72,7 +72,7 @@ def main() -> None:
             edgecolors="black",
             linewidths=0.5,
             label=f"{int(bl)} bp",
-            s=50,
+            s=25,
         )
 
         popt, pcov = plot_fit_curve(
@@ -121,7 +121,7 @@ def main() -> None:
                 color=c,
                 markeredgecolor="black",
                 markeredgewidth=0.5,
-                markersize=8,
+                markersize=5,
                 capsize=3,
                 linewidth=0.5,
             )
@@ -141,17 +141,15 @@ def main() -> None:
             label=f"Slope = {slope:.3f}",
         )
 
-        # Legend for top row on the right-hand panel
         ax1.legend(
             title="Brush Length",
-            bbox_to_anchor=(1.05, 1),
-            loc="upper left",
+            loc="upper right",
             frameon=False,
         )
 
-        ax2.set_xlabel("Brush Length / bp")
+        ax2.set_xlabel("Construct Length / bp")
         ax2.set_ylabel(r"$\Delta D_{max}$ / nm")
-        ax2.set_title(r"Fitted $\Delta D_{max}$ vs Construct Length")
+        ax2.set_title(r"Fitted $\Delta D_{max}$ vs Length")
         ax2.legend(frameon=False)
         ax2.set_xlim(0, max(bl_fit) * 1.1)
         ax2.set_ylim(0, max(ddm_vals) * 1.1)
@@ -181,7 +179,7 @@ def main() -> None:
             edgecolors="black",
             linewidths=0.5,
             label=f"{shape}",
-            s=50,
+            s=25,
         )
 
         param_mean, param_cov = plot_fit_curve(
@@ -210,7 +208,7 @@ def main() -> None:
             edgecolors="black",
             linewidths=0.5,
             label=f"{shape}",
-            s=50,
+            s=25,
         )
 
         plot_error_ellipse(
@@ -226,18 +224,16 @@ def main() -> None:
     format_axes(ax3)
     ax3.set_ylim(ax1.get_ylim()[0], None)
 
-    # Legend for bottom row on the right-hand panel
     ax3.legend(
         title="DNA Shape",
-        bbox_to_anchor=(1.05, 1),
-        loc="upper left",
+        loc="upper right",
         frameon=False,
     )
 
     ax4.set_xlabel("$c_{1/2}$")
     ax4.set_xscale("log")
     ax4.set_ylabel(r"$\Delta D_{max}$ / nm")
-    ax4.set_title("Fitted Parameters vs Construct Shape")
+    ax4.set_title("Fitted Parameters vs Shape")
     format_axes(ax4)
 
     save_plot(fig, data_dir / "Delta D")
