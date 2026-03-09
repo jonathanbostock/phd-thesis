@@ -1,0 +1,84 @@
+Complex results:
+                                              Complex       Pfunc dG (kcal/mol)
+0                                          (Strand A)   2.6200e+0        -0.571
+1                                          (Strand B)   1.0077e+0        -0.005
+2                                          (Strand C)   1.5170e+0        -0.247
+3                                   (Test 1 Strand 1)   2.6200e+0        -0.571
+4                                   (Test 1 Strand 2)   1.0077e+0        -0.005
+5                                   (Test 1 Strand 3)   1.5170e+0        -0.247
+6                                   (Test 2 Strand 1)   2.6200e+0        -0.571
+7                                   (Test 2 Strand 2)   1.0077e+0        -0.005
+8                                   (Test 2 Strand 3)   1.5170e+0        -0.247
+9                                 (Strand A+Strand A)   9.3451e+4        -6.781
+10                                (Strand A+Strand B)   6.0453e+6        -9.251
+11                                (Strand A+Strand C)  3.5334e+10       -14.390
+12                                (Strand B+Strand B)   8.0275e+2        -3.962
+13                                (Strand C+Strand B)   1.2336e+4        -5.581
+14                                (Strand C+Strand C)   5.2503e+3        -5.075
+15                  (Test 1 Strand 1+Test 1 Strand 1)   9.3451e+4        -6.781
+16                  (Test 1 Strand 1+Test 1 Strand 2)   6.0453e+6        -9.251
+17                  (Test 1 Strand 1+Test 1 Strand 3)  3.5334e+10       -14.390
+18                  (Test 1 Strand 2+Test 1 Strand 2)   8.0275e+2        -3.962
+19                  (Test 1 Strand 3+Test 1 Strand 2)   1.2336e+4        -5.581
+20                  (Test 1 Strand 3+Test 1 Strand 3)   5.2503e+3        -5.075
+21                  (Test 2 Strand 1+Test 2 Strand 1)   9.3451e+4        -6.781
+22                  (Test 2 Strand 1+Test 2 Strand 2)   6.0453e+6        -9.251
+23                  (Test 2 Strand 1+Test 2 Strand 3)  3.5334e+10       -14.390
+24                  (Test 2 Strand 2+Test 2 Strand 2)   8.0275e+2        -3.962
+25                  (Test 2 Strand 3+Test 2 Strand 2)   1.2336e+4        -5.581
+26                  (Test 2 Strand 3+Test 2 Strand 3)   5.2503e+3        -5.075
+27                       (Strand A+Strand A+Strand A)   4.0203e+9       -13.102
+28                       (Strand A+Strand A+Strand B)  1.1864e+11       -15.108
+29                       (Strand A+Strand A+Strand C)  1.4226e+15       -20.672
+30                       (Strand A+Strand B+Strand B)  2.5128e+10       -14.188
+31                       (Strand A+Strand B+Strand C)  5.0890e+17       -24.156
+32                       (Strand A+Strand C+Strand B)  1.1528e+13       -17.819
+33                       (Strand A+Strand C+Strand C)  4.7588e+14       -20.023
+34                       (Strand B+Strand B+Strand B)   5.8717e+5        -7.870
+35                       (Strand C+Strand B+Strand B)   4.5016e+7       -10.441
+36                       (Strand C+Strand C+Strand B)   7.6476e+7       -10.755
+37                       (Strand C+Strand C+Strand C)   2.9752e+7       -10.196
+38  (Test 1 Strand 1+Test 1 Strand 1+Test 1 Strand 1)   4.0203e+9       -13.102
+39  (Test 1 Strand 1+Test 1 Strand 1+Test 1 Strand 2)  1.1864e+11       -15.108
+40  (Test 1 Strand 1+Test 1 Strand 1+Test 1 Strand 3)  1.4226e+15       -20.672
+41  (Test 1 Strand 1+Test 1 Strand 2+Test 1 Strand 2)  2.5128e+10       -14.188
+42  (Test 1 Strand 1+Test 1 Strand 2+Test 1 Strand 3)  5.0890e+17       -24.156
+43  (Test 1 Strand 1+Test 1 Strand 3+Test 1 Strand 2)  1.1528e+13       -17.819
+44  (Test 1 Strand 1+Test 1 Strand 3+Test 1 Strand 3)  4.7588e+14       -20.023
+45  (Test 1 Strand 2+Test 1 Strand 2+Test 1 Strand 2)   5.8717e+5        -7.870
+46  (Test 1 Strand 3+Test 1 Strand 2+Test 1 Strand 2)   4.5016e+7       -10.441
+47  (Test 1 Strand 3+Test 1 Strand 3+Test 1 Strand 2)   7.6476e+7       -10.755
+48  (Test 1 Strand 3+Test 1 Strand 3+Test 1 Strand 3)   2.9752e+7       -10.196
+49  (Test 2 Strand 1+Test 2 Strand 1+Test 2 Strand 1)   4.0203e+9       -13.102
+50  (Test 2 Strand 1+Test 2 Strand 1+Test 2 Strand 2)  1.1864e+11       -15.108
+51  (Test 2 Strand 1+Test 2 Strand 1+Test 2 Strand 3)  1.4226e+15       -20.672
+52  (Test 2 Strand 1+Test 2 Strand 2+Test 2 Strand 2)  2.5128e+10       -14.188
+53  (Test 2 Strand 1+Test 2 Strand 2+Test 2 Strand 3)  5.0890e+17       -24.156
+54  (Test 2 Strand 1+Test 2 Strand 3+Test 2 Strand 2)  1.1528e+13       -17.819
+55  (Test 2 Strand 1+Test 2 Strand 3+Test 2 Strand 3)  4.7588e+14       -20.023
+56  (Test 2 Strand 2+Test 2 Strand 2+Test 2 Strand 2)   5.8717e+5        -7.870
+57  (Test 2 Strand 3+Test 2 Strand 2+Test 2 Strand 2)   4.5016e+7       -10.441
+58  (Test 2 Strand 3+Test 2 Strand 3+Test 2 Strand 2)   7.6476e+7       -10.755
+59  (Test 2 Strand 3+Test 2 Strand 3+Test 2 Strand 3)   2.9752e+7       -10.196
+Concentration results:
+                                           Complex Test 1 (M)                                              Complex Test 2 (M)                         Complex Test 3 (M)  
+                 (Test 1 Strand 1+Test 1 Strand 3)  8.950e-07                                    (Test 2 Strand 2)  1.346e-06             (Strand A+Strand C)  8.950e-07  
+                                 (Test 1 Strand 3)  5.110e-07                                    (Test 2 Strand 1)  4.780e-07                      (Strand C)  5.110e-07  
+                                 (Test 1 Strand 2)  4.060e-07                    (Test 2 Strand 1+Test 2 Strand 3)  3.675e-07                      (Strand B)  4.060e-07  
+ (Test 1 Strand 1+Test 1 Strand 2+Test 1 Strand 3)  9.383e-08    (Test 2 Strand 1+Test 2 Strand 2+Test 2 Strand 3)  1.277e-07    (Strand A+Strand B+Strand C)  9.383e-08  
+                                 (Test 1 Strand 1)  1.090e-08                    (Test 2 Strand 1+Test 2 Strand 2)  2.661e-08                      (Strand A)  1.090e-08  
+                 (Test 1 Strand 1+Test 1 Strand 2)  1.831e-10                                    (Test 2 Strand 3)  4.786e-09             (Strand A+Strand B)  1.831e-10  
+ (Test 1 Strand 1+Test 1 Strand 3+Test 1 Strand 3)  7.336e-11                    (Test 2 Strand 1+Test 2 Strand 1)  5.621e-11    (Strand A+Strand C+Strand C)  7.336e-11  
+                 (Test 1 Strand 3+Test 1 Strand 2)  3.024e-11    (Test 2 Strand 1+Test 2 Strand 1+Test 2 Strand 3)  4.877e-11             (Strand C+Strand B)  3.024e-11  
+                 (Test 1 Strand 3+Test 1 Strand 3)  1.076e-11                    (Test 2 Strand 2+Test 2 Strand 2)  2.586e-11             (Strand C+Strand C)  1.076e-11  
+ (Test 1 Strand 1+Test 1 Strand 1+Test 1 Strand 3)  2.710e-12    (Test 2 Strand 1+Test 2 Strand 3+Test 2 Strand 2)  2.893e-12    (Strand A+Strand A+Strand C)  2.710e-12  
+                 (Test 1 Strand 2+Test 1 Strand 2)  2.354e-12    (Test 2 Strand 1+Test 2 Strand 2+Test 2 Strand 2)  2.669e-12             (Strand B+Strand B)  2.354e-12  
+ (Test 1 Strand 1+Test 1 Strand 3+Test 1 Strand 2)  2.125e-12    (Test 2 Strand 1+Test 2 Strand 1+Test 2 Strand 2)  1.722e-12    (Strand A+Strand C+Strand B)  2.125e-12  
+                 (Test 1 Strand 1+Test 1 Strand 1)  2.925e-14                    (Test 2 Strand 3+Test 2 Strand 2)  9.390e-13             (Strand A+Strand A)  2.925e-14  
+ (Test 1 Strand 1+Test 1 Strand 2+Test 1 Strand 2)  5.542e-15    (Test 2 Strand 1+Test 2 Strand 3+Test 2 Strand 3)  2.821e-13    (Strand A+Strand B+Strand B)  5.542e-15  
+ (Test 1 Strand 3+Test 1 Strand 3+Test 1 Strand 2)  1.141e-15    (Test 2 Strand 1+Test 2 Strand 1+Test 2 Strand 1)  7.971e-15    (Strand C+Strand C+Strand B)  1.141e-15  
+ (Test 1 Strand 3+Test 1 Strand 2+Test 1 Strand 2)  8.034e-16                    (Test 2 Strand 3+Test 2 Strand 3)  9.441e-16    (Strand C+Strand B+Strand B)  8.034e-16  
+ (Test 1 Strand 3+Test 1 Strand 3+Test 1 Strand 3)  3.711e-16    (Test 2 Strand 2+Test 2 Strand 2+Test 2 Strand 2)  4.565e-16    (Strand C+Strand C+Strand C)  3.711e-16  
+ (Test 1 Strand 1+Test 1 Strand 1+Test 1 Strand 2)  2.703e-16    (Test 2 Strand 3+Test 2 Strand 2+Test 2 Strand 2)  8.268e-17    (Strand A+Strand A+Strand B)  2.703e-16  
+ (Test 1 Strand 2+Test 1 Strand 2+Test 1 Strand 2)  1.253e-17    (Test 2 Strand 3+Test 2 Strand 3+Test 2 Strand 2)  3.318e-19    (Strand B+Strand B+Strand B)  1.253e-17  
+ (Test 1 Strand 1+Test 1 Strand 1+Test 1 Strand 1)  9.464e-20    (Test 2 Strand 3+Test 2 Strand 3+Test 2 Strand 3)  3.050e-22    (Strand A+Strand A+Strand A)  9.464e-20  

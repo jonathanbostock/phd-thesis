@@ -1,0 +1,23 @@
+Sample Name	Z-Average (nm)	Polydispersity Index (PI)	Peak 1 Area by Intensity ordered by area (%)	Peak 1 Mean by Intensity ordered by area (nm)
+Ext 1 Control 1	143.1	0.05889	100	153
+Ext 1 Control 2	139.7	0.07022	100	151.4
+Ext 1 Control 3	146.7	0.0626	100	159.1
+Ext 1 Control 4	146.7	0.05867	100	157.1
+Ext 1 0bp 40	165.7	0.0466	100	177
+Ext 1 15bp 40	175.2	0.01359	100	184.3
+Ext 1 30bp 40	177.1	0.0918	100	197.4
+Ext 1 42bp 40	183.3	0.03442	100	196.1
+Ext 2 Control 1	149.6	0.1959	100	151.2
+Ext 2 Control 2	156.2	0.09435	100	172.7
+Ext 2 Control 3	156.7	0.09476	100	173.6
+Ext 2 0bp 40	166.6	0.0735	100	181
+Ext 2 15bp 40	177.4	0.05861	100	191.9
+Ext 2 30bp 40	181.3	0.06523	100	196.6
+Ext 2 42bp 40	189	0.09093	100	208.4
+Ext 3 Control 1	148.6	0.08088	100	162.8
+Ext 3 Control 2	147.3	0.09424	100	155.3
+Ext 3 Control 3	153.7	0.1393	100	165.2
+Ext 3 0bp 40	166.2	0.05548	100	178.9
+Ext 3 15bp 40	175.3	0.02962	100	185.7
+Ext 3 30bp 40	181.2	0.0717	100	195.9
+Ext 3 42bp 40	185.7	0.04401	100	198.4

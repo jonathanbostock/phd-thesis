@@ -1,0 +1,346 @@
+Sample H9,,Sample H10,,Sample H11,,Sample H12,,
+Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),
+0.0008333333535,187.374176,0.02279166505,32.47455215,0.04335416481,161.6866608,0.06512500346,31.86732101,
+0.5008333325,184.6968079,0.5212500095,33.76032639,0.5429166555,163.43367,0.5637708306,32.50235748,
+1.000833273,186.6947021,1.022770762,33.39692307,1.042937517,163.8072357,1.064499974,31.67592812,
+1.500833392,184.6968384,1.522499919,32.67372894,1.543333292,170.4521027,1.564166665,32.3404541,
+2.000833273,184.2934723,2.022520781,33.49166489,2.043333292,173.3294067,2.064187527,32.35135651,
+2.500833273,183.9685211,2.521604061,33.67425919,2.543499947,167.7777252,2.564354181,31.31243515,
+3.000833273,184.2437897,3.021520853,34.41956711,3.04216671,169.2262268,3.064020872,32.08892822,
+3.500833273,185.5548248,3.522374868,33.17478561,3.543208361,173.031723,3.564604282,33.36795807,
+4.000833511,185.6299133,4.021416664,33.39086533,4.04333353,171.7933197,4.064166546,33.28886795,
+4.500833035,185.1075897,4.522041798,33.79397964,4.544000149,174.7061005,4.564833641,32.44347763,
+5.000833035,183.8123932,5.02068758,33.67318726,5.042666435,179.7983398,5.063499928,32.70756149,
+5.500833035,184.013916,5.522020817,32.69754791,5.543937683,175.6074219,5.564771175,32.20670319,
+6.000833035,184.612854,6.020208359,33.06867981,6.042104244,179.3749237,6.063000202,32.81589508,
+6.500833035,186.5634918,6.521604538,33.30049515,6.542437553,177.6800995,6.564332962,33.29511261,
+7.000833035,183.617157,7.020874977,33.13425446,7.041708469,178.8102112,7.063666821,33.18805313,
+7.500833035,187.2671661,7.522187233,33.6393013,7.543020725,181.738266,7.564916611,31.90515518,
+8.000833511,183.991745,8.022333145,33.61940765,8.043166161,183.1296692,8.065020561,33.24555588,
+8.500833511,186.0228271,8.521437645,33.42545319,8.54227066,177.6084747,8.564166069,33.30813217,
+9.000833511,186.7873383,9.021604538,33.57109833,9.043499947,177.5377197,9.064332962,32.94597626,
+9.500833511,184.4052124,9.522874832,34.21084976,9.543749809,177.7414093,9.564583778,32.74497986,
+10.00083351,186.131546,10.02204227,32.65388489,10.04291725,176.3732758,10.06377029,33.02699661,
+10.50083351,183.8870544,10.52118778,33.63318253,10.54204178,178.4416656,10.56393719,33.01029587,
+11.00083351,182.6837006,11.02135372,32.80014801,11.04118729,176.1033783,11.06304073,33.96667862,
+11.50083351,186.5970917,11.5215416,33.17356491,11.54343796,177.9986572,11.56427097,34.05373383,
+12.00083351,181.9697876,12.02283287,33.56789398,12.04366684,176.767334,12.06552124,34.0823288,
+12.50083351,185.09935,12.52108383,32.52607727,12.54191685,177.1094055,12.56277084,33.15118027,
+13.00083351,185.2911682,13.02133369,32.81723022,13.04216671,173.1637573,13.06300068,33.64888763,
+13.50083351,186.2978668,13.52252102,33.60034561,13.54333305,176.5297241,13.56518745,34.52100754,
+14.00083351,186.5695038,14.0215416,32.98452377,14.04343796,176.5681305,14.06433296,32.80776215,
+14.50083351,186.1178436,14.52170849,32.71444321,14.54258347,174.0986176,14.56341648,34.13063812,
+15.00083351,185.8916626,15.02087498,32.88432312,15.04283333,178.9419556,15.06366634,34.27069473,
+15.50083351,181.6890717,15.5211668,33.55165482,15.54200077,176.8140411,15.56285381,33.42557907,
+16.00083351,181.8436279,16.02233315,33.37089157,16.0431881,176.4669952,16.0650425,33.64630127,
+16.50083351,184.8322754,16.52041626,33.44655609,16.5423336,178.8748322,16.56316566,33.28050613,
+17.00083351,183.8542175,17.02052116,32.9888916,17.04135513,177.8108215,17.06320763,34.2678566,
+17.50083351,184.8748932,17.52066612,33.43369293,17.5425415,176.848999,17.56337547,34.25392532,
+18.00083351,182.348465,18.02199936,33.61621475,18.04385376,179.6991272,18.06468773,33.90444946,
+18.50083351,184.2082367,18.52116776,33.48264694,18.54199982,176.6568604,18.5638752,33.91653824,
+19.00083351,189.3405151,19.02135468,33.88138199,19.04218674,175.9693451,19.06302071,34.60017776,
+19.50083351,185.7568359,19.52150154,33.2458992,19.5423336,174.561264,19.5641861,34.41974258,
+20.00083351,183.410675,20.0205822,33.02718735,20.04141617,176.8195038,20.06120872,33.23324203,
+20.50083351,182.0543365,20.52283287,33.91056442,20.54368782,176.874054,20.56450081,33.6276207,
+21.00083351,182.6955414,21.02199936,32.42598724,21.04383278,177.3730316,21.06466675,33.60549164,
+21.50083351,183.8508759,21.52102089,33.57320786,21.54291534,177.7748871,21.5637722,33.35790253,
+22.00083351,182.4893646,22.02227211,32.55830383,22.04316521,180.8642426,22.06399918,34.62257385,
+22.50083351,182.0359802,22.52135468,33.50153732,22.54218674,178.1348877,22.56410408,33.5870285,
+23.00083351,182.1494141,23.02152061,33.78018951,23.04235458,175.6894226,23.06318855,33.68663025,
+23.50083351,184.9131012,23.522686,34.29611969,23.54351997,176.1039124,23.56541824,34.09357452,
+24.00083351,183.4324188,24.0218544,33.54517746,24.04268837,179.7310181,24.06352043,33.96611404,
+24.50083351,188.0587921,24.52102089,32.64760208,24.54185295,180.6433563,24.5637722,33.34056473,
+25.00083351,185.3463898,25.02124977,33.35505295,25.04210472,177.2476807,25.06293678,34.65775299,
+25.50083351,182.0287323,25.52249908,33.67058563,25.54333305,177.0042114,25.56416702,34.6955452,
+26.00083351,182.7505188,26.0215416,32.34334183,26.04241753,179.7150726,26.06433296,34.22904205,
+26.50083351,185.104126,26.5206871,32.88388824,26.54258347,175.8046722,26.56343842,33.29325485,
+27.00083351,185.7894745,27.02083397,33.34139633,27.04277229,179.0581055,27.06366539,34.01561737,
+27.50083351,187.0101929,27.52199936,32.19321442,27.54243851,177.7240753,27.56399918,33.90080643,
+28.00083351,183.3356628,28.02085304,33.03829575,28.04250145,176.6358643,28.06310463,33.91214371,
+28.50083351,182.7503815,28.52118683,33.42098618,28.54152107,179.078186,28.56285477,33.58789063,
+29.00083351,188.2055359,29.0221653,33.2995491,29.04385376,175.9271545,29.06451988,33.78620911,
+29.50083351,183.0035706,29.52227211,33.98656845,29.5436039,177.5441284,29.56416702,34.81494904,
+30.00083351,184.2836456,30.02158356,33.8584938,30.04241753,175.954483,30.06451988,34.22899246,
+30.50083351,188.6579895,30.52083397,33.23593903,30.54160309,177.0905762,30.5617485,33.89992905,
+31.00083351,186.1182098,31.02283287,33.59337234,31.04335403,175.7198334,31.06518745,33.23920441,
+31.50083351,183.402298,31.52041626,33.18675995,31.54199982,178.0132751,31.56383324,35.12382126,
+32.00083542,186.057373,32.0213356,34.11087418,32.04283142,177.5880432,32.06374741,34.26182175,
+32.50083542,184.0607147,32.52208328,33.12016678,32.54349899,174.6053314,32.56502151,32.88645554,
+33.00083542,182.7862549,33.02135468,32.61021423,33.04208374,177.5535431,33.06268692,35.1193161,
+33.50083542,183.7829742,33.52118683,33.77337646,33.54252243,176.545639,33.56304169,32.92123795,
+34.00083542,186.6536713,34.02127075,34.13911438,34.04235458,178.8414001,34.06383133,32.82441711,
+34.50083542,181.7309265,34.52051926,32.7215538,34.54199982,178.2508545,34.56333542,34.38932419,
+35.00083542,185.1390839,35.02085495,33.54987717,35.04268646,175.1842957,35.06341553,33.38935852,
+35.50083542,185.2714539,35.52191544,33.29753876,35.54277039,178.683136,35.56335449,34.02405548,
+36.00083542,181.9944458,36.0225029,33.70367432,36.04319,178.1383972,36.06450272,33.87188339,
+36.50083542,179.6835175,36.52243805,33.12138367,36.54399872,175.093338,36.56483078,34.06463623,
+37.00083542,185.4010773,37.02170944,33.08008957,37.04285431,176.3761139,37.06285477,34.17166138,
+37.50083542,184.8526306,37.52166748,34.46534729,37.54300308,176.3000336,37.56358337,33.45957565,
+38.00083542,185.619278,38.02099991,34.28396988,38.04185486,177.4670258,38.06270599,33.94400787,
+38.50083542,184.2891998,38.52235413,33.60803986,38.54425049,177.5366821,38.56510544,33.86803055,
+39.00083542,181.3111267,39.02050018,32.62654495,39.04235458,176.0348969,39.06318665,34.71679306,
+39.50083542,182.9637909,39.52266693,33.23563004,39.54350281,175.5814362,39.56435394,34.6986084,
+40.00083542,184.1832733,40.02177048,33.30771255,40.04260254,176.5492096,40.06452179,32.92084122,
+40.50083542,181.9082336,40.52187347,33.75181198,40.54376984,176.4664612,40.5646019,33.68081284,
+41.00083542,183.6398163,41.02101898,33.91488266,41.04285431,179.1183624,41.06368637,32.89594269,
+41.50083542,184.6821442,41.52316666,34.04635239,41.54399872,175.4340057,41.56485748,32.99185944,
+42.00083542,183.651535,42.0212059,33.62800598,42.04204178,178.822525,42.06400299,33.54698563,
+42.50083542,182.3947601,42.5213356,34.33494949,42.54216766,173.9422607,42.56402206,33.47049713,
+43.00083542,184.6735535,43.02149963,33.80858612,43.04233551,178.1423798,43.06316757,33.62206268,
+43.50083542,183.8647766,43.52258301,34.04782486,43.54341507,173.8392944,43.56533051,34.8816452,
+44.00083542,183.6160431,44.02268982,33.20855331,44.04352188,177.8262482,44.06437683,34.26986313,
+44.50083542,186.0027008,44.52183533,33.13137817,44.54266739,174.1019897,44.56452179,34.18565369,
+44.56452179,34.18565369,,,,,,,
+
+Sample H9,
+Sample H9
+Collection Time: 17-Apr-23 2:14:00 PM
+Operator Name  : Jonathan Bostock
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Mon 17 Apr 02:14:00 PM 2023
+Software version: 1.2(146)
+Operator: Jonathan Bostock
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               494.00
+Em. wavelength (nm)               517.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    120.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   650
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:                         Calcein Leakage DNA Attempt 1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 17-Apr-23 1:55:44 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 17-Apr-23 1:56:22 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 17-Apr-23 1:56:22 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 17-Apr-23 1:56:22 PM, Old: 600.00, New: 517.00
+Stop Time 1 Changed: 17-Apr-23 1:56:22 PM, Old: 1.0000, New:120.0000
+Wellplate Samples Changed: 17-Apr-23 1:56:22 PM, Old:, New:A1;A2;A3;A4;
+Wellplate Overlay Mode Changed: 17-Apr-23 1:57:32 PM, Old:Overlay columns, New:Individual
+Operator Changed: 17-Apr-23 1:57:36 PM, Old:, New:Jonathan Bostock
+Comment Changed: 17-Apr-23 1:57:36 PM, Old:, New:Calcein Leakage DNA Attempt 1
+Report Company Logo Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Data Form Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Graph Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Results Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Cycle Time 1 Changed: 17-Apr-23 1:57:36 PM, Old: 0.0000, New: 1.0000
+Plot Fit Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+X mode Changed: 17-Apr-23 2:01:00 PM, Old:min, New:sec
+PMT Volts Changed: 17-Apr-23 2:06:42 PM, Old:600, New:650
+Emission PMT (V): Changed: 17-Apr-23 2:06:42 PM, Old: 600, New: 650
+Wellplate Samples Changed: 17-Apr-23 2:10:28 PM, Old:A1;A2;A3;A4;, New:H9;H10;H11;H12;
+Stop Time 1 Changed: 17-Apr-23 2:10:34 PM, Old:120.0000, New:30.0000
+X mode Changed: 17-Apr-23 2:11:26 PM, Old:sec, New:min
+Stop Time 1 Changed: 17-Apr-23 2:11:26 PM, Old:30.0000, New:120.0000
+Cycle Time 1 Changed: 17-Apr-23 2:13:58 PM, Old: 1.0000, New: 0.5000
+End Method Modifications
+
+Sample H10,
+Sample H10
+Collection Time: 17-Apr-23 2:14:00 PM
+Operator Name  : Jonathan Bostock
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Mon 17 Apr 02:14:00 PM 2023
+Software version: 1.2(146)
+Operator: Jonathan Bostock
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               494.00
+Em. wavelength (nm)               517.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    120.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   650
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:                         Calcein Leakage DNA Attempt 1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 17-Apr-23 1:55:44 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 17-Apr-23 1:56:22 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 17-Apr-23 1:56:22 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 17-Apr-23 1:56:22 PM, Old: 600.00, New: 517.00
+Stop Time 1 Changed: 17-Apr-23 1:56:22 PM, Old: 1.0000, New:120.0000
+Wellplate Samples Changed: 17-Apr-23 1:56:22 PM, Old:, New:A1;A2;A3;A4;
+Wellplate Overlay Mode Changed: 17-Apr-23 1:57:32 PM, Old:Overlay columns, New:Individual
+Operator Changed: 17-Apr-23 1:57:36 PM, Old:, New:Jonathan Bostock
+Comment Changed: 17-Apr-23 1:57:36 PM, Old:, New:Calcein Leakage DNA Attempt 1
+Report Company Logo Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Data Form Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Graph Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Results Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Cycle Time 1 Changed: 17-Apr-23 1:57:36 PM, Old: 0.0000, New: 1.0000
+Plot Fit Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+X mode Changed: 17-Apr-23 2:01:00 PM, Old:min, New:sec
+PMT Volts Changed: 17-Apr-23 2:06:42 PM, Old:600, New:650
+Emission PMT (V): Changed: 17-Apr-23 2:06:42 PM, Old: 600, New: 650
+Wellplate Samples Changed: 17-Apr-23 2:10:28 PM, Old:A1;A2;A3;A4;, New:H9;H10;H11;H12;
+Stop Time 1 Changed: 17-Apr-23 2:10:34 PM, Old:120.0000, New:30.0000
+X mode Changed: 17-Apr-23 2:11:26 PM, Old:sec, New:min
+Stop Time 1 Changed: 17-Apr-23 2:11:26 PM, Old:30.0000, New:120.0000
+Cycle Time 1 Changed: 17-Apr-23 2:13:58 PM, Old: 1.0000, New: 0.5000
+End Method Modifications
+
+Sample H11,
+Sample H11
+Collection Time: 17-Apr-23 2:14:00 PM
+Operator Name  : Jonathan Bostock
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Mon 17 Apr 02:14:00 PM 2023
+Software version: 1.2(146)
+Operator: Jonathan Bostock
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               494.00
+Em. wavelength (nm)               517.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    120.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   650
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:                         Calcein Leakage DNA Attempt 1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 17-Apr-23 1:55:44 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 17-Apr-23 1:56:22 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 17-Apr-23 1:56:22 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 17-Apr-23 1:56:22 PM, Old: 600.00, New: 517.00
+Stop Time 1 Changed: 17-Apr-23 1:56:22 PM, Old: 1.0000, New:120.0000
+Wellplate Samples Changed: 17-Apr-23 1:56:22 PM, Old:, New:A1;A2;A3;A4;
+Wellplate Overlay Mode Changed: 17-Apr-23 1:57:32 PM, Old:Overlay columns, New:Individual
+Operator Changed: 17-Apr-23 1:57:36 PM, Old:, New:Jonathan Bostock
+Comment Changed: 17-Apr-23 1:57:36 PM, Old:, New:Calcein Leakage DNA Attempt 1
+Report Company Logo Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Data Form Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Graph Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Results Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Cycle Time 1 Changed: 17-Apr-23 1:57:36 PM, Old: 0.0000, New: 1.0000
+Plot Fit Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+X mode Changed: 17-Apr-23 2:01:00 PM, Old:min, New:sec
+PMT Volts Changed: 17-Apr-23 2:06:42 PM, Old:600, New:650
+Emission PMT (V): Changed: 17-Apr-23 2:06:42 PM, Old: 600, New: 650
+Wellplate Samples Changed: 17-Apr-23 2:10:28 PM, Old:A1;A2;A3;A4;, New:H9;H10;H11;H12;
+Stop Time 1 Changed: 17-Apr-23 2:10:34 PM, Old:120.0000, New:30.0000
+X mode Changed: 17-Apr-23 2:11:26 PM, Old:sec, New:min
+Stop Time 1 Changed: 17-Apr-23 2:11:26 PM, Old:30.0000, New:120.0000
+Cycle Time 1 Changed: 17-Apr-23 2:13:58 PM, Old: 1.0000, New: 0.5000
+End Method Modifications
+
+Sample H12,
+Sample H12
+Collection Time: 17-Apr-23 2:14:00 PM
+Operator Name  : Jonathan Bostock
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Mon 17 Apr 02:14:00 PM 2023
+Software version: 1.2(146)
+Operator: Jonathan Bostock
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               494.00
+Em. wavelength (nm)               517.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    120.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   650
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:                         Calcein Leakage DNA Attempt 1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 17-Apr-23 1:55:44 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 17-Apr-23 1:55:45 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 17-Apr-23 1:56:22 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 17-Apr-23 1:56:22 PM, Old: 400.00, New: 494.00
+Emission Wavelength Changed: 17-Apr-23 1:56:22 PM, Old: 600.00, New: 517.00
+Stop Time 1 Changed: 17-Apr-23 1:56:22 PM, Old: 1.0000, New:120.0000
+Wellplate Samples Changed: 17-Apr-23 1:56:22 PM, Old:, New:A1;A2;A3;A4;
+Wellplate Overlay Mode Changed: 17-Apr-23 1:57:32 PM, Old:Overlay columns, New:Individual
+Operator Changed: 17-Apr-23 1:57:36 PM, Old:, New:Jonathan Bostock
+Comment Changed: 17-Apr-23 1:57:36 PM, Old:, New:Calcein Leakage DNA Attempt 1
+Report Company Logo Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Data Form Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Graph Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Report Results Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+Cycle Time 1 Changed: 17-Apr-23 1:57:36 PM, Old: 0.0000, New: 1.0000
+Plot Fit Changed: 17-Apr-23 1:57:36 PM, Old:ON, New:OFF
+X mode Changed: 17-Apr-23 2:01:00 PM, Old:min, New:sec
+PMT Volts Changed: 17-Apr-23 2:06:42 PM, Old:600, New:650
+Emission PMT (V): Changed: 17-Apr-23 2:06:42 PM, Old: 600, New: 650
+Wellplate Samples Changed: 17-Apr-23 2:10:28 PM, Old:A1;A2;A3;A4;, New:H9;H10;H11;H12;
+Stop Time 1 Changed: 17-Apr-23 2:10:34 PM, Old:120.0000, New:30.0000
+X mode Changed: 17-Apr-23 2:11:26 PM, Old:sec, New:min
+Stop Time 1 Changed: 17-Apr-23 2:11:26 PM, Old:30.0000, New:120.0000
+Cycle Time 1 Changed: 17-Apr-23 2:13:58 PM, Old: 1.0000, New: 0.5000
+End Method Modifications
+
