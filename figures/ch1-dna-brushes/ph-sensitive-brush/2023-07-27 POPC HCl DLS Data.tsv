@@ -1,0 +1,20 @@
+Quality Indicator	Measurement Type	Result State	Sample Name	Measurement Start Date And Time	Temperature (°C)	Z-Average (nm)	Polydispersity Index (PI)	Peak 1 Area by Intensity ordered by area (%)	Peak 1 Mean by Intensity ordered by area (nm)
+GoodData	Size	Completed	Ext 1 0 HCl	27/07/2023 11:38	25	138.3	0.112	100	146.5
+GoodData	Size	Completed	Ext 1 3 HCl	27/07/2023 11:41	25	132.1	0.09461	100	143.3
+GoodData	Size	Completed	Ext 1 6 HCl	27/07/2023 11:43	25	132.3	0.07623	100	144.5
+GoodData	Size	Completed	Ext 1 9 HCl	27/07/2023 11:45	25	132.4	0.1135	100	147.9
+GoodData	Size	Completed	Ext 1 12 HCl	27/07/2023 11:47	25	130.2	0.06135	100	140
+GoodData	Size	Completed	Ext 1 15 HCl	27/07/2023 11:49	25	131.7	0.1045	100	146.1
+NoData	Size	Aborted	Ext 2 Test	27/07/2023 11:50	25	3.65E+04	0.6772		
+GoodData	Size	Completed	Ext 2 0 HCl	27/07/2023 11:52	25	130.2	0.1035	100	142.9
+GoodData	Size	Completed	Ext 2 3 HCl	27/07/2023 11:54	25	133.2	0.08649	100	146.8
+GoodData	Size	Completed	Ext 2 6 HCl	27/07/2023 11:56	25	130.2	0.08909	100	142.4
+GoodData	Size	Completed	Ext 2 9 HCl	27/07/2023 11:58	25	130.8	0.04927	100	139.4
+GoodData	Size	Completed	Ext 2 12 HCl	27/07/2023 12:00	25	133.6	0.1307	100	135.4
+GoodData	Size	Completed	Ext 2 15 HCl	27/07/2023 12:01	25	130.5	0.07509	100	142.4
+GoodData	Size	Completed	Ext 3 0 HCl	27/07/2023 12:04	25	138.5	0.06282	100	149.8
+GoodData	Size	Completed	Ext 3 3 HCl	27/07/2023 12:06	25	134.5	0.086	100	147.3
+GoodData	Size	Completed	Ext 3 6 HCl	27/07/2023 12:07	25	133.1	0.1332	100	153.4
+GoodData	Size	Completed	Ext 3 9 HCl	27/07/2023 12:09	25	131.6	0.1093	100	144.3
+GoodData	Size	Completed	Ext 3 12 HCl	27/07/2023 12:11	25	131.8	0.1235	100	150.4
+GoodData	Size	Completed	Ext 3 15 HCl	27/07/2023 12:12	25	129.6	0.1335	100	137.7
