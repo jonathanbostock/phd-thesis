@@ -184,9 +184,7 @@ def main():
 
     plotting.format_axes(ax)
 
-    fig.savefig(
-        os.path.join(current_path, "Release.svg"), bbox_inches="tight", pad_inches=0.1
-    )
+    plotting.save_plot(fig, os.path.join(current_path, "Release"))
 
 
 if __name__ == "__main__":

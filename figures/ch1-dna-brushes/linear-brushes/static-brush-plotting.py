@@ -10,7 +10,7 @@ import seaborn as sns
 from scipy.optimize import curve_fit
 from itertools import product
 
-from utils.plotting import fit_function, setup_plot_style, format_axes, plot_fit_curve
+from utils.plotting import fit_function, setup_plot_style, format_axes, plot_fit_curve, save_plot
 from utils import defaults
 
 
@@ -40,10 +40,10 @@ def main() -> None:
     lipid_moles = 5e-6 * 0.5 / 760
     # microliters of 5 micromolar DNA
     df_data["dna_moles"] = df_data["sample_number"] * 1e-6 * 5e-6
-    df_data["Brush Length / bp"] = list(map(float, df_data["sample_type"]))
-    df_data["Lipid:DNA Ratio"] = (lipid_moles / df_data["dna_moles"]).astype(int)
+    df_data["Construct Length / bp"] = list(map(float, df_data["sample_type"]))
+    df_data["Lipid:Construct Ratio"] = (lipid_moles / df_data["dna_moles"]).astype(int)
     df_data["Concentration"] = (
-        1 / df_data["Lipid:DNA Ratio"]
+        1 / df_data["Lipid:Construct Ratio"]
     )  # Concentration is inverse of ratio
     df_data["Delta D"] = df_data["peak_1_mean_intensity"]
 
@@ -53,7 +53,7 @@ def main() -> None:
     )
 
     # Get unique brush lengths and create gradient colormap
-    brush_lengths = sorted(np.unique(df_data["Brush Length / bp"]))
+    brush_lengths = sorted(np.unique(df_data["Construct Length / bp"]))
     # Create a colormap for gradient colors based on brush length
     import matplotlib.cm as cm
     from matplotlib.colors import Normalize
@@ -67,17 +67,17 @@ def main() -> None:
     fitted_params = []
 
     # Set axis limits first to ensure curves extend to full range
-    all_ratios = np.array(df_data["Lipid:DNA Ratio"])
+    all_ratios = np.array(df_data["Lipid:Construct Ratio"])
     min_ratio = min(all_ratios) * 0.3  # Extend further left
     max_ratio = max(all_ratios) * 3.0  # Extend further right
     ax1.set_xlim(max_ratio, min_ratio)  # Reversed for log scale
 
     # Plot individual data points and fit curves
     for i, brush_length in enumerate(brush_lengths):
-        data_subset = df_data[df_data["Brush Length / bp"] == brush_length]
+        data_subset = df_data[df_data["Construct Length / bp"] == brush_length]
         color = cmap(norm(brush_length))
         ax1.scatter(
-            data_subset["Lipid:DNA Ratio"],
+            data_subset["Lipid:Construct Ratio"],
             data_subset["Delta D"],
             color=color,
             marker=markers[i],
@@ -93,7 +93,7 @@ def main() -> None:
             data_subset,
             "Concentration",
             "Delta D",
-            "Lipid:DNA Ratio",
+            "Lipid:Construct Ratio",
             np.array(df_data["Concentration"]),
             color,
         )
@@ -112,15 +112,15 @@ def main() -> None:
 
     # Format first subplot (original plot)
     ax1.set_xscale("log")
-    ax1.set_xlabel("Lipid:DNA Ratio")
-    ax1.set_ylabel(r"$\Delta D$")
+    ax1.set_xlabel("Lipid:Construct Ratio")
+    ax1.set_ylabel(r"$\Delta D$ / nm")
     ax1.legend(
-        title="Brush Length", bbox_to_anchor=(1.05, 1), loc="upper left", frameon=False
+        title="Construct Length", bbox_to_anchor=(1.05, 1), loc="upper left", frameon=False
     )
-    ax1.set_title(r"Static Brush $\Delta D$ vs Lipid:DNA Ratio")
+    ax1.set_title(r"Static Brush $\Delta D$ vs Lipid:Construct Ratio")
     format_axes(ax1)
 
-    # Create second subplot: ΔD max vs Brush Length
+    # Create second subplot: ΔD max vs Construct Length
     if fitted_params:
         # Extract data for plotting
         brush_lengths_fit = [p["brush_length"] for p in fitted_params]
@@ -164,9 +164,9 @@ def main() -> None:
         )
 
         # Format second subplot
-        ax2.set_xlabel("Brush Length (bp)")
-        ax2.set_ylabel(r"$\Delta D_{max}$")
-        ax2.set_title(r"Fitted $\Delta D_{max}$ vs Brush Length")
+        ax2.set_xlabel("Construct Length / bp")
+        ax2.set_ylabel(r"$\Delta D_{max}$ / nm")
+        ax2.set_title(r"Fitted $\Delta D_{max}$ vs Construct Length")
         ax2.legend(frameon=False)
 
         # Set origin at (0,0)
@@ -174,8 +174,7 @@ def main() -> None:
         ax2.set_ylim(0, max(delta_d_max_vals) * 1.1)
         format_axes(ax2)
 
-    plt.tight_layout()
-    plt.savefig("Static Brush Plot.svg", bbox_inches="tight")
+    save_plot(fig, "Static Brush Plot")
     plt.show()
 
 

@@ -1,6 +1,6 @@
 """
 Fluorophore quenching assay: brush attachment and MBCD detachment timecourses.
-Two-subplot figure: (1) attachment quenching timecourse, (2) MBCD detachment by concentration.
+Two separate 1-panel figures: (1) attachment quenching timecourse, (2) MBCD detachment by concentration.
 """
 
 from __future__ import annotations
@@ -94,18 +94,14 @@ def main() -> None:
 
     setup_plot_style()
 
-    fig, (ax1, ax2) = plt.subplots(
-        1, 2, figsize=(defaults.fig_width * 2, defaults.fig_height)
-    )
-
-    # Panel 1: attachment timecourse (single line, colorblind color 0)
+    # Figure 1: attachment timecourse (single line, colorblind color 0)
+    fig1, ax1 = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
     color = sns.color_palette("colorblind")[0]
     ax1.plot(
         attachment_data["Time"],
         attachment_data["Mean"],
         color=color,
         linewidth=2,
-        label="Attachment",
     )
     ax1.fill_between(
         attachment_data["Time"],
@@ -118,13 +114,14 @@ def main() -> None:
     ax1.set_ylabel("Quenching")
     ax1.set_title("Brush Attachment")
     format_axes(ax1)
+    save_plot(fig1, "fluorophore-quenching-attachment")
 
-    # Panel 2: MBCD detachment by concentration (gradient colormap)
+    # Figure 2: MBCD detachment by concentration (gradient colormap)
+    fig2, ax2 = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
     cmap = plt.get_cmap("viridis")
     norm = Normalize(vmin=min(mbcd_concs), vmax=max(mbcd_concs))
-    markers = ["o", "s", "^", "D"]
 
-    for i, conc in enumerate(mbcd_concs):
+    for conc in mbcd_concs:
         subset = detachment_data[detachment_data["MBCD"] == conc]
         color = cmap(norm(conc))
         ax2.plot(
@@ -132,7 +129,7 @@ def main() -> None:
             subset["Mean"],
             color=color,
             linewidth=2,
-            label=f"{conc} mM MBCD",
+            label=f"{conc} mM",
         )
         ax2.fill_between(
             subset["Time"],
@@ -145,11 +142,9 @@ def main() -> None:
     ax2.set_xlabel("Time / min")
     ax2.set_ylabel("Quenching")
     ax2.set_title("MBCD Detachment")
-    ax2.legend(frameon=False, bbox_to_anchor=(1.05, 1), loc="upper left")
+    ax2.legend(title="MβCD", frameon=False, bbox_to_anchor=(1.05, 1), loc="upper left")
     format_axes(ax2)
-
-    plt.tight_layout()
-    save_plot(fig, "fluorophore-quenching")
+    save_plot(fig2, "fluorophore-quenching")
 
 
 if __name__ == "__main__":

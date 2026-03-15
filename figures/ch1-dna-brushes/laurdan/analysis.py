@@ -88,7 +88,7 @@ def main() -> None:
     ax.set_xticks(range(len(conditions)))
     ax.set_xticklabels(conditions)
     ax.set_xlabel("Brush Condition")
-    ax.set_ylabel("General Polarization (GP)")
+    ax.set_ylabel("General Polarization / GP")
     format_axes(ax)
 
     plt.tight_layout()

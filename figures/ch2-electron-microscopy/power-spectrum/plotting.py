@@ -5,17 +5,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
+from utils.plotting import setup_plot_style, save_plot
 from scipy.interpolate import interp1d
 from statsmodels.nonparametric.smoothers_lowess import lowess
 from tqdm import tqdm
 from typing import cast
 
 # Set up plotting style
-sns.set_palette("colorblind")
-plt.rcParams["axes.spines.top"] = False
-plt.rcParams["axes.spines.right"] = False
-plt.rcParams["axes.facecolor"] = "white"
-plt.rcParams["axes.grid"] = False
+setup_plot_style()
 
 # Define markers for each dataset
 MARKERS = ["o", "s", "^", "D"]
@@ -313,22 +310,20 @@ def main():
             all_y_max = max(all_y_max, np.max(plot_powers))
 
         # Labels and formatting
-        ax.set_xlabel("Spacing (nm)", fontsize=10)
-        ax.set_ylabel("Amplitude", fontsize=10)
+        ax.set_xlabel("Spacing / nm")
+        ax.set_ylabel("Amplitude")
         ax.set_xlim(0.1, 20)
-        ax.set_title(dataset_name, fontsize=11, fontweight="bold")
-        ax.legend(frameon=False, fontsize=8)
+        ax.set_title(dataset_name, fontweight="bold")
+        ax.legend(frameon=False)
 
     # Set consistent y-axis limits across all subplots
     for ax in axes:
         ax.set_ylim(0, all_y_max * 1.05)
 
-    plt.tight_layout()
-
     # Save figure
-    output_path = data_dir / "power_spectrum_analysis.svg"
-    plt.savefig(output_path, format="svg", dpi=300, bbox_inches="tight")
-    print(f"\nSaved plot to {output_path}")
+    output_path = str(data_dir / "power_spectrum_analysis")
+    save_plot(plt.gcf(), output_path)
+    print(f"\nSaved plot to {output_path}.svg")
 
 
 if __name__ == "__main__":

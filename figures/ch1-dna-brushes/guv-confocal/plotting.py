@@ -87,7 +87,7 @@ def main():
             linewidth=1,
         )
 
-    ax1.set_xlabel("Distance (pixels)")
+    ax1.set_xlabel("Distance / pixels")
     ax1.set_ylabel("Fluorescence Intensity")
     ax1.set_title("Fluorescence Profile Over Time")
 
@@ -181,7 +181,7 @@ def main():
                 color=colors[t],
                 linewidth=2,
             )
-            ax_snap.set_xlabel("Distance (pixels)")
+            ax_snap.set_xlabel("Distance / pixels")
             ax_snap.set_ylabel("Fluorescence Intensity")
             ax_snap.set_title(f"Fluorescence Profile at t={t}")
             plt.tight_layout()
@@ -207,7 +207,7 @@ def main():
         label="Membrane 2",
         color=palette[1],
     )
-    ax3.set_xlabel("Membrane Position (pixels)")
+    ax3.set_xlabel("Membrane Position / pixels")
     ax3.set_ylabel("Time Point")
     ax3.set_title("Detected Membrane Positions Over Time")
     ax3.legend()
@@ -237,7 +237,7 @@ def main():
             linewidth=1,
         )
 
-    ax4a.set_xlabel("Distance (pixels)")
+    ax4a.set_xlabel("Distance / pixels")
     ax4a.set_ylabel("Fluorescence Intensity")
     ax4a.set_title("Fluorescence Profile Over Time")
 

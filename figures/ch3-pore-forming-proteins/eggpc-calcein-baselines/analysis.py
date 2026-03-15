@@ -88,7 +88,7 @@ def main() -> None:
         )
 
     ax.set_xlabel("Time / min")
-    ax.set_ylabel("Calcein Release (%)")
+    ax.set_ylabel("Calcein Release / %")
     ax.legend(frameon=False, bbox_to_anchor=(1.05, 1), loc="upper left")
     format_axes(ax)
 

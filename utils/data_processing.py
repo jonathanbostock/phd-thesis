@@ -76,9 +76,9 @@ def process_brush_data(
     df_data["dna_moles"] = (
         df_data["sample_number_clean"] * 1e-6 * dna_concentration_uM * 1e-6
     )
-    df_data["Lipid:DNA Ratio"] = (lipid_moles / df_data["dna_moles"]).astype(int)
+    df_data["Lipid:Construct Ratio"] = (lipid_moles / df_data["dna_moles"]).astype(int)
     df_data["Concentration"] = (
-        1 / df_data["Lipid:DNA Ratio"]
+        1 / df_data["Lipid:Construct Ratio"]
     )  # Concentration is inverse of ratio
     df_data["Delta D"] = df_data["peak_1_mean_intensity"]
 
@@ -102,7 +102,7 @@ def process_length_data(df, **kwargs):
         Processed data with brush length as float
     """
     df_processed = process_brush_data(df, **kwargs)
-    df_processed["Brush Length / bp"] = list(map(float, df_processed["sample_type"]))
+    df_processed["Construct Length / bp"] = list(map(float, df_processed["sample_type"]))
     return df_processed
 
 

@@ -15,19 +15,20 @@ def main() -> None:
 
     # Process the data with half concentration (2.5 μM instead of 5 μM)
     df_data = process_shape_data(df, dna_concentration_uM=2.5, control_name="control")
+    df_data["Shape"] = df_data["Shape"].str.title()
 
     # Create the plot
     fig = plot_brush_data_categorical(
         df_data=df_data,
         category_col="Shape",
         value_col="Concentration",
-        x_col="Lipid:DNA Ratio",
+        x_col="Lipid:Construct Ratio",
         y_col="Delta D",
         ax_1_title=r"Shape Effect on Brush $\Delta D$",
         ax_2_title=r"Shape Effect on $\Delta D_{max}$ and $c_{1/2}$",
-        xlabel="Lipid:DNA Ratio",
-        ylabel=r"$\Delta D$",
-        legend_title="DNA Shape",
+        xlabel="Lipid:Construct Ratio",
+        ylabel=r"$\Delta D$ / nm",
+        legend_title="Construct Shape",
         figsize=(defaults.fig_width * 2, defaults.fig_height),
     )
 

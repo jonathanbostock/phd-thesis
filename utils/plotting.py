@@ -31,6 +31,17 @@ def setup_plot_style():
     """Set up seaborn style according to CLAUDE.md guidelines"""
     sns.set_style("white")
     sns.set_palette("colorblind")
+    plt.rcParams.update(
+        {
+            "font.size": 8,
+            "axes.labelsize": 8,
+            "axes.titlesize": 8,
+            "xtick.labelsize": 7,
+            "ytick.labelsize": 7,
+            "legend.fontsize": 7,
+            "legend.title_fontsize": 8,
+        }
+    )
 
 
 def format_axes(ax):
@@ -44,7 +55,7 @@ def format_axes(ax):
     ax.tick_params(
         axis="both",
         which="major",
-        direction="in",
+        direction="out",
         length=4,
         top=False,
         right=False,
@@ -54,7 +65,7 @@ def format_axes(ax):
     ax.tick_params(
         axis="both",
         which="minor",
-        direction="in",
+        direction="out",
         length=2,
         top=False,
         right=False,
@@ -150,7 +161,7 @@ def plot_brush_data_continuous(
     xlabel,
     ylabel,
     legend_title,
-    figsize=(defaults.fig_width * 2, defaults.fig_height),
+    figsize=(defaults.double_fig_width, defaults.double_fig_height),
 ):
     """
     Plot brush data with continuous categories using gradient colors
@@ -244,7 +255,7 @@ def plot_brush_data_categorical(
     xlabel,
     ylabel,
     legend_title,
-    figsize=(defaults.fig_width * 2, defaults.fig_height),
+    figsize=(defaults.double_fig_width, defaults.double_fig_height),
 ):
     """
     Plot brush data with categorical categories using colorblind palette
@@ -349,7 +360,7 @@ def plot_brush_data_categorical(
 
     ax_2.set_xlabel("$c_{1/2}$")
     ax_2.set_xscale("log")
-    ax_2.set_ylabel(r"$\Delta D_{max} / nm$")
+    ax_2.set_ylabel(r"$\Delta D_{max}$ / nm")
     ax_2.set_title(ax_2_title)
 
     format_axes(ax_2)
@@ -667,7 +678,7 @@ def plot_calcein_release(
     ax1.axhline(0, color="black", linewidth=1, zorder=5)
 
     ax1.set_xlabel("Well")
-    ax1.set_ylabel("Calcein Release (%)")
+    ax1.set_ylabel("Calcein Release / %")
     ax1.set_title(f"Final Release at {final_time:.1f} min")
     ax1.set_xticks(np.arange(len(experiment_names)))
     ax1.set_xticklabels(experiment_names, rotation=90, ha="right")
@@ -702,8 +713,8 @@ def plot_calcein_release(
             alpha=0.3,
         )
 
-    ax2.set_xlabel("Time (min)")
-    ax2.set_ylabel("Calcein Release (%)")
+    ax2.set_xlabel("Time / min")
+    ax2.set_ylabel("Calcein Release / %")
     ax2.set_title("Release Over Time")
     ax2.legend(bbox_to_anchor=(1.05, 1), loc="upper left")
     format_axes(ax2)
@@ -713,5 +724,21 @@ def plot_calcein_release(
 
 
 def save_plot(fig, filename_base):
-    """Save plot as SVG according to CLAUDE.md guidelines"""
+    """Save plot as SVG, resizing so each subplot axis has the correct physical size.
+
+    Single-axis figures: axes are 50mm × 40mm.
+    Multi-axis figures: each axis is 45mm × 35mm.
+    Uses a two-pass tight_layout so margins are correct at the final size.
+    """
+    subplot_axes = [ax for ax in fig.get_axes() if ax.get_subplotspec() is not None]
+    n = len(subplot_axes)
+    ax_w_mm = 30.375 if n >= 2 else 50
+    ax_h_mm = 23.625 if n >= 2 else 40
+
+    if subplot_axes:
+        plt.tight_layout()
+        pos = subplot_axes[0].get_position()
+        fig.set_size_inches((ax_w_mm / 25.4) / pos.width, (ax_h_mm / 25.4) / pos.height)
+        plt.tight_layout()
+
     fig.savefig(f"{filename_base}.svg", bbox_inches="tight")

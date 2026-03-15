@@ -22,7 +22,7 @@ def main() -> None:
         x_col="DOPG_percentage",
         y_col="delta_p1mi",
         title="Effect of Charge on Brush Formation",
-        xlabel="DOPG Percentage (%)",
+        xlabel="DOPG Percentage / %",
         ylabel=r"$\Delta D$",
         color_index=4,
         figsize=(

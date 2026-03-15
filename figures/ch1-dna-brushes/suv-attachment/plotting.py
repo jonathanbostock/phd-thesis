@@ -202,8 +202,8 @@ def main() -> None:
     except (RuntimeError, ValueError) as e:
         print(f"Could not fit curve: {e}")
 
-    ax.set_xlabel("Time (min)")
-    ax.set_ylabel(r"$\Delta D$ (nm)")
+    ax.set_xlabel("Time / min")
+    ax.set_ylabel(r"$\Delta D$ / nm")
     ax.set_ylim(bottom=0)
     format_axes(ax)
 
