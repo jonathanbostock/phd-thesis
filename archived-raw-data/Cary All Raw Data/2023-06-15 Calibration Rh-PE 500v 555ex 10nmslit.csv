@@ -1,0 +1,1427 @@
+Wavelength (nm),Intensity (a.u.),Z Axis,
+,Sample A1,Sample A2,Sample A3,Sample A4,Sample A5,Sample A6,Sample A7,Sample A8,Sample B8,Sample B7,Sample B6,Sample B5,Sample B4,Sample B3,Sample B2,Sample B1,Sample C1,Sample C2,Sample C3,Sample C4,Sample C5,Sample C6,Sample C7,Sample C8
+,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
+575,0.738244831562042,87.0907287597656,32.0758972167969,18.676736831665,10.702712059021,4.04986190795898,2.71931457519531,1.74677300453186,1.52027666568756,2.12827134132385,4.23288154602051,10.2835311889648,17.3027229309082,32.065013885498,79.6267776489258,0.782158732414246,0.822233200073242,70.1072540283203,32.2668876647949,16.8324127197266,9.70494747161865,3.70273423194885,1.9873104095459,1.55611050128937
+576.02001953125,0.724847793579102,97.6448974609375,36.2931365966797,20.7827548980713,11.5699148178101,4.54258918762207,2.83477807044983,1.7709778547287,1.61367225646973,2.30124378204346,4.62440347671509,11.5392990112305,18.8995914459229,36.5551528930664,89.8299865722656,0.676971673965454,0.649128139019012,78.7061386108398,36.3303260803223,18.4620380401611,11.1202411651611,4.07864665985107,2.4840247631073,1.78800404071808
+577.049987792969,0.710861563682556,108.619132995605,40.1325416564941,23.1793575286865,12.9134740829468,4.9078197479248,3.12069749832153,1.98492920398712,1.78162384033203,2.54693651199341,4.76917600631714,12.803539276123,21.4956474304199,40.0007400512695,99.24365234375,0.791651666164398,0.56487911939621,86.8366851806641,40.3453979492188,20.1120777130127,12.2854108810425,4.63908290863037,2.60270762443542,1.59226822853088
+577.940002441406,0.419218450784683,118.493789672852,43.4593963623047,25.1480369567871,14.2060518264771,5.34331703186035,3.15277123451233,1.8798725605011,1.68823862075806,2.82501530647278,5.49340629577637,13.8949594497681,23.3460216522217,43.3937950134277,109.469268798828,0.67621898651123,0.71666145324707,95.6220550537109,43.5374145507812,22.493480682373,13.0827178955078,4.7469539642334,2.58080816268921,1.7876490354538
+578.969970703125,0.579605162143707,128.921569824219,47.5641288757324,27.90087890625,14.9564771652222,5.73872375488281,3.37831687927246,1.90534949302673,1.85859787464142,2.95995688438416,5.69774627685547,14.8944511413574,25.3865146636963,48.5312690734863,119.578453063965,0.502652883529663,0.544948935508728,105.100547790527,48.1307029724121,23.9003391265869,14.1873836517334,5.28249883651733,2.87440490722656,1.79669547080994
+580,0.542044579982758,139.955825805664,51.4668884277344,30.3421688079834,16.460750579834,6.13619804382324,3.74483227729797,2.03025245666504,1.99619591236114,3.11429476737976,6.122971534729,16.1018676757813,27.157657623291,52.8346519470215,132.717025756836,0.394469916820526,0.39969477057457,112.857276916504,52.5580444335937,26.8970127105713,15.4239225387573,5.44783020019531,3.18749761581421,2.13087582588196
+581.039978027344,0.584549605846405,151.224761962891,55.116340637207,31.8915920257568,17.6032886505127,6.57363176345825,3.9283754825592,2.22320222854614,2.22247123718262,3.30760741233826,6.69894790649414,17.2423324584961,29.7925796508789,56.9248390197754,143.940765380859,0.523012518882751,0.343636065721512,122.816284179688,56.8875045776367,28.4454898834229,16.6406745910645,6.03423023223877,3.18029689788818,2.19441413879395
+581.940002441406,0.455605775117874,164.0625,59.183479309082,34.2346992492676,18.8353309631348,7.29568290710449,4.04495191574097,2.33913636207581,2.23352551460266,3.57858848571777,6.70902633666992,18.4070472717285,31.1764278411865,60.1288070678711,153.196655273438,0.483442097902298,0.375847995281219,132.141723632812,60.5163612365723,30.1774578094482,17.4774589538574,6.13429546356201,3.13026285171509,2.30862236022949
+582.97998046875,0.352060467004776,174.176071166992,64.0155410766602,36.2767486572266,20.4089126586914,7.31734561920166,4.33991050720215,2.26126289367676,2.24714827537537,3.60897254943848,7.31425189971924,20.0505352020264,33.0863571166992,64.154914855957,162.906692504883,0.4562126994133,0.46651366353035,141.05940246582,65.0791015625,32.6725120544434,18.8862419128418,6.6993465423584,3.46027040481567,2.09326887130737
+584.02001953125,0.338250488042831,187.033508300781,67.6157913208008,38.4665756225586,21.3539543151855,7.92104959487915,4.70548868179321,2.55165672302246,2.45617341995239,3.81054043769836,8.06109428405762,20.8003883361816,35.7281494140625,68.9744644165039,175.641189575195,0.284586757421494,0.50322437286377,151.60334777832,68.9610900878906,33.971622467041,20.448070526123,7.01754379272461,3.74133443832397,2.46067476272583
+585.070007324219,0.39308175444603,195.275146484375,70.7640838623047,41.0904922485352,22.6796474456787,8.3821382522583,4.69641065597534,2.8105251789093,2.44341325759888,4.05924320220947,8.2459192276001,22.2584648132324,37.1342887878418,72.2310485839844,186.719268798828,0.22870646417141,0.250370740890503,160.290786743164,71.8633728027344,35.2314224243164,21.0286483764648,7.22519445419311,4.02312421798706,2.47349166870117
+585.969970703125,0.380821824073791,203.010208129883,74.5449752807617,42.6890106201172,23.9402866363525,8.44960117340088,5.04938411712646,2.52820992469788,2.37294483184814,4.22564172744751,8.70344352722168,22.8327178955078,38.5247421264648,75.4706573486328,194.250854492187,0.331610262393951,0.449227899312973,169.389587402344,75.6393051147461,37.4228096008301,22.0526351928711,7.72695684432983,4.03665685653687,2.67680788040161
+587.010009765625,0.436134696006775,216.039291381836,78.3637847900391,44.2380714416504,24.216682434082,8.74724197387695,4.99265241622925,2.87613916397095,2.6397659778595,4.30277967453003,8.97554969787598,23.1639804840088,40.7510757446289,78.6480026245117,202.19465637207,0.173146843910217,0.257215797901154,177.541900634766,79.0239181518555,39.3988037109375,23.1698246002197,8.08827590942383,4.27831983566284,2.588791847229
+588.049987792969,0.288933843374252,224.543853759766,79.6790390014648,45.6191444396973,24.7756500244141,9.24291515350342,5.30671310424805,2.75503158569336,2.79782891273499,4.55349397659302,9.43007087707519,24.4033145904541,41.910457611084,81.5406112670898,209.741912841797,0.23006135225296,0.238387763500214,184.709167480469,81.5125427246094,40.1570053100586,23.967845916748,8.37289714813232,4.41388368606567,2.58952355384827
+588.950012207031,0.338422179222107,230.13606262207,82.5799865722656,46.2784996032715,25.8032836914062,9.355149269104,5.36162853240967,3.05903363227844,2.71653175354004,4.84310913085937,9.76684379577637,25.1844139099121,43.3253746032715,83.2735900878906,215.959854125977,0.356921464204788,0.296066015958786,189.412567138672,85.2377090454102,42.0702171325684,24.5647048950195,8.18553829193115,4.28654336929321,2.75957870483398
+590,0.359868913888931,237.642333984375,85.3288650512695,47.4988136291504,26.6361541748047,9.39737129211426,5.26935386657715,2.78142905235291,2.69571852684021,4.62308502197266,9.71230983734131,25.557523727417,44.0612640380859,85.5694427490234,221.147415161133,0.240073874592781,0.314296811819077,197.626693725586,86.8566055297852,42.419075012207,24.9990539550781,8.64579677581787,4.73261642456055,2.78040361404419
+591.02001953125,0.356018602848053,243.916076660156,84.9321670532227,48.3262367248535,26.6240081787109,9.72078514099121,5.64313220977783,2.96399784088135,2.62378025054932,4.56781435012817,9.92863273620605,26.1687793731689,45.4689025878906,87.9736862182617,227.259201049805,0.224862277507782,0.296967208385468,201.22021484375,90.1585083007812,42.5308685302734,25.4365043640137,8.79668045043945,4.97585773468018,2.8711678981781
+592.049987792969,0.32461953163147,244.184066772461,86.3859176635742,49.3086357116699,26.7305335998535,9.70800304412842,5.48164129257202,2.98959398269653,3.0391628742218,4.67738962173462,10.1864738464355,26.5945453643799,45.8545608520508,90.0164566040039,233.200347900391,0.336486309766769,0.349444568157196,204.394790649414,90.7523803710937,44.1937065124512,25.3000736236572,8.76440238952637,4.74168825149536,2.80600094795227
+592.940002441406,0.243295341730118,252.370651245117,87.2059555053711,49.7875366210937,27.2221698760986,9.94299602508545,5.74734306335449,3.06875514984131,2.75169658660889,4.60247087478638,10.2251033782959,26.366756439209,45.9579315185547,88.9851684570312,232.193984985352,0.317093193531036,0.352386981248856,210.589248657227,91.9610290527344,44.2942123413086,26.1761722564697,8.65959739685059,4.7683801651001,2.86617732048035
+593.969970703125,0.269874304533005,249.232818603516,87.5897445678711,50.8315162658691,27.9157333374023,9.83361339569092,5.58607387542725,2.98389077186584,2.83583474159241,4.70300722122192,10.1786413192749,26.6158237457275,46.2556686401367,90.5201797485352,233.101409912109,0.166879907250404,0.210812777280807,210.372573852539,91.5285415649414,44.3145523071289,26.0455284118652,8.66665458679199,4.66464757919312,3.1449990272522
+595,0.376300603151321,251.402557373047,86.9881820678711,49.1352195739746,27.1062679290771,9.94526386260986,5.29985570907593,3.02909064292908,2.77944707870483,4.71899652481079,10.1799774169922,26.2582874298096,45.6420097351074,90.5727081298828,237.370223999023,0.332920253276825,0.186237081885338,209.438705444336,93.1496353149414,44.8648147583008,25.7760314941406,9.04670143127441,4.82038974761963,2.7895040512085
+596.02001953125,0.283072263002396,251.652389526367,86.694938659668,49.0998077392578,27.1751003265381,9.70084381103516,5.50938940048218,2.94525623321533,2.77658724784851,4.86604070663452,9.92107772827148,25.8705539703369,45.5095100402832,88.3852005004883,232.961120605469,0.247812569141388,0.206231951713562,208.722457885742,91.2870864868164,44.683723449707,26.1701068878174,9.0517635345459,4.86693954467773,2.80862545967102
+597.049987792969,0.24194148182869,250.564926147461,85.3869400024414,48.1418609619141,27.0324974060059,9.65283107757568,5.34679079055786,2.84058833122253,2.64762353897095,4.62676763534546,9.84072589874268,26.0450992584229,44.9738883972168,87.3249130249023,232.442886352539,0.209264725446701,0.220353290438652,207.50569152832,91.1769561767578,43.0137252807617,25.7050647735596,8.64042568206787,4.58630800247192,3.08296489715576
+597.940002441406,0.264470279216766,244.373825073242,84.0203857421875,47.6251678466797,25.952564239502,9.43588161468506,5.1857123374939,2.80829119682312,2.65024256706238,4.59345197677612,10.0003671646118,25.4905567169189,44.5147819519043,87.2133026123047,226.178680419922,0.18523320555687,0.187406301498413,201.82063293457,88.5412750244141,42.5737686157227,24.9328517913818,8.45023441314697,4.50674152374268,2.50954914093018
+598.969970703125,0.230698242783546,238.91716003418,81.3378295898438,46.8182258605957,25.0849533081055,9.12463474273682,5.20340585708618,2.69589185714722,2.63218140602112,4.51866006851196,9.2606201171875,25.0249309539795,42.8629493713379,84.4938430786133,223.997909545898,-0.074794314801693,0.425177931785583,200.015045166016,87.1055603027344,41.9625205993652,24.1837520599365,8.43828296661377,4.56323337554932,2.71544408798218
+600,0.115680493414402,234.16047668457,79.6151428222656,45.8229179382324,24.7888088226318,8.71719455718994,5.05022382736206,2.6110155582428,2.48643755912781,4.48389101028442,9.46033954620361,24.7275848388672,41.915283203125,82.9138336181641,217.844314575195,0.134351849555969,0.168937936425209,195.501113891602,85.8417816162109,40.8522758483887,24.0632972717285,8.25048446655273,4.22543048858643,2.6414954662323
+601.02001953125,0.186786711215973,228.055068969727,78.3928985595703,43.2880020141602,24.323371887207,8.45394897460937,5.00330400466919,2.5329794883728,2.55236101150513,4.33015537261963,8.78375816345215,23.6963348388672,40.9951515197754,80.7533569335938,211.416854858398,0.167728960514069,0.0558066852390766,191.148178100586,82.5542907714844,39.6618041992188,23.0918674468994,7.74690961837769,4.31683731079102,2.65621280670166
+602.049987792969,0.0563835613429546,220.30207824707,74.4680862426758,42.6463432312012,22.9181995391846,8.22157287597656,4.63171291351318,2.55003070831299,2.38924670219421,3.8542788028717,8.44347953796387,23.0854606628418,39.3396339416504,77.5857162475586,203.255889892578,0.224508881568909,0.25968724489212,186.370376586914,79.3591537475586,38.2877349853516,22.2848930358887,7.55870676040649,4.05578994750977,2.29928040504456
+602.940002441406,0.243377327919006,212.886108398438,73.2095336914062,40.8148193359375,22.0112895965576,7.99161577224731,4.57023000717163,2.36704182624817,2.17785167694092,3.91531038284302,8.26568222045898,22.1988868713379,37.8155899047852,74.6070175170898,198.381698608398,0.153539076447487,0.147691398859024,180.213729858398,77.7455902099609,37.051929473877,21.273853302002,7.40985298156738,3.91780018806458,2.4309515953064
+603.969970703125,0.210687607526779,203.550430297852,69.1556854248047,39.5684127807617,21.4475650787354,7.86826276779175,4.38504886627197,2.19277691841126,2.11112356185913,3.68898963928223,8.03265571594238,21.02467918396,36.5855903625488,71.527473449707,188.692535400391,0.116033956408501,0.110750146210194,172.333786010742,73.7991485595703,35.1111373901367,21.0530204772949,6.91078662872314,3.64235377311707,2.41016244888306
+605,0.166208058595657,195.67658996582,66.7588882446289,37.4526977539063,19.9870796203613,7.24529981613159,4.19922780990601,2.35387182235718,2.19350790977478,3.71023440361023,7.42876148223877,19.9377975463867,34.2124137878418,68.3982849121094,182.758743286133,0.277710944414139,0.0957102701067924,164.629104614258,70.9024124145508,34.174186706543,19.9459018707275,6.61825513839722,3.57129573822022,2.3108241558075
+
+Sample A1
+Collection Time: 15-Jun-23 11:40:31 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample A2
+Collection Time: 15-Jun-23 11:40:45 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample A3
+Collection Time: 15-Jun-23 11:40:49 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample A4
+Collection Time: 15-Jun-23 11:40:54 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample A5
+Collection Time: 15-Jun-23 11:40:58 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample A6
+Collection Time: 15-Jun-23 11:41:02 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample A7
+Collection Time: 15-Jun-23 11:41:06 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample A8
+Collection Time: 15-Jun-23 11:41:11 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample B8
+Collection Time: 15-Jun-23 11:41:15 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample B7
+Collection Time: 15-Jun-23 11:41:20 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample B6
+Collection Time: 15-Jun-23 11:41:24 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample B5
+Collection Time: 15-Jun-23 11:41:28 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample B4
+Collection Time: 15-Jun-23 11:41:32 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample B3
+Collection Time: 15-Jun-23 11:41:37 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample B2
+Collection Time: 15-Jun-23 11:41:41 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample B1
+Collection Time: 15-Jun-23 11:41:45 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample C1
+Collection Time: 15-Jun-23 11:41:49 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample C2
+Collection Time: 15-Jun-23 11:41:54 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample C3
+Collection Time: 15-Jun-23 11:41:58 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample C4
+Collection Time: 15-Jun-23 11:42:02 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample C5
+Collection Time: 15-Jun-23 11:42:07 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample C6
+Collection Time: 15-Jun-23 11:42:11 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample C7
+Collection Time: 15-Jun-23 11:42:15 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+
+Sample C8
+Collection Time: 15-Jun-23 11:42:19 AM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        575.00
+Stop (nm)                         605.00
+Ex. Wavelength (nm)               555.00
+Ex. Slit (nm)                     10
+Em. Slit (nm)                     10
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   500
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 15-Jun-23 11:27:13 AM
+Method Modifications:
+PMT Volts Changed: 15-Jun-23 11:29:46 AM, Old:600, New:400
+Well plate reader Changed: 15-Jun-23 11:29:46 AM, Old:OFF, New:ON
+User Delta Stop Changed: 15-Jun-23 11:29:46 AM, Old: 450.00, New: 555.00
+User Delta Increment Changed: 15-Jun-23 11:29:46 AM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 15-Jun-23 11:29:46 AM, Old: 600, New: 400
+Excitation Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 350.00, New: 555.00
+Emission Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 400.00, New: 570.00
+Stop Wavelength Changed: 15-Jun-23 11:29:46 AM, Old: 600.00, New: 590.00
+Wellplate Samples Changed: 15-Jun-23 11:29:46 AM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;B1;B2;B3;B4;B5;B6;B7;B8;C1;C2;C3;C4;C5;C6;C7;C8;
+PMT Volts Changed: 15-Jun-23 11:30:56 AM, Old:400, New:600
+Emission PMT (V): Changed: 15-Jun-23 11:30:56 AM, Old: 400, New: 600
+Overlayed Graphs Changed: 15-Jun-23 11:31:46 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:35:10 AM, Old:ON, New:OFF
+Ex. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Em. Slit Width (nm): Changed: 15-Jun-23 11:35:10 AM, Old:5, New:10
+Emission Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 570.00, New: 575.00
+Stop Wavelength Changed: 15-Jun-23 11:35:10 AM, Old: 590.00, New: 605.00
+Overlayed Graphs Changed: 15-Jun-23 11:35:45 AM, Old:OFF, New:ON
+Overlayed Graphs Changed: 15-Jun-23 11:38:45 AM, Old:ON, New:OFF
+PMT Volts Changed: 15-Jun-23 11:38:45 AM, Old:600, New:400
+Emission PMT (V): Changed: 15-Jun-23 11:38:45 AM, Old: 600, New: 400
+Overlayed Graphs Changed: 15-Jun-23 11:39:25 AM, Old:OFF, New:ON
+PMT Volts Changed: 15-Jun-23 11:40:19 AM, Old:400, New:500
+Emission PMT (V): Changed: 15-Jun-23 11:40:19 AM, Old: 400, New: 500
+End Method Modifications
+

@@ -1,282 +1,263 @@
-"""Analysis and plotting of GUV confocal micrograph time-series data."""
+"""Analysis and plotting of GUV confocal line-scan time-series data.
 
+Reads manually annotated cross-sectional profiles from H5 files, computes
+membrane fluorescence using a Gaussian kernel at the annotated boundary
+positions minus background, and plots all run-N/ samples stacked on a shared
+x-axis.
+"""
+
+import re
+from pathlib import Path
+from typing import cast
+
+import h5py
+import matplotlib.axes
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import seaborn as sns
-from matplotlib.colors import Normalize
-from PIL import Image
-from scipy.signal import find_peaks
+
+from utils.plotting import format_axes, setup_plot_style
+
+GAUSSIAN_SIGMA_UM = 1.0
+
+CONDITION_ORDER = ["After DNA brush addition", "After cyclodextrin addition"]
+
+CONDITION_LABELS = {
+    "After DNA brush addition": "+ DNA Construct",
+    "After cyclodextrin addition": "+ Cyclodextrin",
+}
 
 
-def setup_plotting_style():
-    """Configure plotting style according to project guidelines."""
-    sns.set_palette("colorblind")
-    plt.rcParams["axes.spines.top"] = False
-    plt.rcParams["axes.spines.right"] = False
-    plt.rcParams["axes.facecolor"] = "white"
-    plt.rcParams["figure.facecolor"] = "white"
+def find_h5_files(run_dir: Path) -> dict[str, Path]:
+    """Find H5 profile files in a run directory, keyed by condition name."""
+    result: dict[str, Path] = {}
+    for h5_path in sorted(run_dir.glob("*.h5")):
+        for condition in CONDITION_LABELS:
+            if condition.lower() in h5_path.name.lower():
+                result[condition] = h5_path
+                break
+    return result
 
 
-def load_tiff_data(filename):
-    """Load and extract both channels from TIFF file."""
-    img = Image.open(filename)
+def marker_fluorescence(
+    fluorescence_profile: np.ndarray,
+    positions_um: np.ndarray,
+    boundary_left_um: float,
+    boundary_right_um: float,
+    sigma_um: float = GAUSSIAN_SIGMA_UM,
+) -> float:
+    """Gaussian-weighted mean at membrane markers minus mean outside markers."""
+    kernel = np.exp(
+        -((positions_um - boundary_left_um) ** 2) / (2 * sigma_um**2)
+    ) + np.exp(-((positions_um - boundary_right_um) ** 2) / (2 * sigma_um**2))
 
-    img.seek(0)  # First channel (fluorescence)
-    channel1 = np.array(img)
-    img.seek(1)  # Second channel (standard image)
-    channel2 = np.array(img)
+    at_markers = float(np.sum(fluorescence_profile * kernel) / np.sum(kernel))
 
-    return channel1, channel2
+    outside_mask = kernel < 0.01 * kernel.max()
+    if not outside_mask.any():
+        return np.nan
+    outside = float(fluorescence_profile[outside_mask].mean())
 
-
-def find_membrane_peaks(profile, min_distance=20):
-    """
-    Find the two membrane peaks in a fluorescence profile.
-
-    The profile should show two peaks (membranes) with dark (low intensity) between them.
-    """
-    peaks, _ = find_peaks(profile, distance=min_distance, prominence=10)
-
-    # Sort peaks by intensity and take the top 2
-    if len(peaks) >= 2:
-        peak_intensities = profile[peaks]
-        top_peaks_idx = np.argsort(peak_intensities)[-2:]
-        top_peaks = peaks[top_peaks_idx]
-        # Sort by position (left to right)
-        top_peaks = np.sort(top_peaks)
-        return top_peaks
-    elif len(peaks) == 1:
-        return [peaks[0], peaks[0]]  # Fallback if only one peak found
-    else:
-        # If no peaks found, use max intensity
-        max_pos = np.argmax(profile)
-        return [max_pos, max_pos]
+    return at_markers - outside
 
 
-def main():
-    """Main analysis and plotting function."""
-    setup_plotting_style()
+def load_condition_data(h5_path: Path) -> pd.DataFrame:
+    """Load all frames and segments from an H5 profile file into a DataFrame."""
+    rows = []
+    with h5py.File(h5_path, "r") as f:
+        frames_group = cast(h5py.Group, f["frames"])
+        for frame_name in sorted(
+            frames_group.keys(), key=lambda k: int(k.split("_")[1])
+        ):
+            frame_idx = int(frame_name.split("_")[1])
+            segs = cast(
+                h5py.Group, cast(h5py.Group, frames_group[frame_name])["segments"]
+            )
+            for seg_name in segs.keys():
+                seg = cast(h5py.Group, segs[seg_name])
+                fl = np.asarray(
+                    cast(h5py.Dataset, seg["fluorescence_profile"])[()],
+                    dtype=np.float64,
+                )
+                pos = np.asarray(
+                    cast(h5py.Dataset, seg["positions_um"])[()], dtype=np.float64
+                )
+                bl = float(seg.attrs["boundary_left_um"])  # type: ignore[arg-type]
+                br = float(seg.attrs["boundary_right_um"])  # type: ignore[arg-type]
+                seg_id = int(seg.attrs["segment_id"])  # type: ignore[arg-type]
+                diff = marker_fluorescence(fl, pos, bl, br)
+                rows.append(
+                    {"frame": frame_idx, "guv_id": seg_id, "membrane_signal": diff}
+                )
+    return pd.DataFrame(rows)
 
-    # Load the TIFF file
-    channel1, channel2 = load_tiff_data("experiment-1-slice.tif")
 
-    print(f"Channel 1 shape: {channel1.shape}")
-    print(f"Channel 2 shape: {channel2.shape}")
-    print(f"Data type: {channel1.dtype}")
-
-    # Cut off t=35 (last timepoint)
-    n_timepoints_raw, n_positions = channel1.shape
-    n_timepoints = n_timepoints_raw - 1  # Exclude last timepoint
-    channel1 = channel1[:n_timepoints, :]
-
-    print(f"Number of timepoints (excluding last): {n_timepoints}")
-    print(f"Number of positions: {n_positions}")
-
-    # Task 1: Plot fluorescence/distance lines for each time slice
-    fig1, ax1 = plt.subplots(figsize=(8, 6))
-
-    # Create a colormap for time progression
-    colors = sns.color_palette("viridis", n_timepoints)
-
-    for t in range(n_timepoints):
-        ax1.plot(
-            range(n_positions),
-            channel1[t, :],
-            color=colors[t],
-            alpha=0.6,
-            linewidth=1,
-        )
-
-    ax1.set_xlabel("Distance / pixels")
-    ax1.set_ylabel("Fluorescence Intensity")
-    ax1.set_title("Fluorescence Profile Over Time")
-
-    # Add colorbar to show time progression
-    sm = plt.cm.ScalarMappable(
-        cmap="viridis",
-        norm=Normalize(vmin=0, vmax=n_timepoints - 1),
+def find_run_dirs(base_dir: Path) -> list[Path]:
+    """Return sorted list of run-N/ subdirectory paths."""
+    pattern = re.compile(r"^run-\d+$")
+    runs = sorted(
+        [d for d in base_dir.iterdir() if d.is_dir() and pattern.match(d.name)],
+        key=lambda p: int(re.search(r"\d+", p.name).group()),  # type: ignore[union-attr]
     )
-    sm.set_array([])
-    cbar = plt.colorbar(sm, ax=ax1)
-    cbar.set_label("Time Point")
+    return runs
 
-    plt.tight_layout()
-    plt.savefig("fluorescence_profiles.svg")
-    print("Saved fluorescence_profiles.svg")
-    plt.close()
 
-    # Task 2: Extract membrane intensity over time
-    # The cross-section shows TWO membranes with dark interior between them
-    membrane1_intensity = []
-    membrane2_intensity = []
-    membrane1_positions = []
-    membrane2_positions = []
+def plot_run_on_axis(
+    data: dict[str, pd.DataFrame],
+    ax: matplotlib.axes.Axes,
+    dna_x_range: float,
+    cyclo_x_range: float,
+    show_x_labels: bool,
+) -> None:
+    """Plot one run's two conditions onto ax with a shared x-axis layout.
 
-    for t in range(n_timepoints):
-        profile = channel1[t, :].astype(float)  # Convert to float to avoid overflow
-        # Find both membrane peaks
-        peaks = find_membrane_peaks(profile)
-
-        membrane1_positions.append(peaks[0])
-        membrane2_positions.append(peaks[1])
-        membrane1_intensity.append(profile[peaks[0]])
-        membrane2_intensity.append(profile[peaks[1]])
-
-    # Plot membrane intensity over time
-    fig2, ax2 = plt.subplots(figsize=(8, 6))
-
-    # Plot both membranes and their average
+    The DNA phase is mapped to 0..dna_x_range and the cyclodextrin phase to
+    dna_x_range+gap..dna_x_range+gap+cyclo_x_range, matching the scale used
+    by all other rows.
+    """
     palette = sns.color_palette("colorblind")
 
-    ax2.plot(
-        range(n_timepoints),
-        membrane1_intensity,
-        marker="o",
-        markerfacecolor=palette[0],
-        markeredgecolor="black",
-        markeredgewidth=1,
-        linewidth=2,
-        color=palette[0],
-        label="Membrane 1",
-        markersize=4,
-    )
+    gap = dna_x_range * 0.1
+    cd_offset = dna_x_range + gap
 
-    ax2.plot(
-        range(n_timepoints),
-        membrane2_intensity,
-        marker="s",
-        markerfacecolor=palette[1],
-        markeredgecolor="black",
-        markeredgewidth=1,
-        linewidth=2,
-        color=palette[1],
-        label="Membrane 2",
-        markersize=4,
-    )
+    offsets = {CONDITION_ORDER[0]: 0.0, CONDITION_ORDER[1]: cd_offset}
 
-    # Add vertical dashed lines at t=1, t=15, and t=31
-    snapshot_times = [1, 15, 31]
-    for t in snapshot_times:
-        if t < n_timepoints:
-            ax2.axvline(x=t, color="gray", linestyle="--", linewidth=1, alpha=0.7)
+    tick_positions: list[float] = []
+    tick_labels: list[str] = []
 
-    ax2.set_xlabel("Time Point")
-    ax2.set_ylabel("Membrane Fluorescence Intensity")
-    ax2.set_title("Membrane Fluorescence Over Time")
-    ax2.legend()
+    for i, condition in enumerate(CONDITION_ORDER):
+        df = data.get(condition)
+        if df is None or df.empty:
+            continue
+        color = palette[i]
+        offset = offsets[condition]
+        max_t = float(df["frame"].max())
 
-    plt.tight_layout()
-    plt.savefig("membrane_intensity_time.svg")
-    print("Saved membrane_intensity_time.svg")
-    plt.close()
-
-    # Save PNG images of fluorescence profiles at specific timepoints
-    snapshot_times = [1, 15, 31]
-    for t in snapshot_times:
-        if t < n_timepoints:
-            fig_snap, ax_snap = plt.subplots(figsize=(8, 6))
-            ax_snap.plot(
-                range(n_positions),
-                channel1[t, :],
-                color=colors[t],
-                linewidth=2,
+        # Individual GUV traces
+        for guv_id in df["guv_id"].unique():
+            guv = df[df["guv_id"] == guv_id].sort_values("frame")  # type: ignore[call-overload]
+            ax.plot(
+                guv["frame"] + offset,
+                guv["membrane_signal"],
+                color=color,
+                linewidth=0.5,
+                alpha=0.35,
             )
-            ax_snap.set_xlabel("Distance / pixels")
-            ax_snap.set_ylabel("Fluorescence Intensity")
-            ax_snap.set_title(f"Fluorescence Profile at t={t}")
-            plt.tight_layout()
-            plt.savefig(f"fluorescence_profile_t{t}.png", dpi=300)
-            print(f"Saved fluorescence_profile_t{t}.png")
-            plt.close()
 
-    # Diagnostic plot showing where both membranes were detected
-    fig3, ax3 = plt.subplots(figsize=(8, 6))
-    ax3.plot(
-        membrane1_positions,
-        range(n_timepoints),
-        marker="o",
-        markersize=3,
-        label="Membrane 1",
-        color=palette[0],
-    )
-    ax3.plot(
-        membrane2_positions,
-        range(n_timepoints),
-        marker="s",
-        markersize=3,
-        label="Membrane 2",
-        color=palette[1],
-    )
-    ax3.set_xlabel("Membrane Position / pixels")
-    ax3.set_ylabel("Time Point")
-    ax3.set_title("Detected Membrane Positions Over Time")
-    ax3.legend()
-    ax3.invert_yaxis()
-    plt.tight_layout()
-    plt.savefig("membrane_position_diagnostic.svg")
-    print("Saved membrane_position_diagnostic.svg")
-    plt.close()
-
-    print(
-        f"\nMembrane 1 intensity range: {min(membrane1_intensity):.1f} - {max(membrane1_intensity):.1f}"
-    )
-    print(
-        f"Membrane 2 intensity range: {min(membrane2_intensity):.1f} - {max(membrane2_intensity):.1f}"
-    )
-
-    # Create a combined figure with both analyses
-    fig4, (ax4a, ax4b) = plt.subplots(1, 2, figsize=(14, 5))
-
-    # Left panel: fluorescence profiles
-    for t in range(n_timepoints):
-        ax4a.plot(
-            range(n_positions),
-            channel1[t, :],
-            color=colors[t],
-            alpha=0.6,
-            linewidth=1,
+        # Mean line
+        mean_by_frame = df.groupby("frame")["membrane_signal"].mean()
+        ax.plot(
+            mean_by_frame.index + offset,
+            mean_by_frame.values,
+            color=color,
+            linewidth=2.0,
+            alpha=0.9,
+            label=CONDITION_LABELS[condition],
         )
 
-    ax4a.set_xlabel("Distance / pixels")
-    ax4a.set_ylabel("Fluorescence Intensity")
-    ax4a.set_title("Fluorescence Profile Over Time")
+        if show_x_labels:
+            for t in range(0, int(max_t) + 1, 15):
+                tick_positions.append(t + offset)
+                tick_labels.append(str(t))
 
-    # Right panel: membrane intensity over time (both membranes)
-    ax4b.plot(
-        range(n_timepoints),
-        membrane1_intensity,
-        marker="o",
-        markerfacecolor=palette[0],
-        markeredgecolor="black",
-        markeredgewidth=1,
-        linewidth=2,
-        color=palette[0],
-        label="Membrane 1",
-        markersize=4,
+    # Divider between conditions
+    ax.axvline(
+        dna_x_range + gap / 2,
+        color="gray",
+        linestyle="--",
+        linewidth=0.8,
+        alpha=0.5,
     )
 
-    ax4b.plot(
-        range(n_timepoints),
-        membrane2_intensity,
-        marker="s",
-        markerfacecolor=palette[1],
-        markeredgecolor="black",
-        markeredgewidth=1,
-        linewidth=2,
-        color=palette[1],
-        label="Membrane 2",
-        markersize=4,
+    ax.set_xlim(-1, dna_x_range + gap + cyclo_x_range + 1)
+    ax.set_ylim(0, None)
+
+    if show_x_labels:
+        ax.set_xticks(tick_positions)
+        ax.set_xticklabels(tick_labels, fontsize=7)
+        ax.set_xlabel("Time / min")
+    else:
+        ax.tick_params(axis="x", which="both", bottom=False, labelbottom=False)
+
+    ax.set_ylabel("Membrane fluorescence", fontsize=8)
+    format_axes(ax)
+
+
+def main() -> None:
+    base_dir = Path(__file__).parent
+    run_dirs = find_run_dirs(base_dir)
+
+    if not run_dirs:
+        print("No run-N/ directories found.")
+        return
+
+    print(f"Found {len(run_dirs)} run dir(s)")
+
+    # Load all data first so we can determine global x-axis limits
+    all_data: list[dict[str, pd.DataFrame]] = []
+    for run_dir in run_dirs:
+        h5_files = find_h5_files(run_dir)
+        data: dict[str, pd.DataFrame] = {}
+        for condition, h5_path in h5_files.items():
+            print(f"  Loading {run_dir.name}/{h5_path.name}...")
+            df = load_condition_data(h5_path)
+            if condition == CONDITION_ORDER[1]:
+                df = df[df["frame"] <= 30].copy()
+            n_guvs = df["guv_id"].nunique()
+            n_frames = df["frame"].nunique()
+            print(f"    {n_guvs} GUVs across {n_frames} frames")
+            data[condition] = df
+        all_data.append(data)
+
+    # Shared x-axis: scale to the longest DNA and longest cyclodextrin run
+    max_dna_frames = max(
+        float(d[CONDITION_ORDER[0]]["frame"].max())
+        for d in all_data
+        if CONDITION_ORDER[0] in d and not d[CONDITION_ORDER[0]].empty
+    )
+    max_cyclo_frames = max(
+        float(d[CONDITION_ORDER[1]]["frame"].max())
+        for d in all_data
+        if CONDITION_ORDER[1] in d and not d[CONDITION_ORDER[1]].empty
     )
 
-    ax4b.set_xlabel("Time Point")
-    ax4b.set_ylabel("Membrane Fluorescence Intensity")
-    ax4b.set_title("Membrane Fluorescence Over Time")
-    ax4b.legend()
+    n_runs = len(run_dirs)
+    setup_plot_style()
+    fig, axes = plt.subplots(
+        n_runs,
+        1,
+        figsize=(100 / 25.4, 45 / 25.4 * n_runs),
+        sharex=False,  # handled manually via set_xlim
+    )
+    if n_runs == 1:
+        axes = [axes]
+
+    for i, (ax, run_dir, data) in enumerate(zip(axes, run_dirs, all_data)):
+        is_bottom = i == n_runs - 1
+        plot_run_on_axis(
+            data,
+            ax,
+            dna_x_range=max_dna_frames,
+            cyclo_x_range=max_cyclo_frames,
+            show_x_labels=is_bottom,
+        )
+        ax.text(
+            0.01,
+            0.97,
+            run_dir.name,
+            transform=ax.transAxes,
+            fontsize=7,
+            va="top",
+        )
+        if i == 0:
+            ax.legend(frameon=False, fontsize=7, loc="upper right")
 
     plt.tight_layout()
-    plt.savefig("combined_analysis.svg")
-    print("Saved combined_analysis.svg")
-    plt.close()
+    out_path = base_dir / "guv-confocal-all-runs.svg"
+    fig.savefig(out_path, bbox_inches="tight")
+    plt.close(fig)
+    print(f"\nSaved {out_path}")
 
 
 if __name__ == "__main__":

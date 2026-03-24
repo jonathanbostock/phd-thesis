@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.colors import Normalize
 
-from utils.plotting import setup_plot_style, format_axes, save_plot
+from utils.plotting import setup_plot_style, format_axes, save_plot, plot_mean_sem_overlay
 from utils import defaults
 
 P1MI_KEY = "Peak 1 Mean by Intensity ordered by area (nm)"
@@ -143,9 +143,15 @@ def process_brush_length_data(filepath: str, get_pH) -> pd.DataFrame:
 
 
 def plot_ph_calibration(cal_df: pd.DataFrame) -> plt.Figure:
-    """Plot pH calibration: raw triplicates (pH 1, 2, 3) vs HCl volume added."""
+    """Plot pH calibration: raw triplicates (pH 1, 2, 3) vs HCl volume added.
+
+    Horizontal reference lines mark the working pH of Tris (8.1), PIPES (6.8),
+    and acetate (4.8) buffers, with Gaussian fuzzy bands spanning each buffer's
+    effective buffering range (pKa ± 1 pH unit).
+    """
     setup_plot_style()
     colors = sns.color_palette("colorblind")
+    dark_grey = "#555555"
 
     fig, ax = plt.subplots(
         figsize=(
@@ -154,18 +160,50 @@ def plot_ph_calibration(cal_df: pd.DataFrame) -> plt.Figure:
         )
     )
 
-    for col in ["pH 1", "pH 2", "pH 3"]:
+    # Buffer reference lines: (pH, colorblind index)
+    buffers = [
+        (8.1, colors[0]),   # Tris
+        (6.5, colors[1]),   # Bis-Tris
+        (4.8, colors[2]),   # Acetate
+    ]
+
+    x_min = float(cal_df["Vol HCl"].min())
+    x_max = float(cal_df["Vol HCl"].max())
+    buffering_sigma = 1.5   # half-width of buffering region in pH units
+    n_shells = 40           # shells for smooth Gaussian gradient
+    max_alpha = 0.5         # cumulative peak opacity at centre
+
+    for ph_centre, col in buffers:
+        # Gaussian fuzzy band: stack shells from outermost inward so alpha
+        # accumulates towards the centre.
+        for k in range(n_shells, 0, -1):
+            frac = k / n_shells
+            half_w = buffering_sigma * frac
+            layer_alpha = max_alpha * np.exp(-0.5 * frac ** 2) / n_shells
+            ax.axhspan(
+                ph_centre - half_w,
+                ph_centre + half_w,
+                color=col,
+                alpha=layer_alpha,
+                linewidth=0,
+                zorder=1,
+            )
+        ax.axhline(ph_centre, color=col, linewidth=0.8, linestyle=":", alpha=0.9, zorder=2)
+
+    for col_name in ["pH 1", "pH 2", "pH 3"]:
         ax.scatter(
             cal_df["Vol HCl"],
-            cal_df[col],
-            color=colors[0],
+            cal_df[col_name],
+            color=dark_grey,
             marker="o",
             edgecolors="black",
             linewidths=0.5,
             s=30,
-            alpha=0.7,
+            alpha=0.9,
+            zorder=5,
         )
 
+    ax.set_xlim(x_min, x_max)
     ax.set_xlabel("V/V% HCl added")
     ax.set_ylabel("pH")
     format_axes(ax)
@@ -179,7 +217,7 @@ def plot_brushes_ph_changes(
     """Plot ΔD vs pH for No DNA (POPC only), 30bp brush, and I-motif brush."""
     setup_plot_style()
     colors = sns.color_palette("colorblind")
-    markers = ["o", "s", "^"]
+    markers = ["+", "x", "1"]
 
     fig, ax = plt.subplots(
         figsize=(
@@ -193,16 +231,18 @@ def plot_brushes_ph_changes(
 
     for i, condition in enumerate(conditions):
         data = combined[combined["condition"] == condition]
+        x = data["pH"].to_numpy()
+        y = data["delta_p1mi"].to_numpy()
         ax.scatter(
-            data["pH"],
-            data["delta_p1mi"],
+            x,
+            y,
             color=colors[i],
             marker=markers[i],
-            edgecolors="black",
-            linewidths=0.5,
-            s=40,
+            linewidths=0.8,
+            s=35,
             label=condition,
         )
+        plot_mean_sem_overlay(ax, x, y, color=colors[i])
 
     ax.set_xlabel("pH")
     ax.set_ylabel(r"$\Delta D$ / nm")
@@ -227,21 +267,23 @@ def plot_ph_response_standard_brushes(data_df: pd.DataFrame) -> plt.Figure:
     lengths = sorted(data_df["length_bp"].unique())
     cmap = plt.colormaps["viridis"]
     norm = Normalize(vmin=min(lengths), vmax=max(lengths))
-    markers = ["o", "s", "^", "D"]
+    markers = ["+", "x", "1", "2"]
 
     for i, length in enumerate(lengths):
         data = data_df[data_df["length_bp"] == length]
         color = cmap(norm(length))
+        x = data["pH"].to_numpy()
+        y = data["delta_p1mi"].to_numpy()
         ax.scatter(
-            data["pH"],
-            data["delta_p1mi"],
+            x,
+            y,
             color=color,
             marker=markers[i],
-            edgecolors="black",
-            linewidths=0.5,
-            s=40,
+            linewidths=0.8,
+            s=35,
             label=f"{length} bp",
         )
+        plot_mean_sem_overlay(ax, x, y, color=color)
 
     ax.set_xlabel("pH")
     ax.set_ylabel(r"$\Delta D$ / nm")

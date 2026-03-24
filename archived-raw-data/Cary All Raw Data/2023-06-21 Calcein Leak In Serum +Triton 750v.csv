@@ -1,0 +1,654 @@
+Sample E1,,Sample E2,,Sample E3,,Sample E4,,Sample F1,,Sample F2,,Sample F3,,Sample F4,,Sample G1,,Sample G2,,Sample G3,,Sample G4,,
+Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),
+0.008333333768,349.2284241,0.04433333501,154.5012817,0.07983333617,214.5114594,0.1158749983,325.8553772,0.2643333375,373.816925,0.2282499969,272.162262,0.1928333342,109.2969589,0.1565416604,333.1984863,0.3055000007,394.276886,0.3409999907,224.7661591,0.3763750196,136.1706543,0.4134166837,271.206543,
+0.5083333254,349.0426636,0.5440416932,157.8173828,0.5805416703,215.2237091,0.6160417199,324.5252075,0.7627083659,373.8517456,0.7273124456,176.1685028,0.6918750405,110.1475601,0.6553958058,332.8861084,0.8037291765,394.1087036,0.8399583101,228.6667786,0.8752291203,145.156189,0.9116458297,270.3630371,
+1.008333325,340.65979,1.045916677,157.4341583,1.081375003,214.4054108,1.117729187,326.3182678,1.266062498,379.7991333,1.229979157,197.0131073,1.194708347,111.3933563,1.15831244,335.6092834,1.305062532,392.9198914,1.342208385,228.7279053,1.378374934,148.3076019,1.413729191,272.3136902,
+
+Sample E1,
+Sample E1
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample E2,
+Sample E2
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample E3,
+Sample E3
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample E4,
+Sample E4
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample F1,
+Sample F1
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample F2,
+Sample F2
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample F3,
+Sample F3
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample F4,
+Sample F4
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample G1,
+Sample G1
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample G2,
+Sample G2
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample G3,
+Sample G3
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+
+Sample G4,
+Sample G4
+Collection Time: 21-Jun-23 10:07:35 AM
+Operator Name  :
+Kinetics Software Version: 1.2(146)
+Parameter List :
+Report Time: Wed 21 Jun 10:07:35 AM 2023
+Software version: 1.2(146)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                1.0000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   750
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 20-Jun-23 5:05:32 PM
+Method Modifications:
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Individual, New:Choice 1
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay all, New:Choice 2
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay rows, New:Choice 3
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:Overlay columns, New:Choice 4
+Wellplate Overlay Mode Changed: 20-Jun-23 5:05:34 PM, Old:User defined, New:Overlay columns
+Well plate reader Changed: 20-Jun-23 5:07:54 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 20-Jun-23 5:07:54 PM, Old: 600.00, New: 515.00
+Stop Time 1 Changed: 20-Jun-23 5:07:54 PM, Old: 1.0000, New:900.0000
+Wellplate Samples Changed: 20-Jun-23 5:07:54 PM, Old:, New:E1;E2;E3;E4;F1;F2;F3;F4;G1;G2;G3;G4;
+Ave. time (s): Changed: 20-Jun-23 5:08:53 PM, Old:0.10000, New:1.00000
+Cycle Time 1 Changed: 20-Jun-23 5:08:53 PM, Old: 0.0000, New: 1.0000
+PMT Volts Changed: 20-Jun-23 5:09:49 PM, Old:600, New:800
+Emission PMT (V): Changed: 20-Jun-23 5:09:49 PM, Old: 600, New: 800
+PMT Volts Changed: 20-Jun-23 5:10:48 PM, Old:800, New:750
+Emission PMT (V): Changed: 20-Jun-23 5:10:48 PM, Old: 800, New: 750
+Cycle Time 1 Changed: 21-Jun-23 10:06:49 AM, Old: 1.0000, New: 0.5000
+Stop Time 1 Changed: 21-Jun-23 10:06:49 AM, Old:900.0000, New: 1.0000
+End Method Modifications
+

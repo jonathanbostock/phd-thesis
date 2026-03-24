@@ -6,7 +6,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from utils.data_processing import process_charged_liposome_data
 from utils.plotting import plot_linear_relationship, save_plot
-from utils import defaults
 
 
 def main() -> None:
@@ -21,14 +20,10 @@ def main() -> None:
         df_data=df_data,
         x_col="DOPG_percentage",
         y_col="delta_p1mi",
-        title="Effect of Charge on Brush Formation",
+        title="",
         xlabel="DOPG Percentage / %",
-        ylabel=r"$\Delta D$",
+        ylabel=r"$\Delta D$ / nm",
         color_index=4,
-        figsize=(
-            defaults.fig_width * defaults.small_fig_scale,
-            defaults.fig_height * defaults.small_fig_scale,
-        ),
     )
 
     # Save and show

@@ -583,7 +583,8 @@ def plot_linear_relationship(
     # Format plot
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
-    ax.set_title(title)
+    if title:
+        ax.set_title(title)
 
     # Set y-axis to start from 0 for Delta D plots
     if "Δ" in ylabel or "Delta" in ylabel:
@@ -721,6 +722,96 @@ def plot_calcein_release(
 
     plt.tight_layout()
     return fig1, fig2
+
+
+def plot_linear_fit_overlay(
+    ax,
+    x: np.ndarray,
+    y: np.ndarray,
+    color,
+    line_alpha: float = 0.9,
+    band_alpha: float = 0.2,
+) -> float:
+    """
+    Fit a linear regression to (x, y), overlay the fitted line and ±1σ
+    confidence band on ax.
+
+    Parameters
+    ----------
+    ax : matplotlib.axes.Axes
+    x, y : np.ndarray  Raw data arrays.
+    color : Colour for the line and band (should match the scatter colour).
+    line_alpha, band_alpha : Opacities.
+
+    Returns
+    -------
+    r_squared : float
+    """
+    result = stats.linregress(x, y)
+    slope, intercept, r_value = result.slope, result.intercept, result.rvalue
+
+    x_plot = np.linspace(x.min(), x.max(), 200)
+    y_plot = slope * x_plot + intercept
+
+    # ±1σ confidence band via t-distribution at 68%
+    n = len(x)
+    x_mean = x.mean()
+    mse = np.sum((y - (slope * x + intercept)) ** 2) / (n - 2)
+    se_line = np.sqrt(
+        mse * (1 / n + (x_plot - x_mean) ** 2 / np.sum((x - x_mean) ** 2))
+    )
+    t_val = stats.t.ppf(0.84, df=n - 2)
+
+    ax.plot(x_plot, y_plot, color=color, linewidth=1.5, alpha=line_alpha)
+    ax.fill_between(
+        x_plot,
+        y_plot - t_val * se_line,
+        y_plot + t_val * se_line,
+        color=color,
+        alpha=band_alpha,
+    )
+
+    return float(r_value**2)
+
+
+def plot_mean_sem_overlay(
+    ax,
+    x: np.ndarray,
+    y: np.ndarray,
+    color,
+    line_alpha: float = 0.9,
+    band_alpha: float = 0.0,
+    linestyle: str = "-",
+) -> None:
+    """
+    Overlay a mean line (and optional ±SEM band) on an existing axes.
+
+    Groups raw (x, y) data by unique x values, computes mean and SEM per group,
+    then plots the mean as a line and optionally the ±SEM region as a filled band.
+
+    Parameters
+    ----------
+    ax : matplotlib.axes.Axes
+    x : np.ndarray
+        Raw x values (one entry per observation).
+    y : np.ndarray
+        Raw y values (one entry per observation).
+    color :
+        Line and band colour — should match the corresponding scatter colour.
+    line_alpha : float
+        Alpha for the mean line.
+    band_alpha : float
+        Alpha for the SEM band. Set to 0 (default) to hide the band.
+    linestyle : str
+        Linestyle for the mean line (default: "--").
+    """
+    unique_x = np.unique(x)
+    means = np.array([np.mean(y[x == xi]) for xi in unique_x])
+    sems = np.array([stats.sem(y[x == xi]) for xi in unique_x])
+
+    ax.plot(unique_x, means, color=color, linewidth=1.5, alpha=line_alpha, linestyle=linestyle)
+    if band_alpha > 0:
+        ax.fill_between(unique_x, means - sems, means + sems, color=color, alpha=band_alpha)
 
 
 def save_plot(fig, filename_base):

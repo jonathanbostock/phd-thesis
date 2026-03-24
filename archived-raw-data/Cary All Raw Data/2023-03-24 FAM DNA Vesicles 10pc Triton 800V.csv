@@ -1,0 +1,1892 @@
+Sample A1,,Sample A2,,Sample A3,,Sample A4,,Sample A5,,Sample A6,,Sample A7,,Sample A8,,Sample A9,,Sample A10,,Sample A11,,Sample A12,,Sample B12,,Sample B11,,Sample B10,,Sample B9,,Sample B8,,Sample B7,,Sample B6,,Sample B5,,Sample B4,,Sample B3,,Sample B2,,Sample B1,,Sample C1,,Sample C2,,Sample C3,,Sample C4,,Sample C5,,Sample C6,,Sample C7,,Sample C8,,Sample C9,,Sample C10,,Sample C11,,Sample C12,,
+Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),Wavelength (nm),Intensity (a.u.),
+510,3.041984797,510,46.58483887,510,47.84949112,510,49.2129097,510,53.19712448,510,47.63364029,510,54.13790131,510,49.75743103,510,47.64637756,510,54.76548004,510,55.61704254,510,53.41594696,510,55.51249313,510,59.99996185,510,51.73741913,510,53.81358337,510,48.97499084,510,52.35644531,510,48.87388611,510,51.29665375,510,48.70172119,510,48.58933258,510,45.42189407,510,3.296840429,510,3.17166996,510,48.38485718,510,50.9250946,510,47.33076477,510,49.05878448,510,49.06820297,510,51.98242188,510,50.46335602,510,49.37424469,510,65.14888,510,51.48361588,510,53.98906326,
+511.0400085,2.836197615,511.0400085,48.01336288,511.0400085,49.80183411,511.0400085,50.34407806,511.0400085,56.06775665,511.0400085,51.0603714,511.0400085,55.4595108,511.0400085,53.6040802,511.0400085,49.88869095,511.0400085,57.34350967,511.0400085,59.77869034,511.0400085,55.52391052,511.0400085,58.82758331,511.0400085,63.6709938,511.0400085,53.9286499,511.0400085,55.85461426,511.0400085,50.9518013,511.0400085,54.42227554,511.0400085,51.58560944,511.0400085,52.4220314,511.0400085,50.40051651,511.0400085,49.50467682,511.0400085,49.65919113,511.0400085,2.783088207,511.0400085,2.770890951,511.0400085,48.97701645,511.0400085,51.81289291,511.0400085,50.22359085,511.0400085,52.95465088,511.0400085,53.42401886,511.0400085,55.60209656,511.0400085,55.31947327,511.0400085,51.47360229,511.0400085,69.36960602,511.0400085,52.53441238,511.0400085,55.72352982,
+511.9400024,2.693019152,511.9400024,50.63801956,511.9400024,51.868927,511.9400024,51.66905594,511.9400024,56.24562454,511.9400024,54.26018524,511.9400024,59.47877884,511.9400024,54.38797379,511.9400024,52.29523087,511.9400024,59.07136536,511.9400024,61.81274414,511.9400024,55.99157715,511.9400024,61.63928986,511.9400024,67.30136871,511.9400024,55.04437637,511.9400024,57.07291412,511.9400024,52.88755798,511.9400024,54.80784607,511.9400024,53.27089691,511.9400024,54.51212692,511.9400024,53.06032562,511.9400024,51.79837418,511.9400024,49.91358948,511.9400024,2.587219238,511.9400024,2.531606197,511.9400024,51.50119019,511.9400024,53.64497757,511.9400024,52.1226387,511.9400024,53.09697342,511.9400024,54.9493866,511.9400024,56.47794724,511.9400024,55.70079422,511.9400024,52.69340897,511.9400024,70.30774689,511.9400024,55.13120651,511.9400024,58.26825714,
+512.9799805,2.436868906,512.9799805,51.05630493,512.9799805,53.30885696,512.9799805,54.03782272,512.9799805,56.40731812,512.9799805,54.73412323,512.9799805,60.59733963,512.9799805,56.02088165,512.9799805,53.00302505,512.9799805,59.60052872,512.9799805,63.65071869,512.9799805,58.78528976,512.9799805,61.83727264,512.9799805,69.75285339,512.9799805,57.5141449,512.9799805,57.65421677,512.9799805,54.84046936,512.9799805,55.69529724,512.9799805,56.9405098,512.9799805,56.63434601,512.9799805,54.49186707,512.9799805,53.75330734,512.9799805,51.53523636,512.9799805,2.507598162,512.9799805,2.625672817,512.9799805,53.65678787,512.9799805,55.20022202,512.9799805,55.84924316,512.9799805,56.72199631,512.9799805,57.32156372,512.9799805,57.43949127,512.9799805,56.64271545,512.9799805,53.48503494,512.9799805,72.13264465,512.9799805,56.86742783,512.9799805,59.60339737,
+514.0200195,2.053324699,514.0200195,53.67951202,514.0200195,54.51831818,514.0200195,53.0586853,514.0200195,57.78091812,514.0200195,56.54702377,514.0200195,60.61949921,514.0200195,57.23716354,514.0200195,56.61008835,514.0200195,61.22028732,514.0200195,61.7305069,514.0200195,60.11123276,514.0200195,63.32336426,514.0200195,70.75829315,514.0200195,56.09049606,514.0200195,60.4968071,514.0200195,55.56201553,514.0200195,57.63301468,514.0200195,56.55026627,514.0200195,56.84584045,514.0200195,56.04862213,514.0200195,55.21966553,514.0200195,52.49606323,514.0200195,2.826484442,514.0200195,2.708590984,514.0200195,53.88760376,514.0200195,57.22071075,514.0200195,55.17414474,514.0200195,56.88713074,514.0200195,57.72780991,514.0200195,58.98243713,514.0200195,58.04642105,514.0200195,54.48789215,514.0200195,73.85082245,514.0200195,56.94506836,514.0200195,62.54367447,
+515.0700073,2.108818293,515.0700073,53.29359436,515.0700073,54.03868866,515.0700073,55.29737854,515.0700073,60.45948792,515.0700073,56.5843277,515.0700073,59.424366,515.0700073,58.78572845,515.0700073,55.43015289,515.0700073,62.24023819,515.0700073,65.28237152,515.0700073,60.79889297,515.0700073,64.99673462,515.0700073,72.82041931,515.0700073,58.11776733,515.0700073,60.4142952,515.0700073,54.9481926,515.0700073,59.38766861,515.0700073,59.4282608,515.0700073,55.94717407,515.0700073,56.83266449,515.0700073,54.8951416,515.0700073,52.20629883,515.0700073,2.549613476,515.0700073,2.156701565,515.0700073,56.87525558,515.0700073,58.04457855,515.0700073,55.48559952,515.0700073,58.25669479,515.0700073,57.5647049,515.0700073,59.32047272,515.0700073,59.25743484,515.0700073,54.97473907,515.0700073,75.38880157,515.0700073,59.48283005,515.0700073,61.22108078,
+515.9699707,2.131512642,515.9699707,53.82868958,515.9699707,56.45864868,515.9699707,55.65670013,515.9699707,59.96351624,515.9699707,56.21773911,515.9699707,61.5356636,515.9699707,58.9741745,515.9699707,56.25906754,515.9699707,64.01689148,515.9699707,65.21629333,515.9699707,60.43257523,515.9699707,65.5905304,515.9699707,72.03246307,515.9699707,59.7170639,515.9699707,60.97887421,515.9699707,56.28185654,515.9699707,58.7181015,515.9699707,58.82859039,515.9699707,57.23179245,515.9699707,57.31859207,515.9699707,55.96677399,515.9699707,52.87635422,515.9699707,1.958759546,515.9699707,2.25344348,515.9699707,57.23707962,515.9699707,57.896698,515.9699707,56.75665283,515.9699707,59.93783569,515.9699707,58.05849075,515.9699707,60.7205658,515.9699707,59.86381531,515.9699707,55.39543152,515.9699707,75.41052246,515.9699707,59.01115417,515.9699707,60.94154739,
+517.0100098,2.122111082,517.0100098,53.59724808,517.0100098,54.90952682,517.0100098,55.00347137,517.0100098,59.429039,517.0100098,57.83211136,517.0100098,61.0757637,517.0100098,58.86064911,517.0100098,56.39609146,517.0100098,64.72608948,517.0100098,65.58039093,517.0100098,61.81347275,517.0100098,65.79153442,517.0100098,71.70697784,517.0100098,57.93311691,517.0100098,62.14806366,517.0100098,56.94495392,517.0100098,60.17609406,517.0100098,57.6942482,517.0100098,57.96780777,517.0100098,57.68037415,517.0100098,57.49035263,517.0100098,52.98199081,517.0100098,2.229633331,517.0100098,2.246187449,517.0100098,55.32917023,517.0100098,58.47362137,517.0100098,55.91251373,517.0100098,60.34344101,517.0100098,59.49010849,517.0100098,60.53595734,517.0100098,60.24626923,517.0100098,56.53468704,517.0100098,75.7881546,517.0100098,59.52772141,517.0100098,62.47461319,
+518.0499878,2.04084754,518.0499878,53.43442154,518.0499878,55.83237457,518.0499878,55.47716141,518.0499878,61.85675049,518.0499878,58.46974564,518.0499878,61.19332886,518.0499878,60.39626312,518.0499878,58.49335861,518.0499878,63.54975128,518.0499878,65.87052155,518.0499878,61.67514038,518.0499878,63.87342453,518.0499878,74.25796509,518.0499878,58.82577133,518.0499878,61.95690155,518.0499878,57.34721756,518.0499878,60.79873657,518.0499878,59.30735397,518.0499878,59.33625412,518.0499878,57.99946976,518.0499878,56.08045959,518.0499878,53.89587784,518.0499878,2.181694031,518.0499878,2.424088717,518.0499878,55.63121796,518.0499878,58.4784584,518.0499878,55.68930054,518.0499878,59.80066681,518.0499878,59.67511368,518.0499878,60.94134521,518.0499878,59.20746231,518.0499878,57.07496262,518.0499878,77.51457977,518.0499878,59.40799332,518.0499878,64.45241547,
+518.9500122,2.052373648,518.9500122,53.06169128,518.9500122,54.17505264,518.9500122,55.9655838,518.9500122,59.76070786,518.9500122,57.96858597,518.9500122,60.49150467,518.9500122,57.94734192,518.9500122,56.8795433,518.9500122,64.73000336,518.9500122,65.12862396,518.9500122,63.74496841,518.9500122,66.45133972,518.9500122,72.86875916,518.9500122,57.99563217,518.9500122,62.24830246,518.9500122,56.36937714,518.9500122,59.65950775,518.9500122,58.07587051,518.9500122,59.20521164,518.9500122,56.49506378,518.9500122,58.52952576,518.9500122,52.85407639,518.9500122,2.011406183,518.9500122,1.776144624,518.9500122,53.66808701,518.9500122,56.6017189,518.9500122,56.28165054,518.9500122,58.00184631,518.9500122,59.31629562,518.9500122,58.81826782,518.9500122,58.09854126,518.9500122,57.95937347,518.9500122,78.4394989,518.9500122,59.88628387,518.9500122,61.54039001,
+520,1.944777369,520,53.05166245,520,54.23911285,520,53.76629639,520,59.82492828,520,55.84769821,520,60.76329803,520,57.62644958,520,56.96850967,520,64.00473785,520,63.33426285,520,62.00551224,520,65.84442902,520,72.39263916,520,58.30979538,520,62.88645554,520,55.49739075,520,60.29094315,520,57.47005844,520,57.98009872,520,56.61649323,520,55.25776672,520,51.29520035,520,1.930153012,520,1.994695783,520,55.60452652,520,58.62327576,520,55.05976105,520,57.73103333,520,58.91641998,520,59.75793457,520,59.9779892,520,56.42460632,520,74.55996704,520,59.51719284,520,63.99816895,
+521.0599976,1.489535928,521.0599976,51.05615997,521.0599976,53.37725449,521.0599976,54.16123962,521.0599976,60.17204666,521.0599976,55.19876862,521.0599976,60.24013519,521.0599976,57.21789551,521.0599976,56.37326813,521.0599976,62.38594818,521.0599976,61.99814987,521.0599976,61.20753098,521.0599976,65.38404083,521.0599976,70.89133453,521.0599976,58.58872604,521.0599976,60.05544662,521.0599976,53.52740097,521.0599976,59.28652573,521.0599976,56.02977371,521.0599976,58.27050781,521.0599976,56.78310394,521.0599976,54.27443314,521.0599976,51.30990219,521.0599976,1.959644437,521.0599976,1.595530987,521.0599976,54.23395157,521.0599976,55.92721939,521.0599976,54.64192581,521.0599976,57.28730011,521.0599976,57.84022141,521.0599976,58.37742233,521.0599976,59.82350159,521.0599976,56.32644653,521.0599976,76.20488739,521.0599976,56.8647728,521.0599976,60.43030167,
+521.960022,1.550159454,521.960022,50.69866943,521.960022,51.96199799,521.960022,54.37166977,521.960022,58.65972519,521.960022,55.60450363,521.960022,58.96393204,521.960022,57.2821846,521.960022,54.95464325,521.960022,62.40568542,521.960022,62.53839111,521.960022,61.18829346,521.960022,61.70718002,521.960022,68.60274506,521.960022,55.45685196,521.960022,58.40983582,521.960022,54.3411293,521.960022,58.60070038,521.960022,56.66741562,521.960022,57.7481575,521.960022,56.63312531,521.960022,55.61076736,521.960022,51.75717545,521.960022,1.981422782,521.960022,1.871469617,521.960022,53.48066711,521.960022,56.38412857,521.960022,55.52185822,521.960022,57.45560074,521.960022,55.62161255,521.960022,56.0822525,521.960022,57.24269104,521.960022,55.1925087,521.960022,76.24993134,521.960022,57.59402466,521.960022,59.58454514,
+523.0300293,1.406913877,523.0300293,50.70875168,523.0300293,51.33554077,523.0300293,51.56135559,523.0300293,57.6521225,523.0300293,54.40244293,523.0300293,57.58253479,523.0300293,55.58460236,523.0300293,52.86444473,523.0300293,59.24702072,523.0300293,62.37072372,523.0300293,60.28384399,523.0300293,61.58750916,523.0300293,68.47213745,523.0300293,56.71432114,523.0300293,59.56734467,523.0300293,53.53220367,523.0300293,58.52502441,523.0300293,55.8275795,523.0300293,55.44616318,523.0300293,54.74882126,523.0300293,52.90551758,523.0300293,49.62511826,523.0300293,1.913828015,523.0300293,1.774180532,523.0300293,53.75218201,523.0300293,55.43910599,523.0300293,54.46253204,523.0300293,57.22728729,523.0300293,55.43891907,523.0300293,58.23809052,523.0300293,56.30733871,523.0300293,54.79158401,523.0300293,70.97164154,523.0300293,56.43743515,523.0300293,58.35914612,
+523.9299927,1.504953027,523.9299927,50.17896271,523.9299927,53.15697479,523.9299927,52.77436066,523.9299927,56.04545212,523.9299927,53.44157028,523.9299927,57.29694748,523.9299927,55.24202347,523.9299927,51.34560394,523.9299927,60.14829254,523.9299927,60.03742218,523.9299927,58.48839569,523.9299927,61.0701828,523.9299927,64.96553802,523.9299927,53.43468094,523.9299927,56.64190674,523.9299927,52.18729401,523.9299927,55.49167633,523.9299927,53.16218948,523.9299927,55.15652847,523.9299927,54.30361176,523.9299927,50.84540939,523.9299927,50.18516922,523.9299927,1.66290009,523.9299927,1.679653287,523.9299927,50.76605606,523.9299927,53.77973175,523.9299927,52.84461975,523.9299927,56.05121994,523.9299927,54.88580704,523.9299927,56.16533661,523.9299927,55.75305557,523.9299927,53.20082474,523.9299927,71.10664368,523.9299927,54.45043945,523.9299927,58.48093414,
+525,1.656962276,525,49.41505814,525,51.89117432,525,50.59870529,525,55.14188766,525,52.95606232,525,55.42837906,525,52.35472107,525,50.99743652,525,58.11659241,525,59.16588974,525,55.57560349,525,59.33848953,525,65.41396332,525,54.15706635,525,56.11079025,525,52.5205307,525,55.39109802,525,53.23592758,525,53.7300148,525,52.0848999,525,50.08827972,525,48.32142258,525,1.749272346,525,1.716699719,525,48.49935913,525,54.05378342,525,49.7105217,525,53.62401962,525,52.28443909,525,55.16287994,525,54.94090271,525,51.20723343,525,67.90387726,525,53.60316467,525,56.82707596,
+526.0599976,1.869297147,526.0599976,48.8870697,526.0599976,50.03042221,526.0599976,48.73273849,526.0599976,53.84888458,526.0599976,51.13210678,526.0599976,54.9308548,526.0599976,49.84211731,526.0599976,49.78189087,526.0599976,56.39099884,526.0599976,55.74994278,526.0599976,54.44509888,526.0599976,58.40152359,526.0599976,64.89996338,526.0599976,51.82072449,526.0599976,54.12985229,526.0599976,49.8740387,526.0599976,53.2586174,526.0599976,50.25113678,526.0599976,52.38444519,526.0599976,51.03533554,526.0599976,48.52932358,526.0599976,47.63642502,526.0599976,1.82836926,526.0599976,1.923570871,526.0599976,49.91373825,526.0599976,50.47505951,526.0599976,50.97851944,526.0599976,51.92432785,526.0599976,52.20217896,526.0599976,53.7052803,526.0599976,54.03536987,526.0599976,50.63293457,526.0599976,67.59674835,526.0599976,51.87648773,526.0599976,55.78979111,
+
+Sample A1,
+Sample A1
+Collection Time: 21-Mar-24 2:15:15 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A2,
+Sample A2
+Collection Time: 21-Mar-24 2:15:35 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A3,
+Sample A3
+Collection Time: 21-Mar-24 2:15:44 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A4,
+Sample A4
+Collection Time: 21-Mar-24 2:15:54 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A5,
+Sample A5
+Collection Time: 21-Mar-24 2:16:04 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A6,
+Sample A6
+Collection Time: 21-Mar-24 2:16:13 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A7,
+Sample A7
+Collection Time: 21-Mar-24 2:16:23 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A8,
+Sample A8
+Collection Time: 21-Mar-24 2:16:32 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A9,
+Sample A9
+Collection Time: 21-Mar-24 2:16:42 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A10,
+Sample A10
+Collection Time: 21-Mar-24 2:16:52 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A11,
+Sample A11
+Collection Time: 21-Mar-24 2:17:01 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample A12,
+Sample A12
+Collection Time: 21-Mar-24 2:17:11 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B12,
+Sample B12
+Collection Time: 21-Mar-24 2:17:20 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B11,
+Sample B11
+Collection Time: 21-Mar-24 2:17:30 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B10,
+Sample B10
+Collection Time: 21-Mar-24 2:17:40 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B9,
+Sample B9
+Collection Time: 21-Mar-24 2:17:49 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B8,
+Sample B8
+Collection Time: 21-Mar-24 2:17:59 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B7,
+Sample B7
+Collection Time: 21-Mar-24 2:18:08 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B6,
+Sample B6
+Collection Time: 21-Mar-24 2:18:18 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B5,
+Sample B5
+Collection Time: 21-Mar-24 2:18:28 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B4,
+Sample B4
+Collection Time: 21-Mar-24 2:18:37 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B3,
+Sample B3
+Collection Time: 21-Mar-24 2:18:47 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B2,
+Sample B2
+Collection Time: 21-Mar-24 2:18:56 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample B1,
+Sample B1
+Collection Time: 21-Mar-24 2:19:06 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C1,
+Sample C1
+Collection Time: 21-Mar-24 2:19:16 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C2,
+Sample C2
+Collection Time: 21-Mar-24 2:19:25 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C3,
+Sample C3
+Collection Time: 21-Mar-24 2:19:35 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C4,
+Sample C4
+Collection Time: 21-Mar-24 2:19:45 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C5,
+Sample C5
+Collection Time: 21-Mar-24 2:19:54 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C6,
+Sample C6
+Collection Time: 21-Mar-24 2:20:04 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C7,
+Sample C7
+Collection Time: 21-Mar-24 2:20:13 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C8,
+Sample C8
+Collection Time: 21-Mar-24 2:20:23 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C9,
+Sample C9
+Collection Time: 21-Mar-24 2:20:33 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C10,
+Sample C10
+Collection Time: 21-Mar-24 2:20:42 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C11,
+Sample C11
+Collection Time: 21-Mar-24 2:20:52 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+
+Sample C12,
+Sample C12
+Collection Time: 21-Mar-24 2:21:01 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         526.00
+Ex. Wavelength (nm)               493.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                120.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.5000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   High
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 21-Mar-24 1:56:55 PM
+Method Modifications:
+Well plate reader Changed: 21-Mar-24 1:57:15 PM, Old:OFF, New:ON
+Wellplate Samples Changed: 21-Mar-24 1:57:15 PM, Old:, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Overlayed Graphs Changed: 21-Mar-24 1:58:37 PM, Old:OFF, New:ON
+PMT Volts Changed: 21-Mar-24 1:58:37 PM, Old:600, New:800
+User Delta Stop Changed: 21-Mar-24 1:58:37 PM, Old: 450.00, New: 493.00
+User Delta Increment Changed: 21-Mar-24 1:58:37 PM, Old:  10.00, New:   0.15
+Emission PMT (V): Changed: 21-Mar-24 1:58:37 PM, Old: 600, New: 800
+Excitation Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 350.00, New: 493.00
+Emission Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 400.00, New: 510.00
+Stop Wavelength Changed: 21-Mar-24 1:58:37 PM, Old: 600.00, New: 526.00
+Wellplate Samples Changed: 21-Mar-24 1:58:37 PM, Old:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;, New:A1;B1;C1;D1;
+Overlayed Graphs Changed: 21-Mar-24 2:00:27 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 21-Mar-24 2:00:37 PM, Old:A1;B1;C1;D1;, New:A1;A2;A3;A4;A5;A6;A7;A8;A9;A10;A11;A12;B1;B2;B3;B4;B5;B6;B7;B8;B9;B10;B11;B12;C1;C2;C3;C4;C5;C6;C7;C8;C9;C10;C11;C12;
+Scan Control Changed: 21-Mar-24 2:00:57 PM, Old:Medium, New:Manual
+Ave. time (s): Changed: 21-Mar-24 2:00:57 PM, Old:0.10000, New:0.20000
+Scan Control Changed: 21-Mar-24 2:01:08 PM, Old:Manual, New:Slow
+Ave. time (s): Changed: 21-Mar-24 2:01:08 PM, Old:0.20000, New:0.50000
+End Method Modifications
+

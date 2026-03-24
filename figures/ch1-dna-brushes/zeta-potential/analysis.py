@@ -41,8 +41,8 @@ def main() -> None:
                 sample_dict[key][col] -= control[col]
 
     data_df = pd.DataFrame.from_dict(sample_dict, orient="index")
-    data_df["DNA:Lipid Ratio"] = [1 / 20, 1 / 100, 1 / 500, 1 / 2000]
-    data_df = data_df.sort_values("DNA:Lipid Ratio")
+    data_df["Construct:Lipid Ratio"] = [1 / 20, 1 / 100, 1 / 500, 1 / 2000]
+    data_df = data_df.sort_values("Construct:Lipid Ratio")
 
     setup_plot_style()
     color = sns.color_palette("colorblind")[0]
@@ -50,7 +50,7 @@ def main() -> None:
     fig, ax = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
 
     ax.scatter(
-        data_df["DNA:Lipid Ratio"],
+        data_df["Construct:Lipid Ratio"],
         data_df["Zeta Potential (mV)"],
         color=color,
         edgecolors="black",
@@ -59,7 +59,7 @@ def main() -> None:
         zorder=5,
     )
     ax.plot(
-        data_df["DNA:Lipid Ratio"],
+        data_df["Construct:Lipid Ratio"],
         data_df["Zeta Potential (mV)"],
         color=color,
         linewidth=1.5,
@@ -67,7 +67,7 @@ def main() -> None:
     )
 
     ax.set_xscale("log")
-    ax.set_xlabel("DNA:Lipid Ratio")
+    ax.set_xlabel("Construct:Lipid Ratio")
     ax.set_ylabel(r"$\Delta\zeta$ / mV")
     format_axes(ax)
 

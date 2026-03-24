@@ -1,0 +1,112 @@
+Sample A5,,
+Wavelength (nm),Intensity (a.u.),
+510,138.062973,
+511.0400085,137.0473175,
+511.9400024,141.6617432,
+512.9799805,146.8598785,
+514.0200195,147.3236084,
+515.0700073,144.3673096,
+515.9699707,151.2165833,
+517.0100098,152.7826233,
+518.0499878,160.9572601,
+518.9500122,147.4490509,
+520,148.277359,
+521.0599976,148.0037384,
+521.960022,141.8193817,
+523.0300293,132.4873047,
+523.9299927,141.7331848,
+525,129.1982727,
+526.0599976,129.0477142,
+526.960022,127.7271957,
+528.0300293,117.6373215,
+528.9299927,113.5610123,
+530,104.4089203,
+531.039978,101.6613922,
+531.9400024,94.11283875,
+532.9799805,99.1529541,
+534.0200195,90.59467316,
+535.0700073,86.26055145,
+535.9699707,88.50474548,
+537.0100098,77.30558014,
+538.0499878,73.82997131,
+538.9500122,75.94174957,
+540,70.16279602,
+541.039978,68.07868195,
+541.9400024,69.05241394,
+542.9799805,63.8253746,
+544.0200195,59.5929718,
+545.0700073,59.00921631,
+545.9699707,59.45729446,
+547.0100098,53.23186111,
+548.0499878,55.17102814,
+548.9500122,49.18083954,
+550,47.05932617,
+551.0200195,43.70349884,
+552.0499878,44.07211685,
+552.9400024,43.82923508,
+553.9699707,38.18608093,
+555,42.6722374,
+556.0200195,39.80562592,
+557.0499878,36.14712906,
+557.9400024,38.47060013,
+558.9699707,35.51328659,
+560,35.1813736,
+
+Sample A5,
+Sample A5
+Collection Time: 10-Aug-23 2:59:29 PM
+Operator Name  :
+Scan Software Version: 1.2(147)
+Parameter List :
+Instrument                        Cary Eclipse
+Instrument Serial Number          MY18160001
+Data mode                         Fluorescence
+Scan mode                         Emission
+X Mode                            Wavelength (nm)
+Start (nm)                        510.00
+Stop (nm)                         560.00
+Ex. Wavelength (nm)               495.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Scan rate (nm/min)                600.00
+Data interval (nm)                1.0000
+Averaging Time (s)                0.1000
+Excitation filter                 Auto
+Emission filter                   Open
+PMT voltage (V)                   900
+Corrected spectra                 OFF
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 10-Aug-23 2:24:37 PM
+Method Modifications:
+Well plate reader Changed: 10-Aug-23 2:25:14 PM, Old:OFF, New:ON
+User Delta Stop Changed: 10-Aug-23 2:25:14 PM, Old: 450.00, New: 495.00
+User Delta Increment Changed: 10-Aug-23 2:25:14 PM, Old:  10.00, New:   0.15
+Excitation Wavelength Changed: 10-Aug-23 2:25:14 PM, Old: 350.00, New: 495.00
+Emission Wavelength Changed: 10-Aug-23 2:25:14 PM, Old: 400.00, New: 505.00
+Stop Wavelength Changed: 10-Aug-23 2:25:14 PM, Old: 600.00, New: 565.00
+Wellplate Samples Changed: 10-Aug-23 2:25:14 PM, Old:, New:A1;A2;A3;A4;A5;A6;B1;B2;B3;B4;B5;B6;C1;C2;C3;C4;C5;C6;
+Overlayed Graphs Changed: 10-Aug-23 2:26:13 PM, Old:OFF, New:ON
+PMT Volts Changed: 10-Aug-23 2:26:13 PM, Old:600, New:800
+Emission PMT (V): Changed: 10-Aug-23 2:26:13 PM, Old: 600, New: 800
+Emission Wavelength Changed: 10-Aug-23 2:26:13 PM, Old: 505.00, New: 510.00
+Stop Wavelength Changed: 10-Aug-23 2:26:13 PM, Old: 565.00, New: 560.00
+Wellplate Samples Changed: 10-Aug-23 2:26:13 PM, Old:A1;A2;A3;A4;A5;A6;B1;B2;B3;B4;B5;B6;C1;C2;C3;C4;C5;C6;, New:A6;B6;C6;
+Overlayed Graphs Changed: 10-Aug-23 2:27:01 PM, Old:ON, New:OFF
+PMT Volts Changed: 10-Aug-23 2:27:01 PM, Old:800, New:900
+Emission PMT (V): Changed: 10-Aug-23 2:27:01 PM, Old: 800, New: 900
+Wellplate Samples Changed: 10-Aug-23 2:27:01 PM, Old:A6;B6;C6;, New:A5;A6;B5;B6;C5;C6;
+Overlayed Graphs Changed: 10-Aug-23 2:27:15 PM, Old:OFF, New:ON
+Overlayed Graphs Changed: 10-Aug-23 2:28:20 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 10-Aug-23 2:28:20 PM, Old:A5;A6;B5;B6;C5;C6;, New:A1;A2;A3;A4;A5;A6;B1;B2;B3;B4;B5;B6;C1;C2;C3;C4;C5;C6;
+Overlayed Graphs Changed: 10-Aug-23 2:29:03 PM, Old:OFF, New:ON
+Overlayed Graphs Changed: 10-Aug-23 2:59:28 PM, Old:ON, New:OFF
+Wellplate Samples Changed: 10-Aug-23 2:59:28 PM, Old:A1;A2;A3;A4;A5;A6;B1;B2;B3;B4;B5;B6;C1;C2;C3;C4;C5;C6;, New:A5;
+End Method Modifications
+

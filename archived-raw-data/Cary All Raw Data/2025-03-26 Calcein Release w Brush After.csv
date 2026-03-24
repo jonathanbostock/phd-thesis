@@ -1,0 +1,621 @@
+Sample A1,,Sample A2,,Sample A3,,Sample A4,,Sample A5,,Sample B1,,Sample B2,,Sample B3,,Sample B4,,Sample B5,,Sample C1,,Sample C2,,Sample C3,,Sample C4,,Sample C5,,
+Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),Time (min),Intensity (a.u.),
+0.0008333333535,322.8210144,0.02056249976,339.9891968,0.040374998,353.7244263,0.06120833009,291.4671936,0.08100000024,328.9393005,0.1862083226,204.6679993,0.166395843,220.4645386,0.1466666758,232.7314606,0.1268333346,186.3323059,0.1059999987,212.4553375,0.2122291774,315.533783,0.232041657,289.794342,0.2518333197,268.7124634,0.2726666629,250.3269958,0.2924999893,292.453186,
+0.5008333325,319.1192932,0.5205833316,334.5420837,0.5403958559,353.7512207,0.5602291822,295.6132507,0.5799791813,330.4993591,0.6862291694,198.3889465,0.6664167047,216.2620392,0.6455833316,229.4609985,0.6258125305,188.9702606,0.6060625315,213.596344,0.7112292051,317.1598511,0.7320625186,289.544342,0.7518958449,265.1118164,0.771645844,251.7053833,0.7914167047,295.1382141,
+1.000833273,316.9236755,1.021645904,339.0987549,1.041416645,348.3589172,1.061229229,295.0977478,1.082062483,328.1056824,1.187250018,200.6921692,1.167479157,219.5574799,1.147729158,228.6361694,1.126895785,189.5417328,1.107062578,214.7011719,1.213312507,317.5924988,1.233083367,286.7146301,1.252895832,265.6417847,1.272729158,252.4200745,1.293562412,294.1810608,
+
+Sample A1,
+Sample A1
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample A2,
+Sample A2
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample A3,
+Sample A3
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample A4,
+Sample A4
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample A5,
+Sample A5
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample B1,
+Sample B1
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample B2,
+Sample B2
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample B3,
+Sample B3
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample B4,
+Sample B4
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample B5,
+Sample B5
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample C1,
+Sample C1
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample C2,
+Sample C2
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample C3,
+Sample C3
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample C4,
+Sample C4
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
+Sample C5,
+Sample C5
+Collection Time: 3/26/2025 3:42:39 PM
+Operator Name  :
+Kinetics Software Version: 1.1(132)
+Parameter List :
+Report Time: Wed 26 Mar 03:42:39 PM 2025
+Software version: 1.1(132)
+Operator:
+Instrument Parameters
+Instrument                        Cary Eclipse
+Instrument Serial Number          el03107365
+Data mode                         Fluorescence
+Ex. wavelength (nm)               495.00
+Em. wavelength (nm)               515.00
+Ex. Slit (nm)                     5
+Em. Slit (nm)                     5
+Averaging Time (s)                0.1000
+Cycle time(min)                   0.5000
+Stop time(min)                    1.0000
+Emission filter                   Open
+Excitation Filter                 Auto
+PMT voltage (V)                   Medium
+Wellplate                         ON
+Plate format                     96 Wells
+Read position                    Well centre
+Multi-zero                       OFF
+Auto-zero                        OFF
+Well                            A1
+Comments:
+Method Log     :
+Method Name    : Default
+Date/Time stamp: 3/26/2025 3:40:45 PM
+Method Modifications:
+Well plate reader Changed: 3/26/2025 3:42:37 PM, Old:OFF, New:ON
+Excitation Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 400.00, New: 495.00
+Emission Wavelength Changed: 3/26/2025 3:42:37 PM, Old: 600.00, New: 515.00
+Cycle Time 1 Changed: 3/26/2025 3:42:37 PM, Old: 0.0000, New: 0.5000
+Wellplate Samples Changed: 3/26/2025 3:42:37 PM, Old:, New:A1;A2;A3;A4;A5;B1;B2;B3;B4;B5;C1;C2;C3;C4;C5;
+End Method Modifications
+
