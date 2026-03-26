@@ -814,22 +814,24 @@ def plot_mean_sem_overlay(
         ax.fill_between(unique_x, means - sems, means + sems, color=color, alpha=band_alpha)
 
 
-def save_plot(fig, filename_base):
-    """Save plot as SVG, resizing so each subplot axis has the correct physical size.
+def save_plot(fig, filename_base, resize: bool = True):
+    """Save plot as SVG, optionally resizing so each subplot axis has the correct physical size.
 
     Single-axis figures: axes are 50mm × 40mm.
     Multi-axis figures: each axis is 45mm × 35mm.
     Uses a two-pass tight_layout so margins are correct at the final size.
+    Pass resize=False to preserve the figure size set at creation time.
     """
-    subplot_axes = [ax for ax in fig.get_axes() if ax.get_subplotspec() is not None]
-    n = len(subplot_axes)
-    ax_w_mm = 30.375 if n >= 2 else 50
-    ax_h_mm = 23.625 if n >= 2 else 40
+    if resize:
+        subplot_axes = [ax for ax in fig.get_axes() if ax.get_subplotspec() is not None]
+        n = len(subplot_axes)
+        ax_w_mm = 30.375 if n >= 2 else 50
+        ax_h_mm = 23.625 if n >= 2 else 40
 
-    if subplot_axes:
-        plt.tight_layout()
-        pos = subplot_axes[0].get_position()
-        fig.set_size_inches((ax_w_mm / 25.4) / pos.width, (ax_h_mm / 25.4) / pos.height)
-        plt.tight_layout()
+        if subplot_axes:
+            plt.tight_layout()
+            pos = subplot_axes[0].get_position()
+            fig.set_size_inches((ax_w_mm / 25.4) / pos.width, (ax_h_mm / 25.4) / pos.height)
+            plt.tight_layout()
 
     fig.savefig(f"{filename_base}.svg", bbox_inches="tight")
