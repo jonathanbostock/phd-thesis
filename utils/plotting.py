@@ -11,7 +11,7 @@ import seaborn as sns
 from scipy.optimize import curve_fit
 import scipy.stats as stats
 import pandas as pd
-from typing import Iterable, Optional, Tuple, List
+from typing import Any, Iterable, Optional, Tuple, List, cast
 
 from utils import defaults
 
@@ -196,7 +196,7 @@ def plot_brush_data_continuous(
 
     # Get unique categories and create gradient colormap
     categories = sorted(df_data[category_col].unique())
-    cmap = plt.cm.get_cmap("viridis")
+    cmap = plt.get_cmap("viridis")
     norm = Normalize(vmin=min(categories), vmax=max(categories))
     markers = ["o", "s", "^", "D", "v", "<", ">", "p", "*", "h"][: len(categories)]
 
@@ -256,6 +256,7 @@ def plot_brush_data_categorical(
     ylabel,
     legend_title,
     figsize=(defaults.double_fig_width, defaults.double_fig_height),
+    axes=None,
 ):
     """
     Plot brush data with categorical categories using colorblind palette
@@ -284,11 +285,18 @@ def plot_brush_data_categorical(
         Legend title
     figsize : tuple
         Figure size (width, height)
+    axes : tuple of two matplotlib.axes.Axes, optional
+        Draw onto these axes instead of creating a new 1x2 figure.  Pass one
+        axis from each of two separate figures to save the panels individually.
     """
     setup_plot_style()
 
-    # Create figure
-    fig, (ax_1, ax_2) = plt.subplots(1, 2, figsize=figsize)
+    # Create figure (unless the caller supplied the axes)
+    if axes is None:
+        fig, (ax_1, ax_2) = plt.subplots(1, 2, figsize=figsize)
+    else:
+        ax_1, ax_2 = axes
+        fig = ax_1.figure
 
     # Get unique categories and assign colors
     categories = sorted(df_data[category_col].unique())
@@ -365,7 +373,8 @@ def plot_brush_data_categorical(
 
     format_axes(ax_2)
 
-    plt.tight_layout()
+    if axes is None:
+        plt.tight_layout()
     return fig
 
 
@@ -747,7 +756,9 @@ def plot_linear_fit_overlay(
     -------
     r_squared : float
     """
-    result = stats.linregress(x, y)
+    result = cast(
+        Any, stats.linregress(x, y)
+    )  # LinregressResult; cast keeps pyright happy
     slope, intercept, r_value = result.slope, result.intercept, result.rvalue
 
     x_plot = np.linspace(x.min(), x.max(), 200)
@@ -809,29 +820,65 @@ def plot_mean_sem_overlay(
     means = np.array([np.mean(y[x == xi]) for xi in unique_x])
     sems = np.array([stats.sem(y[x == xi]) for xi in unique_x])
 
-    ax.plot(unique_x, means, color=color, linewidth=1.5, alpha=line_alpha, linestyle=linestyle)
+    ax.plot(
+        unique_x,
+        means,
+        color=color,
+        linewidth=1.5,
+        alpha=line_alpha,
+        linestyle=linestyle,
+    )
     if band_alpha > 0:
-        ax.fill_between(unique_x, means - sems, means + sems, color=color, alpha=band_alpha)
+        ax.fill_between(
+            unique_x, means - sems, means + sems, color=color, alpha=band_alpha
+        )
 
 
 def save_plot(fig, filename_base, resize: bool = True):
     """Save plot as SVG, optionally resizing so each subplot axis has the correct physical size.
 
     Single-axis figures: axes are 50mm × 40mm.
-    Multi-axis figures: each axis is 45mm × 35mm.
-    Uses a two-pass tight_layout so margins are correct at the final size.
+    Multi-axis figures: each axis is 30.375mm × 23.625mm.
+
+    The figure is laid out with tight_layout, the space taken up by the decorations
+    (tick labels, axis labels, titles, padding) is measured, and the figure is then
+    resized so that the axes themselves come out at the target size.  Legends are
+    ignored while laying out, so a legend placed outside the axes does not shrink
+    them; it is still included in the saved file through bbox_inches="tight".
     Pass resize=False to preserve the figure size set at creation time.
     """
     if resize:
         subplot_axes = [ax for ax in fig.get_axes() if ax.get_subplotspec() is not None]
         n = len(subplot_axes)
-        ax_w_mm = 30.375 if n >= 2 else 50
-        ax_h_mm = 23.625 if n >= 2 else 40
+        ax_w_in = (30.375 if n >= 2 else 50) / 25.4
+        ax_h_in = (23.625 if n >= 2 else 40) / 25.4
 
         if subplot_axes:
-            plt.tight_layout()
+            legends = [
+                legend
+                for legend in (ax.get_legend() for ax in fig.get_axes())
+                if legend is not None
+            ]
+            for legend in legends:
+                legend.set_in_layout(False)
+
+            subplot_spec = subplot_axes[0].get_subplotspec()
+            assert subplot_spec is not None
+            nrows, ncols = subplot_spec.get_gridspec().get_geometry()
+
+            # Lay out at a comfortable size, measure the decorations, then resize exactly
+            fig.set_size_inches(ncols * ax_w_in + 2.0, nrows * ax_h_in + 2.0)
+            fig.tight_layout()
             pos = subplot_axes[0].get_position()
-            fig.set_size_inches((ax_w_mm / 25.4) / pos.width, (ax_h_mm / 25.4) / pos.height)
-            plt.tight_layout()
+            fig_w, fig_h = fig.get_size_inches()
+            decoration_w = fig_w - ncols * pos.width * fig_w
+            decoration_h = fig_h - nrows * pos.height * fig_h
+            fig.set_size_inches(
+                ncols * ax_w_in + decoration_w, nrows * ax_h_in + decoration_h
+            )
+            fig.tight_layout()
+
+            for legend in legends:
+                legend.set_in_layout(True)
 
     fig.savefig(f"{filename_base}.svg", bbox_inches="tight")

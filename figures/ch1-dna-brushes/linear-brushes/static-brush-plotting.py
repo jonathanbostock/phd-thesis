@@ -10,13 +10,18 @@ import seaborn as sns
 from scipy.optimize import curve_fit
 from itertools import product
 
-from utils.plotting import fit_function, setup_plot_style, format_axes, plot_fit_curve, save_plot
+from utils.plotting import (
+    fit_function,
+    setup_plot_style,
+    format_axes,
+    plot_fit_curve,
+    save_plot,
+)
 from utils import defaults
 
 
-def main() -> None:
-    setup_plot_style()
-
+def load_data() -> pd.DataFrame:
+    """Read the DLS data and subtract the per-batch control measurements."""
     df = pd.read_csv("static-brush-data.csv")
 
     controls = df["sample_type"] == "ctrl"
@@ -35,6 +40,7 @@ def main() -> None:
 
     df_ctrl = df[controls]
     df_data = df[~controls].apply(lambda row: process_row(row, df_ctrl), axis=1)
+    assert isinstance(df_data, pd.DataFrame)
 
     # 5 microliters of 0.5 mg/mL POPC (molar mass 760)
     lipid_moles = 5e-6 * 0.5 / 760
@@ -46,23 +52,15 @@ def main() -> None:
         1 / df_data["Lipid:Construct Ratio"]
     )  # Concentration is inverse of ratio
     df_data["Delta D"] = df_data["peak_1_mean_intensity"]
+    return df_data
 
-    # Create figure with subplots for both plots
-    fig, (ax1, ax2) = plt.subplots(
-        1, 2, figsize=(defaults.fig_width * 2, defaults.fig_height)
-    )
 
-    # Get unique brush lengths and create gradient colormap
-    brush_lengths = sorted(np.unique(df_data["Construct Length / bp"]))
-    # Create a colormap for gradient colors based on brush length
-    import matplotlib.cm as cm
-    from matplotlib.colors import Normalize
-    from matplotlib import colormaps
+def plot_saturation_curves(ax, df_data, brush_lengths, cmap, norm, markers) -> list:
+    """Delta D against lipid:construct ratio with one saturation fit per construct length.
 
-    cmap = colormaps["viridis"]
-    norm = Normalize(vmin=min(brush_lengths), vmax=max(brush_lengths))
-    markers = ["o", "s", "^", "D", "v", "<", ">", "p", "*", "h"][: len(brush_lengths)]
-
+    Returns the fitted parameters (one dict per construct length), which feed the
+    Delta D_max vs length plot.
+    """
     # Store fitted parameters for second plot
     fitted_params = []
 
@@ -70,13 +68,13 @@ def main() -> None:
     all_ratios = np.array(df_data["Lipid:Construct Ratio"])
     min_ratio = min(all_ratios) * 0.3  # Extend further left
     max_ratio = max(all_ratios) * 3.0  # Extend further right
-    ax1.set_xlim(max_ratio, min_ratio)  # Reversed for log scale
+    ax.set_xlim(max_ratio, min_ratio)  # Reversed for log scale
 
     # Plot individual data points and fit curves
     for i, brush_length in enumerate(brush_lengths):
         data_subset = df_data[df_data["Construct Length / bp"] == brush_length]
         color = cmap(norm(brush_length))
-        ax1.scatter(
+        ax.scatter(
             data_subset["Lipid:Construct Ratio"],
             data_subset["Delta D"],
             color=color,
@@ -89,7 +87,7 @@ def main() -> None:
 
         # Use shared utility for fitting and plotting
         popt, param_errors = plot_fit_curve(
-            ax1,
+            ax,
             data_subset,
             "Concentration",
             "Delta D",
@@ -111,70 +109,116 @@ def main() -> None:
             )
 
     # Format first subplot (original plot)
-    ax1.set_xscale("log")
-    ax1.set_xlabel("Lipid:Construct Ratio")
-    ax1.set_ylabel(r"$\Delta D$ / nm")
-    ax1.legend(
-        title="Construct Length", bbox_to_anchor=(1.05, 1), loc="upper left", frameon=False
+    ax.set_xscale("log")
+    ax.set_xlabel("Lipid:Construct Ratio")
+    ax.set_ylabel(r"$\Delta D$ / nm")
+    ax.legend(
+        title="Construct Length",
+        bbox_to_anchor=(1.05, 1),
+        loc="upper left",
+        frameon=False,
     )
-    ax1.set_title(r"Static Brush $\Delta D$ vs Lipid:Construct Ratio")
-    format_axes(ax1)
+    ax.set_title(r"Static Brush $\Delta D$ vs Lipid:Construct Ratio")
+    format_axes(ax)
 
-    # Create second subplot: ΔD max vs Construct Length
-    if fitted_params:
-        # Extract data for plotting
-        brush_lengths_fit = [p["brush_length"] for p in fitted_params]
-        delta_d_max_vals = [p["delta_d_max"] for p in fitted_params]
-        delta_d_max_errors = [p["delta_d_max_error"] for p in fitted_params]
+    return fitted_params
 
-        print(delta_d_max_errors)
 
-        colors = [p["color"] for p in fitted_params]
+def plot_dmax_vs_length(ax, fitted_params, markers) -> None:
+    """Fitted Delta D_max against construct length, with a line through the origin."""
+    if not fitted_params:
+        return
 
-        # Plot with error bars
-        for i, (bl, ddm, err, color) in enumerate(
-            zip(brush_lengths_fit, delta_d_max_vals, delta_d_max_errors, colors)
-        ):
-            ax2.errorbar(
-                bl,
-                ddm,
-                yerr=err,
-                marker=markers[i],
-                color=color,
-                markeredgecolor="black",
-                markeredgewidth=0.5,
-                markersize=8,
-                capsize=3,
-                linewidth=0.5,
-            )
+    # Extract data for plotting
+    brush_lengths_fit = [p["brush_length"] for p in fitted_params]
+    delta_d_max_vals = [p["delta_d_max"] for p in fitted_params]
+    delta_d_max_errors = [p["delta_d_max_error"] for p in fitted_params]
 
-        # Fit a line through the origin
-        # Force intercept to be 0 by fitting y = mx model
-        x_data = np.array(brush_lengths_fit)
-        y_data = np.array(delta_d_max_vals)
+    print(delta_d_max_errors)
 
-        # Fit slope (forcing through origin)
-        slope = np.sum(x_data * y_data) / np.sum(x_data**2)
+    colors = [p["color"] for p in fitted_params]
 
-        # Plot fitted line
-        x_fit = np.linspace(0, max(brush_lengths_fit) * 1.1, 100)
-        y_fit = slope * x_fit
-        ax2.plot(
-            x_fit, y_fit, "k--", linewidth=2, alpha=0.7, label=f"Slope = {slope:.3f}"
+    # Plot with error bars
+    for i, (bl, ddm, err, color) in enumerate(
+        zip(brush_lengths_fit, delta_d_max_vals, delta_d_max_errors, colors)
+    ):
+        ax.errorbar(
+            bl,
+            ddm,
+            yerr=err,
+            marker=markers[i],
+            color=color,
+            markeredgecolor="black",
+            markeredgewidth=0.5,
+            markersize=8,
+            capsize=3,
+            linewidth=0.5,
         )
 
-        # Format second subplot
-        ax2.set_xlabel("Construct Length / bp")
-        ax2.set_ylabel(r"$\Delta D_{max}$ / nm")
-        ax2.set_title(r"Fitted $\Delta D_{max}$ vs Construct Length")
-        ax2.legend(frameon=False)
+    # Fit a line through the origin
+    # Force intercept to be 0 by fitting y = mx model
+    x_data = np.array(brush_lengths_fit)
+    y_data = np.array(delta_d_max_vals)
 
-        # Set origin at (0,0)
-        ax2.set_xlim(0, max(brush_lengths_fit) * 1.1)
-        ax2.set_ylim(0, max(delta_d_max_vals) * 1.1)
-        format_axes(ax2)
+    # Fit slope (forcing through origin)
+    slope = np.sum(x_data * y_data) / np.sum(x_data**2)
 
+    # Plot fitted line
+    x_fit = np.linspace(0, max(brush_lengths_fit) * 1.1, 100)
+    y_fit = slope * x_fit
+    ax.plot(x_fit, y_fit, "k--", linewidth=2, alpha=0.7, label=f"Slope = {slope:.3f}")
+
+    # Format second subplot
+    ax.set_xlabel("Construct Length / bp")
+    ax.set_ylabel(r"$\Delta D_{max}$ / nm")
+    ax.set_title(r"Fitted $\Delta D_{max}$ vs Construct Length")
+    ax.legend(frameon=False)
+
+    # Set origin at (0,0)
+    ax.set_xlim(0, max(brush_lengths_fit) * 1.1)
+    ax.set_ylim(0, max(delta_d_max_vals) * 1.1)
+    format_axes(ax)
+
+
+def main() -> None:
+    setup_plot_style()
+
+    df_data = load_data()
+
+    # Get unique brush lengths and create gradient colormap
+    brush_lengths = sorted(np.unique(df_data["Construct Length / bp"]))
+    # Create a colormap for gradient colors based on brush length
+    import matplotlib.cm as cm
+    from matplotlib.colors import Normalize
+    from matplotlib import colormaps
+
+    cmap = colormaps["viridis"]
+    norm = Normalize(vmin=min(brush_lengths), vmax=max(brush_lengths))
+    markers = ["o", "s", "^", "D", "v", "<", ">", "p", "*", "h"][: len(brush_lengths)]
+
+    # Combined two-panel figure (the plot used in the original composite figure)
+    fig, (ax1, ax2) = plt.subplots(
+        1, 2, figsize=(defaults.fig_width * 2, defaults.fig_height)
+    )
+    fitted_params = plot_saturation_curves(
+        ax1, df_data, brush_lengths, cmap, norm, markers
+    )
+    plot_dmax_vs_length(ax2, fitted_params, markers)
     save_plot(fig, "Static Brush Plot")
+
+    # The same two panels rendered individually for the thesis figures
+    # linear-constructs-b and linear-constructs-c (panel a is drawn in Inkscape;
+    # see split-panels.py).
+    fig_b, ax_b = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
+    fitted_params_b = plot_saturation_curves(
+        ax_b, df_data, brush_lengths, cmap, norm, markers
+    )
+    save_plot(fig_b, "linear-constructs-b")
+
+    fig_c, ax_c = plt.subplots(figsize=(defaults.fig_width, defaults.fig_height))
+    plot_dmax_vs_length(ax_c, fitted_params_b, markers)
+    save_plot(fig_c, "linear-constructs-c")
+
     plt.show()
 
 

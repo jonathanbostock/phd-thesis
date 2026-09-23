@@ -92,7 +92,9 @@ def main() -> None:
     format_axes(ax)
 
     plt.tight_layout()
-    save_plot(fig, "laurdan-gp")
+    # Panel b of the thesis figure "laurdan-gp".  (laurdan-gp.svg itself is the
+    # hand-edited Inkscape composite, so do not save over it; see split-panels.py.)
+    save_plot(fig, "laurdan-gp-b")
 
 
 if __name__ == "__main__":
