@@ -136,7 +136,7 @@ def _parse_transform(transform: Optional[str]) -> Matrix:
             m = (sx, 0, 0, sy, 0, 0)
         elif name == "matrix":
             m = tuple(values)  # type: ignore[assignment]
-        elif name == "rotate" and len(values) == 1:
+        elif name == "rotate":
             angle = math.radians(values[0])
             m = (
                 math.cos(angle),
@@ -146,6 +146,9 @@ def _parse_transform(transform: Optional[str]) -> Matrix:
                 0,
                 0,
             )
+            if len(values) == 3:  # rotate about (cx, cy)
+                cx, cy = values[1], values[2]
+                m = _matmul(_matmul((1, 0, 0, 1, cx, cy), m), (1, 0, 0, 1, -cx, -cy))
         else:
             raise NotImplementedError(f"unsupported transform {name}({args})")
         result = _matmul(result, m)

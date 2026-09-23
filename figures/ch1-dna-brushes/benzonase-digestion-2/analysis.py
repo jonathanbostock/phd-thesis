@@ -51,8 +51,14 @@ for col in range(0, n_cols - 1, 2):
     name = str(df_raw.iloc[0, col]).strip().replace("Sample ", "")
     if not name or name.lower() == "nan":
         continue
-    t = pd.to_numeric(df_raw.iloc[2:last_data_row + 1, col], errors="coerce").values
-    y = pd.to_numeric(df_raw.iloc[2:last_data_row + 1, col + 1], errors="coerce").values
+    t = np.asarray(
+        pd.to_numeric(df_raw.iloc[2 : last_data_row + 1, col], errors="coerce"),
+        dtype=float,
+    )
+    y = np.asarray(
+        pd.to_numeric(df_raw.iloc[2 : last_data_row + 1, col + 1], errors="coerce"),
+        dtype=float,
+    )
     mask = np.isfinite(t) & np.isfinite(y)
     samples[name] = (t[mask], y[mask])
 
@@ -81,7 +87,7 @@ for r_idx, row_letter in enumerate(plate_rows):
 # Normalise wells 3-7 per row per timepoint
 # ---------------------------------------------------------------------------
 full_dig = data_array[:, 0, :]  # (3, n_timepoints)
-no_dig = data_array[:, 1, :]    # (3, n_timepoints)
+no_dig = data_array[:, 1, :]  # (3, n_timepoints)
 
 exp_data = data_array[:, 2:, :]  # (3, 5, n_timepoints)
 normalised = (exp_data - full_dig[:, np.newaxis, :]) / (
@@ -94,7 +100,13 @@ sem_norm = stats.sem(normalised, axis=0)  # (5, n_timepoints)
 # ---------------------------------------------------------------------------
 # Plot
 # ---------------------------------------------------------------------------
-condition_labels = ["Sparse brush", "Short brush", "Long brush", "Star brush", "No brush"]
+condition_labels = [
+    "Sparse brush",
+    "Short brush",
+    "Long brush",
+    "Star brush",
+    "No brush",
+]
 colors = sns.color_palette("colorblind", n_colors=5)
 markers = ["o", "s", "^", "D", "v"]
 
@@ -121,7 +133,7 @@ for i, (label, color) in enumerate(zip(condition_labels, colors)):
 ax.set_xlabel("Time / min")
 ax.set_ylabel("Brush Digestion / %")
 ax.set_ylim(0, 100)
-ax.legend(frameon=False, fontsize=6)
+ax.legend(frameon=False, fontsize=7)
 
 format_axes(ax)
 save_plot(fig, os.path.join(here, "benzonase-digestion-2"))

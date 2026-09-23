@@ -12,11 +12,12 @@ Uses the same analysis approach as dna-brush-paper-2025/figures/fig-2:
 import math
 import pickle
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import h5py
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
 import numpy as np
 import seaborn as sns
 from joblib import Parallel, delayed
@@ -57,7 +58,7 @@ _CB = sns.color_palette("colorblind")
 COLORS: dict[str, Any] = {
     "38bp-dense": _CB[0],  # blue
     "68bp-dense": _CB[2],  # teal / green
-    "68bp-sparse": _CB[1], # orangey-yellow
+    "68bp-sparse": _CB[1],  # orangey-yellow
     "star-dense": _CB[3],  # vermillion / red
 }
 
@@ -66,25 +67,26 @@ Y_LIM = (-0.05, 1.05)
 Y_TICKS = np.arange(0.0, 1.1, 0.1)
 
 # Spacing range for all analysis
-SPACING_MIN = 0.5   # nm
+SPACING_MIN = 0.5  # nm
 SPACING_MAX = 10.0  # nm
 N_SPACING = 200
 SPACING_FIT = np.logspace(np.log10(SPACING_MIN), np.log10(SPACING_MAX), N_SPACING)
 
 # Bootstrap / peak-finding parameters
 N_BOOTSTRAP = 200
-RADIAL_BAND_MIN = 2.0   # nm — used for Figure 5
-RADIAL_BAND_MAX = 5.0   # nm — used for Figure 5
-PEAK_SEARCH_MIN = 2.0   # nm
-PEAK_SEARCH_MAX = 7.0   # nm
+RADIAL_BAND_MIN = 2.0  # nm — used for Figure 5
+RADIAL_BAND_MAX = 5.0  # nm — used for Figure 5
+PEAK_SEARCH_MIN = 2.0  # nm
+PEAK_SEARCH_MAX = 7.0  # nm
 
-ANALYSIS_CACHE = DATA_DIR / "analysis_cache.pkl"   # per-particle data & LOWESS
+ANALYSIS_CACHE = DATA_DIR / "analysis_cache.pkl"  # per-particle data & LOWESS
 BOOTSTRAP_CACHE = DATA_DIR / "bootstrap_cache.pkl"  # bootstrap results
 
 
 # ---------------------------------------------------------------------------
 # Core analysis
 # ---------------------------------------------------------------------------
+
 
 def compute_power_spectrum(
     row_data: np.ndarray,
@@ -124,7 +126,11 @@ def compute_power_spectrum(
 def process_h5_file(
     h5_path: Path,
     spacing_range: tuple[float, float] = (SPACING_MIN, SPACING_MAX),
-) -> tuple[np.ndarray, list[tuple[np.ndarray, np.ndarray]], list[list[tuple[np.ndarray, np.ndarray]]]]:
+) -> tuple[
+    np.ndarray,
+    list[tuple[np.ndarray, np.ndarray]],
+    list[list[tuple[np.ndarray, np.ndarray]]],
+]:
     """Load H5 file and return radial distances, LOWESS curves, and per-particle data.
 
     Returns
@@ -183,8 +189,13 @@ def process_h5_file(
         lowess_result = lowess(combined_pw, combined_sp, frac=0.1)
         lx, uniq = np.unique(lowess_result[:, 0], return_index=True)
         ly = lowess_result[uniq, 1]
-        interp_fn = interp1d(lx, ly, kind="linear", bounds_error=False,
-                             fill_value=(ly[0], ly[-1]))
+        interp_fn = interp1d(
+            lx,
+            ly,
+            kind="linear",
+            bounds_error=False,
+            fill_value=cast(Any, (ly[0], ly[-1])),
+        )
         lowess_curves.append((SPACING_FIT, interp_fn(SPACING_FIT)))
 
     return radial_distances, lowess_curves, per_particle_data
@@ -193,6 +204,7 @@ def process_h5_file(
 # ---------------------------------------------------------------------------
 # Bootstrap helpers (parallelised with joblib)
 # ---------------------------------------------------------------------------
+
 
 def _bootstrap_spectrum_iter(
     boot_idx: int,
@@ -219,8 +231,9 @@ def _bootstrap_spectrum_iter(
 
     lx, uniq = np.unique(lowess_result[:, 0], return_index=True)
     ly = lowess_result[uniq, 1]
-    interp_fn = interp1d(lx, ly, kind="linear", bounds_error=False,
-                         fill_value=(ly[0], ly[-1]))
+    interp_fn = interp1d(
+        lx, ly, kind="linear", bounds_error=False, fill_value=cast(Any, (ly[0], ly[-1]))
+    )
     return interp_fn(SPACING_FIT)
 
 
@@ -263,15 +276,22 @@ def _bootstrap_amplitude_iter(
 
         lx, uniq = np.unique(lowess_result[:, 0], return_index=True)
         ly = lowess_result[uniq, 1]
-        interp_fn = interp1d(lx, ly, kind="linear", bounds_error=False,
-                             fill_value=(ly[0], ly[-1]))
+        interp_fn = interp1d(
+            lx,
+            ly,
+            kind="linear",
+            bounds_error=False,
+            fill_value=cast(Any, (ly[0], ly[-1])),
+        )
         values[r_idx] = float(interp_fn(target_spacing))
 
     return values
 
 
 def compute_or_load_bootstrap(
-    all_per_particle: dict[str, tuple[np.ndarray, list[list[tuple[np.ndarray, np.ndarray]]]]],
+    all_per_particle: dict[
+        str, tuple[np.ndarray, list[list[tuple[np.ndarray, np.ndarray]]]]
+    ],
     all_raw_data: dict[str, tuple[np.ndarray, list[tuple[np.ndarray, np.ndarray]]]],
 ) -> dict[str, Any]:
     """Return bootstrap results from cache, or compute and cache them."""
@@ -291,7 +311,9 @@ def compute_or_load_bootstrap(
     # --- Spectrum bootstrap (Figure 5) ---
     for name in DATASET_NAMES:
         radial_distances, raw_data_list = all_raw_data[name]
-        r_mask = (radial_distances >= RADIAL_BAND_MIN) & (radial_distances <= RADIAL_BAND_MAX)
+        r_mask = (radial_distances >= RADIAL_BAND_MIN) & (
+            radial_distances <= RADIAL_BAND_MAX
+        )
         selected_indices = np.where(r_mask)[0]
 
         # Find peak from pooled data in radial band
@@ -301,8 +323,13 @@ def compute_or_load_bootstrap(
         lowess_result = lowess(all_pw[sort_idx], all_sp[sort_idx], frac=0.1)
         lx, uniq = np.unique(lowess_result[:, 0], return_index=True)
         ly = lowess_result[uniq, 1]
-        interp_fn = interp1d(lx, ly, kind="linear", bounds_error=False,
-                             fill_value=(ly[0], ly[-1]))
+        interp_fn = interp1d(
+            lx,
+            ly,
+            kind="linear",
+            bounds_error=False,
+            fill_value=cast(Any, (ly[0], ly[-1])),
+        )
         power_fit = interp_fn(SPACING_FIT)
         peak_mask = (SPACING_FIT >= PEAK_SEARCH_MIN) & (SPACING_FIT <= PEAK_SEARCH_MAX)
         peak_idx = int(np.argmax(power_fit[peak_mask]))
@@ -340,8 +367,13 @@ def compute_or_load_bootstrap(
         # Interpolate each bootstrap result to x_coords then average
         boot_interp = np.zeros((N_BOOTSTRAP, len(x_coords)))
         for b in range(N_BOOTSTRAP):
-            fn = interp1d(radial_distances, arr[b], kind="linear",
-                          bounds_error=False, fill_value="extrapolate")
+            fn = interp1d(
+                radial_distances,
+                arr[b],
+                kind="linear",
+                bounds_error=False,
+                fill_value=cast(Any, "extrapolate"),
+            )
             boot_interp[b] = fn(x_coords)
 
         amplitude_boot[name] = (
@@ -380,7 +412,9 @@ def compute_or_load_analysis() -> tuple[
 
     all_curves: dict[str, tuple[np.ndarray, list[tuple[np.ndarray, np.ndarray]]]] = {}
     all_raw: dict[str, tuple[np.ndarray, list[tuple[np.ndarray, np.ndarray]]]] = {}
-    all_per_particle: dict[str, tuple[np.ndarray, list[list[tuple[np.ndarray, np.ndarray]]]]] = {}
+    all_per_particle: dict[
+        str, tuple[np.ndarray, list[list[tuple[np.ndarray, np.ndarray]]]]
+    ] = {}
 
     for name, h5_path in H5_FILES.items():
         print(f"\nProcessing {name}...")
@@ -415,12 +449,13 @@ def compute_or_load_analysis() -> tuple[
 # Plotting
 # ---------------------------------------------------------------------------
 
+
 def _plot_ridgeline(
     name: str,
     radial_distances: np.ndarray,
     lowess_curves: list[tuple[np.ndarray, np.ndarray]],
     global_max: float = 1.0,
-) -> plt.Figure:
+) -> Figure:
     """Multi-line plot: one line per radial distance, coloured by distance."""
     cmap = cm.plasma
     norm_cm = Normalize(radial_distances[0], radial_distances[-1])
@@ -436,7 +471,7 @@ def _plot_ridgeline(
     sm.set_array([])
     cbar = fig.colorbar(sm, ax=ax, pad=0.02, fraction=0.06)
     cbar.set_label("Distance from membrane / nm", fontsize=7)
-    cbar.ax.tick_params(labelsize=6)
+    cbar.ax.tick_params(labelsize=7)
 
     ax.set_xlabel("Spacing / nm")
     ax.set_ylabel(Y_LABEL)
@@ -451,7 +486,7 @@ def _plot_ridgeline(
     return fig
 
 
-def _plot_comparison_spectrum(boot: dict[str, Any]) -> plt.Figure:
+def _plot_comparison_spectrum(boot: dict[str, Any]) -> Figure:
     """Figure 5: LOWESS in 2–5 nm band, all conditions, peaks starred."""
     fig, ax = plt.subplots(figsize=(5.1, 3.06))
 
@@ -461,12 +496,30 @@ def _plot_comparison_spectrum(boot: dict[str, Any]) -> plt.Figure:
         peak_pw = boot["peak_powers"][name]
         color = COLORS[name]
 
-        ax.fill_between(SPACING_FIT, mean_curve - se_curve, mean_curve + se_curve,
-                        alpha=0.3, color=color, linewidth=0)
-        ax.plot(SPACING_FIT, mean_curve, color=color, linewidth=1.5,
-                label=f"{DATASET_TITLES.get(name, name)} ({peak_sp:.1f} nm)")
-        ax.plot(peak_sp, peak_pw, marker="*", markersize=10, color=color,
-                markeredgecolor="black", markeredgewidth=0.5)
+        ax.fill_between(
+            SPACING_FIT,
+            mean_curve - se_curve,
+            mean_curve + se_curve,
+            alpha=0.3,
+            color=color,
+            linewidth=0,
+        )
+        ax.plot(
+            SPACING_FIT,
+            mean_curve,
+            color=color,
+            linewidth=1.5,
+            label=f"{DATASET_TITLES.get(name, name)} ({peak_sp:.1f} nm)",
+        )
+        ax.plot(
+            peak_sp,
+            peak_pw,
+            marker="*",
+            markersize=10,
+            color=color,
+            markeredgecolor="black",
+            markeredgewidth=0.5,
+        )
 
     ax.set_xlabel("Spacing / nm")
     ax.set_ylabel(Y_LABEL)
@@ -477,7 +530,7 @@ def _plot_comparison_spectrum(boot: dict[str, Any]) -> plt.Figure:
     return fig
 
 
-def _plot_amplitude_vs_distance(boot: dict[str, Any]) -> plt.Figure:
+def _plot_amplitude_vs_distance(boot: dict[str, Any]) -> Figure:
     """Figure 6: LOWESS amplitude at peak spacing vs distance from membrane."""
     x_coords: np.ndarray = boot["x_coords"]
 
@@ -488,12 +541,26 @@ def _plot_amplitude_vs_distance(boot: dict[str, Any]) -> plt.Figure:
         peak_sp = boot["peak_spacings"][name]
         color = COLORS[name]
 
-        ax.fill_between(x_coords, mean_vals - se_vals, mean_vals + se_vals,
-                        alpha=0.3, color=color, linewidth=0)
-        ax.plot(x_coords, mean_vals, color=color, linewidth=1.5,
-                marker=MARKERS[idx], markersize=4,
-                markerfacecolor=color, markeredgecolor="black", markeredgewidth=0.5,
-                label=f"{DATASET_TITLES.get(name, name)} ({peak_sp:.1f} nm)")
+        ax.fill_between(
+            x_coords,
+            mean_vals - se_vals,
+            mean_vals + se_vals,
+            alpha=0.3,
+            color=color,
+            linewidth=0,
+        )
+        ax.plot(
+            x_coords,
+            mean_vals,
+            color=color,
+            linewidth=1.5,
+            marker=MARKERS[idx],
+            markersize=4,
+            markerfacecolor=color,
+            markeredgecolor="black",
+            markeredgewidth=0.5,
+            label=f"{DATASET_TITLES.get(name, name)} ({peak_sp:.1f} nm)",
+        )
 
     ax.set_xlabel("Distance from membrane / nm")
     ax.set_ylabel(Y_LABEL)
@@ -507,6 +574,7 @@ def _plot_amplitude_vs_distance(boot: dict[str, Any]) -> plt.Figure:
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
 
 def main() -> None:
     """Produce all six figures."""

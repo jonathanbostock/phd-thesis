@@ -4,6 +4,8 @@ Two-panel plot: (1) normalised Laurdan spectrum per condition,
                (2) GP value vs Lipid:Construct ratio.
 """
 
+from typing import Any
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -30,8 +32,9 @@ def general_polarization(column: pd.Series) -> float:
 
 
 def normalize_column(column: pd.Series, blank_df: pd.DataFrame) -> pd.Series:
-    letter = column.name[-2]
-    number = int(column.name[-1])
+    name = str(column.name)
+    letter = name[-2]
+    number = int(name[-1])
     blank = blank_df[f"Sample {letter}7"]
     blanked = column - blank
     norm_factor = blanked[440] + blanked[490]
@@ -52,9 +55,7 @@ def main() -> None:
 
     # Normalise each of the 18 sample columns (A1-A6, B1-B6, C1-C6)
     good_columns = [
-        f"Sample {letter}{j+1}"
-        for letter in ["A", "B", "C"]
-        for j in range(6)
+        f"Sample {letter}{j + 1}" for letter in ["A", "B", "C"] for j in range(6)
     ]
     normed_data = raw_data[good_columns].apply(
         lambda col: normalize_column(col, raw_data)
@@ -109,7 +110,11 @@ def main() -> None:
     for i, cond in enumerate(CONDITIONS):
         color = colors[i]
         ax1.plot(
-            wavelengths, spec_means[i], color=color, linewidth=1.5, label=display_labels[i]
+            wavelengths,
+            spec_means[i],
+            color=color,
+            linewidth=1.5,
+            label=display_labels[i],
         )
         ax1.fill_between(
             wavelengths,
@@ -124,8 +129,8 @@ def main() -> None:
     ax1.legend(
         title="Lipid:Construct",
         frameon=False,
-        fontsize=6,
-        title_fontsize=6,
+        fontsize=7,
+        title_fontsize=7,
         loc="upper right",
     )
     format_axes(ax1)
@@ -142,7 +147,7 @@ def main() -> None:
     )
     ax2_left.set_xlim(-0.5, 0.5)
     ax2_left.set_xticks([0])
-    ax2_left.set_xticklabels(["No\nconstruct"], fontsize=6)
+    ax2_left.set_xticklabels(["No\nconstruct"], fontsize=7)
     ax2_left.set_ylabel("GP (440 nm, 490 nm)")
     format_axes(ax2_left)
 
@@ -170,19 +175,23 @@ def main() -> None:
     # Both marks are "/" (lower-left to upper-right). ax2_right is 4× wider
     # (width_ratio 2.0 vs 0.5), so its d_x in axes coords must be scaled down
     # by the same factor to keep the same physical slope.
-    w_left = 0.5   # GridSpec width_ratio for ax2_left
+    w_left = 0.5  # GridSpec width_ratio for ax2_left
     w_right = 2.0  # GridSpec width_ratio for ax2_right
     d_y = 0.08
     d_x_left = d_y
     d_x_right = d_y * (w_left / w_right)
-    break_kw = dict(color="k", clip_on=False, linewidth=0.8)
+    break_kw: dict[str, Any] = dict(color="k", clip_on=False, linewidth=0.8)
     ax2_left.plot(
-        [1 - d_x_left, 1 + d_x_left], [-d_y, +d_y],
-        transform=ax2_left.transAxes, **break_kw,
+        [1 - d_x_left, 1 + d_x_left],
+        [-d_y, +d_y],
+        transform=ax2_left.transAxes,
+        **break_kw,
     )
     ax2_right.plot(
-        [-d_x_right, +d_x_right], [-d_y, +d_y],
-        transform=ax2_right.transAxes, **break_kw,
+        [-d_x_right, +d_x_right],
+        [-d_y, +d_y],
+        transform=ax2_right.transAxes,
+        **break_kw,
     )
 
     # Custom save: target 40×30 mm per axis (slightly larger than default 30×24 mm)
