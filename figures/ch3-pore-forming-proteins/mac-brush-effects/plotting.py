@@ -14,9 +14,9 @@ from utils.plotting import plot_calcein_release, save_plot
 from utils.stats import t_test_unpaired
 
 
-def main():
+def load_release() -> pd.DataFrame:
     """
-    Main function to plot the data for MAC experiments.
+    Calcein release (%) over time for every well (plate rows A-C, columns 1-8).
     """
     # Get our file path for this script
     file_path = os.path.dirname(os.path.abspath(__file__))
@@ -34,9 +34,17 @@ def main():
     triton_df: pd.DataFrame = pd.DataFrame(triton_df_full[columns])
 
     # Calculate the calcein release
-    release_df = calculate_release_from_fluorescence(
-        initial_df, timecourse_df, triton_df
-    )
+    return calculate_release_from_fluorescence(initial_df, timecourse_df, triton_df)
+
+
+def main():
+    """
+    Main function to plot the data for MAC experiments.
+    """
+    # Get our file path for this script
+    file_path = os.path.dirname(os.path.abspath(__file__))
+
+    release_df = load_release()
 
     final_release = release_df.iloc[-1]
     no_brush_data = final_release[["A5", "B5", "C5"]].tolist()

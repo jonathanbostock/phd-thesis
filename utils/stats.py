@@ -1,5 +1,57 @@
+from typing import Mapping, Sequence
+
 from scipy import stats
 import numpy as np
+import pandas as pd
+
+
+def significance_label(p_value: float) -> str:
+    """Star notation for a p-value: *** < 0.001, ** < 0.01, * < 0.05, else n.s."""
+    if p_value < 0.001:
+        return "***"
+    if p_value < 0.01:
+        return "**"
+    if p_value < 0.05:
+        return "*"
+    return "n.s."
+
+
+def paired_t_tests_against(
+    reference: str, values: Mapping[str, Sequence[float]]
+) -> pd.DataFrame:
+    """
+    Two-sided paired t-test of every group against the reference group.
+
+    Replicate i of each group is paired with replicate i of the reference
+    (e.g. the wells in the same row of a plate), so the groups must list their
+    replicates in the same order.  The p-values are not corrected for multiple
+    comparisons.
+
+    Args:
+        reference: Name of the group every other group is compared with
+        values: Replicate values of each group, by group name
+
+    Returns:
+        One row per group compared with the reference, indexed by group name:
+        number of pairs, mean of the paired differences (reference - group),
+        t-statistic, degrees of freedom, p-value and its star notation.
+    """
+    reference_values = np.asarray(values[reference], dtype=float)
+    rows = {}
+    for name, group_values in values.items():
+        if name == reference:
+            continue
+        difference = reference_values - np.asarray(group_values, dtype=float)
+        result = t_test_paired(list(reference_values), list(group_values))
+        rows[name] = {
+            "n_pairs": len(difference),
+            "mean_difference": float(difference.mean()),
+            "t_statistic": float(result["t_statistic"]),
+            "degrees_of_freedom": len(difference) - 1,
+            "p_value": float(result["p_value"]),
+            "significance": significance_label(float(result["p_value"])),
+        }
+    return pd.DataFrame.from_dict(rows, orient="index")
 
 
 def t_test_paired(data_1: list, data_2: list):

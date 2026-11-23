@@ -1,0 +1,4 @@
+,n_pairs,mean_difference,t_statistic,degrees_of_freedom,p_value,significance
+No Brush vs Sparse Brush,3,-4.640857372833225,-2.19418079599174,2,0.15946139950916202,n.s.
+No Brush vs Dense Brush,3,22.466121059564497,5.149552351638311,2,0.035703062938693776,*
+No Brush vs Star Brush,3,21.87175651392613,5.2996449910641585,2,0.033809324261657295,*
