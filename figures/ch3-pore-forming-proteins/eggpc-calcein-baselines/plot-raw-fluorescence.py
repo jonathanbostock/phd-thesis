@@ -9,11 +9,11 @@ on the same instrument scale, though the vesicle preparations differ and the
 absolute levels are not meant to be compared.
 
 Colour distinguishes vesicles incubated with \\gls{ahl} from the matched
-no-\\gls{ahl} controls, and the number of repeats is given in each legend.
-Lines are the mean and the shaded regions span one standard error either
-side, as in the other calcein figures of this chapter.  Panel a has a single
-well per condition, so it carries a line with no band.  Neither panel has a
-title: what each one shows belongs in the figure caption.
+no-\\gls{ahl} controls.  Lines are the mean and the shaded regions span one
+standard error either side, as in the other calcein figures of this chapter.
+Panel a has a single well per condition, so it carries a line with no band.
+Neither panel has a title, and the legends do not give the number of
+repeats: both belong in the figure caption.
 
 Panel a: 2024-08-07, 100 % \\gls{popc} membranes, one well with \\gls{ahl} (A1)
 and its control (A6); the run had no repeats.  The final reading is dropped,
@@ -126,13 +126,7 @@ def plot_panel(ax, panel: Panel) -> None:
     for (label, indices), colour in zip(panel.series, colours):
         repeats = timecourse[[wells[index] for index in indices]]
         mean = repeats.mean(axis=1)
-        ax.plot(
-            time,
-            mean,
-            color=colour,
-            linewidth=LINE_WIDTH,
-            label=f"{label} (n = {len(indices)})",
-        )
+        ax.plot(time, mean, color=colour, linewidth=LINE_WIDTH, label=label)
         if len(indices) > 1:  # a single well has no standard error to show
             error = repeats.sem(axis=1)
             ax.fill_between(
