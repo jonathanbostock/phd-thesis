@@ -23,8 +23,9 @@ closing 0.2 min).  The other wells of this run held \\gls{mbcd} (A5, A8) or
 other conditions, and A12 was a free-calcein reference.  The Before and
 Triton reads live alongside the timecourse in archived-raw-data.
 
-Panel b: 2024-11-21, EggPC membranes, the undecorated (no brush) vesicles
-with \\gls{ahl} against the no-\\gls{ahl} controls, three repeats each.  Wells
+Panel b: 2024-11-21, 50:50 \\gls{popc}:\\gls{eggpc} membranes, the undecorated
+(no brush) vesicles with \\gls{ahl} against the no-\\gls{ahl} controls, three
+repeats each.  Wells
 are from the plate map in analysis.py, which normalises the same run across
 all four of its conditions: the fifteen intensity columns are in plate order
 (A1-A5, B1-B5, C1-C5), plate columns are 1 = no-\\gls{ahl} control,
@@ -51,6 +52,11 @@ REPO_ROOT = HERE.parents[2]
 # Matching the other calcein figures of this chapter
 LINE_WIDTH = 2
 BAND_ALPHA = 0.3
+
+WITH_AHL = "+ Ahl"
+WITHOUT_AHL = "− Ahl"
+# Index into the colorblind palette, so both panels colour a condition alike
+CONDITION_COLOURS = {WITH_AHL: 1, WITHOUT_AHL: 0}
 
 # Each panel at the thesis single-plot axis size: these are two independent
 # plots sharing a figure, not a pair of small multiples.
@@ -82,7 +88,7 @@ PANELS = [
         n_wells=9,  # A1-A8 and A12
         n_timepoints=120,
         drop_from_end=1,  # Triton reached A1 during the final reading
-        series=[("+ Ahl", [0]), ("− Ahl", [5])],  # A1; A6
+        series=[(WITH_AHL, [0]), (WITHOUT_AHL, [5])],  # A1; A6
     ),
     Panel(
         path=HERE / "2024-11-21 EggPC Brush Ahl Timecourse.csv",
@@ -90,8 +96,8 @@ PANELS = [
         n_timepoints=60,
         drop_from_end=0,
         series=[
-            ("+ Ahl", [1, 6, 11]),  # A2, B2, C2: undecorated vesicles
-            ("− Ahl", [0, 5, 10]),  # A1, B1, C1: the matched controls
+            (WITH_AHL, [1, 6, 11]),  # A2, B2, C2: undecorated vesicles
+            (WITHOUT_AHL, [0, 5, 10]),  # A1, B1, C1: the matched controls
         ],
     ),
 ]
@@ -121,9 +127,10 @@ def plot_panel(ax, panel: Panel) -> None:
     timecourse = timecourse.iloc[: len(timecourse) - panel.drop_from_end]
     wells = well_columns(timecourse)
     time = timecourse["Time (min)"]
-    colours = sns.color_palette("colorblind", n_colors=len(panel.series))
+    palette = sns.color_palette("colorblind")
 
-    for (label, indices), colour in zip(panel.series, colours):
+    for label, indices in panel.series:
+        colour = palette[CONDITION_COLOURS[label]]
         repeats = timecourse[[wells[index] for index in indices]]
         mean = repeats.mean(axis=1)
         ax.plot(time, mean, color=colour, linewidth=LINE_WIDTH, label=label)
